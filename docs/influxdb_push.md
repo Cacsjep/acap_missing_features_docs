@@ -216,3 +216,17 @@ For further learning and more detailed tutorials, consider the following public 
 - **Flux Language Guide:**  
   [InfluxDB Flux Documentation](https://docs.influxdata.com/flux/latest/) – In-depth information on the Flux query language and its capabilities.
 
+
+#### Available Datapoints / Metrics
+
+| Category      | Key Fields |
+|----------------------|------------|
+| **CPU**      | `usage_percent`, `user`, `system`, `idle`, `nice`, `iowait`, `irq`, `softirq`, `steal`, `guest`, `guest_nice`, `load1`, `load5`, `load15` |
+| **Disk**     | `total`, `used`, `free`, `usage` `used percent`; tags: `device`, `fstype`, `mount` |
+| **Metadata** | Based on event configuration |
+| **Network**  | `bytes_sent`, `bytes_recv`, `packets_sent`, `packets_recv`, `err_in`, `err_out`, `drop_in`, `drop_out` |
+| **Power**    | `current_power`, `average_power`, `max_power`, `pse_poe_class`, `lldp_poe_class`, `power_requested` |
+| **Process**  | `cpu_percent`, `RSS`, `VMS`, `HWM`, `data`, `stack`, `locked`, `swap` |
+| **Swap**      | `total`, `used`, `free`, `usage` `used percent` |
+| **Uptime**   | `uptime` |
+| **Virtual Memory**   | `total`, `available`, `used`, `used_percent`, `free`, `active`, `inactive`, `wired`, `buffers`, `cached`, `write_back`, `dirty`, `write_back_tmp`, `shared`, `slab`, `sreclaimable`, `sunreclaim`, `page_tables`, `swap_cached`, `commit_limit`, `committed_as`, `high_total`, `high_free`, `low_total`, `low_free`, `swap_total`, `swap_free`, `mapped`, `vmalloc_total`, `vmalloc_used`, `vmalloc_chunk`, `huge_pages_total`, `huge_pages_free`, `huge_pages_rsvd`, `huge_pages_surp`, `huge_page_size`, `anon_huge_pages` |
