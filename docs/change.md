@@ -6,6 +6,14 @@
 - **F:** New Feature  
 - **C:** Change  
 
+---
+
+##### V0.6.14 – 05.04.2025
+- **I:** Add FF Camera LPR Topics to parking times
+- **I:** Vapix DBUS creds fetch on startup
+- **I:** Recude rest cals do event declarations in datapoints configuration
+- **I:** Remove larod coupling in goxis to enable Artpec-6 support
+- **B:** Exit event nil pointer fix
 
 ---
 
