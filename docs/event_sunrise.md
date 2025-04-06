@@ -45,7 +45,7 @@ To integrate day/night events from Missing Feature ACAP into your AXIS camera’
 
 3. **Set the Condition**  
     - From the dropdown, select **Missing Features: Sun Events**.
-    - Choose either **Night** or **Daylight** depending on which event you want to trigger the rule.
+    - Choose **Daylight**.
 
 4. **Configure the Action**  
     - In the **Action** section, pick the desired behavior (e.g., **Use day-night mode while the rule is active**).

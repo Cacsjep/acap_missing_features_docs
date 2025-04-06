@@ -8,6 +8,13 @@
 
 ---
 
+##### V0.6.15 – 06.04.2025
+
+- **I:** Use event time in SD-Card feature for img timestamp to have more accurate timestamp
+- **C:** Sunries feature now have only one statefull event named daylight
+
+---
+
 ##### V0.6.14 – 05.04.2025
 - **I:** Add FF Camera LPR Topics to parking times
 - **I:** Vapix DBUS creds fetch on startup

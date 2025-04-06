@@ -1,15 +1,11 @@
 #### Releases
 
-You can download the ACAP files from the following link:  
-[ACAP Missing Features Docs Releases](https://github.com/Cacsjep/acap_missing_features_docs/releases)
+You can download the ACAP files from our page:  
+[ACAP Missing Features](https://msfacap.com)
 
 !!! bug "Info"
     If you are unsure whether your camera model uses the Artpec (7, 8) or CV25 chip, please use the [AXIS Product Selector](https://www.axis.com/support/tools/product-selector) or refer to **Obtain Chip and Architecture Section** below.
     We are happy to help if you encounter any issues.
-
-#### Firmware Compatibility 
-- **sdk_1.15.eap** is for Firmware 11.11  
-- **sdk_12.0.0.eap** is for Firmwares 12.xx and later
 
 #### Obtain Chip and Architecture
 - Open a browser.
