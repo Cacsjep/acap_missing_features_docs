@@ -8,6 +8,11 @@
 
 ---
 
+##### V0.7.0 – 06.04.2025
+RC 1
+
+---
+
 ##### V0.6.15 – 06.04.2025
 
 - **I:** Use event time in SD-Card feature for img timestamp to have more accurate timestamp
