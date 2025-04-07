@@ -8,8 +8,8 @@
 
 ---
 
-##### V0.7.0 – 06.04.2025
-RC 1
+##### V0.7.0 – 07.04.2025
+- **I:** Fetch sunrise/sunset when register event in case of camera reboots.
 
 ---
 
