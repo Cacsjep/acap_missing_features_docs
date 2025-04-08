@@ -16,6 +16,7 @@ nav:
   - Event Trigger: event_trigger.md
   - Features: 
     - Overview: features.md
+    - Event Camera Bridge: event_bridge.md
     - Event Countdown: event_countdown.md
     - Event Delay Timer: event_delay_timer.md
     - Event Timed Sequence: event_timed.md

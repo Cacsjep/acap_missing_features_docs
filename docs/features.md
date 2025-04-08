@@ -4,6 +4,10 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 ---
 
+#### Event Camera Bridge
+
+Register events from other AXIS cameras into the camera rules system to enable cross-camera rules.
+
 #### Event Delay Timer
 
 Introduces a configurable delay between the original event trigger and a subsequent action. This allows you to sequence events and automate workflows that depend on precise timing.
