@@ -8,6 +8,14 @@
 
 ---
 
+##### V0.7.1 – 08.04.2025
+- **I:** Event sunrise on next shedule not work correctly
+- **I:** Better error handling when getting event declarations
+- **F:** Event camera bridge 
+- **B:** External event engine not started when using in parking times
+
+---
+
 ##### V0.7.0 – 07.04.2025
 - **I:** Fetch sunrise/sunset when register event in case of camera reboots.
 

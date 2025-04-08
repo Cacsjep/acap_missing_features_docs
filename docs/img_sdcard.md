@@ -52,7 +52,7 @@ After saving your configuration, you can view real-time storage details:
 
 ---
 
-#### Viewing Images
+#### Images
 
 - **View Images:**  
     Specify a date and time range in the **From** and **To** fields.
@@ -71,10 +71,8 @@ After saving your configuration, you can view real-time storage details:
 
     The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
 
-#### Generating Videos
+##### Generating Videos
 
-- **Selecting Images:**  
-    The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
 - **Video Generation Settings:**  
     - **FPS:** Frames per second for the resulting video (1–60).
     - **Width / Height:** Dimensions of the output video (e.g., 1280×720).
