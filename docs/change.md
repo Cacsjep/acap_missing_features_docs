@@ -8,6 +8,30 @@
 
 ---
 
+##### V0.7.5 – 09.04.2025
+- **I:** Adding AWS S3 upload to sd-card image feature
+
+---
+
+##### V0.7.4 – 09.04.2025
+- **B:** Fix double send of exit event when car exit on parking times
+- **B:** Fix parking minutes metadata value type to int, was string
+
+---
+
+##### V0.7.3 – 09.04.2025
+- **I:** Update frontend libaries
+
+---
+
+##### V0.7.2 – 09.04.2025
+- **I:** Update frontend libaries
+- **I:** Reduce API calls on overview
+- **I:** Add corridor info to countdown overlay
+- **B:** Fix stopping countdown on stopping countdown feature
+
+---
+
 ##### V0.7.1 – 08.04.2025
 - **I:** Event sunrise on next shedule not work correctly
 - **I:** Better error handling when getting event declarations

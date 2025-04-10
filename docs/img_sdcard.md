@@ -38,6 +38,38 @@
 - **Save Configuration:**  
   Click **Save** to store your settings.  
 
+#### Amazon S3 Bucket
+
+!!! danger "Important Note" 
+    Managing your Amazon S3 bucket is your responsibility; we assume no liability for any costs incurred from its use, nor for any data loss or malfunctions if our ACAP does not operate as expected.
+
+- **Use Amazon S3 Bucket:**  
+  Toggle the switch to enable or disable the use of Amazon S3 for image uploads.
+
+When enabled, additional options will appear.
+
+##### Configuration Options
+
+- **Bucket Name:**  
+  Enter the name of the Amazon S3 bucket.
+- **Region:**  
+  Specify the region of the Amazon S3 bucket.
+- **Key:**  
+  Provide the access key for the Amazon S3 bucket.
+- **Secret:**  
+  Provide the secret key for the Amazon S3 bucket.
+- **Enable ACL:**  
+  Toggle this to enable Access Control Lists (ACL) for additional security.
+- **Select ACL:**  
+  If ACL is enabled, select the desired ACL configuration.
+- **Timeout:**  
+  Set the AWS operation timeout in seconds (minimum 1 and maximum 10).
+- **Delete Old:**  
+  Enable this option to remove the image simultaneously from both the bucket and the SD card.
+
+!!! warning "Note" 
+    There is no retry mechanism for the upload to the Amazon S3 bucket. In case of an upload failure, the image remains available on the SD card.
+
 ---
 
 #### Storage Info
@@ -65,13 +97,11 @@ After saving your configuration, you can view real-time storage details:
 - **Zoom and Download an Image:**  
     Hover over an image with your mouse to reveal the zoom and download buttons for that image.
 
----
+##### Generating Videos
 
 !!! info 
 
     The video generator uses images that have been “searched or viewed” in the **View Images** section. Ensure the time range includes the snapshots you want in your video.
-
-##### Generating Videos
 
 - **Video Generation Settings:**  
     - **FPS:** Frames per second for the resulting video (1–60).
@@ -80,6 +110,6 @@ After saving your configuration, you can view real-time storage details:
 - **Convert to MP4:**  
     Click **Convert to MP4** to generate your timelapse or video file from the selected snapshots. The video will be created and made available for download.
 
-!!! quote 
+!!! warning "HTTPS Required"
 
     Video encoding requires a secure connection (HTTPS). If you see a warning, reload the camera interface over HTTPS.
