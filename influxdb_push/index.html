@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../metadata_to_https/">
+      
+      
+        <link rel="next" href="../img_sdcard/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>InfluxDB Push - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#influxdb-push-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              InfluxDB Push
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable or Disable Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Trigger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Camera Bridge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_countdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Countdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_delay_timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Delay Timer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_timed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Timed Sequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_sunrise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Sunrise and Sunset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metadata_to_https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metadata to HTTPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    InfluxDB Push
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    InfluxDB Push
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-it-with-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use it with Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-point-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Point Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Non-Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-and-influxdb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafana and InfluxDB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana and InfluxDB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-influxdb-datasource-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add InfluxDB Datasource in Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-datasource-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Datasource Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-your-influxdb-http-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Your InfluxDB HTTP URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-influxdb-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter InfluxDB Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-flux-scripts-from-influxdb-data-explorer-for-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-tutorials-and-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Tutorials and Additional Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-datapoints-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Datapoints / Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Image to SD-Card
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parking Times
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licensing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-it-with-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use it with Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-point-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Point Buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Non-Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana-and-influxdb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafana and InfluxDB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana and InfluxDB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-influxdb-datasource-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add InfluxDB Datasource in Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-datasource-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Datasource Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-your-influxdb-http-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Your InfluxDB HTTP URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-influxdb-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter InfluxDB Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-flux-scripts-from-influxdb-data-explorer-for-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-tutorials-and-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Tutorials and Additional Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-datapoints-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Datapoints / Metrics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="influxdb-push-configuration">InfluxDB Push Configuration</h1>
+<div class="admonition example">
+<p class="admonition-title">Complex Feature</p>
+<p>This feature leverages a highly dynamic approach for exporting and pushing data, making it inherently more complex than standard functionalities. It requires a understanding of InfluxDB and its operational concepts, as InfluxDB may not be part of the day-to-day toolkit for many users. While setting up InfluxDB and connecting it with Missing Feature ACAP is straightforward for those with basic technical skills, it does demand some prior experience and familiarity with these systems.</p>
+</div>
+<h4 id="overview">Overview</h4>
+<p>This feature introduces two distinct approaches for data collection:</p>
+<ul>
+<li>
+<p><strong>Non-Metadata Data Points:</strong><br />
+  All non-metadata data points have an interval-based configuration. You can specify how frequently each datapoint/metric is collected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each non-metadata data point can be added only once.</p>
+</div>
+</li>
+<li>
+<p><strong>Metadata Data Points:</strong><br />
+  Metadata data points are event-based. They are not collected on a fixed interval but are triggered by specific events.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can add as many metadata events as you want, allowing you to capture detailed information exactly when it matters.</p>
+</div>
+</li>
+</ul>
+<hr />
+<h4 id="use-it-with-grafana">Use it with Grafana</h4>
+<p>The primary idea behind this feature is to use it with Grafana, allowing you to build any dashboard you can imagine. By leveraging Grafana's powerful visualization capabilities alongside your InfluxDB data, you can create insightful and dynamic dashboards tailored to your needs.</p>
+<hr />
+<h4 id="prerequisites">Prerequisites</h4>
+<ul>
+<li><strong>InfluxDB:</strong> A running InfluxDB instance. If you don't have one, follow the <a href="https://docs.influxdata.com/influxdb/v2/get-started/setup/">InfluxDB Get Started guide</a>.</li>
+<li><strong>InfluxDB API Token:</strong> ACAP uses token-based authentication with InfluxDB. Please create an API token by following the instructions in the <a href="https://docs.influxdata.com/influxdb/v2/get-started/setup/#create-an-all-access-api-token">InfluxDB Create Token guide</a>.</li>
+<li><strong>InfluxDB Bucket:</strong> You need an InfluxDB bucket.</li>
+<li><strong>InfluxDB Org:</strong> You need the name of your InfluxDB organization.</li>
+</ul>
+<h4 id="data-point-buttons">Data Point Buttons</h4>
+<p><strong>Edit Data Point</strong></p>
+<p><img alt="" src="images/edit.PNG" /></p>
+<p><strong>Remove Data Point</strong></p>
+<p><img alt="" src="images/delete.PNG" /></p>
+<h4 id="configure-non-metadata-data-points">Configure Non-Metadata Data Points</h4>
+<h5 id="add-non-metadata-data-points">Add Non-Metadata Data Points</h5>
+<div class="admonition tip">
+<p class="admonition-title">Examples of Non-Metadata Data Points</p>
+<ul>
+<li>CPU</li>
+<li>Disk</li>
+<li>Uptime</li>
+<li>etc.</li>
+</ul>
+</div>
+<p>Click the <code>ADD DATAPOINT</code> button to open the data point adding menu.
+<img alt="" src="images/add.PNG" /></p>
+<p>Select the data point to add.
+<img alt="" src="images/menu.PNG" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>If any data point is grayed out (disabled), it has already been added and cannot be added twice.</p>
+</div>
+<h5 id="configure-non-metadata-data-points_1">Configure Non-Metadata Data Points</h5>
+<p>To configure the data point, click on the <code>Edit Data Point</code> button.</p>
+<ul>
+<li><strong>Set Interval:</strong><br />
+  Define the desired interval at which data should be pushed to InfluxDB.</li>
+</ul>
+<p>Click the <code>DONE</code> button when you have finished, then click the <code>SAVE</code> button.</p>
+<h4 id="configure-metadata-data-points">Configure Metadata Data Points</h4>
+<h5 id="add-metadata-data-points">Add Metadata Data Points</h5>
+<p>Click the <code>ADD DATAPOINT</code> button to open the data point adding menu and select <code>Metadata</code>.</p>
+<p><img alt="" src="images/add.PNG" /></p>
+<p><img alt="" src="images/menu.PNG" /></p>
+<p>After adding a new metadata datapoint, you will see that the configuration is initially incomplete. </p>
+<p><a href="images/notconf.PNG"><img alt="" src="images/notconf.PNG" /></a></p>
+<h5 id="configure-metadata-data-points_1">Configure Metadata Data Points</h5>
+<p>Open the configuration via the Edit button.</p>
+<p><img alt="" src="images/edit.PNG" /></p>
+<ul>
+<li><strong>Data Point Name:</strong><br />
+  For better differentiation in the configuration list, you can change the name of the data point.</li>
+<li><strong>Select Trigger:</strong><br />
+  Choose the event that will trigger the metadata capture (e.g., sensor threshold exceeded, error event, etc.).</li>
+<li><strong>Define Metadata Fields:</strong><br />
+  Specify which metadata fields should be included in the payload.</li>
+<li><strong>Define InfluxDB Data Point Name:</strong><br />
+  The InfluxDB data point name is the key with which the data is stored in InfluxDB.</li>
+<li><strong>Repeat:</strong><br />
+  Add as many metadata events as needed.</li>
+<li><strong>Save Configuration:</strong><br />
+  After finishing the configuration, don't forget to click the <code>SAVE</code> button.</li>
+</ul>
+<h5 id="metadata-configuration-example">Metadata Configuration Example</h5>
+<p><strong>Metadata Day Night</strong><br />
+<a href="images/dn.PNG"><img alt="" src="images/dn.PNG" /></a></p>
+<p><strong>Metadata AXIS Object Analytics - Area Count Humans Example</strong><br />
+Push the Day Night metadata event<br />
+<a href="images/human.PNG"><img alt="" src="images/human.PNG" /></a></p>
+<p>The final configuration would look like this:<br />
+<a href="images/both.PNG"><img alt="" src="images/both.PNG" /></a></p>
+<h4 id="grafana-and-influxdb-integration">Grafana and InfluxDB Integration</h4>
+<p>This guide shows you how to integrate Grafana with InfluxDB using the <strong>Flux</strong> query language. 
+Follow the steps below to set up your datasource and create a dashboard for visualizing data/metrics from your AXIS Camera.</p>
+<hr />
+<h5 id="prerequisites_1">Prerequisites</h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You should already have everything in place, as it’s configured identically to the Missing Feature ACAP setup.</p>
+</div>
+<ul>
+<li><strong>Missing Feature ACAP:</strong> InfluxDB Push enabled, and configured.</li>
+<li><strong>InfluxDB:</strong> A running InfluxDB instance. </li>
+<li><strong>InfluxDB API Token:</strong> ACAP uses token-based authentication with InfluxDB.</li>
+<li><strong>InfluxDB Bucket:</strong> You need an InfluxDB bucket.</li>
+<li><strong>InfluxDB Org:</strong> You need the name of your InfluxDB organization.</li>
+</ul>
+<hr />
+<h5 id="add-influxdb-datasource-in-grafana">Add InfluxDB Datasource in Grafana</h5>
+<p>First, navigate to your Grafana instance and add a new InfluxDB datasource.</p>
+<p><img alt="New Datasource" src="images/new_source.PNG" /></p>
+<hr />
+<h5 id="configure-datasource-settings">Configure Datasource Settings</h5>
+<ul>
+<li><strong>Datasource Name:</strong> Set a name for your datasource.</li>
+<li><strong>Query Language:</strong> Select <strong>Flux</strong> as the query language.</li>
+</ul>
+<p><img alt="Select Flux" src="images/flux.PNG" /></p>
+<hr />
+<h5 id="set-your-influxdb-http-url">Set Your InfluxDB HTTP URL</h5>
+<p>Specify your InfluxDB HTTP URL in the settings.</p>
+<p><img alt="InfluxDB Endpoint" src="images/endpoint.PNG" /></p>
+<hr />
+<h5 id="enter-influxdb-credentials">Enter InfluxDB Credentials</h5>
+<p>Fill in your InfluxDB Organization, Token, and Default Bucket.</p>
+<p><img alt="InfluxDB Credentials" src="images/ifdb.PNG" /></p>
+<hr />
+<h5 id="create-a-dashboard">Create a Dashboard</h5>
+<p>Navigate to the dashboard section in Grafana and add a new visualization. For example, create a panel to monitor the <strong>Missing Features CPU usage</strong>.</p>
+<p><a href="images/example_cpu_mf.PNG"><img alt="" src="images/example_cpu_mf.PNG" /></a></p>
+<hr />
+<h5 id="extracting-flux-scripts-from-influxdb-data-explorer-for-grafana">Extracting Flux Scripts from InfluxDB Data Explorer for Grafana</h5>
+<p>Use the InfluxDB Data Explorer to inspect the data and use the query builder in combinitation, to switch afterwards to script editor mode to copy the flux script for grafana.
+<a href="images/explore.PNG"><img alt="" src="images/explore.PNG" /></a></p>
+<p>For example, let's locate our metadata event <strong>device_io_virtualport</strong> that we previously configured and executed to ensure an entry exists in the database:</p>
+<ul>
+<li>Select the bucket.</li>
+<li>Choose <code>metadata</code>.</li>
+<li>Set the filter to <code>name</code>.</li>
+<li>Select <code>device_io_virtualport</code>.</li>
+<li>Uncheck the <code>AGGREATE Function</code> on the right side (it's a boolean value).</li>
+<li>Enable the <code>View Raw Data</code> mode to display our entries in a table.</li>
+</ul>
+<p><a href="images/io_metadata.PNG"><img alt="" src="images/io_metadata.PNG" /></a></p>
+<ul>
+<li>Click on the <strong>Script Editor</strong> button to view the Flux script.</li>
+<li>You can now use this Flux script in Grafana.</li>
+</ul>
+<p><a href="images/io_script.PNG"><img alt="" src="images/io_script.PNG" /></a></p>
+<h5 id="public-tutorials-and-additional-resources">Public Tutorials and Additional Resources</h5>
+<p>For further learning and more detailed tutorials, consider the following public resources:</p>
+<ul>
+<li>
+<p><strong>Grafana Tutorials:</strong><br />
+<a href="https://grafana.com/tutorials">Official Grafana Tutorials</a> – Learn more about creating dashboards, panels, and advanced visualizations.</p>
+</li>
+<li>
+<p><strong>InfluxDB Documentation:</strong><br />
+<a href="https://docs.influxdata.com/influxdb/">Official InfluxDB Docs</a> – Detailed guides on installation, configuration, and usage of InfluxDB.</p>
+</li>
+<li>
+<p><strong>Flux Language Guide:</strong><br />
+<a href="https://docs.influxdata.com/flux/latest/">InfluxDB Flux Documentation</a> – In-depth information on the Flux query language and its capabilities.</p>
+</li>
+</ul>
+<h4 id="available-datapoints-metrics">Available Datapoints / Metrics</h4>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Key Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPU</strong></td>
+<td><code>usage_percent</code>, <code>user</code>, <code>system</code>, <code>idle</code>, <code>nice</code>, <code>iowait</code>, <code>irq</code>, <code>softirq</code>, <code>steal</code>, <code>guest</code>, <code>guest_nice</code>, <code>load1</code>, <code>load5</code>, <code>load15</code></td>
+</tr>
+<tr>
+<td><strong>Disk</strong></td>
+<td><code>total</code>, <code>used</code>, <code>free</code>, <code>usage</code> <code>used percent</code>; tags: <code>device</code>, <code>fstype</code>, <code>mount</code></td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>Based on event configuration</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td><code>bytes_sent</code>, <code>bytes_recv</code>, <code>packets_sent</code>, <code>packets_recv</code>, <code>err_in</code>, <code>err_out</code>, <code>drop_in</code>, <code>drop_out</code></td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td><code>current_power</code>, <code>average_power</code>, <code>max_power</code>, <code>pse_poe_class</code>, <code>lldp_poe_class</code>, <code>power_requested</code></td>
+</tr>
+<tr>
+<td><strong>Process</strong></td>
+<td><code>cpu_percent</code>, <code>RSS</code>, <code>VMS</code>, <code>HWM</code>, <code>data</code>, <code>stack</code>, <code>locked</code>, <code>swap</code></td>
+</tr>
+<tr>
+<td><strong>Swap</strong></td>
+<td><code>total</code>, <code>used</code>, <code>free</code>, <code>usage</code> <code>used percent</code></td>
+</tr>
+<tr>
+<td><strong>Uptime</strong></td>
+<td><code>uptime</code></td>
+</tr>
+<tr>
+<td><strong>Virtual Memory</strong></td>
+<td><code>total</code>, <code>available</code>, <code>used</code>, <code>used_percent</code>, <code>free</code>, <code>active</code>, <code>inactive</code>, <code>wired</code>, <code>buffers</code>, <code>cached</code>, <code>write_back</code>, <code>dirty</code>, <code>write_back_tmp</code>, <code>shared</code>, <code>slab</code>, <code>sreclaimable</code>, <code>sunreclaim</code>, <code>page_tables</code>, <code>swap_cached</code>, <code>commit_limit</code>, <code>committed_as</code>, <code>high_total</code>, <code>high_free</code>, <code>low_total</code>, <code>low_free</code>, <code>swap_total</code>, <code>swap_free</code>, <code>mapped</code>, <code>vmalloc_total</code>, <code>vmalloc_used</code>, <code>vmalloc_chunk</code>, <code>huge_pages_total</code>, <code>huge_pages_free</code>, <code>huge_pages_rsvd</code>, <code>huge_pages_surp</code>, <code>huge_page_size</code>, <code>anon_huge_pages</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
