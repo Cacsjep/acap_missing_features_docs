@@ -8,6 +8,11 @@
 
 ---
 
+##### V0.7.6 – 11.04.2025
+- **I:** Use nice names from AXIS Event system for event triggers
+
+---
+
 ##### V0.7.5 – 09.04.2025
 - **I:** Adding AWS S3 upload to sd-card image feature
 
