@@ -8,6 +8,11 @@
 
 ---
 
+##### V0.7.7 – 14.04.2025
+- **C:** Minor UI changes (Datapoint edit from, Camera bridge edit form) 
+
+---
+
 ##### V0.7.6 – 11.04.2025
 - **I:** Use nice names from AXIS Event system for event triggers
 
