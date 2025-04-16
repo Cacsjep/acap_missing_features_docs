@@ -28,14 +28,12 @@ Triggers only if a second event follows the first within a defined time window. 
 
 Automatically saves an image whenever a specified event occurs (for example, during motion detection). You can configure both the retention period and the maximum storage capacity (in GB) to suit your requirements. With built-in video generation, snapshots can be transformed into a timelapse sequence—ideal for long-term observation and quick playback of key events.
 
-#### InfluxDB Push
+#### Metadata Dispatch
 
-Push various metrics to InfluxDB, like CPU, MEM, Proc stats, or any metadata event.
+Unified metadata and metrics dispatcher for databases, HTTPS servers.
 
 #### Parking Times
 
 Logs the in and out timestamps of vehicles identified by the AXIS License Plate Verifier. This feature maintains a detailed record of parking durations and triggers an event if a vehicle exceeds the designated time. It enables timely notifications, enforcement actions, or other workflow automations.
 
-#### Metadata to HTTPS
 
-Sends metadata over HTTPS to a specified endpoint in real time. This facilitates seamless integration with cloud services, custom dashboards, or third-party applications, ensuring that critical data is securely and reliably delivered.

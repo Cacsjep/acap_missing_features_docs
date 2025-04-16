@@ -1,9 +1,144 @@
 # InfluxDB Push Configuration
 
-!!! example "Complex Feature"
-    This feature leverages a highly dynamic approach for exporting and pushing data, making it inherently more complex than standard functionalities. It requires a understanding of InfluxDB and its operational concepts, as InfluxDB may not be part of the day-to-day toolkit for many users. While setting up InfluxDB and connecting it with Missing Feature ACAP is straightforward for those with basic technical skills, it does demand some prior experience and familiarity with these systems.
 
-#### Overview
+The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various external services. It supports multiple sink types:
+
+- **InfluxDB** (Time-series database)
+- **SQL Databases** (via MySQL, PostgreSQL, SQL Server)
+- **Webserver** (RESTful interfaces)
+
+
+---
+
+### Common Data Fields
+
+Regardless of the connection type, each data record includes the following elements:
+
+- **Measurement Name**  
+  A string identifier for the metric/metadata (e.g., `"cpu_usage"`, `"disk_usage"`, `"metadata"`).
+
+- **Tags**  
+  A key-value map (string pairs) providing contextual metadata.  
+  _Example_:  
+  ```json
+  { "mac": "00:11:22:33:44:55", "device": "sda1" }
+  ```
+- **Fields**:
+  A key-value map containing the actual metric values or metadata information. Field types include numbers, booleans, and strings.
+  
+    _Example_:  
+
+    ```json
+    { "usage_percent": 75.5, "total": 1000000000 }
+    ```
+- **Timestamp**  
+  Indicating when the data was recorded.
+
+
+### InfluxDB
+
+- **Data Format Overview**:  
+  Data is sent to InfluxDB as *points* that comprise a measurement name, tags, fields, and a timestamp.
+    - **Example Point (Line Protocol)**:
+      cpu_usage,mac=00:11:22:33:44:55 usage_percent=75.5 1640995200000000000
+
+- **Implementation Details**:
+    - **Measurement**: Directly corresponds to the metric name.
+    - **Tags**: Provided as a JSON object that InfluxDB converts into tags.
+    - **Fields**: Key-value pairs are stored as InfluxDB fields.
+    - **Timestamp**: A `time.Time` value from Go is used as the measurement’s timestamp.
+
+---
+
+### Rational Databases 
+
+#### Schema
+Data is stored in a relational table **metric_records** using a schema similar to the following.
+
+
+!!! Note
+    The `metric_records` table is automatically created on first connection.
+
+- **Example Table Schema** (MySQL/PostgreSQL/SQL Server):
+```sql
+CREATE TABLE metric_records (
+    id          SERIAL PRIMARY KEY,
+    measurement VARCHAR(255) NOT NULL,
+    tags        JSON,
+    fields      JSON,
+    timestamp   TIMESTAMP NOT NULL
+);
+```
+
+- **Serialization Details**:
+    - Tags and Fields: Serialized to JSON strings.
+    - Timestamp: Stored in an indexed datetime column.
+    - Measurement: The name of the metric is stored in the measurement column.
+
+#### DSN 
+
+A **Data Source Name (DSN)** is a connection string that provides the necessary details for your application to establish a connection with a database. It typically comprises the following components:
+
+- **Username and Password:** Authentication credentials for accessing the database.
+- **Host and Port:** The address and port number where the database server is located.
+- **Database Name:** The specific database instance to which you want to connect.
+- **Additional Parameters:** Optional settings such as character set, SSL mode, timezone, and connection timeout that can fine-tune the connection behavior.
+
+
+#### Best Practices for DSN Usage
+
+- **Customization:**  
+  Include all necessary parameters to match your deployment environment, such as SSL settings, time zone configurations, and connection timeout values.
+
+- **Error Handling:**  
+  Validate the DSN string carefully. If the connection fails, review the DSN for typos, missing parameters, or incorrect values.
+
+- **Reference Documentation:**  
+  Consult the official documentation of your database driver for a comprehensive list of supported DSN parameters and recommended practices.
+
+### Webserver
+
+- **Data Format Overview**:  
+  Data is transmitted as a JSON payload via an HTTP POST request.
+
+```json
+{
+   "fields":{
+      "active":false
+   },
+   "measurement":"metadata",
+   "tags":{
+      "context":"Virtual input",
+      "mac":"B8A44F631339",
+      "name":"device_io_virtualinput",
+      "topic":"tns1:Device/tnsaxis:IO/VirtualInput"
+   },
+   "timestamp":1744780731
+}
+```
+
+
+#### Additional HTTP Settings
+
+##### Authentication & Headers
+
+- **Authentication Mode:**  
+    Select the mode that best suits your web server:
+    - **None:** No authentication.
+    - **Basic:** Basic authentication as specified in RFC 7617.
+    - **Digest:** Digest authentication as defined in RFC 7616.
+    - **Bearer:** Bearer token authentication as outlined in RFC 6750.
+    - **Plain:** Sends the username and password in the JSON payload (non-standard; use with caution).
+
+- **HTTP Headers:**  
+    Optionally add one or more HTTP headers to include in the POST request.
+  
+##### SSL/TLS Options:
+
+HTTPS mode settings, such as skipping SSL verification, can be configured as needed.
+
+
+### Datapoints
 
 This feature introduces two distinct approaches for data collection:
 
@@ -20,19 +155,6 @@ This feature introduces two distinct approaches for data collection:
         You can add as many metadata events as you want, allowing you to capture detailed information exactly when it matters.
 
 ---
-
-#### Use it with Grafana
-
-The primary idea behind this feature is to use it with Grafana, allowing you to build any dashboard you can imagine. By leveraging Grafana's powerful visualization capabilities alongside your InfluxDB data, you can create insightful and dynamic dashboards tailored to your needs.
-
----
-
-#### Prerequisites
-
-- **InfluxDB:** A running InfluxDB instance. If you don't have one, follow the [InfluxDB Get Started guide](https://docs.influxdata.com/influxdb/v2/get-started/setup/).
-- **InfluxDB API Token:** ACAP uses token-based authentication with InfluxDB. Please create an API token by following the instructions in the [InfluxDB Create Token guide](https://docs.influxdata.com/influxdb/v2/get-started/setup/#create-an-all-access-api-token).
-- **InfluxDB Bucket:** You need an InfluxDB bucket.
-- **InfluxDB Org:** You need the name of your InfluxDB organization.
 
 #### Data Point Buttons
 
