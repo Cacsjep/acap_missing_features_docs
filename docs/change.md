@@ -8,6 +8,13 @@
 
 ---
 
+##### V0.8.0 – 16.04.2025
+- **F:** Introduce Metadata Dispatch
+- **C:** move metadata to https into the new Metadata Dispatch
+- **B:** Font loading issue 
+
+---
+
 ##### V0.7.7 – 14.04.2025
 - **C:** Minor UI changes (Datapoint edit from, Camera bridge edit form) 
 
