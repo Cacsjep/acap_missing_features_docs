@@ -1,10 +1,10 @@
 #### Releases
 
-You can download the ACAP files from our page:  
-[ACAP Missing Features](https://github.com/Cacsjep/acap_missing_features_docs/releases)
+You can download the ACAP files from: [ACAP Missing Features Github](https://github.com/Cacsjep/acap_missing_features_docs/releases)
 
 !!! bug "Info"
-    If you are unsure whether your camera model uses the Artpec (7, 8) or CV25 chip, please use the [AXIS Product Selector](https://www.axis.com/support/tools/product-selector) or refer to **Obtain Chip and Architecture Section** below.
+    If you are unsure whether your camera model uses the Artpec (7, 8) or CV25 chip, please use the 
+    [AXIS Product Selector](https://www.axis.com/support/tools/product-selector) or refer to **Obtain Chip and Architecture Section** below.
     We are happy to help if you encounter any issues.
 
 #### Obtain Chip and Architecture
