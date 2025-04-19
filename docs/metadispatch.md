@@ -1,4 +1,4 @@
-# InfluxDB Push Configuration
+# Metadata Dispatch Configuration
 
 
 The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various external services. It supports multiple sink types:
