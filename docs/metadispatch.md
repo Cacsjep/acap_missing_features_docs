@@ -215,14 +215,14 @@ Open the configuration via the Edit button.
 
 ![](images/edit.PNG)
 
-- **Data Point Name:**  
-  For better differentiation in the configuration list, you can change the name of the data point.
+- **Name:**  
+  For better differentiation in the configuration list, you can change the name.
 - **Select Trigger:**  
   Choose the event that will trigger the metadata capture (e.g., sensor threshold exceeded, error event, etc.).
 - **Define Metadata Fields:**  
   Specify which metadata fields should be included in the payload.
-- **Define InfluxDB Data Point Name:**  
-  The InfluxDB data point name is the key with which the data is stored in InfluxDB.
+- **Data Point Name:**  
+  The data point name is the key with which the data is stored.
 - **Repeat:**  
   Add as many metadata events as needed.
 - **Save Configuration:**  
