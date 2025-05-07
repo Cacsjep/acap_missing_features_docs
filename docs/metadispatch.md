@@ -162,9 +162,8 @@ Because OPC UA supports only **metadata**, you must add at least one **Metadata*
 ```
 
 
-#### Additional HTTP Settings
 
-##### Authentication & Headers
+#### Authentication & Headers
 
 - **Authentication Mode:**  
     Select the mode that best suits your web server:
@@ -177,10 +176,61 @@ Because OPC UA supports only **metadata**, you must add at least one **Metadata*
 - **HTTP Headers:**  
     Optionally add one or more HTTP headers to include in the POST request.
   
-##### SSL/TLS Options:
+#### SSL/TLS Options:
 
 HTTPS mode settings, such as skipping SSL verification, can be configured as needed.
 
+#### Additional JSON Payload
+
+You can enrich every HTTP request with **any extra JSON** you need by setting `Additional JSON Payload`. This JSON object will be **deep-merged** into the default payload at the top level, **after** the built-in fields (`measurement`, `tags`, `fields`, `timestamp`, etc.) are added.
+
+Placeholders of the form `$path.to.value$` may be used anywhere inside your extra JSON to inject values from the base payload:
+
+- `$measurement$` → the measurement name  
+- `$timestamp$`   → the Unix timestamp  
+- `$tags.<key>$`   → any tag value (e.g. `$tags.name$`)  
+- `$fields.<key>$` → any field value 
+
+##### Example of an additional JSON Payload
+```json
+{
+   {
+   "my_extra_json":{
+      "foo":"bar",
+   },
+}
+```
+
+Resulting Payload
+
+```json
+{
+   {
+   "my_extra_json":{
+      "foo":"bar",
+   },
+   "fields":{
+      "state":false
+   },
+   "measurement":"metadata",
+   "tags":{
+      "context":"Manual trigger",
+      "mac":"B8A44F631339",
+      "name":"device_io_virtualport",
+      "topic":"tns1:Device/tnsaxis:IO/VirtualPort"
+   },
+}
+```
+
+#### Placeholder Rules
+
+- **Delimiters**: placeholders must start and end with a dollar sign (`$`), e.g. `$tags.name$`.
+- **Supported keys**:
+    - `measurement`
+    - `timestamp`
+    - `tags.<tagKey>`
+    - `fields.<fieldKey>`
+- If a placeholder path does not exist, it is replaced with an empty string.
 
 ### Datapoints
 

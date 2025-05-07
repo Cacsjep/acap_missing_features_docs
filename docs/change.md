@@ -8,6 +8,16 @@
 
 ---
 
+##### V0.9.3 – 6.05.2025
+- **I:** Additional JSON Payload for HTTP Metadata Dispatch
+
+---
+
+##### V0.9.2 – 6.05.2025
+- **I:** Prevent Cert delete when its in use
+
+---
+
 ##### V0.9.1 – 6.05.2025
 - **I:** OPC UA Support for metadata dispatch
 
