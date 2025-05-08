@@ -8,6 +8,11 @@
 
 ---
 
+##### V0.9.4 – 6.05.2025
+- **F:** Add Teltonika SMS
+
+---
+
 ##### V0.9.3 – 6.05.2025
 - **I:** Additional JSON Payload for HTTP Metadata Dispatch
 
