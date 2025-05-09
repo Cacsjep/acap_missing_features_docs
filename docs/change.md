@@ -8,6 +8,11 @@
 
 ---
 
+##### V0.9.5 – 9.05.2025
+- **I:** Change Teltonika SMS to notification service, including seven.io sms and phone calls
+
+---
+
 ##### V0.9.4 – 6.05.2025
 - **F:** Add Teltonika SMS
 

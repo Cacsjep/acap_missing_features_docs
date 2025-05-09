@@ -23,7 +23,7 @@ nav:
     - Event Sunrise and Sunset: event_sunrise.md
     - Metadata Dispatch: metadispatch.md
     - Image to SD-Card: img_sdcard.md
-    - Teltonika SMS: teltonika.md
+    - Notifications: notifications.md
     - Parking Times: parking_times.md
 
   - General Settings: general_settings.md

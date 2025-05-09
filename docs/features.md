@@ -32,6 +32,10 @@ Automatically saves an image whenever a specified event occurs (for example, dur
 
 Unified metadata and metrics dispatcher for databases, HTTPS servers.
 
+#### Notifications Configuration
+
+Send SMS to Teltonika devices, or sms/phone calls via [seven.io](https://seven.io/)
+
 #### Parking Times
 
 Logs the in and out timestamps of vehicles identified by the AXIS License Plate Verifier. This feature maintains a detailed record of parking durations and triggers an event if a vehicle exceeds the designated time. It enables timely notifications, enforcement actions, or other workflow automations.
