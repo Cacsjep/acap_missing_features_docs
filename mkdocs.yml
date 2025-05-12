@@ -16,6 +16,7 @@ nav:
   - Event Trigger: event_trigger.md
   - Features: 
     - Overview: features.md
+    - Cross Line Occupancy: cross_occ.md
     - Event Camera Bridge: event_bridge.md
     - Event Countdown: event_countdown.md
     - Event Delay Timer: event_delay_timer.md
