@@ -4,6 +4,10 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 ---
 
+#### Cross Line Occupancy
+
+Using two cross line events, to count occupancy like on and entrance camera.
+
 #### Event Camera Bridge
 
 Register events from other AXIS cameras into the camera rules system to enable cross-camera rules.
