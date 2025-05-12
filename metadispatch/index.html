@@ -1,0 +1,2074 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../event_sunrise/">
+      
+      
+        <link rel="next" href="../img_sdcard/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>Metadata Dispatch - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metadata-dispatch-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metadata Dispatch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable or Disable Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Trigger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross_occ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Line Occupancy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Camera Bridge
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_countdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Countdown
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_delay_timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Delay Timer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_timed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Timed Sequence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_sunrise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Sunrise and Sunset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Metadata Dispatch
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metadata Dispatch
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-data-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Data Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      InfluxDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rational Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DSN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-dsn-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for DSN Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-ua" class="md-nav__link">
+    <span class="md-ellipsis">
+      OPC UA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPC UA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificates-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificates Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-datapoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Datapoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webserver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webserver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Headers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssltls-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Options:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-json-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional JSON Payload
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional JSON Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-additional-json-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of an additional JSON Payload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placeholder Rules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datapoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datapoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datapoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-point-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Point Buttons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Non-Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-and-influxdb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafana and InfluxDB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana and InfluxDB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-influxdb-datasource-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add InfluxDB Datasource in Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-datasource-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Datasource Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-your-influxdb-http-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Your InfluxDB HTTP URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-influxdb-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter InfluxDB Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-flux-scripts-from-influxdb-data-explorer-for-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-tutorials-and-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Tutorials and Additional Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-datapoints-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Datapoints / Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Image to SD-Card
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parking Times
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licensing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-data-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Data Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influxdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      InfluxDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rational Databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rational Databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DSN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-dsn-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for DSN Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opc-ua" class="md-nav__link">
+    <span class="md-ellipsis">
+      OPC UA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPC UA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificates-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certificates Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-datapoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Datapoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Webserver
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webserver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Headers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssltls-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL/TLS Options:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-json-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional JSON Payload
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional JSON Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-additional-json-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of an additional JSON Payload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholder-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Placeholder Rules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datapoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datapoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datapoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-point-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Point Buttons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Non-Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-non-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-non-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Non-Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure Metadata Data Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-metadata-data-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-metadata-data-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Metadata Data Points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata Configuration Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-and-influxdb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafana and InfluxDB Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana and InfluxDB Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-influxdb-datasource-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add InfluxDB Datasource in Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-datasource-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Datasource Settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-your-influxdb-http-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Your InfluxDB HTTP URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-influxdb-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter InfluxDB Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extracting-flux-scripts-from-influxdb-data-explorer-for-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting Flux Scripts from InfluxDB Data Explorer for Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-tutorials-and-additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Tutorials and Additional Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-datapoints-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Datapoints / Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="metadata-dispatch-configuration">Metadata Dispatch Configuration</h1>
+<p>The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various external services. It supports multiple sink types:</p>
+<ul>
+<li><strong>InfluxDB</strong> (Time-series database)</li>
+<li><strong>SQL Databases</strong> (via MySQL, PostgreSQL, SQL Server)</li>
+<li><strong>OPC UA</strong> </li>
+<li><strong>Webserver</strong> (RESTful interfaces)</li>
+</ul>
+<hr />
+<h3 id="common-data-fields">Common Data Fields</h3>
+<p>Regardless of the connection type, each data record includes the following elements:</p>
+<ul>
+<li>
+<p><strong>Measurement Name</strong><br />
+  A string identifier for the metric/metadata (e.g., <code>"cpu_usage"</code>, <code>"disk_usage"</code>, <code>"metadata"</code>).</p>
+</li>
+<li>
+<p><strong>Tags</strong><br />
+  A key-value map (string pairs) providing contextual metadata.<br />
+<em>Example</em>:<br />
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00:11:22:33:44:55&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;device&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sda1&quot;</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Fields</strong>:
+  A key-value map containing the actual metric values or metadata information. Field types include numbers, booleans, and strings.</p>
+<p><em>Example</em>:  </p>
+<p><div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usage_percent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">75.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000000</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+- <strong>Timestamp</strong><br />
+  Indicating when the data was recorded.</p>
+</li>
+</ul>
+<h3 id="influxdb">InfluxDB</h3>
+<ul>
+<li>
+<p><strong>Data Format Overview</strong>:<br />
+  Data is sent to InfluxDB as <em>points</em> that comprise a measurement name, tags, fields, and a timestamp.</p>
+<ul>
+<li><strong>Example Point (Line Protocol)</strong>:
+  cpu_usage,mac=00:11:22:33:44:55 usage_percent=75.5 1640995200000000000</li>
+</ul>
+</li>
+<li>
+<p><strong>Implementation Details</strong>:</p>
+<ul>
+<li><strong>Measurement</strong>: Directly corresponds to the metric name.</li>
+<li><strong>Tags</strong>: Provided as a JSON object that InfluxDB converts into tags.</li>
+<li><strong>Fields</strong>: Key-value pairs are stored as InfluxDB fields.</li>
+<li><strong>Timestamp</strong>: A <code>time.Time</code> value from Go is used as the measurement’s timestamp.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="rational-databases">Rational Databases</h3>
+<h4 id="schema">Schema</h4>
+<p>Data is stored in a relational table <strong>metric_records</strong> using a schema similar to the following.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>metric_records</code> table is automatically created on first connection.</p>
+</div>
+<ul>
+<li>
+<p><strong>Example Table Schema</strong> (MySQL/PostgreSQL/SQL Server):
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">metric_records</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">id</span><span class="w">          </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">measurement</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">tags</span><span class="w">        </span><span class="n">JSON</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">fields</span><span class="w">      </span><span class="n">JSON</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">timestamp</span><span class="w">   </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">);</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Serialization Details</strong>:</p>
+<ul>
+<li>Tags and Fields: Serialized to JSON strings.</li>
+<li>Timestamp: Stored in an indexed datetime column.</li>
+<li>Measurement: The name of the metric is stored in the measurement column.</li>
+</ul>
+</li>
+</ul>
+<h4 id="dsn">DSN</h4>
+<p>A <strong>Data Source Name (DSN)</strong> is a connection string that provides the necessary details for your application to establish a connection with a database. It typically comprises the following components:</p>
+<ul>
+<li><strong>Username and Password:</strong> Authentication credentials for accessing the database.</li>
+<li><strong>Host and Port:</strong> The address and port number where the database server is located.</li>
+<li><strong>Database Name:</strong> The specific database instance to which you want to connect.</li>
+<li><strong>Additional Parameters:</strong> Optional settings such as character set, SSL mode, timezone, and connection timeout that can fine-tune the connection behavior.</li>
+</ul>
+<h4 id="best-practices-for-dsn-usage">Best Practices for DSN Usage</h4>
+<ul>
+<li>
+<p><strong>Customization:</strong><br />
+  Include all necessary parameters to match your deployment environment, such as SSL settings, time zone configurations, and connection timeout values.</p>
+</li>
+<li>
+<p><strong>Error Handling:</strong><br />
+  Validate the DSN string carefully. If the connection fails, review the DSN for typos, missing parameters, or incorrect values.</p>
+</li>
+<li>
+<p><strong>Reference Documentation:</strong><br />
+  Consult the official documentation of your database driver for a comprehensive list of supported DSN parameters and recommended practices.</p>
+</li>
+</ul>
+<h3 id="opc-ua">OPC UA</h3>
+<p>The OPC UA Sink lets you forward <strong>metadata</strong> from your device to any OPC UA–compliant server. Unlike other sinks, OPC UA mode only supports <strong>event-driven metadata</strong> (no interval-based metrics).</p>
+<h4 id="overview">Overview</h4>
+<ul>
+<li><strong>Supported Data</strong>: Metadata only  </li>
+<li><strong>Security</strong>: Configurable message signing/encryption and authentication  </li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>In OPC UA mode, interval-based metrics (CPU, Disk, Network, etc.) are disabled. Only metadata datapoints are accepted.  </p>
+</div>
+<h4 id="configuration-fields">Configuration Fields</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Field Label</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Server Endpoint</strong></td>
+<td>Enter the OPC UA server endpoint (e.g. <code>opc.tcp://hostname:4840</code>).</td>
+</tr>
+<tr>
+<td><strong>Namespace Index</strong></td>
+<td>Specify the namespace index on the server where your OPC UA nodes reside.</td>
+</tr>
+<tr>
+<td><strong>Security Mode</strong></td>
+<td>Choose how messages are protected:<br>• Auto – negotiate best available<br>• None – no security<br>• Sign – sign only<br>• Sign &amp; Encrypt – sign and encrypt</td>
+</tr>
+<tr>
+<td><strong>SecurityPolicy</strong></td>
+<td>Select the policy used for signing/encryption (e.g. Basic256Sha256). Visible when Security Mode ≠ None.</td>
+</tr>
+<tr>
+<td><strong>Authentication Mode</strong></td>
+<td>Choose how the client authenticates:<br>• Anonymous<br>• Credentials (username/password)<br>• Certs (certificate-based)</td>
+</tr>
+<tr>
+<td><strong>Username</strong></td>
+<td>Enter your OPC UA username. Visible when Authentication Mode = Credentials.</td>
+</tr>
+<tr>
+<td><strong>Password</strong></td>
+<td>Enter your OPC UA password. Visible when Authentication Mode = Credentials.</td>
+</tr>
+<tr>
+<td><strong>Use Autogenerated Message Certificate</strong></td>
+<td>Toggle on to auto-generate a client cert/key for message signing/encryption. Visible when Security Mode ≠ None.</td>
+</tr>
+<tr>
+<td><strong>Message Certificate</strong></td>
+<td>Select an uploaded PEM certificate for signing/encryption. Visible when auto-generation is off.</td>
+</tr>
+<tr>
+<td><strong>Message RSA Private Key</strong></td>
+<td>Select the corresponding RSA private key for the message certificate. Visible when auto-generation is off.</td>
+</tr>
+<tr>
+<td><strong>Certificate</strong></td>
+<td>Select the client auth PEM certificate. Visible when Authentication Mode = Certs.</td>
+</tr>
+<tr>
+<td><strong>RSA Private Key</strong></td>
+<td>Select the client auth RSA private key. Visible when Authentication Mode = Certs.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="certificates-management">Certificates Management</h4>
+<p>Use the <strong>Certificates Management</strong> panel to upload or your <code>.pem</code> and <code>.key</code> files.</p>
+<h4 id="metadata-datapoints">Metadata Datapoints</h4>
+<p>Because OPC UA supports only <strong>metadata</strong>, you must add at least one <strong>Metadata</strong> datapoint.</p>
+<hr />
+<h3 id="webserver">Webserver</h3>
+<ul>
+<li><strong>Data Format Overview</strong>:<br />
+  Data is transmitted as a JSON payload via an HTTP POST request.</li>
+</ul>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span><span class="nt">&quot;fields&quot;</span><span class="p">:{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="nt">&quot;active&quot;</span><span class="p">:</span><span class="kc">false</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">   </span><span class="nt">&quot;measurement&quot;</span><span class="p">:</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">   </span><span class="nt">&quot;tags&quot;</span><span class="p">:{</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="s2">&quot;Virtual input&quot;</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="s2">&quot;B8A44F631339&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;device_io_virtualinput&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="s2">&quot;tns1:Device/tnsaxis:IO/VirtualInput&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">   </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="mi">1744780731</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="authentication-headers">Authentication &amp; Headers</h4>
+<ul>
+<li>
+<p><strong>Authentication Mode:</strong><br />
+    Select the mode that best suits your web server:</p>
+<ul>
+<li><strong>None:</strong> No authentication.</li>
+<li><strong>Basic:</strong> Basic authentication as specified in RFC 7617.</li>
+<li><strong>Digest:</strong> Digest authentication as defined in RFC 7616.</li>
+<li><strong>Bearer:</strong> Bearer token authentication as outlined in RFC 6750.</li>
+<li><strong>Plain:</strong> Sends the username and password in the JSON payload (non-standard; use with caution).</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTP Headers:</strong><br />
+    Optionally add one or more HTTP headers to include in the POST request.</p>
+</li>
+</ul>
+<h4 id="ssltls-options">SSL/TLS Options:</h4>
+<p>HTTPS mode settings, such as skipping SSL verification, can be configured as needed.</p>
+<h4 id="additional-json-payload">Additional JSON Payload</h4>
+<p>You can enrich every HTTP request with <strong>any extra JSON</strong> you need by setting <code>Additional JSON Payload</code>. This JSON object will be <strong>deep-merged</strong> into the default payload at the top level, <strong>after</strong> the built-in fields (<code>measurement</code>, <code>tags</code>, <code>fields</code>, <code>timestamp</code>, etc.) are added.</p>
+<p>Placeholders of the form <code>$path.to.value$</code> may be used anywhere inside your extra JSON to inject values from the base payload:</p>
+<ul>
+<li><code>$measurement$</code> → the measurement name  </li>
+<li><code>$timestamp$</code>   → the Unix timestamp  </li>
+<li><code>$tags.&lt;key&gt;$</code>   → any tag value (e.g. <code>$tags.name$</code>)  </li>
+<li><code>$fields.&lt;key&gt;$</code> → any field value </li>
+</ul>
+<h5 id="example-of-an-additional-json-payload">Example of an additional JSON Payload</h5>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="nt">&quot;my_extra_json&quot;</span><span class="p">:{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;foo&quot;</span><span class="p">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Resulting Payload</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">   </span><span class="nt">&quot;my_extra_json&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">&quot;foo&quot;</span><span class="p">:</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">   </span><span class="nt">&quot;fields&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="kc">false</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">   </span><span class="nt">&quot;measurement&quot;</span><span class="p">:</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">   </span><span class="nt">&quot;tags&quot;</span><span class="p">:{</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="s2">&quot;Manual trigger&quot;</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">&quot;mac&quot;</span><span class="p">:</span><span class="s2">&quot;B8A44F631339&quot;</span><span class="p">,</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;device_io_virtualport&quot;</span><span class="p">,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">&quot;topic&quot;</span><span class="p">:</span><span class="s2">&quot;tns1:Device/tnsaxis:IO/VirtualPort&quot;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">   </span><span class="p">},</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="placeholder-rules">Placeholder Rules</h4>
+<ul>
+<li><strong>Delimiters</strong>: placeholders must start and end with a dollar sign (<code>$</code>), e.g. <code>$tags.name$</code>.</li>
+<li><strong>Supported keys</strong>:<ul>
+<li><code>measurement</code></li>
+<li><code>timestamp</code></li>
+<li><code>tags.&lt;tagKey&gt;</code></li>
+<li><code>fields.&lt;fieldKey&gt;</code></li>
+</ul>
+</li>
+<li>If a placeholder path does not exist, it is replaced with an empty string.</li>
+</ul>
+<h3 id="datapoints">Datapoints</h3>
+<p>This feature introduces two distinct approaches for data collection:</p>
+<ul>
+<li>
+<p><strong>Non-Metadata Data Points:</strong><br />
+  All non-metadata data points have an interval-based configuration. You can specify how frequently each datapoint/metric is collected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each non-metadata data point can be added only once.</p>
+</div>
+</li>
+<li>
+<p><strong>Metadata Data Points:</strong><br />
+  Metadata data points are event-based. They are not collected on a fixed interval but are triggered by specific events.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can add as many metadata events as you want, allowing you to capture detailed information exactly when it matters.</p>
+</div>
+</li>
+</ul>
+<hr />
+<h4 id="data-point-buttons">Data Point Buttons</h4>
+<p><strong>Edit Data Point</strong></p>
+<p><img alt="" src="images/edit.PNG" /></p>
+<p><strong>Remove Data Point</strong></p>
+<p><img alt="" src="images/delete.PNG" /></p>
+<h4 id="configure-non-metadata-data-points">Configure Non-Metadata Data Points</h4>
+<h5 id="add-non-metadata-data-points">Add Non-Metadata Data Points</h5>
+<div class="admonition tip">
+<p class="admonition-title">Examples of Non-Metadata Data Points</p>
+<ul>
+<li>CPU</li>
+<li>Disk</li>
+<li>Uptime</li>
+<li>etc.</li>
+</ul>
+</div>
+<p>Click the <code>ADD DATAPOINT</code> button to open the data point adding menu.
+<img alt="" src="images/add.PNG" /></p>
+<p>Select the data point to add.
+<img alt="" src="images/menu.PNG" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Note</p>
+<p>If any data point is grayed out (disabled), it has already been added and cannot be added twice.</p>
+</div>
+<h5 id="configure-non-metadata-data-points_1">Configure Non-Metadata Data Points</h5>
+<p>To configure the data point, click on the <code>Edit Data Point</code> button.</p>
+<ul>
+<li><strong>Set Interval:</strong><br />
+  Define the desired interval at which data should be pushed to InfluxDB.</li>
+</ul>
+<p>Click the <code>DONE</code> button when you have finished, then click the <code>SAVE</code> button.</p>
+<h4 id="configure-metadata-data-points">Configure Metadata Data Points</h4>
+<h5 id="add-metadata-data-points">Add Metadata Data Points</h5>
+<p>Click the <code>ADD DATAPOINT</code> button to open the data point adding menu and select <code>Metadata</code>.</p>
+<p><img alt="" src="images/add.PNG" /></p>
+<p><img alt="" src="images/menu.PNG" /></p>
+<p>After adding a new metadata datapoint, you will see that the configuration is initially incomplete. </p>
+<p><a href="images/notconf.PNG"><img alt="" src="images/notconf.PNG" /></a></p>
+<h5 id="configure-metadata-data-points_1">Configure Metadata Data Points</h5>
+<p>Open the configuration via the Edit button.</p>
+<p><img alt="" src="images/edit.PNG" /></p>
+<ul>
+<li><strong>Name:</strong><br />
+  For better differentiation in the configuration list, you can change the name.</li>
+<li><strong>Select Trigger:</strong><br />
+  Choose the event that will trigger the metadata capture (e.g., sensor threshold exceeded, error event, etc.).</li>
+<li><strong>Define Metadata Fields:</strong><br />
+  Specify which metadata fields should be included in the payload.</li>
+<li><strong>Data Point Name:</strong><br />
+  The data point name is the key with which the data is stored.</li>
+<li><strong>Repeat:</strong><br />
+  Add as many metadata events as needed.</li>
+<li><strong>Save Configuration:</strong><br />
+  After finishing the configuration, don't forget to click the <code>SAVE</code> button.</li>
+</ul>
+<h5 id="metadata-configuration-example">Metadata Configuration Example</h5>
+<p><strong>Metadata Day Night</strong><br />
+<a href="images/dn.PNG"><img alt="" src="images/dn.PNG" /></a></p>
+<p><strong>Metadata AXIS Object Analytics - Area Count Humans Example</strong><br />
+Push the Day Night metadata event<br />
+<a href="images/human.PNG"><img alt="" src="images/human.PNG" /></a></p>
+<p>The final configuration would look like this:<br />
+<a href="images/both.PNG"><img alt="" src="images/both.PNG" /></a></p>
+<h4 id="grafana-and-influxdb-integration">Grafana and InfluxDB Integration</h4>
+<p>This guide shows you how to integrate Grafana with InfluxDB using the <strong>Flux</strong> query language. 
+Follow the steps below to set up your datasource and create a dashboard for visualizing data/metrics from your AXIS Camera.</p>
+<hr />
+<h5 id="prerequisites">Prerequisites</h5>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You should already have everything in place, as it’s configured identically to the Missing Feature ACAP setup.</p>
+</div>
+<ul>
+<li><strong>Missing Feature ACAP:</strong> InfluxDB Push enabled, and configured.</li>
+<li><strong>InfluxDB:</strong> A running InfluxDB instance. </li>
+<li><strong>InfluxDB API Token:</strong> ACAP uses token-based authentication with InfluxDB.</li>
+<li><strong>InfluxDB Bucket:</strong> You need an InfluxDB bucket.</li>
+<li><strong>InfluxDB Org:</strong> You need the name of your InfluxDB organization.</li>
+</ul>
+<hr />
+<h5 id="add-influxdb-datasource-in-grafana">Add InfluxDB Datasource in Grafana</h5>
+<p>First, navigate to your Grafana instance and add a new InfluxDB datasource.</p>
+<p><img alt="New Datasource" src="images/new_source.PNG" /></p>
+<hr />
+<h5 id="configure-datasource-settings">Configure Datasource Settings</h5>
+<ul>
+<li><strong>Datasource Name:</strong> Set a name for your datasource.</li>
+<li><strong>Query Language:</strong> Select <strong>Flux</strong> as the query language.</li>
+</ul>
+<p><img alt="Select Flux" src="images/flux.PNG" /></p>
+<hr />
+<h5 id="set-your-influxdb-http-url">Set Your InfluxDB HTTP URL</h5>
+<p>Specify your InfluxDB HTTP URL in the settings.</p>
+<p><img alt="InfluxDB Endpoint" src="images/endpoint.PNG" /></p>
+<hr />
+<h5 id="enter-influxdb-credentials">Enter InfluxDB Credentials</h5>
+<p>Fill in your InfluxDB Organization, Token, and Default Bucket.</p>
+<p><img alt="InfluxDB Credentials" src="images/ifdb.PNG" /></p>
+<hr />
+<h5 id="create-a-dashboard">Create a Dashboard</h5>
+<p>Navigate to the dashboard section in Grafana and add a new visualization. For example, create a panel to monitor the <strong>Missing Features CPU usage</strong>.</p>
+<p><a href="images/example_cpu_mf.PNG"><img alt="" src="images/example_cpu_mf.PNG" /></a></p>
+<hr />
+<h5 id="extracting-flux-scripts-from-influxdb-data-explorer-for-grafana">Extracting Flux Scripts from InfluxDB Data Explorer for Grafana</h5>
+<p>Use the InfluxDB Data Explorer to inspect the data and use the query builder in combinitation, to switch afterwards to script editor mode to copy the flux script for grafana.
+<a href="images/explore.PNG"><img alt="" src="images/explore.PNG" /></a></p>
+<p>For example, let's locate our metadata event <strong>device_io_virtualport</strong> that we previously configured and executed to ensure an entry exists in the database:</p>
+<ul>
+<li>Select the bucket.</li>
+<li>Choose <code>metadata</code>.</li>
+<li>Set the filter to <code>name</code>.</li>
+<li>Select <code>device_io_virtualport</code>.</li>
+<li>Uncheck the <code>AGGREATE Function</code> on the right side (it's a boolean value).</li>
+<li>Enable the <code>View Raw Data</code> mode to display our entries in a table.</li>
+</ul>
+<p><a href="images/io_metadata.PNG"><img alt="" src="images/io_metadata.PNG" /></a></p>
+<ul>
+<li>Click on the <strong>Script Editor</strong> button to view the Flux script.</li>
+<li>You can now use this Flux script in Grafana.</li>
+</ul>
+<p><a href="images/io_script.PNG"><img alt="" src="images/io_script.PNG" /></a></p>
+<h5 id="public-tutorials-and-additional-resources">Public Tutorials and Additional Resources</h5>
+<p>For further learning and more detailed tutorials, consider the following public resources:</p>
+<ul>
+<li>
+<p><strong>Grafana Tutorials:</strong><br />
+<a href="https://grafana.com/tutorials">Official Grafana Tutorials</a> – Learn more about creating dashboards, panels, and advanced visualizations.</p>
+</li>
+<li>
+<p><strong>InfluxDB Documentation:</strong><br />
+<a href="https://docs.influxdata.com/influxdb/">Official InfluxDB Docs</a> – Detailed guides on installation, configuration, and usage of InfluxDB.</p>
+</li>
+<li>
+<p><strong>Flux Language Guide:</strong><br />
+<a href="https://docs.influxdata.com/flux/latest/">InfluxDB Flux Documentation</a> – In-depth information on the Flux query language and its capabilities.</p>
+</li>
+</ul>
+<h4 id="available-datapoints-metrics">Available Datapoints / Metrics</h4>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Key Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPU</strong></td>
+<td><code>usage_percent</code>, <code>user</code>, <code>system</code>, <code>idle</code>, <code>nice</code>, <code>iowait</code>, <code>irq</code>, <code>softirq</code>, <code>steal</code>, <code>guest</code>, <code>guest_nice</code>, <code>load1</code>, <code>load5</code>, <code>load15</code></td>
+</tr>
+<tr>
+<td><strong>Disk</strong></td>
+<td><code>total</code>, <code>used</code>, <code>free</code>, <code>usage</code> <code>used percent</code>; tags: <code>device</code>, <code>fstype</code>, <code>mount</code></td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>Based on event configuration</td>
+</tr>
+<tr>
+<td><strong>Network</strong></td>
+<td><code>bytes_sent</code>, <code>bytes_recv</code>, <code>packets_sent</code>, <code>packets_recv</code>, <code>err_in</code>, <code>err_out</code>, <code>drop_in</code>, <code>drop_out</code></td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td><code>current_power</code>, <code>average_power</code>, <code>max_power</code>, <code>pse_poe_class</code>, <code>lldp_poe_class</code>, <code>power_requested</code></td>
+</tr>
+<tr>
+<td><strong>Process</strong></td>
+<td><code>cpu_percent</code>, <code>RSS</code>, <code>VMS</code>, <code>HWM</code>, <code>data</code>, <code>stack</code>, <code>locked</code>, <code>swap</code></td>
+</tr>
+<tr>
+<td><strong>Swap</strong></td>
+<td><code>total</code>, <code>used</code>, <code>free</code>, <code>usage</code> <code>used percent</code></td>
+</tr>
+<tr>
+<td><strong>Uptime</strong></td>
+<td><code>uptime</code></td>
+</tr>
+<tr>
+<td><strong>Virtual Memory</strong></td>
+<td><code>total</code>, <code>available</code>, <code>used</code>, <code>used_percent</code>, <code>free</code>, <code>active</code>, <code>inactive</code>, <code>wired</code>, <code>buffers</code>, <code>cached</code>, <code>write_back</code>, <code>dirty</code>, <code>write_back_tmp</code>, <code>shared</code>, <code>slab</code>, <code>sreclaimable</code>, <code>sunreclaim</code>, <code>page_tables</code>, <code>swap_cached</code>, <code>commit_limit</code>, <code>committed_as</code>, <code>high_total</code>, <code>high_free</code>, <code>low_total</code>, <code>low_free</code>, <code>swap_total</code>, <code>swap_free</code>, <code>mapped</code>, <code>vmalloc_total</code>, <code>vmalloc_used</code>, <code>vmalloc_chunk</code>, <code>huge_pages_total</code>, <code>huge_pages_free</code>, <code>huge_pages_rsvd</code>, <code>huge_pages_surp</code>, <code>huge_page_size</code>, <code>anon_huge_pages</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

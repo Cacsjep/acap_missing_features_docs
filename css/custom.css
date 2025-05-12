@@ -1,0 +1,8 @@
+h4 {
+    font-size: 0.9em;     /* Adjust font size as needed */
+  }
+
+h5, h4, h3, h2 {
+    color: #ffc107 !important;       /* Change to your desired color */
+}
+
