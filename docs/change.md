@@ -8,8 +8,26 @@
 
 ---
 
+##### V0.9.9 – 12.05.2025
+- **C:** Remove zone count reset on Occupancy Counting start
+- **C:** UI Improvments on Occupancy Counting
+
+---
+
+##### V0.9.8 – 12.05.2025
+- **C:** Remove crossline occupancy because its merged with Occupancy Counting
+
+---
+
+##### V0.9.7 – 12.05.2025
+- **F:** Occupancy Counting
+
+---
+
 ##### V0.9.6 – 12.05.2025
 - **F:** Add Cross Line Occupancy
+
+---
 
 ##### V0.9.5 – 9.05.2025
 - **I:** Change Teltonika SMS to notification service, including seven.io sms and phone calls

@@ -16,15 +16,15 @@ nav:
   - Event Trigger: event_trigger.md
   - Features: 
     - Overview: features.md
-    - Cross Line Occupancy: cross_occ.md
     - Event Camera Bridge: event_bridge.md
     - Event Countdown: event_countdown.md
     - Event Delay Timer: event_delay_timer.md
     - Event Timed Sequence: event_timed.md
     - Event Sunrise and Sunset: event_sunrise.md
-    - Metadata Dispatch: metadispatch.md
     - Image to SD-Card: img_sdcard.md
+    - Metadata Dispatch: metadispatch.md
     - Notifications: notifications.md
+    - Occupancy counting: occupancy.md
     - Parking Times: parking_times.md
 
   - General Settings: general_settings.md

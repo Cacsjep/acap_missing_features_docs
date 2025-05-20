@@ -4,9 +4,9 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 ---
 
-#### Cross Line Occupancy
+#### Occupancy Counting
 
-Using two cross line events, to count occupancy like on and entrance camera.
+Occupancy counting using multiple cameras.
 
 #### Event Camera Bridge
 
@@ -36,7 +36,7 @@ Automatically saves an image whenever a specified event occurs (for example, dur
 
 Unified metadata and metrics dispatcher for databases, HTTPS servers.
 
-#### Notifications Configuration
+#### Notifications 
 
 Send SMS to Teltonika devices, or sms/phone calls via [seven.io](https://seven.io/)
 
