@@ -139,8 +139,9 @@ Each zone is shown with:
 
 #### InfluxDB / Grafana Flux Functions
 
-Below are reusable Flux functions for querying metadata stored in InfluxDB, typically sent via a metadata dispatcher. These functions simplify common queries such as zone-based occupancy, camera movement tracking, and entry/exit aggregations. Each function can be configured using simple input parameters for bucket, zone, camera, and time window to support easy reuse in Grafana dashboards.
+This section provides a set of ready-to-use Flux functions to simplify querying metadata in InfluxDB — such as zone occupancy, camera activity, and entry/exit counts.
 
+Each function can be customized by changing a few variables at the top (like bucket name, zone, camera, or time window), making it easy to reuse these in Grafana panels without writing full queries from scratch.
 
 ##### Occupancy Count for a Specific Zone
 
@@ -181,7 +182,53 @@ getZoneOccupancy = (bucket, zoneName) => {
 getZoneOccupancy(bucket: bucket, zoneName: zoneName)
 ```
 
-##### Zone Camera change function 
+##### Occupancy Aggregation
+
+This function returns the aggregated occupancy value for a specified zone from a given bucket, using a configurable aggregation window (e.g., every 5 minutes). It automatically joins `zone` and `occupancy` data based on timestamps and calculates the average (mean) occupancy in each time interval.
+
+![](images/flux3.PNG)
+
+> 💡 You can change the aggregation function from `mean` to `sum`, `max`, `min`, etc. if needed.
+
+```javascript
+// === CONFIGURATION ===
+option bucket = "occ"               // The InfluxDB bucket name
+option zoneName = "Default Zone"    // The zone you want to analyze
+option aggWindow = 5m               // Aggregation time window
+
+// === FUNCTION ===
+getZoneOccupancy = (bucket, zoneName, aggWindow) => {
+  zoneStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "zone")
+    |> filter(fn: (r) => r["_value"] == zoneName)
+
+  occupancyStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "occupancy")
+
+  return join(
+      tables: {zone: zoneStream, occ: occupancyStream},
+      on: ["_time"]
+    )
+    |> keep(columns: ["_time", "_value_zone", "_value_occ"])
+    |> rename(columns: {
+      "_value_occ": "occupancy",
+      "_value_zone": "zone"
+    })
+    |> map(fn: (r) => ({ r with _value: r.occupancy }))
+    |> group(columns: ["zone"])
+    |> aggregateWindow(every: aggWindow, fn: mean, createEmpty: false)
+    |> rename(columns: { _value: "occupancy" })
+}
+
+// === CALL FUNCTION ===
+getZoneOccupancy(bucket: bucket, zoneName: zoneName, aggWindow: aggWindow)
+```
+
+##### Zone Camera change 
 
 This function filters and joins the `camera`, `zone`, and `change` fields by time to return all raw change events for a specific camera and zone.
 
@@ -235,12 +282,14 @@ getZoneCameraChangeEvents = (bucket, cameraName, zoneName) => {
 getZoneCameraChangeEvents(bucket: bucket, cameraName: cameraName, zoneName: zoneName)
 ```
 
-##### Aggregation Function 
+##### Counting Aggregation  
 
 This Flux function aggregates entry (`+1`) and exit (`-1`) events for a specified camera and zone over a configurable time window. 
 It returns the number of entries and exits grouped by time, camera, and zone.
 
 ![](images/flux6.PNG)
+
+> 💡 You can change the aggregation function from `mean` to `sum`, `max`, `min`, etc. if needed.
 
 ``` javascript
 // === CONFIGURATION ===
