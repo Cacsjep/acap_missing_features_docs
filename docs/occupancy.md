@@ -137,3 +137,173 @@ Each zone is shown with:
 - **➕ Increase Button**  
   Increases the occupancy count manually.
 
+#### InfluxDB / Grafana Flux Functions
+
+Below are reusable Flux functions for querying metadata stored in InfluxDB, typically sent via a metadata dispatcher. These functions simplify common queries such as zone-based occupancy, camera movement tracking, and entry/exit aggregations. Each function can be configured using simple input parameters for bucket, zone, camera, and time window to support easy reuse in Grafana dashboards.
+
+
+##### Occupancy Count for a Specific Zone
+
+This function returns the occupancy values for a specific zone like (e.g., `"Default Zone"`), by joining `zone` and `occupancy` fields over time.
+
+![](images/flux4.PNG)
+
+```javascript
+// === CONFIGURATION ===
+option bucket = "occ"             // Change this
+option zoneName = "Default Zone"  // Change this
+
+// === FUNCTION ===
+getZoneOccupancy = (bucket, zoneName) => {
+  zoneStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "zone")
+    |> filter(fn: (r) => r["_value"] == zoneName)
+
+  occupancyStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "occupancy")
+
+  return join(
+      tables: {zone: zoneStream, occ: occupancyStream},
+      on: ["_time"]
+    )
+    |> keep(columns: ["_time", "_value_zone", "_value_occ"])
+    |> rename(columns: {
+      "_value_occ": "occupancy",
+      "_value_zone": "zone"
+    })
+}
+
+// === CALL ===
+getZoneOccupancy(bucket: bucket, zoneName: zoneName)
+```
+
+##### Zone Camera change function 
+
+This function filters and joins the `camera`, `zone`, and `change` fields by time to return all raw change events for a specific camera and zone.
+
+![](images/flux5.PNG)
+
+``` javascript
+// === CONFIGURATION ===
+option bucket = "occ"                   // Change this
+option cameraName = "Entrance 6"        // Change this
+option zoneName = "Default Zone"        // Change this
+
+// === FUNCTION ===
+getZoneCameraChangeEvents = (bucket, cameraName, zoneName) => {
+  cameraStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "camera")
+    |> filter(fn: (r) => r["_value"] == cameraName)
+
+  zoneStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "zone")
+    |> filter(fn: (r) => r["_value"] == zoneName)
+
+  changeStream = from(bucket: bucket)
+    |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+    |> filter(fn: (r) => r["_measurement"] == "metadata")
+    |> filter(fn: (r) => r["_field"] == "change")
+
+  zoneCamera = join(
+    tables: {cam: cameraStream, zone: zoneStream},
+    on: ["_time"]
+  )
+
+  finalJoin = join(
+    tables: {zc: zoneCamera, chg: changeStream},
+    on: ["_time"]
+  )
+    |> keep(columns: ["_time", "_value_cam", "_value_zone", "_value"])
+    |> rename(columns: {
+      "_value_cam": "camera",
+      "_value_zone": "zone",
+      "_value": "change"
+    })
+
+  return finalJoin
+}
+
+// === CALL ===
+getZoneCameraChangeEvents(bucket: bucket, cameraName: cameraName, zoneName: zoneName)
+```
+
+##### Aggregation Function 
+
+This Flux function aggregates entry (`+1`) and exit (`-1`) events for a specified camera and zone over a configurable time window. 
+It returns the number of entries and exits grouped by time, camera, and zone.
+
+![](images/flux6.PNG)
+
+``` javascript
+// === CONFIGURATION ===
+option bucket = "occ"                // Change this
+option cameraName = "Entrance 7"     // Change this
+option zoneName = "Default Zone"     // Change this
+option aggWindow = 5m                // Change this
+
+// === FUNCTION ===
+getEntryExitCounts = (bucket, cameraName, zoneName, aggWindow) => {
+    cameraStream = from(bucket: bucket)
+      |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+      |> filter(fn: (r) => r["_measurement"] == "metadata")
+      |> filter(fn: (r) => r["_field"] == "camera")
+      |> filter(fn: (r) => r["_value"] == cameraName)
+
+    zoneStream = from(bucket: bucket)
+      |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+      |> filter(fn: (r) => r["_measurement"] == "metadata")
+      |> filter(fn: (r) => r["_field"] == "zone")
+      |> filter(fn: (r) => r["_value"] == zoneName)
+
+    changeStream = from(bucket: bucket)
+      |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+      |> filter(fn: (r) => r["_measurement"] == "metadata")
+      |> filter(fn: (r) => r["_field"] == "change")
+
+    zoneCamera = join(
+      tables: {cam: cameraStream, zone: zoneStream},
+      on: ["_time"]
+    )
+
+    finalJoin = join(
+      tables: {zc: zoneCamera, chg: changeStream},
+      on: ["_time"]
+    )
+      |> keep(columns: ["_time", "_value_cam", "_value_zone", "_value"])
+      |> rename(columns: {
+          "_value_cam": "camera",
+          "_value_zone": "zone",
+          "_value": "change"
+      })
+
+    entryStream = finalJoin
+      |> filter(fn: (r) => r.change == 1)
+      |> map(fn: (r) => ({ r with _value: 1 }))
+      |> group(columns: ["camera", "zone"])
+      |> aggregateWindow(every: aggWindow, fn: count, createEmpty: false)
+      |> rename(columns: { _value: "entries" })
+
+    exitStream = finalJoin
+      |> filter(fn: (r) => r.change == -1)
+      |> map(fn: (r) => ({ r with _value: 1 }))
+      |> group(columns: ["camera", "zone"])
+      |> aggregateWindow(every: aggWindow, fn: count, createEmpty: false)
+      |> rename(columns: { _value: "exits" })
+
+    return join(
+      tables: {in: entryStream, out: exitStream},
+      on: ["_time", "camera", "zone"]
+    )
+}
+
+// === CALL FUNCTION ===
+getEntryExitCounts(bucket: bucket, cameraName: cameraName, zoneName: zoneName, aggWindow: aggWindow)
+```
