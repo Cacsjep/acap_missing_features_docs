@@ -8,13 +8,21 @@
 
 ---
 
-##### V0.9.9 – 12.05.2025
+##### V1.0.0 – 21.05.2025
+- **C:** Eula Logo remove
+- **I:** Better error message in case of img size could not get via VAPIX (sd-card feature)
+- **B:** Prevent save for notifications only when trigger is set
+- **C:** Readd toast notificaton for test sms success
+  
+---
+
+##### V0.9.9 – 15.05.2025
 - **C:** Remove zone count reset on Occupancy Counting start
 - **C:** UI Improvments on Occupancy Counting
 
 ---
 
-##### V0.9.8 – 12.05.2025
+##### V0.9.8 – 13.05.2025
 - **C:** Remove crossline occupancy because its merged with Occupancy Counting
 
 ---
