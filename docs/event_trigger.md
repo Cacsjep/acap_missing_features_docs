@@ -10,7 +10,7 @@ Provides a user-friendly interface to configure trigger events for your ACAP app
 #### Launch the Configuration Dialog
 
 - **Open the Dialog:**  
-  Click the Configure [Trigger Event] button (displayed with an amber fire icon) located on the interface; the name of the button varies.  
+  Click the Configure [Trigger Event] button (displayed with an amber fire icon) located on the interface, the name of the button varies.  
 
 !!! warning 
     If no event is selected, a small message is displayed below the button stating:  
@@ -66,6 +66,14 @@ Provides a user-friendly interface to configure trigger events for your ACAP app
 #### Example for Virtual Port 1 (Active)
 
 [![](images/example.PNG)](images/example.PNG)
+
+#### Example Interval Triggers / Recurring Pulse
+If you want to take an action, for example every second, go to **AXIS Camera Events/Schedules** and create a schedule with the type set to `Pulse`. Then, within the event trigger, select `Recurring Pulse` and choose the schedule you created.
+
+[![](images/pulse2.PNG)](images/pulse2.PNG)
+
+
+[![](images/pulse.PNG)](images/pulse.PNG)
 
 #### Videos
 [How to setup an Event Trigger](https://youtu.be/18Kz0O5mTog)

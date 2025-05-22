@@ -6,6 +6,20 @@
 - **F:** New Feature  
 - **C:** Change  
 
+# Known Issues
+- Bad or missleading error message when sevenio billing amount is too low, to send an sms or voice. (GH Issue created)
+
+---
+
+##### V1.0.2 – 22.05.2025
+- **I:** Add doc link for event trigger component
+- **B:** Fix race condition in countdown feature
+
+---
+
+##### V1.0.1 – 22.05.2025
+- **C:** 12.4 SDK Adding to build pipeline
+
 ---
 
 ##### V1.0.0 – 21.05.2025
