@@ -6,8 +6,10 @@
 - **F:** New Feature  
 - **C:** Change  
 
-# Known Issues
-- Bad or missleading error message when sevenio billing amount is too low, to send an sms or voice. (GH Issue created)
+---
+
+##### V1.0.3 – 22.05.2025
+- **I:** Add seven.io balance check before perform api call (sms, voice)
 
 ---
 
