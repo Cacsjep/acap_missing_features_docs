@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.5 – 22.05.2025
+- **I:** Add config import / export
+
+---
+
 ##### V1.0.4 – 22.05.2025
 - **I:** Add seven.io voice ringtime
 
