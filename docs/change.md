@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.4 – 22.05.2025
+- **I:** Add seven.io voice ringtime
+
+---
+
 ##### V1.0.3 – 22.05.2025
 - **I:** Add seven.io balance check before perform api call (sms, voice)
 
