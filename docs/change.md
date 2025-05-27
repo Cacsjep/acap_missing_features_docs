@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.6 – 25.05.2025
+- **I:** Add UI Popup for counting rule occupancy in area
+
+---
+
 ##### V1.0.5 – 22.05.2025
 - **I:** Add config import / export
 
