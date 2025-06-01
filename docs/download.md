@@ -11,7 +11,7 @@ You can download the ACAP files from: [ACAP Missing Features Github](https://git
 | ARTPEC-7    | armv7hf      |
 | ARTPEC-8    | aarch64      |
 | ARTPEC-9    | aarch64      |
-| CV25  (M-Series)      | aarch64      | 
+| CV25        | aarch64      | 
 
 !!! bug "Info"
     If you are unsure whether your camera model uses the Artpec (7, 8) or CV25 chip, please use the [AXIS Product Selector](https://www.axis.com/support/tools/product-selector) or refer to **Obtain Chip and Architecture Section** below.
