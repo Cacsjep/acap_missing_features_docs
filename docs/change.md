@@ -8,6 +8,13 @@
 
 ---
 
+##### V1.0.7 – 01.06.2025
+- **I:** Improve Image loading for SD-Card feature
+- **B:** Fix image deletion regarding to database entries for SD-Card feature (File was deleted but not DB entrie)
+
+---
+
+
 ##### V1.0.6 – 25.05.2025
 - **I:** Add UI Popup for counting rule occupancy in area
 
