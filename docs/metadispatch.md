@@ -58,10 +58,50 @@ Regardless of the connection type, each data record includes the following eleme
   Select a clear event to delete records that are older than the configured `Max Hours` when the trigger occurs.
 
 - **Max Hours**:
-  Records older than this value will be deleted when the clear event triggers.
+  
+    Records older than this value will be deleted when the clear event triggers.
 
 #### Download CSV
-You can download all stored events and metrics as a CSV.
+  You can download all stored events and metrics as a CSV.
+
+#### Get CSV via HTTP
+  To retrieve CSV data from the camera’s HTTP interface, you must use HTTP Digest Authentication and send a GET request to the `/local/ax_msf/ax_msf/sdcsv` endpoint. 
+
+##### Prerequisites
+
+- **Camera IP Address**  
+- **Camera Credentials**  
+- **HTTP Client with Digest Authentication Support**  
+
+##### Endpoint and URL Structure
+
+- **HTTP Method**:  
+  `GET`
+
+- **URL Pattern**: 
+    
+    http://**camera-ip**/local/ax_msf/ax_msf/sdcsv
+
+
+##### Response
+Response holds a simple JSON object when there is no error.
+
+```json
+{
+  csv_data: "<csv-data>"
+}
+```
+
+In case of an error JSON object holds an error_msg, HTTP status code is still **200**.
+
+```json
+{
+  error_msg: "<error-msg>"
+}
+```
+
+!!! Important
+    In case of our **ACAP Application** is not running or other camera related issue, **camera webserver** may return with 400, or 500 HTTP Status Codes, our ACAP runs as reverse proxy, **so also handle this kind of errors**.
 
 ---
 
