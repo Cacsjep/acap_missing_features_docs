@@ -8,6 +8,16 @@
 
 ---
 
+##### V1.0.72 – 06.06.2025
+- **I:** Add SD-Card sink to metadata dispatcher
+
+---
+
+##### V1.0.71 – 03.06.2025
+- **B:** Fix an issue with event countdown that can lead into deadlock when stopping multiple times fast.
+
+---
+
 ##### V1.0.7 – 01.06.2025
 - **I:** Improve Image loading for SD-Card feature
 - **B:** Fix image deletion regarding to database entries for SD-Card feature (File was deleted but not DB entrie)
