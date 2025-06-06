@@ -1,12 +1,13 @@
 # Metadata Dispatch Configuration
 
 
-The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various external services. It supports multiple sink types:
+The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various services or SD-Card. It supports multiple sink types:
 
 - **InfluxDB** (Time-series database)
 - **SQL Databases** (via MySQL, PostgreSQL, SQL Server)
 - **OPC UA** 
 - **Webserver** (RESTful interfaces)
+- **SD-Card** 
 
 
 ---
@@ -48,6 +49,19 @@ Regardless of the connection type, each data record includes the following eleme
     - **Tags**: Provided as a JSON object that InfluxDB converts into tags.
     - **Fields**: Key-value pairs are stored as InfluxDB fields.
     - **Timestamp**: A `time.Time` value from Go is used as the measurement’s timestamp.
+
+---
+
+### SD-Card
+
+- **Clear Event**:  
+  Select a clear event to delete records that are older than the configured `Max Hours` when the trigger occurs.
+
+- **Max Hours**:
+  Records older than this value will be deleted when the clear event triggers.
+
+#### Download CSV
+You can download all stored events and metrics as a CSV.
 
 ---
 
