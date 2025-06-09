@@ -8,6 +8,18 @@
 
 ---
 
+##### V1.0.82 – 06.06.2025
+- **F:** Add image to FTP feature
+- **F:** Update goxis lib to with fixing SD-Card release callback issue
+- **I:** Update golang version to latest
+
+---
+
+##### V1.0.73 – 06.06.2025
+- **I:** Add loading indicator for csv download on sd-card metadata dispatch
+
+---
+
 ##### V1.0.72 – 06.06.2025
 - **I:** Add SD-Card sink to metadata dispatcher
 

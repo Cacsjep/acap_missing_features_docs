@@ -6,10 +6,6 @@ Missing Feature ACAP requires a valid license to enable its features—without a
 
 If you have purchased a license, first register it through the [AXIS License Registration](https://www.axis.com/support/license-key-registration) portal. Then, open the camera web UI, navigate to the **Apps** section, and activate Missing Features ACAP.
 
-### Trial Licenses
-
-`UP4B4-K2XSQ-6FCMQ-4NAYD`
-
 ### Requesting a Trial License
 
 For testing and evaluation purposes, demo licenses can be requested by sending an email to [VideoSolutions@commend.at](mailto:VideoSolutions@commend.at) if the trial licenses have expired or their usage limits have been exceeded.

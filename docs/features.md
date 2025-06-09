@@ -32,6 +32,11 @@ Triggers only if a second event follows the first within a defined time window. 
 
 Automatically saves an image whenever a specified event occurs (for example, during motion detection). You can configure both the retention period and the maximum storage capacity (in GB) to suit your requirements. With built-in video generation, snapshots can be transformed into a timelapse sequence—ideal for long-term observation and quick playback of key events.
 
+#### Image to FTP
+
+Automatically transfer and delete recorded jpeg images whenever a specified event occurs.
+The problem with actual camera FTP sending, is that you cant have a pre buffer over 99 seconds. With this feature there is no such limit.
+
 #### Metadata Dispatch
 
 Unified metadata and metrics dispatcher for databases, HTTPS servers.

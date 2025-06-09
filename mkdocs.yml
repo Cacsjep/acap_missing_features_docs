@@ -3,6 +3,8 @@ theme:
   name: material
   palette:
     scheme: slate 
+    primary: yellow 
+
     toggle:
       icon: material/weather-night
       name: Switch to light mode
@@ -22,6 +24,7 @@ nav:
     - Event Timed Sequence: event_timed.md
     - Event Sunrise and Sunset: event_sunrise.md
     - Image to SD-Card: img_sdcard.md
+    - Image to FTP: img_ftp.md
     - Metadata Dispatch: metadispatch.md
     - Notifications: notifications.md
     - Occupancy counting: occupancy.md
@@ -46,3 +49,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+copyright: Copyright &copy; Commend Österreich GmbH 

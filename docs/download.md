@@ -1,6 +1,6 @@
 #### Releases
 
-You can download the ACAP files from: [ACAP Missing Features Github](https://github.com/Cacsjep/acap_missing_features_docs/releases)
+You can download the ACAP files from our homepage: [cmdoe.at](https://cmdoe.at/)
 
 
 #### Obtain Chip and Architecture
