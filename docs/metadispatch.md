@@ -458,6 +458,7 @@ For further learning and more detailed tutorials, consider the following public 
 | **Process**  | `cpu_percent`, `RSS`, `VMS`, `HWM`, `data`, `stack`, `locked`, `swap` |
 | **Swap**      | `total`, `used`, `free`, `usage` `used percent` |
 | **Uptime**   | `uptime` |
+| **PTZ Movment**   | `brightness`, `focus`, `pan`, `tilt`, `zoom` |
 | **Virtual Memory**   | `total`, `available`, `used`, `used_percent`, `free`, `active`, `inactive`, `wired`, `buffers`, `cached`, `write_back`, `dirty`, `write_back_tmp`, `shared`, `slab`, `sreclaimable`, `sunreclaim`, `page_tables`, `swap_cached`, `commit_limit`, `committed_as`, `high_total`, `high_free`, `low_total`, `low_free`, `swap_total`, `swap_free`, `mapped`, `vmalloc_total`, `vmalloc_used`, `vmalloc_chunk`, `huge_pages_total`, `huge_pages_free`, `huge_pages_rsvd`, `huge_pages_surp`, `huge_page_size`, `anon_huge_pages` |
 
 ### OPC UA
