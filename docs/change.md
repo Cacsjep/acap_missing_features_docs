@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.84 – 10.06.2025
+- **C:** Correct sorting on metrices in metadata dispatcher (UI)
+  
+---
+
 ##### V1.0.83 – 10.06.2025
 - **I:** Add PTZ movment metric
   
