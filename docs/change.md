@@ -10,6 +10,8 @@
 
 ##### V1.0.83 – 10.06.2025
 - **I:** Add PTZ movment metric
+  
+---
 
 ##### V1.0.82 – 06.06.2025
 - **F:** Add image to FTP feature
