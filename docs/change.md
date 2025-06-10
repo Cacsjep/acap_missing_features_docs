@@ -18,9 +18,9 @@
   
 ---
 
-##### V1.0.82 – 06.06.2025
+##### V1.0.82 – 06.06.202
 - **F:** Add image to FTP feature
-- **F:** Update goxis lib to with fixing SD-Card release callback issue
+- **F:** Update goxis lib fixes SD-Card release callback issue
 - **I:** Update golang version to latest
 
 ---
