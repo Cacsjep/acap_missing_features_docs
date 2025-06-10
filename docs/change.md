@@ -8,12 +8,9 @@
 
 ---
 
-##### V1.0.84 – 10.06.2025
+##### V1.0.85 – 10.06.2025
+- **B:** Fix RAM issue when downloading large meta data from SD-Card (CSV), now it use streams and DB operate in WAL mode.
 - **C:** Correct sorting on metrices in metadata dispatcher (UI)
-  
----
-
-##### V1.0.83 – 10.06.2025
 - **I:** Add PTZ movment metric
   
 ---
