@@ -61,44 +61,14 @@ Regardless of the connection type, each data record includes the following eleme
   
     Records older than this value will be deleted when the clear event triggers.
 
-#### Download CSV
-  You can download all stored events and metrics as a CSV.
+#### Download CSV/JSON
+  You can download all stored events and metrics as a CSV or JSON.
 
 #### Get CSV via HTTP
-  To retrieve CSV data from the camera’s HTTP interface, you must use HTTP Digest Authentication and send a GET request to the `/local/ax_msf/ax_msf/sdcsv` endpoint. 
+  To retrieve CSV data from the camera’s HTTP interface, you must use HTTP Digest Authentication and send a GET request to the `/local/ax_msf/ax_msf/sdcsvstream` endpoint. 
 
-##### Prerequisites
-
-- **Camera IP Address**  
-- **Camera Credentials**  
-- **HTTP Client with Digest Authentication Support**  
-
-##### Endpoint and URL Structure
-
-- **HTTP Method**:  
-  `GET`
-
-- **URL Pattern**: 
-    
-    http://**camera-ip**/local/ax_msf/ax_msf/sdcsv
-
-
-##### Response
-Response holds a simple JSON object when there is no error.
-
-```json
-{
-  csv_data: "<csv-data>"
-}
-```
-
-In case of an error JSON object holds an error_msg, HTTP status code is still **200**.
-
-```json
-{
-  error_msg: "<error-msg>"
-}
-```
+#### Get JSON via HTTP
+  To retrieve CSV data from the camera’s HTTP interface, you must use HTTP Digest Authentication and send a GET request to the `/local/ax_msf/ax_msf/sdjsonstream` endpoint. 
 
 !!! Important
     In case of our **ACAP Application** is not running or other camera related issue, **camera webserver** may return with 400, or 500 HTTP Status Codes, our ACAP runs as reverse proxy, **so also handle this kind of errors**.
@@ -457,6 +427,8 @@ For further learning and more detailed tutorials, consider the following public 
 | **Power**    | `current_power`, `average_power`, `max_power`, `pse_poe_class`, `lldp_poe_class`, `power_requested` |
 | **Process**  | `cpu_percent`, `RSS`, `VMS`, `HWM`, `data`, `stack`, `locked`, `swap` |
 | **Swap**      | `total`, `used`, `free`, `usage` `used percent` |
+| **Scene Description Metadata**      | `https://www.axis.com/ftp/devcom_files/scene_metadata/examples_json_frame_based.json` |
+| **Scene Consolidated Track Metadata**      | `https://www.axis.com/ftp/devcom_files/scene_metadata/examples_json_consolidated.json` |
 | **Uptime**   | `uptime` |
 | **PTZ Movment**   | `brightness`, `focus`, `pan`, `tilt`, `zoom` |
 | **Virtual Memory**   | `total`, `available`, `used`, `used_percent`, `free`, `active`, `inactive`, `wired`, `buffers`, `cached`, `write_back`, `dirty`, `write_back_tmp`, `shared`, `slab`, `sreclaimable`, `sunreclaim`, `page_tables`, `swap_cached`, `commit_limit`, `committed_as`, `high_total`, `high_free`, `low_total`, `low_free`, `swap_total`, `swap_free`, `mapped`, `vmalloc_total`, `vmalloc_used`, `vmalloc_chunk`, `huge_pages_total`, `huge_pages_free`, `huge_pages_rsvd`, `huge_pages_surp`, `huge_page_size`, `anon_huge_pages` |

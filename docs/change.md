@@ -8,6 +8,14 @@
 
 ---
 
+##### V1.0.86 – 11.06.2025
+- **I:** Add Metadata scene description analytics metric
+- **I:** Add Metadata consolidated analytics metric
+- **I:** Add JSON export for metrics export when stored on SD-Card
+- **C:** Split artpec-builds into artep6 and artpec7+
+  
+---
+
 ##### V1.0.85 – 10.06.2025
 - **B:** Fix RAM issue when downloading large meta data from SD-Card (CSV), now it use streams and DB operate in WAL mode.
 - **C:** Correct sorting on metrices in metadata dispatcher (UI)
