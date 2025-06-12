@@ -8,6 +8,12 @@
 
 ---
 
+##### V1.0.88 – 12.06.2025
+- **I:** Only transmit scene analytics when observations exists
+- **B:** Fix consolidated issue that only one was possbile to add
+  
+---
+
 ##### V1.0.86 – 11.06.2025
 - **I:** Add Metadata scene description analytics metric
 - **I:** Add Metadata consolidated analytics metric
