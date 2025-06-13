@@ -13,7 +13,6 @@ nav:
   - About: index.md
   - Changelog: change.md
   - Compatibility: compat.md
-  - Download: download.md
   - Enable or Disable Features: endis.md
   - Event Trigger: event_trigger.md
   - Features: 
