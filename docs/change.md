@@ -8,6 +8,12 @@
 
 ---
 
+##### V1.0.89 – 13.06.2025
+- **I:** Add delete button for metrics database (SD-Card)
+- **I:** Split .eap builds into cv25, artep6, artpec7, metadata scene etc..
+
+---
+
 ##### V1.0.88 – 12.06.2025
 - **I:** Only transmit scene analytics when observations exists
 - **B:** Fix consolidated issue that only one was possbile to add

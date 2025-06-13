@@ -61,6 +61,9 @@ Regardless of the connection type, each data record includes the following eleme
   
     Records older than this value will be deleted when the clear event triggers.
 
+#### Manual Clean-UP
+  Via the red `CLEAN-UP` button, all stored records could be removed/deleted.
+
 #### Download CSV/JSON
   You can download all stored events and metrics as a CSV or JSON.
 
