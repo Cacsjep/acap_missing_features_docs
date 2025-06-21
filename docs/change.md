@@ -8,6 +8,16 @@
 
 ---
 
+##### V1.0.90 – 21.06.2025
+- **I:** Unify SD-Card Managment for all features, now it is more reslilent to SD-Card failures.
+- **I:** Adding SD-Card cache for metadata dispatcher
+- **I:** Adding MQTT sink for metadata dispatcher
+- **I:** Adding feature start watchdog, in case of camera starts and external services prevent the feature from start.
+- **I:** Improve stop code for some features.
+- **I:** Adding SD-Card info to webui when one exists.
+  
+---
+
 ##### V1.0.89 – 13.06.2025
 - **I:** Add delete button for metrics database (SD-Card)
 - **I:** Split .eap builds into cv25, artep6, artpec7, metadata scene etc..

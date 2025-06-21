@@ -4,10 +4,11 @@
 The MetaDispatch feature acts as a unified gateway for forwarding metadata and metrics to various services or SD-Card. It supports multiple sink types:
 
 - **InfluxDB** (Time-series database)
+- **MQTT**
+- **OPC UA**
+- **SD-Card**
 - **SQL Databases** (via MySQL, PostgreSQL, SQL Server)
-- **OPC UA** 
 - **Webserver** (RESTful interfaces)
-- **SD-Card** 
 
 
 ---
@@ -76,7 +77,126 @@ Regardless of the connection type, each data record includes the following eleme
 !!! Important
     In case of our **ACAP Application** is not running or other camera related issue, **camera webserver** may return with 400, or 500 HTTP Status Codes, our ACAP runs as reverse proxy, **so also handle this kind of errors**.
 
+
+### SD-Card Cache (Resilient Buffer)
+
+**Description:**  
+Harness the SD-Card as a local buffer when network connectivity drops. Metrics are cached on the card and automatically flushed to the configured sink once connectivity is restored.
+
+#### Configuration Options
+
+- **Use SD-Card cache**  
+    Enable or disable local buffering on the camera’s SD-Card. When enabled, any failed metric writes are stored on the card and retried once connectivity is restored.
+
+- **Cache Size (Entries)**  
+    Maximum number of metric records to keep on the SD-Card before older entries are purged. Adjust based on your card capacity and expected outage duration.
+
+#### Live Statistics
+
+Once caching is enabled, two live metrics appear:
+
+- **Cache entries**  
+    Shows the current number of records waiting in the cache.
+
+- **Average insert time**  
+    Displays the average time (in ms) to write a record to the cache.
+
+Click the “reload” button next to these stats to refresh their values at any time.
+
 ---
+
+#### How It Works
+
+1. **Failure detection:**  
+   If a metric write to your configured sink (InfluxDB, MQTT, etc.) fails, the system writes the data to the SD-Card cache instead of dropping it.
+
+2. **Background flush:**  
+   Every few seconds, the dispatcher checks for cached entries and attempts to resend them to the sink in FIFO order. Successfully sent entries are removed from the cache.
+
+3. **Automatic pruning:**  
+   When the cache grows beyond your configured maximum, the oldest entries are deleted to make room for new ones, ensuring the cache never exceeds the specified size.
+
+
+---
+
+### MQTT
+
+
+**Version:** v3.1.1  
+**QoS Level:** 1  
+
+!!! Note
+    Our MQTT Client operates at QoS 1. In case of a failure, outgoing messages will be cached via the SD-Card cache and retried.
+
+#### Supported Features
+
+- **TLS / Plain TCP**  
+    Supports both `tcp://` and `tls://` broker URIs.  
+- **Authentication**  
+    - Username/Password  
+    - Clean Session & Auto-Reconnect  
+- **JSON Payload**  
+    Each message is a JSON object containing `measurement`, `tags`, `fields`, and `timestamp`.  
+- **Timeouts**  
+    Connect timeout: 5 s  
+    Publish timeout: 5 s  
+
+#### General Settings
+
+- **Broker URI**  
+    Enter the MQTT broker address in one of these formats:  
+      - `tcp://your-broker.example.com:1883`  
+      - `tls://192.168.0.80:8883`  
+
+- **Base Topic**  
+  Prefix for all MQTT messages (e.g. `camera/metrics`)  
+
+
+- **Client ID**  
+  Unique identifier for this MQTT connection (e.g. `camera-01`)  
+  
+#### Authentication (Optional)
+
+- **Username**  
+  MQTT username, if broker requires authentication  
+
+- **Password**  
+  MQTT password, if broker requires authentication 
+
+#### Topics
+
+> All MQTT topics are published under `{base_topic}/{topic}`. Replace `{base_topic}` with your configured base topic.
+
+| Topic                                  | Metric Struct                     | Description                                                           |
+|----------------------------------------|-----------------------------------|-----------------------------------------------------------------------|
+| `{base_topic}/cpu_usage`               | `CpuMetrics`                      | Instantaneous CPU usage percentage                                    |
+| `{base_topic}/cpu_times`               | `CpuMetrics`                      | Breakdown of CPU times (`user`, `system`, `idle`, etc.)               |
+| `{base_topic}/cpu_load_average`        | `CpuMetrics`                      | System load averages over 1, 5, and 15 minutes                        |
+| `{base_topic}/disk_usage`              | `DiskMetrics`                     | Disk usage stats per partition (`disk_total`, `disk_used`, etc.)      |
+| `{base_topic}/net_io`                  | `NetworkMetrics`                  | Network I/O counters per interface (bytes, packets, errors)           |
+| `{base_topic}/optics`                  | `OpticMetrics`                    | Optic module metrics (focus position, zoom, IR filter state, etc.)    |
+| `{base_topic}/power`                   | `PowerMetrics`                    | Power metrics (current, average, max, PoE classes)                    |
+| `{base_topic}/proc`                    | `ProcessMetrics`                  | Per‐process CPU & memory metrics (`cpu_percent`, `rss`, etc.)         |
+| `{base_topic}/ptz`                     | `PTZMetric`                       | PTZ movement & camera parameters (pan, tilt, zoom, focus)             |
+| `{base_topic}/swap_usage`              | `SwapMetrics`                     | Swap memory statistics (total, used, free, usage percent)             |
+| `{base_topic}/uptime`                  | `UptimeMetrics`                   | System uptime                                                         |
+| `{base_topic}/vmem_usage`              | `VMMetrics`                       | Virtual memory stats (total, available, used, cached, etc.)           |
+| `{base_topic}/metadata`                | `MetaDataMetrics`                 | Event‐driven metadata payloads                                        |
+| `{base_topic}/scene_description{ch}`   | `MDBSceneMetric`                  | Scene description metadata from MDB (channel‐specific)                |
+| `{base_topic}/consolidated_track{ch}`  | `MDBConsolidatedTrackMetric`      | Consolidated track metadata from MDB (channel‐specific)               |
+
+#### Payload Format
+
+Every MQTT message payload is a JSON object with the following structure:
+
+```json
+{
+  "measurement": "<metric_name>",
+  "tags": { /* context tags, if any */ },
+  "fields": { /* one or more value fields */ },
+  "timestamp": "2025-06-21T14:23:45.123456789Z"
+}
+```
 
 ### Rational Databases 
 
