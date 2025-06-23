@@ -20,10 +20,6 @@ Introduces a configurable delay between the original event trigger and a subsequ
 
 Retrieves daily sunrise and sunset data and triggers corresponding events. Perfect for adjusting camera settings, turning on lights, or starting/stopping recordings according to natural light levels.
 
-#### Event Countdown
-
-Delivers a highly accurate on-screen timer with a stop-time latency under 50ms, ensuring precision for industrial applications. The countdown begins when a specified event occurs and stops either when another event is triggered or when the timer reaches zero. It can trigger events to capture images, send alerts, or start automated processes. Additionally, an optional on-screen overlay provides real-time monitoring, allowing you to customize the feature for your specific needs.
-
 #### Event Timed Sequence
 
 Triggers only if a second event follows the first within a defined time window. This feature helps in creating complex event chains, ensuring that actions are executed only under specific, timely conditions.
@@ -39,7 +35,7 @@ The problem with actual camera FTP sending, is that you cant have a pre buffer o
 
 #### Metadata Dispatch
 
-Unified metadata and metrics dispatcher for databases, HTTPS servers.
+Unified metadata and metrics dispatcher for databases, SD-Card, MQTT, OPCUA or HTTPS servers.
 
 #### Notifications 
 

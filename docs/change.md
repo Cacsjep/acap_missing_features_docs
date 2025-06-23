@@ -8,6 +8,14 @@
 
 ---
 
+##### V1.0.91 – 23.06.2025
+- **C:** Remove Event Countdown feature, could be used with older versions.
+- **C:** Remove MQTT UI Defaults.
+- **C:** Made non present of SD-Card more verbose, not show error toast message.
+- **C:** Update open source licenses.
+  
+---
+
 ##### V1.0.90 – 21.06.2025
 - **I:** Unify SD-Card Managment for all features, now it is more reslilent to SD-Card failures.
 - **I:** Adding SD-Card cache for metadata dispatcher
