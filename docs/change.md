@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.92 – 02.07.2025
+- **C:** Increase max. resolution (ui validation) for timelaps generation.
+
+---
+
 ##### V1.0.91 – 23.06.2025
 - **C:** Remove Event Countdown feature, could be used with older versions.
 - **C:** Remove MQTT UI Defaults.
