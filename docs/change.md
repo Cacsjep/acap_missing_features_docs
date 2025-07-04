@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.93 – 04.07.2025
+- **I:** Use axparmenter to obtain resolution and number of image configurations.
+
+---
+
 ##### V1.0.92 – 02.07.2025
 - **C:** Increase max. resolution (ui validation) for timelaps generation.
 
