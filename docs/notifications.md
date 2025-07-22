@@ -62,6 +62,31 @@ Send SMS to Teltonika devices, or sms/phone calls via [seven.io](https://seven.i
 - **Phone Numbers:**  
   A list of phone numbers in full format with leading zeros like: 00436763151474
 - **Trigger Event:**  
+  Choose the event that will trigger the call.
+- **Event Timeout:**  
+  Timeout after event to prevent multiple notifications in a short time.
+
+#### Configure the SMS Eagle (Voice, SMS)
+
+Before you can use the SMS Eagle device, you must enable APIv2 and obtain an API token via the SMS Eagle web interface.
+
+API permissions must also be set up.
+
+[![](notifications/token.PNG)](notifications/token.PNG)
+[![](notifications/access.PNG)](notifications/access.PNG)
+
+Voice ID for calls
+[![](notifications/voice_models.PNG)](notifications/voice_models.PNG)
+
+- **API Key:**  
+  Enter your API key.
+- **Message:**  
+  Specify text that should be played trough the phone call or send via SMS.
+- **Phone Numbers:**  
+  A list of phone numbers in full format with leading zeros like: 00436763151474
+- **VoiceId:**  
+  Corresponding voice ID when using a voice call.
+- **Trigger Event:**  
   Choose the event that will trigger the sending of SMS.
 - **Event Timeout:**  
   Timeout after event to prevent multiple notifications in a short time.
