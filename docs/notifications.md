@@ -75,9 +75,8 @@ API permissions must also be set up.
 [![](notifications/token.PNG)](notifications/token.PNG)
 [![](notifications/access.PNG)](notifications/access.PNG)
 
-Voice ID for calls
-[![](notifications/voice_models.PNG)](notifications/voice_models.PNG)
-
+- **Url:**  
+  Enter the URL of your SMS Eagle device, like https://192.168.1.50
 - **API Key:**  
   Enter your API key.
 - **Message:**  
@@ -90,6 +89,9 @@ Voice ID for calls
   Choose the event that will trigger the sending of SMS.
 - **Event Timeout:**  
   Timeout after event to prevent multiple notifications in a short time.
+
+Voice ID for calls
+[![](notifications/voice_models.PNG)](notifications/voice_models.PNG)
 
 ---
 

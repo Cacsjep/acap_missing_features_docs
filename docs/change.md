@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.94 – 23.07.2025
+- **I:** Add SMS Eagle for SMS and Voice calls to notifications feature.
+
+---
+
 ##### V1.0.93 – 04.07.2025
 - **I:** Use axparmenter to obtain resolution and number of image configurations.
 
