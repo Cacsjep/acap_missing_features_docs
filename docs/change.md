@@ -8,6 +8,11 @@
 
 ---
 
+##### V1.0.95 – 05.09.2025
+- **B:** Websocket issue with 12.5 reverse proxy manifest modification
+
+---
+
 ##### V1.0.94 – 23.07.2025
 - **I:** Add SMS Eagle for SMS and Voice calls to notifications feature.
 
