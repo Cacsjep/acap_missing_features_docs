@@ -8,6 +8,16 @@
 
 ---
 
+##### V1.1.3 – 28.10.2025
+- **F:** Add builds for devices without video 
+- **F:** Add `LoggingSink` to emit metrics to application logs for diagnostics.
+- **I:** Unknown metadata datatypes now default to string so all keys are preserved in pipeline output.
+- **B:** Add SD reliability fixes and guards around non-VDO / non-storage builds to prevent runtime errors when features are disabled.
+- **B:** Fix models to align with VDO decoupling and new build variants.
+- **B:** Streaming endpoints now always return consistent JSON error objects instead of plain responses when the sink type is incorrect or on failures.
+- **C:** Add AXIS OS 12 build steps for CV25, ARTPEC7, and ARTPEC8 (video and non-video variants).
+- **C:** Update primary `manifest.json` (schemaVersion bump); add `manifestv11.json` for AXIS OS 11 targets; apply version bumps across manifests for interim releases.
+
 ##### V1.0.95 – 05.09.2025
 - **B:** Websocket issue with 12.5 reverse proxy manifest modification
 
