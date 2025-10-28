@@ -18,6 +18,8 @@
 - **C:** Add AXIS OS 12 build steps for CV25, ARTPEC7, and ARTPEC8 (video and non-video variants).
 - **C:** Update primary `manifest.json` (schemaVersion bump); add `manifestv11.json` for AXIS OS 11 targets; apply version bumps across manifests for interim releases.
 
+---
+
 ##### V1.0.95 – 05.09.2025
 - **B:** Websocket issue with 12.5 reverse proxy manifest modification
 
