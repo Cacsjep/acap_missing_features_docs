@@ -5,6 +5,7 @@ The MetaDispatch feature acts as a unified gateway for forwarding metadata and m
 
 - **InfluxDB** (Time-series database)
 - **MQTT**
+- **Log-File**
 - **OPC UA**
 - **SD-Card**
 - **SQL Databases** (via MySQL, PostgreSQL, SQL Server)
