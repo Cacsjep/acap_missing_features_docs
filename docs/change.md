@@ -8,6 +8,12 @@
 
 ---
 
+##### V2.0.10 – 23.10.2025
+- **F:** Flow Feature Release
+- **C:** Remove AWS integration from SD-Card feature
+- **C:** Old event based features removed (Camera Bridge, Timed Sequence, Sunset and Sunrise, Countdown)
+- **I:** Reduce application footprint
+
 ##### V1.1.3 – 28.10.2025
 - **F:** Add builds for devices without video 
 - **F:** Add `LoggingSink` to emit metrics to application logs for diagnostics.

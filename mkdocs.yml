@@ -17,12 +17,8 @@ nav:
   - Event Trigger: event_trigger.md
   - Features: 
     - Overview: features.md
-    - Event Camera Bridge: event_bridge.md
-    - Event Delay Timer: event_delay_timer.md
-    - Event Timed Sequence: event_timed.md
-    - Event Sunrise and Sunset: event_sunrise.md
+    - Flow: flow.md
     - Image to SD-Card: img_sdcard.md
-    - Image to FTP: img_ftp.md
     - Metadata Dispatch: metadispatch.md
     - Notifications: notifications.md
     - Occupancy counting: occupancy.md
