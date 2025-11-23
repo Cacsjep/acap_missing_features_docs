@@ -8,7 +8,7 @@
 
 ---
 
-##### V2.0.10 – 23.10.2025
+##### V2.0.11 – 23.10.2025
 - **F:** Flow Feature Release
 - **C:** Remove AWS integration from SD-Card feature
 - **C:** Old event based features removed (Camera Bridge, Timed Sequence, Sunset and Sunrise, Countdown)
