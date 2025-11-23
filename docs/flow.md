@@ -22,7 +22,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - **Introduction:** Reopen the short walkthrough (video steps).
 
 **Video: Floating action bar**
-<video controls muted loop playsinline src="/flow_videos/bar.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/bar.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 
 
@@ -37,13 +37,13 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - **Edge colors:** Mirror the source output in live mode; turn gray in edit mode.
 
 **Video: Adding nodes**
-<video controls muted loop playsinline src="/flow_videos/addnode.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/addnode.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 **Video: Connect and disconnect**
-<video controls muted loop playsinline src="/flow_videos/connect.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/connect.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
 
 **Video: Rectangle selection and delete**
-<video controls muted loop playsinline src="/flow_videos/delete.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/delete.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
 
 ---
 
@@ -56,7 +56,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - A small badge at the top-right shows the last execution time while running; a warning banner appears if the websocket reconnects.
 
 **Video: Node properties**
-<video controls muted loop playsinline src="/flow_videos/props.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/props.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 ---
 
@@ -80,7 +80,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
     - Inputs: `Send` plus user-added fields marked as **Trigger (Source)** or **Data**.  
     - Outputs: `Error`.  
     - Properties: Event name; add/remove fields and choose their type/direction.
-<video controls muted loop playsinline src="/flow_videos/axiscreate.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/axiscreate.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 !!! warning
     Axis Metadata Event (Create) nodes are only visible in the Axis event rule list while the flow is running.
@@ -94,7 +94,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
     - Inputs: `EN` plus one input per discovered port.  
     - Outputs: `Success`, `Status`, `Error`.  
     - Tip: Recreate the node if device credentials or port mapping change.
-<video controls muted loop playsinline src="/flow_videos/axissub.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/axissub.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 ##### Inputs and manual controls
 
@@ -103,10 +103,10 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 - **Button** - Outputs `true` while pressed, `false` on release (live mode).
 
 **Video: Manual inputs and buttons**
-<video controls muted loop playsinline src="/flow_videos/manual.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/manual.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 **Video: Handle shapes and colors**
-<video controls muted loop playsinline src="/flow_videos/io.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
+<video controls muted loop playsinline src="flow_videos/io.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
 
 ##### Timing and pulses
 
