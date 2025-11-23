@@ -8,7 +8,7 @@
 
 ---
 
-##### V2.0.12 – 23.10.2025
+##### V2.0.13 – 23.10.2025
 - **B:** Flow: Axis Meta Create note now allow stateless and statefull events
 - **F:** Flow: Timer Sequence Node
 
