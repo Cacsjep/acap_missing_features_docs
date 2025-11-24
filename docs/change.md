@@ -6,6 +6,14 @@
 - **F:** New Feature  
 - **C:** Change  
 
+
+---
+
+##### V2.0.14 – 24.10.2025
+- **B:** Flow: Compare node had invalid output type
+- **I:** Flow: Tooltip for node disconnection added
+- **I:** Flow: Manual Input node shows the value state
+- **C:** Flow: Remove Lock funcion from floating bar
 ---
 
 ##### V2.0.13 – 23.10.2025

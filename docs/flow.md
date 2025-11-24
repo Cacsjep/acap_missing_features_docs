@@ -17,7 +17,6 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - **Add Node:** Opens the catalog. Drag a template to the canvas. Axis nodes open an extra dialog to pick ports or events before placement.
 - **IO Table:** Opens a live table listing every node with its inputs/outputs and current values.
 - **Fit to View:** Reframes the canvas around all nodes.
-- **Lock:** Prevents panning/selection to avoid accidental edits.
 - **Export / Import:** Download or load a graph JSON. Import is disabled while the flow is running.
 - **Introduction:** Reopen the short walkthrough (video steps).
 
