@@ -8,6 +8,11 @@
 
 ---
 
+##### V2.0.24 – 26.10.2025
+- **B:** Flow: Bend points on dragging moved all even if only one was selected.
+- **I:** Flow: Imporve UI Contrast
+- **I:** Flow: Add help dialog for nodes
+
 ##### V2.0.23 – 25.10.2025
 - **B:** Flow: Bend points not moving when use selection.
 - **I:** Flow: Bend points adding on left mouse done instead of click, Higlight edge connector on hover.
