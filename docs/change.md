@@ -6,7 +6,18 @@
 - **F:** New Feature  
 - **C:** Change  
 
+---
 
+##### V2.0.23 – 25.10.2025
+- **B:** Flow: Bend points not moving when use selection.
+- **I:** Flow: Bend points adding on left mouse done instead of click, Higlight edge connector on hover.
+- **B:** Flow: Axis event create, now waits for completion callback.
+- **I:** Flow: Axis event create no use the input name for the key in the event instead of the ID.
+- **I:** Flow: Add node action toolbar text under the icon.
+- **I:** Flow: Counter/Fifo/Lifo node, add edge detection
+- **I:** Flow: Add panic recover on node exectuion, Increase over all stability for exectuion
+- **I:** Flow: Axis output port dialog improved, when there is not output founded.
+- **I:** Flow: General stability Improvments
 ---
 
 ##### V2.0.14 – 24.10.2025
@@ -14,6 +25,7 @@
 - **I:** Flow: Tooltip for node disconnection added
 - **I:** Flow: Manual Input node shows the value state
 - **C:** Flow: Remove Lock funcion from floating bar
+
 ---
 
 ##### V2.0.13 – 23.10.2025

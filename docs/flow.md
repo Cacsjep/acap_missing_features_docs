@@ -117,6 +117,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 - **Pulse Timer (TP)** - Fixed-length pulse on each rising edge of `Enable`; outputs elapsed time.  
 - **Pulse Generator** - Periodic single-cycle pulse while `Enable` is true.  
 - **Step Sequencer** - Advances one step per `Step` pulse; exactly one output is true. Property: steps (2-16).  
+- **Timed Sequenced** - Runs timers in order while enabled, then wraps back to the first timer. 
 - **Counter** - Counts up/down on pulses; `Reset` clears to zero.
 
 ##### Logic, selection, and math
@@ -156,6 +157,5 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 
 #### Tips
 
-- Use **Lock** before monitoring or presenting to avoid accidental drags.
 - If a node shows an orange dotted border, open its properties and complete the required fields (URL, event name, etc.).
 - Keep a **Logging** node in your flow to see backend messages when testing HTTP calls or Axis events.
