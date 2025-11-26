@@ -8,10 +8,23 @@
 
 ---
 
+##### V2.0.31 – 27.10.2025
+- **B:** Flow: Osci was not correclty renderd when flow was alread running
+- **I:** Flow: Node Help Dialog Added
+- **I:** Flow: Improve UI, Colors, Node Action Bar
+- **I:** Flow: Bend points now added on mouse hold down
+- **I:** Flow: Add body override for HTTP Node
+- **I:** Flow: Add raw json output to axis metadata event subscribe
+- **I:** Flow: Add speedometer node
+
+---
+
 ##### V2.0.24 – 26.10.2025
 - **B:** Flow: Bend points on dragging moved all even if only one was selected.
 - **I:** Flow: Imporve UI Contrast
 - **I:** Flow: Add help dialog for nodes
+
+---
 
 ##### V2.0.23 – 25.10.2025
 - **B:** Flow: Bend points not moving when use selection.
@@ -183,68 +196,4 @@
 - **C:** 12.4 SDK Adding to build pipeline
 
 ---
-
-##### V1.0.0 – 21.05.2025
-- **C:** Eula Logo remove
-- **I:** Better error message in case of img size could not get via VAPIX (sd-card feature)
-- **B:** Prevent save for notifications only when trigger is set
-- **C:** Readd toast notificaton for test sms success
-  
----
-
-##### V0.9.9 – 15.05.2025
-- **C:** Remove zone count reset on Occupancy Counting start
-- **C:** UI Improvments on Occupancy Counting
-
----
-
-##### V0.9.8 – 13.05.2025
-- **C:** Remove crossline occupancy because its merged with Occupancy Counting
-
----
-
-##### V0.9.7 – 12.05.2025
-- **F:** Occupancy Counting
-
----
-
-##### V0.9.6 – 12.05.2025
-- **F:** Add Cross Line Occupancy
-
----
-
-##### V0.9.5 – 9.05.2025
-- **I:** Change Teltonika SMS to notification service, including seven.io sms and phone calls
-
----
-
-##### V0.9.4 – 6.05.2025
-- **F:** Add Teltonika SMS
-
----
-
-##### V0.9.3 – 6.05.2025
-- **I:** Additional JSON Payload for HTTP Metadata Dispatch
-
----
-
-##### V0.9.2 – 6.05.2025
-- **I:** Prevent Cert delete when its in use
-
----
-
-##### V0.9.1 – 6.05.2025
-- **I:** OPC UA Support for metadata dispatch
-
----
-
-##### V0.9.0 – 24.04.2025
-- **I:** Individual feature licensing: features can now be purchased à la carte.
-
----
-
-##### V0.8.0 – 16.04.2025
-- **F:** Introduce Metadata Dispatch
-- **C:** move metadata to https into the new Metadata Dispatch
-- **B:** Font loading issue 
 

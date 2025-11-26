@@ -152,6 +152,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 - **Logging** - Live log viewer (level, time, node id/name, message) from the flow runtime.  
 - **Text** - Static label. Properties: text and size.  
 - **Axis Live Stream** - Also handy for visual debugging of camera feeds.
+- **Speedometer** - The Speedometer visualizes a numeric input value using a gauge-style dial.
 
 ---
 
