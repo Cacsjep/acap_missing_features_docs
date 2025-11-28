@@ -8,10 +8,14 @@
 
 ---
 
-##### V2.0.34 – 28.10.2025
+##### V2.0.39 – 28.10.2025
 - **I:** Flow: Prevent multiple connection to inputs
 - **I:** Flow: Prevent connetion with diffrent data types
+- **B:** Flow: Connection saving failed when validation multiple connections
 - **I:** Flow: Add safe mode to turn on or off invalid connection message 
+- **I:** Flow: Add Lua Node
+- **I:** Flow: Add Lua json methods
+- **I:** Flow: Add Lua time methods
 - **B:** Flow: Fix invalid shape on inputs
 
 ---
