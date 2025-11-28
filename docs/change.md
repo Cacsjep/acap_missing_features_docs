@@ -8,6 +8,14 @@
 
 ---
 
+##### V2.0.34 – 28.10.2025
+- **I:** Flow: Prevent multiple connection to inputs
+- **I:** Flow: Prevent connetion with diffrent data types
+- **I:** Flow: Add safe mode to turn on or off invalid connection message 
+- **B:** Flow: Fix invalid shape on inputs
+
+---
+
 ##### V2.0.31 – 27.10.2025
 - **B:** Flow: Osci was not correclty renderd when flow was alread running
 - **I:** Flow: Node Help Dialog Added
