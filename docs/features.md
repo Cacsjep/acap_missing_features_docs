@@ -6,7 +6,7 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 #### Flow
 
-Design automation visually by dragging nodes onto a canvas and wiring them together. Includes Axis device nodes, HTTP/JSON utilities, Lua scripting, Vaxtor Cloud ANPR, device management (per-device credentials, snapshots/resolutions reused across nodes), and type-safe wiring with per-node help.
+Design automation visually by dragging nodes onto a canvas and wiring them together. Includes Axis device nodes, HTTP/JSON utilities, Lua scripting, device management (per-device credentials, snapshots/resolutions reused across nodes), and type-safe wiring with per-node help.
 
 #### Image to SD Card
 

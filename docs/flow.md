@@ -4,15 +4,6 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 ---
 
-#### What’s new in 2.1.0
-
-- Vaxtor Cloud ANPR node (OAuth2 client credentials with cached tokens, Axis snapshot upload, plate/vehicle outputs, success/error pulses).
-- JSON-to-Node and JSON Array Selector nodes to break API responses into per-key or indexed outputs.
-- License Plate List node with validity windows and per-tag outputs.
-- Connection safety: one connection per input and hard type checks (bool/int/float/string) with optional warning toasts.
-
----
-
 #### Open the Flow Builder
 
 - **Launch the app UI** and pick **Flow** from the feature list.
@@ -117,7 +108,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 <video controls muted loop playsinline src="axissub.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 - **Vaxtor Cloud ANPR**  
-    - What it does: Captures a snapshot from the selected device and sends it to Vaxtor Cloud ALPR using OAuth2 client credentials (token cached/auto-refreshed).  
+    - What it does: Captures a snapshot from the selected device and sends it to Vaxtor Cloud ALPR.  
     - Inputs: `Execute`, `Reset`.  
     - Outputs: `Success`, `Plate Found`, plate fields (number, country, state, category, confidence), vehicle fields (make, model, color, class), `Status`, `Error`, `Executed` pulse.  
     - Properties: Client ID/Secret, scope (api), token URL, API URL, timeout, device + optional resolution (from Device Management).
