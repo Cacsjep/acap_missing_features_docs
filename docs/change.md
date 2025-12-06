@@ -8,7 +8,13 @@
 
 ---
 
-##### V2.1.0 - 06.12.2025
+##### V2.1.2 - 06.12.2025
+- **F:** Flow: Added edge value muxer
+- **B:** Flow: Fix invalid port usage of rtsp port
+
+---
+
+##### V2.1.0 - 04.12.2025
 - **F:** Flow: Added Vaxtor Cloud ANPR node (Axis snapshot upload with OAuth2 client credentials, token caching, plate & vehicle outputs, success/error status).
 - **F:** Flow: Added JSON-to-Node and JSON Array Selector nodes to split API responses into per-key outputs or indexed items.
 - **F:** Flow: Added License Plate List node for whitelists with validity windows and per-tag outputs.
