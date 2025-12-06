@@ -8,6 +8,15 @@
 
 ---
 
+##### V2.1.0 - 06.12.2025
+- **F:** Flow: Added Vaxtor Cloud ANPR node (Axis snapshot upload with OAuth2 client credentials, token caching, plate & vehicle outputs, success/error status).
+- **F:** Flow: Added JSON-to-Node and JSON Array Selector nodes to split API responses into per-key outputs or indexed items.
+- **F:** Flow: Added License Plate List node for whitelists with validity windows and per-tag outputs.
+- **I:** Flow: Device management integrated into Flow (shared device list, non-video flag, resolution-aware snapshots reused by nodes like HTTP image uploads and Vaxtor).
+- **I:** Flow: Connection safety refinements and help coverage for the new nodes.
+
+---
+
 ##### V2.0.39 – 28.10.2025
 - **I:** Flow: Prevent multiple connection to inputs
 - **I:** Flow: Prevent connetion with diffrent data types

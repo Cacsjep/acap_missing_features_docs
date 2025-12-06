@@ -6,7 +6,7 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 #### Flow
 
-Design automation visually by dragging nodes onto a canvas and wiring them together
+Design automation visually by dragging nodes onto a canvas and wiring them together. Includes Axis device nodes, HTTP/JSON utilities, Lua scripting, Vaxtor Cloud ANPR, device management (per-device credentials, snapshots/resolutions reused across nodes), and type-safe wiring with per-node help.
 
 #### Image to SD Card
 
@@ -27,5 +27,9 @@ Occupancy counting using multiple cameras.
 #### Parking Times
 
 Logs the in and out timestamps of vehicles identified by the AXIS License Plate Verifier. This feature maintains a detailed record of parking durations and triggers an event if a vehicle exceeds the designated time. It enables timely notifications, enforcement actions, or other workflow automations.
+
+#### License Plate List
+
+Whitelist plates with validity windows, tags, and optional fuzzy matching. Cached list feeds the Flow License Plates node and can auto-clean expired entries. See `license_plate_list.md` for setup.
 
 

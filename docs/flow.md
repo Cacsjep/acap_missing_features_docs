@@ -4,10 +4,29 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 ---
 
+#### What’s new in 2.1.0
+
+- Vaxtor Cloud ANPR node (OAuth2 client credentials with cached tokens, Axis snapshot upload, plate/vehicle outputs, success/error pulses).
+- JSON-to-Node and JSON Array Selector nodes to break API responses into per-key or indexed outputs.
+- License Plate List node with validity windows and per-tag outputs.
+- Connection safety: one connection per input and hard type checks (bool/int/float/string) with optional warning toasts.
+
+---
+
 #### Open the Flow Builder
 
 - **Launch the app UI** and pick **Flow** from the feature list.
 - The last saved flow loads automatically; if none is stored, a short intro dialog appears.
+
+---
+
+#### Device Management (for Flow)
+
+- Add/edit devices once and reuse them across Flow nodes (Axis outputs, RTSP preview, HTTP image uploads, Vaxtor Cloud ANPR).
+- Fields: Name, IP/Protocol/Port, RTSP port, username/password, auth type (digest/basic/none), channel, **Non-video device** flag, optional resolution list.
+- Snapshots: nodes that send images pull a snapshot from the selected device; non-video devices will reject snapshot requests.
+- Resolutions: if available, nodes can request a specific resolution; otherwise the default stream is used.
+- If Axis passwords change, update the device entry; recreate Axis Output nodes if port mappings change.
 
 ---
 
@@ -34,6 +53,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - **Edges:** Hover to add bend points (yellow). Right-click a bend point to remove. Double-click an edge or click its small **x** to delete.
 - **Handles:** Outputs on the right, inputs on the left. Shapes indicate type: **round** = bool, **square** = int/float, **diamond** = string. In live mode booleans glow green/red; int uses magenta, float uses purple, string uses cyan.
 - **Edge colors:** Mirror the source output in live mode; turn gray in edit mode.
+- **Connections:** Each input accepts a single connection. Mismatched data types are blocked (bool only to bool, string only to string, numeric to numeric). Safe mode shows warning toasts when a connection is rejected.
 
 **Video: Adding nodes**
 <video controls muted loop playsinline src="addnode.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
@@ -52,6 +72,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - Click a node in edit mode to open the right-side drawer:
   - Rename **Title/Sub Title**, change **Header Color**, and rename inputs/outputs.
   - Nodes with missing required data show an orange dotted border until fixed.
+  - Device pickers pull from **Device Management (Flow)**; update devices there to refresh selectors.
 - A small badge at the top-right shows the last execution time while running; a warning banner appears if the websocket reconnects.
 
 **Video: Node properties**
@@ -95,6 +116,16 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
     - Tip: Recreate the node if device credentials or port mapping change.
 <video controls muted loop playsinline src="axissub.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
+- **Vaxtor Cloud ANPR**  
+    - What it does: Captures a snapshot from the selected device and sends it to Vaxtor Cloud ALPR using OAuth2 client credentials (token cached/auto-refreshed).  
+    - Inputs: `Execute`, `Reset`.  
+    - Outputs: `Success`, `Plate Found`, plate fields (number, country, state, category, confidence), vehicle fields (make, model, color, class), `Status`, `Error`, `Executed` pulse.  
+    - Properties: Client ID/Secret, scope (api), token URL, API URL, timeout, device + optional resolution (from Device Management).
+
+- **License Plates**  
+    - What it does: Matches detected plates against a whitelist with validity windows and per-tag outputs.  
+    - Inputs/Outputs: Dynamic outputs per tag plus match info; configure plates, dates, tags, and deviation in the License Plate List feature.
+
 ##### Inputs and manual controls
 
 - **Manual Input** - Constant output; pick data type and value.  
@@ -131,6 +162,7 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 - **Advanced Math** - ABS, SQRT, SIN, COS, TAN, SIGN on `Value` when `Enable` is true. Outputs: `Done`, `Value`. Property: operation.  
 - **Flip-Flop** - Set/Reset latch. Properties: mode `RS` (reset-dominant) or `SR` (set-dominant); input labels update automatically.  
 - **Value Latch** - Stores the last value when `Set` is true; holds until `Reset`. Property: data type syncs input/output.
+- **Lua Script** - Execute custom Lua against inputs/outputs; includes JSON/time helpers and preserves state between executions. Reserved error output fires on script/runtime failures.
 
 ##### Data, buffers, routing
 
@@ -142,6 +174,8 @@ Use **Add Node** to drag any template. Each entry lists what it does, its ports,
 
 - **HTTP Request** - Fires when `Enable` is true; `Reset` clears state. Outputs: `Success`, `Status`, `Body`, `Error`. Properties: URL, method, body type (none/form/JSON/raw/XML), auth (none/basic/digest), headers, params, timeout, skip TLS verify.  
 - **JSON Key Extractor** - On `Extract`, pulls a key (dot notation allowed) from a JSON string; `Reset` clears. Outputs: `Value`, `Found`. Properties: key and output type.
+- **JSON to Node** - Splits a JSON object into individual outputs for each top-level key; configure keys and sample JSON for auto-generation.  
+- **JSON Array Selector** - Selects an array element by index from a JSON string; outputs the item JSON plus `Found`/`Processed` flags.
 
 ##### Debug and visualization
 
