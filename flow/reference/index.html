@@ -1,0 +1,3129 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../logic_nodes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Reference - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flow-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enable or Disable Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event_trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Trigger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workspace-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workspace controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-vs-edit-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live vs. edit mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-and-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas and helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-selection-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node selection and properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-and-composite-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device and composite management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence-importexport-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence, import/export, and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogs-that-appear-before-the-node-is-placed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dialogs that appear before the node is placed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-engine-ax_msf-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution engine (ax_msf Flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-device-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis &amp; device nodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis &amp; device nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-live-stream-axisrtspstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Live Stream (AxisRtspStream)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-device-log-syslog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Device Log (Syslog)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-metadata-event-subscribe-metadataeventsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Metadata Event (Subscribe) (MetaDataEventSubscribe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-metadata-event-create-metadataeventcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Metadata Event (Create) (MetaDataEventCreate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-outputs-axisoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Outputs (AxisOutput)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vaxtor-cloud-anpr-vaxtorcloudanpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vaxtor Cloud ANPR (VaxtorCloudAnpr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-plates-licenseplatelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Plates (LicensePlateList)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs-manual-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs &amp; manual controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs &amp; manual controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-input-inputmanual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Input (InputManual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-input-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Input (Enable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button (Button)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-sequencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing &amp; sequencing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing &amp; sequencing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-time-intime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Time (InTime)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debounce-debounce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce (Debounce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-detection-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection (Edge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-buffer-with-release-impulsestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Buffer with Release (ImpulseStorage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-cycle-pulse-nextcycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Cycle Pulse (NextCycle)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-shot-pulse-after-oneshotpulseafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Shot Pulse After (OneShotPulseAfter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-on-delay-tofn-ton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer On Delay (ToFN – TON)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-off-delay-tofn-tof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer Off Delay (ToFN – TOF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-timer-tofn-tp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Timer (ToFN – TP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-generator-tofn-pulse-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Generator (ToFN – Pulse Generator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-sequencer-stepsequencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step Sequencer (StepSequencer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-sequence-timersequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer Sequence (TimerSequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter (Counter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic &amp; math
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic &amp; math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-gates-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic gates (Logic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare (Compare)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-selector-valueselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Selector (ValueSelector)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplexer-multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplexer (Multiplexer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move (Move)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math (Math)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-math-mathadvanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Math (MathAdvanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flip-flop-flipflop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flip-Flop (FlipFlop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-latch-valuelatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Latch (ValueLatch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-value-mux-edgevaluemux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Value Mux (EdgeValueMux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversion helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; transformation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data &amp; transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-fifo-fifo-with-internalnodetypefifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue FIFO (Fifo with InternalNodeTypeFIFO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-lifo-fifo-with-internalnodetypelifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue LIFO (Fifo with InternalNodeTypeLIFO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-table-datatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Table (DataTable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-key-extractor-jsonkeyextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Key Extractor (JsonKeyExtract)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-to-node-jsontonode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON To Node (JsonToNode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-array-selector-jsonarrayselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Array Selector (JsonArraySelector)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-viewer-jsonviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Viewer (JsonViewer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request (Http)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization &amp; debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization &amp; debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-debug-output-booldebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bool Debug Output (BoolDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-debug-output-stringdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Debug Output (StringDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-debug-output-iodebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Debug Output (IoDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging (Logging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oscilloscope-oscilloscope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oscilloscope (Oscilloscope)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedometer-speedometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speedometer (Speedometer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text (Text)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced &amp; utility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced &amp; utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lua-script-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lua Script (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleporter-teleport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teleporter (Teleport)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-nodes-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite nodes (Composite*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadispatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metadata Dispatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../occupancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy counting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workspace-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workspace controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-vs-edit-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live vs. edit mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-and-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas and helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-selection-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node selection and properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-and-composite-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device and composite management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence-importexport-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence, import/export, and diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogs-that-appear-before-the-node-is-placed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dialogs that appear before the node is placed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-engine-ax_msf-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution engine (ax_msf Flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-device-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis &amp; device nodes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis &amp; device nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-live-stream-axisrtspstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Live Stream (AxisRtspStream)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-device-log-syslog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Device Log (Syslog)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-metadata-event-subscribe-metadataeventsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Metadata Event (Subscribe) (MetaDataEventSubscribe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-metadata-event-create-metadataeventcreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Metadata Event (Create) (MetaDataEventCreate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-outputs-axisoutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Outputs (AxisOutput)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vaxtor-cloud-anpr-vaxtorcloudanpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vaxtor Cloud ANPR (VaxtorCloudAnpr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-plates-licenseplatelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Plates (LicensePlateList)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs-manual-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs &amp; manual controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inputs &amp; manual controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-input-inputmanual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Input (InputManual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-input-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Input (Enable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button (Button)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-sequencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing &amp; sequencing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timing &amp; sequencing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-time-intime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Time (InTime)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debounce-debounce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debounce (Debounce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-detection-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection (Edge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-buffer-with-release-impulsestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Buffer with Release (ImpulseStorage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-cycle-pulse-nextcycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Cycle Pulse (NextCycle)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-shot-pulse-after-oneshotpulseafter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Shot Pulse After (OneShotPulseAfter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-on-delay-tofn-ton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer On Delay (ToFN – TON)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-off-delay-tofn-tof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer Off Delay (ToFN – TOF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-timer-tofn-tp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Timer (ToFN – TP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulse-generator-tofn-pulse-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulse Generator (ToFN – Pulse Generator)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-sequencer-stepsequencer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step Sequencer (StepSequencer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timer-sequence-timersequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timer Sequence (TimerSequence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counter-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter (Counter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic &amp; math
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic &amp; math">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-gates-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic gates (Logic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare (Compare)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-selector-valueselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Selector (ValueSelector)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplexer-multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplexer (Multiplexer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move (Move)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#math-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math (Math)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-math-mathadvanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Math (MathAdvanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flip-flop-flipflop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flip-Flop (FlipFlop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-latch-valuelatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Latch (ValueLatch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-value-mux-edgevaluemux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Value Mux (EdgeValueMux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversion helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; transformation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data &amp; transformation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#queue-fifo-fifo-with-internalnodetypefifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue FIFO (Fifo with InternalNodeTypeFIFO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-lifo-fifo-with-internalnodetypelifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue LIFO (Fifo with InternalNodeTypeLIFO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-table-datatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Table (DataTable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-key-extractor-jsonkeyextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Key Extractor (JsonKeyExtract)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-to-node-jsontonode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON To Node (JsonToNode)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-array-selector-jsonarrayselector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Array Selector (JsonArraySelector)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-viewer-jsonviewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Viewer (JsonViewer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-request-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request (Http)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization &amp; debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization &amp; debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bool-debug-output-booldebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bool Debug Output (BoolDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-debug-output-stringdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Debug Output (StringDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-debug-output-iodebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Debug Output (IoDebug)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging (Logging)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oscilloscope-oscilloscope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oscilloscope (Oscilloscope)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speedometer-speedometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speedometer (Speedometer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text (Text)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced &amp; utility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced &amp; utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lua-script-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lua Script (Lua)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleporter-teleport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teleporter (Teleport)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-nodes-composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite nodes (Composite*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="flow-reference">Flow Reference</h1>
+<p>This document gathers every Flow-related control, helper, and node so that a UI-only user understands what is available, how it behaves, and what to look for while the graph is running.</p>
+<h2 id="workspace-controls">Workspace controls</h2>
+<h3 id="live-vs-edit-mode">Live vs. edit mode</h3>
+<ul>
+<li><strong>Start / Stop Execution</strong>: The floating button in the action bar toggles live mode. Starting posts <code>/flow/start</code>, animates edges, freezes node movement, and streams runtime updates via the <code>flow</code> websocket. Stopping posts <code>/flow/stop</code>, saves the graph (<code>/flow/save</code> is called automatically), and returns you to edit mode so you can move nodes again.</li>
+<li><strong>Execution feedback</strong>: The top-right stats card shows the last execution time when it exceeds ~45 ms. A yellow banner appears whenever the websocket reconnects so you know the runtime is temporarily offline.</li>
+<li><strong>Edge coloring</strong>: While live, connections paint themselves based on the source output (booleans blink green/red, numbers use the <code>ioColor</code> theme). When you stop, the edges revert to grey and reconnectable nodes become interactive again.</li>
+</ul>
+<h3 id="canvas-and-helpers">Canvas and helpers</h3>
+<ul>
+<li><strong>Action toolbar</strong>: The vertical bar near the top-left is draggable using the tiny grab handle. It holds the workflow buttons (Start/Stop, Add Node, Devices, IO Table, Composites, Fit to View, Export, Import, Introduction). Buttons that require edit mode (Add Node, Devices, Export/Import, Composites) are disabled while live; the IO Table only makes sense while live.</li>
+<li><strong>Safe mode</strong>: The switch near the top-right toggles <code>safe_mode</code>. When enabled, invalid connections (wrong data types or already-booked inputs) show throttled warning toasts (<code>showAlreadyConnectedToast</code>, <code>ShowInvalidTypeToast</code> in the code). Turning it off silences those pop-ups without changing the wiring rules themselves.</li>
+<li><strong>Helper lines</strong>: The helper-lines switch activates the alignment helpers defined in <code>helperLines.js</code>. Dragging a node near another displays vertical/horizontal guides within 5 px and snaps the node edge to match, keeping large graphs tidy.</li>
+<li><strong>Introduction dialog</strong>: If a saved graph is empty or you click the Introduction button, a tutorial dialog (<code>IntroductionDialog</code>) reopens to walk through the basics. It automatically triggers on first load when there is no graph yet (<code>state.emtpyVisitDialog</code>).</li>
+</ul>
+<h3 id="node-selection-and-properties">Node selection and properties</h3>
+<ul>
+<li><strong>Add Node catalog</strong>: Click "Add Node" to open the NodeSelectorDialog. You can search, filter by tag chips (e.g., Logic, Axis, Time), and drag templates directly onto the canvas. Axis-specific nodes (Axis Output, Metadata Event Subscribe, Metadata Event Create, Teleport, JSON To Node) open an intermediate dialog so you can choose devices, ports, events, or the data that should drive the node before it is placed.</li>
+<li><strong>Per-node drawer</strong>: Clicking a node in edit mode opens the side drawer (<code>NodeProperties</code>). Tabs cover Settings (custom UI components), Appearance (title, subtitle, color), Inputs, and Outputs. There is also a Help button on each node toolbar that launches the NodeHelp components (<code>showHelpDialog</code>), giving detailed usage hints without leaving the canvas.</li>
+<li><strong>Deletion &amp; composites</strong>: Selecting nodes and pressing Delete (or clicking the Delete toolbar button that appears when two or more nodes are selected) queues a confirmation dialog before the nodes vanish. The "Create Composite" button appears automatically when at least two nodes are selected and connected; it copies the relevant graph, exposes inputs/outputs (using <code>buildExposedOptions</code>), and opens the composite dialog so you can name, tag, and describe the reusable unit.</li>
+</ul>
+<h3 id="device-and-composite-management">Device and composite management</h3>
+<ul>
+<li><strong>Device dialog</strong>: The Devices button opens <code>DeviceDialog</code>. From there you can add Axis devices with Name, IP/hostname, protocol/ports, username/password (min 3 characters), auth type, video channel, and the "Non-video device" flag. Non-video devices disable RTSP/resolution fields and move to "No Video" chips. The dialog can fetch a snapshot (<code>Get Snapshot</code>/<code>Test Connection</code>) before saving, and you can delete devices or edit credentials as needed.</li>
+<li><strong>Composite manager</strong>: "Composites" opens a list of saved composites. You can import/export JSON definitions, delete old composites, and see their descriptions. When you re-save a composite, the list refreshes so the new version appears in the Add Node catalog with the chosen icon, tags, and category.</li>
+</ul>
+<h3 id="persistence-importexport-and-diagnostics">Persistence, import/export, and diagnostics</h3>
+<ul>
+<li><strong>Save/load lifecycle</strong>: Flow calls <code>/flow/load</code> on mount and restores the last saved graph, including the previous run state (the server returns <code>run_state</code> and the UI re-enters live mode if needed). When you stop execution, <code>stopGraph(true)</code> first posts <code>/flow/save</code>, so the exact layout and node data are persisted on disk.</li>
+<li><strong>Graph import/export</strong>: Export downloads the current graph as JSON (<code>exportGraph</code>), while Import uses a hidden file input so you can drop a <code>.json</code> file (<code>handleImportFileChange</code>). Import is blocked during live mode; the UI warns you to stop execution before loading.</li>
+<li><strong>Logging</strong>: Runtime log messages arrive via the websocket (<code>ws.onmessage</code> handles messages with <code>type === 'log'</code>) and feed <code>state.loggingMessages</code>. Nodes such as the Logging node consume that array to show level, timestamp, node name/ID, and the message itself. Keeping a Logging node in the graph lets you see backend notes while you tune HTTP calls or Axis rules.</li>
+<li><strong>IO Table</strong>: When the graph is running, click "IO Table" to open a compact table showing every node, input/output name, data type (bool/int/float/string), and the current state. It groups rows by node title and highlights boolean states with colored dots.</li>
+</ul>
+<h3 id="dialogs-that-appear-before-the-node-is-placed">Dialogs that appear before the node is placed</h3>
+<ul>
+<li><strong>Axis Output port selection (<code>handleAxisOutputNode</code>)</strong>: The Axis Output node opens <code>AxisAddDialog</code> before placement so you can pick the device, toggle which physical ports to expose, and reuse the stored credentials/resolutions.</li>
+<li><strong>Axis Metadata event subscribe (<code>handleAxisMetaData</code>)</strong>: When adding the metadata subscribe node, a dialog lets you select the target event topic and device before the node hits the canvas. This ensures the dynamic outputs line up with the event payload (<code>createIoFromAxEvent</code> builds per-field IO definitions).</li>
+<li><strong>Metadata event create warning (<code>state.show_axis_create_dialog</code>)</strong>: Creating metadata events is only visible to Axis rules when the flow is live; the dialog reminds you that the event exists only during execution.</li>
+<li><strong>JSON To Node</strong>: The JsonToNode dialog captures the sample JSON you want to split, presents dynamic key names in Settings, and then the node itself emerges with the generated output handles (<code>handleJsonToNodeAdd</code>).</li>
+<li><strong>Teleport</strong>: Adding a Teleport node prompts you to pick source outputs to mirror (<code>handleTeleportNode</code>). Once placed, it automatically wires copies of those edges so you can fan out a signal without drawing long wires.</li>
+</ul>
+<h2 id="execution-engine-ax_msf-flow">Execution engine (ax_msf Flow)</h2>
+<ul>
+<li>Flow execution lives in the Go backend located under <code>ax_msf/flow</code>. When you hit Start the UI calls <code>/flow/start</code>, which spins up the ticker loop, topsort the graph (<code>node.TopologicalSort</code>), and begins evaluating nodes via the registered <code>executors</code>. Every clock tick (<code>evalTicker</code>) re-evaluates nodes, pushes changes to <code>/flow</code>’s websocket, and streams the latest graph plus execution time to the web UI (<code>type='graph'</code> payloads contain <code>flow_graph</code> and <code>exec_time</code>).</li>
+<li>Runtime events (errors, warnings, info) arrive with <code>type='log'</code> and land in the <code>state.loggingMessages</code> array. Bad nodes are wrapped in panic recovery so you still get an explanation rather than a hard crash.</li>
+<li>Composites are saved in <code>/flow/composites</code> (see <code>composites.go</code> and <code>templates.go</code>). When you create or import a composite, the backend exposes it as a template (<code>BuildCompositeTemplates</code>) with its own inputs, outputs, icon, and tags so the UI can render it like any stock node.</li>
+<li>The websocket stream also sends <code>ping</code> messages to keep the connection alive and shows a reconnect message (<code>reconnect_msg</code>) if the socket closes unexpectedly.</li>
+</ul>
+<h2 id="node-library">Node library</h2>
+<p>The Flow canvas is backed by node templates coming from <code>ax_msf/flow/templates.go</code>. The sections below walk through every template you can drag from the Add Node catalog, grouped by their everyday purpose. Each entry lists the internal type, the default inputs/outputs, and the knobs you can tweak.</p>
+<h3 id="axis-device-nodes">Axis &amp; device nodes</h3>
+<h4 id="axis-live-stream-axisrtspstream">Axis Live Stream (<code>AxisRtspStream</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Displays the live RTSP feed from an Axis device. While the node itself does not expose outputs, it shows a video window with "Connecting", "Error", and "Stream not connected" overlays when the flow is stopped (see <code>AxisRtspStreamNode.vue</code>).</li>
+<li><strong>Inputs</strong>: none by default, but when the overlay flag (<code>extra_data.overlay_enabled</code>) is true or ROI/Observations/Tripwire data arrives, the node dynamically exposes handles named <code>ROI</code>, <code>Observations</code>, and <code>Tripwire</code>. These JSON inputs let you draw the overlay polygon, bounding boxes, or tripwire lines on top of the stream.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Choose the device/resolution in the Axis dialog, including username/password, RTSP port, channel, and whether overlay inputs should be used. The node retries every 5 seconds after errors (<code>state.streamError</code>), shows custom error text from the server, and colors bounding boxes using <code>colorForKey</code>.</li>
+</ul>
+<h4 id="axis-device-log-syslog">Axis Device Log (<code>Syslog</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Writes human-readable text into the Axis device syslog over VAPIX.</li>
+<li><strong>Inputs</strong>: <code>Write</code> (boolean trigger), <code>Message</code> (string message).</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Notes</strong>: The dialog uses the Axis device list (same Device dialog) to reuse stored credentials.</li>
+</ul>
+<h4 id="axis-metadata-event-subscribe-metadataeventsubscribe">Axis Metadata Event (Subscribe) (<code>MetaDataEventSubscribe</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Connects to Axis metadata event streams on a device and pushes every payload into the flow as node outputs.</li>
+<li><strong>Inputs</strong>: <code>Enable</code> (boolean, only processes when true).</li>
+<li><strong>Outputs</strong>: <code>Connected</code>, <code>Error</code>, <code>New Event</code>, <code>JSON</code>, plus the fields of the selected Axis event (each field becomes a handle when you choose the event via the dialog that opens before placement).</li>
+<li><strong>Notes</strong>: Add the node and pick the specific metadata topic through the dialog. The node updates its outputs dynamically based on the metadata payload shape (<code>createIoFromAxEvent</code> dynamically generates handles).</li>
+</ul>
+<h4 id="axis-metadata-event-create-metadataeventcreate">Axis Metadata Event (Create) (<code>MetaDataEventCreate</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Defines a custom Axis metadata event that becomes available to Axis rules or other ONVIF consumers while the flow runs.</li>
+<li><strong>Inputs</strong>: <code>Send</code> (boolean trigger).</li>
+<li><strong>Outputs</strong>: <code>Error</code>.</li>
+<li><strong>Properties</strong>: Set the event name and choose stateless vs. stateful behavior; expose additional custom fields via the properties drawer. The UX warns (via <code>state.show_axis_create_dialog</code>) that Axis only sees these events while the graph is live.</li>
+</ul>
+<h4 id="axis-outputs-axisoutput">Axis Outputs (<code>AxisOutput</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Fires VAPIX commands that toggle physical Axis output ports (relays/digital outs).</li>
+<li><strong>Inputs</strong>: configured per device inside the Axis dialog (the node populates inputs on the fly when selecting the device and available ports).</li>
+<li><strong>Outputs</strong>: <code>Success</code>, <code>Status</code>, <code>Error</code>.</li>
+<li><strong>Tips</strong>: Recreate the node after changing device credentials or port mappings so the inputs stay in sync with the hardware.</li>
+</ul>
+<h4 id="vaxtor-cloud-anpr-vaxtorcloudanpr">Vaxtor Cloud ANPR (<code>VaxtorCloudAnpr</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Captures a snapshot from a device, uploads it to Vaxtor Cloud, and returns plate/vehicle metadata.</li>
+<li><strong>Inputs</strong>: <code>Execute</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Success</code>, <code>Plate Found</code>, <code>Number</code>, <code>Country</code>, <code>State</code>, <code>Category</code>, <code>Read Confidence</code>, <code>Vehicle Make/Model/Color/Class</code>, <code>Status</code>, <code>Error</code>, <code>Executed</code>.</li>
+<li><strong>Properties</strong>: Configure the OAuth2 client credentials, API URL, timeout, whether to reuse a device/resolution snapshot (<code>extra_data.use_resolution</code>), and optionally pick a resolution from the Device dialog. The helper dialog explains which fields are required.</li>
+</ul>
+<h4 id="license-plates-licenseplatelist">License Plates (<code>LicensePlateList</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Matches incoming plate strings against the whitelist managed in the standalone License Plate List feature.</li>
+<li><strong>Inputs</strong>: <code>Process</code> (boolean trigger), <code>Plate</code> (string), <code>Reset</code> (boolean).</li>
+<li><strong>Outputs</strong>: <code>Error</code>, <code>Matched Plate</code>, <code>In List</code>, <code>Not In List</code>, <code>Expired</code>, <code>Not Valid Yet</code>, <code>Processed</code>, <code>Total Plates</code>, plus a boolean output per configured tag (<code>T.01</code>, <code>T.02</code>, …).</li>
+<li><strong>Notes</strong>: The node reads the shared license plate database, honors validity windows, and sets the tag outputs for any matching entry. Use the <code>License Plate List</code> docs to manage the table.</li>
+</ul>
+<h3 id="inputs-manual-controls">Inputs &amp; manual controls</h3>
+<h4 id="manual-input-inputmanual">Manual Input (<code>InputManual</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Provides a typed constant (boolean/int/float/string) that you can tweak by clicking the DataType chip in the title or the Data Type selector in the properties panel.</li>
+<li><strong>Inputs</strong>: none.</li>
+<li><strong>Outputs</strong>: <code>Value</code> (defaults to <code>true</code>, datatype adjusts when you change the selector).</li>
+</ul>
+<h4 id="enable-input-enable">Enable Input (<code>Enable</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Simple helper that always outputs <code>true</code>. Use it as a permanent enable signal for timers, HTTP requests, or to gate composite execution.</li>
+<li><strong>Inputs</strong>: none.</li>
+<li><strong>Outputs</strong>: <code>True</code> (boolean).</li>
+</ul>
+<h4 id="button-button">Button (<code>Button</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Acts like a physical button. The output goes high while you hold the node pressed and returns to false on release.</li>
+<li><strong>Inputs</strong>: none; the node handles its own <code>pressed</code> state in <code>extra_data</code>.</li>
+<li><strong>Outputs</strong>: <code>Active</code> (boolean).</li>
+</ul>
+<h3 id="timing-sequencing">Timing &amp; sequencing</h3>
+<h4 id="in-time-intime">In Time (<code>InTime</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Yields <code>true</code> inside a configured daily window (08:00-17:00 Monday–Friday by default).</li>
+<li><strong>Inputs</strong>: none.</li>
+<li><strong>Outputs</strong>: <code>In Time</code> (boolean).</li>
+<li><strong>Properties</strong>: Use the timer panel to set start/end times, pick the allowed days, and toggle the <code>valid</code> flag for quick overrides.</li>
+</ul>
+<h4 id="debounce-debounce">Debounce (<code>Debounce</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Filters noisy boolean signals. The output only changes when the input stays stable for the configured duration.</li>
+<li><strong>Inputs</strong>: <code>Input</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>, <code>Elapsed</code> (time spent waiting, in milliseconds).</li>
+<li><strong>Properties</strong>: Choose <code>unit</code> (ms/s/m) and <code>amount</code> for the wait time; Reset clears the timer.</li>
+</ul>
+<h4 id="edge-detection-edge">Edge Detection (<code>Edge</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Emits a one-cycle <code>Value</code> when a boolean input crosses a rising or falling edge.</li>
+<li><strong>Inputs</strong>: <code>Value</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+<li><strong>Properties</strong>: Pick <code>rising</code> or <code>falling</code> mode; the title chip flips between teal/blue to remind you of the direction.</li>
+</ul>
+<h4 id="pulse-buffer-with-release-impulsestorage">Pulse Buffer with Release (<code>ImpulseStorage</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Queues up pulses until a release signal frees them, useful to synchronize multiple consumers.</li>
+<li><strong>Inputs</strong>: <code>Add</code>, <code>Release</code>, <code>Clear</code>.</li>
+<li><strong>Outputs</strong>: <code>Pulse</code>.</li>
+<li><strong>Properties</strong>: Set the buffer depth (<code>buffer_amount</code>) in the inspector and watch the live buffer counter in the node title (<code>actual_buffer</code>).</li>
+</ul>
+<h4 id="next-cycle-pulse-nextcycle">Next Cycle Pulse (<code>NextCycle</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Detects a rising edge and pushes the pulse into the next execution cycle (useful when an immediate response would be too early).</li>
+<li><strong>Inputs</strong>: <code>Trigger</code>.</li>
+<li><strong>Outputs</strong>: <code>Pulse</code>.</li>
+</ul>
+<h4 id="one-shot-pulse-after-oneshotpulseafter">One Shot Pulse After (<code>OneShotPulseAfter</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Emits a delayed pulse when <code>Trigger</code> rises.</li>
+<li><strong>Inputs</strong>: <code>Trigger</code>.</li>
+<li><strong>Outputs</strong>: <code>Pulse</code>, <code>Elapsed Time</code>.</li>
+<li><strong>Properties</strong>: Set the delay amount and unit (ms/s/min) via the shared <code>Timer</code> properties UI.</li>
+</ul>
+<h4 id="timer-on-delay-tofn-ton">Timer On Delay (<code>ToFN</code> – TON)</h4>
+<ul>
+<li><strong>Purpose</strong>: Outputs <code>Active</code> only after <code>Enable</code> stays true for the configured duration. <code>Elapsed Time</code> tracks progress.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>.</li>
+<li><strong>Outputs</strong>: <code>Active</code>, <code>Elapsed Time</code>.</li>
+<li><strong>Properties</strong>: Choose the time amount/unit just like the other ToFN variants.</li>
+</ul>
+<h4 id="timer-off-delay-tofn-tof">Timer Off Delay (<code>ToFN</code> – TOF)</h4>
+<ul>
+<li><strong>Purpose</strong>: Goes high immediately when <code>Enable</code> goes true, then stays high for the delay after the input falls.</li>
+<li><strong>Inputs/Outputs</strong>: same as TON.</li>
+</ul>
+<h4 id="pulse-timer-tofn-tp">Pulse Timer (<code>ToFN</code> – TP)</h4>
+<ul>
+<li><strong>Purpose</strong>: Emits a fixed-length pulse for every rising edge of <code>Enable</code>.</li>
+<li><strong>Inputs/Outputs</strong>: same as TON (only the timing behavior changes).</li>
+</ul>
+<h4 id="pulse-generator-tofn-pulse-generator">Pulse Generator (<code>ToFN</code> – Pulse Generator)</h4>
+<ul>
+<li><strong>Purpose</strong>: While <code>Enable</code> stays true, emits periodic one-cycle pulses spaced by the configured duration.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>.</li>
+<li><strong>Outputs</strong>: <code>Active</code>.</li>
+</ul>
+<h4 id="step-sequencer-stepsequencer">Step Sequencer (<code>StepSequencer</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Advances through <code>steps</code> outputs each time <code>Step</code> goes true. Only one output is high at a time.</li>
+<li><strong>Inputs</strong>: <code>Step</code>.</li>
+<li><strong>Outputs</strong>: <code>Step 1…Step N</code> (default 4 boolean handles).</li>
+<li><strong>Properties</strong>: Control the step count and whether the sequence wraps around.</li>
+</ul>
+<h4 id="timer-sequence-timersequence">Timer Sequence (<code>TimerSequence</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Chains multiple timer slots while enabled, toggling the corresponding output per slot.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>.</li>
+<li><strong>Outputs</strong>: <code>Elapsed Time</code>, <code>Timer Index</code>, and boolean outputs for each configured timer step (Timer 1, Timer 2, …).</li>
+<li><strong>Properties</strong>: Define durations in milliseconds/seconds/minutes and labels for each slot.</li>
+</ul>
+<h4 id="counter-counter">Counter (<code>Counter</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Tracks an integer value that can increment, decrement, and reset based on pulses.</li>
+<li><strong>Inputs</strong>: <code>Up</code>, <code>Down</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+</ul>
+<h3 id="logic-math">Logic &amp; math</h3>
+<h4 id="logic-gates-logic">Logic gates (<code>Logic</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Build AND, NAND, OR, NOR, XOR, XNOR, and NOT gates. Each operator appears separately in the Add Node catalog but reuses the same template with different <code>internal_node_type</code>.</li>
+<li><strong>Inputs</strong>: <code>A</code> and <code>B</code> (booleans). <code>NOT</code> only uses <code>A</code>.</li>
+<li><strong>Outputs</strong>: <code>Result</code> (boolean).</li>
+<li><strong>Notes</strong>: Safe mode highlights invalid combinations, and the node help dialog explains the truth tables.</li>
+</ul>
+<h4 id="compare-compare">Compare (<code>Compare</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Compares A and B using operators such as <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>contains</code>, <code>startswith</code>, and <code>endswith</code>.</li>
+<li><strong>Inputs</strong>: <code>A</code>, <code>B</code>.</li>
+<li><strong>Outputs</strong>: <code>Result</code>.</li>
+<li><strong>Properties</strong>: Select the operator and the data type (int/float/string) so the node will coerce inputs accordingly before evaluating.</li>
+</ul>
+<h4 id="value-selector-valueselector">Value Selector (<code>ValueSelector</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Routes either <code>Input 1</code> or <code>Input 2</code> to the output based on the boolean <code>Select</code> input.</li>
+<li><strong>Inputs</strong>: <code>Select</code>, <code>Input 1</code>, <code>Input 2</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+<li><strong>Properties</strong>: Pick the shared data type (int/float/string) in the properties panel; the node enforces the same type on both inputs and the output.</li>
+</ul>
+<h4 id="multiplexer-multiplexer">Multiplexer (<code>Multiplexer</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Picks one of many value inputs by number and reports which index was selected.</li>
+<li><strong>Inputs</strong>: <code>Index</code> (integer) plus <code>Value-1…Value-N</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>, <code>Selected Index</code>.</li>
+<li><strong>Properties</strong>: Add/remove data inputs from the settings dialog and choose their datatype.</li>
+</ul>
+<h4 id="move-move">Move (<code>Move</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Passes the incoming value through when <code>Enable</code> is true, acting as a gated buffer.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>, <code>Value</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+</ul>
+<h4 id="math-math">Math (<code>Math</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Adds, subtracts, multiplies, or divides <code>A</code> and <code>B</code> once <code>Enable</code> is true.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>, <code>A</code>, <code>B</code>.</li>
+<li><strong>Outputs</strong>: <code>Done</code>, <code>Result</code>.</li>
+<li><strong>Properties</strong>: Choose the operation from the dropdown (add/sub/mul/div).</li>
+</ul>
+<h4 id="advanced-math-mathadvanced">Advanced Math (<code>MathAdvanced</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Runs an advanced math function (ABS, SQRT, SIN, COS, TAN, SIGN) on a single <code>Value</code>.</li>
+<li><strong>Inputs</strong>: <code>Enable</code>, <code>Value</code>.</li>
+<li><strong>Outputs</strong>: <code>Done</code>, <code>Value</code>.</li>
+<li><strong>Properties</strong>: Pick the function from the properties dialog; the node keeps output precision and respects the <code>Enable</code> gate.</li>
+</ul>
+<h4 id="flip-flop-flipflop">Flip-Flop (<code>FlipFlop</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Stores one bit and reacts to <code>Set</code>/<code>Reset</code> signals (<code>mode</code> can be RS or SR).</li>
+<li><strong>Inputs</strong>: <code>Reset</code>, <code>Set</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+<li><strong>Properties</strong>: Switch modes and the input labels update automatically.</li>
+</ul>
+<h4 id="value-latch-valuelatch">Value Latch (<code>ValueLatch</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Memorizes the last <code>Value</code> seen when <code>Set</code> is high and releases it until <code>Reset</code> clears the latch.</li>
+<li><strong>Inputs</strong>: <code>Value</code>, <code>Set</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>.</li>
+</ul>
+<h4 id="edge-value-mux-edgevaluemux">Edge Value Mux (<code>EdgeValueMux</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: On a rising trigger the node pulses and forwards the paired string payload.</li>
+<li><strong>Inputs</strong>: four trigger/value pairs (<code>Trigger 1</code>/<code>Value 1</code>, … <code>Trigger 4</code>/<code>Value 4</code>).</li>
+<li><strong>Outputs</strong>: <code>Pulse</code> (true for one cycle) and <code>Value</code> (string that matched the rising trigger).</li>
+</ul>
+<h4 id="conversion-helpers">Conversion helpers</h4>
+<ul>
+<li><strong>Int to Bool</strong> (<code>IntToBool</code>): Converts non-zero integers to <code>true</code>. Inputs: <code>Value</code> (int). Outputs: <code>Bool</code> (boolean).</li>
+<li><strong>Bool to Int</strong> (<code>BoolToInt</code>): Maps boolean inputs to <code>0</code>/<code>1</code>. Inputs: <code>Value</code> (boolean). Outputs: <code>Int</code> (integer).</li>
+</ul>
+<h3 id="data-transformation">Data &amp; transformation</h3>
+<h4 id="queue-fifo-fifo-with-internalnodetypefifo">Queue FIFO (<code>Fifo</code> with <code>InternalNodeTypeFIFO</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Enqueues integer values and pops them in FIFO order; useful as a simple buffer or for smoothing pulses.</li>
+<li><strong>Inputs</strong>: <code>Value</code>, <code>Add</code>, <code>Pop</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>, <code>Has</code> (true when the queue is not empty), <code>Count</code>.</li>
+<li><strong>Properties</strong>: Choose the maximum list length; overflow drops the oldest value.</li>
+</ul>
+<h4 id="queue-lifo-fifo-with-internalnodetypelifo">Queue LIFO (<code>Fifo</code> with <code>InternalNodeTypeLIFO</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Stores values in Last-In First-Out order, useful for stack-like behavior.</li>
+<li><strong>Inputs/Outputs</strong>: same as FIFO but the most recently added value is popped first.</li>
+</ul>
+<h4 id="data-table-datatable">Data Table (<code>DataTable</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Provides eight independent registers that you can wire into, inspect, and edit; the defaults are simple integer outputs.</li>
+<li><strong>Inputs</strong>: none (values are manipulated via the properties drawer or via connected nodes that drive the outputs).</li>
+<li><strong>Outputs</strong>: Eight numeric handles (<code>O.01…O.08</code>) you can rename in the property panel.</li>
+</ul>
+<h4 id="json-key-extractor-jsonkeyextract">JSON Key Extractor (<code>JsonKeyExtract</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Pulls a single key (dot notation supported) from a JSON string and flags whether it was found.</li>
+<li><strong>Inputs</strong>: <code>Extract</code>, <code>String</code>, <code>Reset</code>.</li>
+<li><strong>Outputs</strong>: <code>Value</code>, <code>Found</code>.</li>
+<li><strong>Properties</strong>: Enter the key path in the properties panel and enable preview mode to see the parsed value before pressing <code>Extract</code>.</li>
+</ul>
+<h4 id="json-to-node-jsontonode">JSON To Node (<code>JsonToNode</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Splits a JSON object into individual outputs, one per top-level key.</li>
+<li><strong>Inputs</strong>: <code>Process</code>, <code>Reset</code>, <code>JSON</code>.</li>
+<li><strong>Outputs</strong>: <code>Processed</code>, <code>Error</code>, plus dynamically generated key handles you define via the sample JSON field before placement.</li>
+</ul>
+<h4 id="json-array-selector-jsonarrayselector">JSON Array Selector (<code>JsonArraySelector</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Selects the JSON object at a specific zero-based index from a JSON array string.</li>
+<li><strong>Inputs</strong>: <code>Process</code>, <code>JSON Array</code>.</li>
+<li><strong>Outputs</strong>: <code>Processed</code>, <code>Found</code>, <code>Error</code>, <code>Item JSON</code>.</li>
+<li><strong>Properties</strong>: Pick the index, piping in arrays stored elsewhere in the flow.</li>
+</ul>
+<h4 id="json-viewer-jsonviewer">JSON Viewer (<code>JsonViewer</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Formats JSON payloads for humans, complete with indentation and theming.</li>
+<li><strong>Inputs</strong>: <code>JSON</code>.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Adjust indent, height, and color theme for the rendered box.</li>
+</ul>
+<h4 id="http-request-http">HTTP Request (<code>Http</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Fires GET/POST/PUT/etc. requests with optional body overrides and reports the response.</li>
+<li><strong>Inputs</strong>: <code>Execute</code>, <code>Reset</code>, <code>Body</code>.</li>
+<li><strong>Outputs</strong>: <code>Success</code>, <code>Status</code>, <code>Body</code>, <code>Error</code>, <code>Executed</code>.</li>
+<li><strong>Properties</strong>: Configure URL, method, headers, body templates, authentication (none/basic/digest), TLS options, and optional device snapshot templates (<code>GenericData</code>).</li>
+</ul>
+<h3 id="visualization-debugging">Visualization &amp; debugging</h3>
+<h4 id="bool-debug-output-booldebug">Bool Debug Output (<code>BoolDebug</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Displays the boolean value it receives with configurable icons, colors, and labels.</li>
+<li><strong>Inputs</strong>: <code>Value</code>.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Set <code>true_icon</code>, <code>false_icon</code>, colors, and the text shown for each state; the properties panel exposes all of these controls.</li>
+</ul>
+<h4 id="string-debug-output-stringdebug">String Debug Output (<code>StringDebug</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Prints the latest string value for quick inspection.</li>
+<li><strong>Inputs</strong>: <code>Value</code>.</li>
+<li><strong>Outputs</strong>: none.</li>
+</ul>
+<h4 id="value-debug-output-iodebug">Value Debug Output (<code>IoDebug</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Shows a live table of boolean/int/float/string inputs when the graph is running.</li>
+<li><strong>Inputs</strong>: <code>Value - Bool</code>, <code>Value - Int</code>, <code>Value - Float</code>, <code>Value - String</code>.</li>
+<li><strong>Outputs</strong>: none.</li>
+</ul>
+<h4 id="logging-logging">Logging (<code>Logging</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Renders the runtime log feed (<code>state.loggingMessages</code>) with level chips, timestamps, node IDs, and descriptions.</li>
+<li><strong>Inputs</strong>: none (the node subscribes automatically to the websocket log array).</li>
+<li><strong>Outputs</strong>: none.</li>
+</ul>
+<h4 id="oscilloscope-oscilloscope">Oscilloscope (<code>Oscilloscope</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Draws up to five live signals on a scrolling chart with configurable colors/ranges.</li>
+<li><strong>Inputs</strong>: five generic handles (bool/int/float) by default.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Tune per-input colors, thresholds, and min/max values to keep the waveform readable.</li>
+</ul>
+<h4 id="speedometer-speedometer">Speedometer (<code>Speedometer</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Visualizes a numeric input as a gauge with needle, segments, and color gradient.</li>
+<li><strong>Inputs</strong>: <code>Value</code>.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Set <code>min</code>, <code>max</code>, <code>segments</code>, <code>needleColor</code>, <code>startColor</code>, <code>endColor</code>, and number formatting.</li>
+</ul>
+<h4 id="text-text">Text (<code>Text</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Renders static text for labeling sections of the canvas or giving instructions.</li>
+<li><strong>Inputs</strong>: none.</li>
+<li><strong>Outputs</strong>: none.</li>
+<li><strong>Properties</strong>: Change <code>text</code>, <code>size</code>, and <code>color</code> in the properties panel; general properties are disabled for this node so the entire panel is dedicated to the text itself.</li>
+</ul>
+<h3 id="advanced-utility">Advanced &amp; utility</h3>
+<h4 id="lua-script-lua">Lua Script (<code>Lua</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Runs custom Lua code that can read inputs and write outputs on demand.</li>
+<li><strong>Inputs</strong>: <code>Execute</code>, plus two additional boolean inputs (<code>I.02</code>, <code>I.03</code>) available for your script.</li>
+<li><strong>Outputs</strong>: <code>O.01</code> (reserved for errors), <code>O.02</code>, <code>O.03</code>.</li>
+<li><strong>Properties</strong>: Paste your Lua script in the properties panel; the default snippet shows how to access <code>inputs[]</code>, <code>outputs[]</code>, and the persistent <code>state</code> table. The node ships with helper functions such as <code>json_encode</code>, <code>json_decode</code>, <code>time()</code>, and <code>date()</code>.</li>
+</ul>
+<h4 id="teleporter-teleport">Teleporter (<code>Teleport</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Mirrors a signal from one node to another without drawing long wires.</li>
+<li><strong>Inputs/Outputs</strong>: none initially. Before the node is placed, the teleport dialog (<code>handleTeleportNode</code>) asks which outputs to copy. It then auto-creates hidden edges between the selected outputs and the teleport node, so the remote node sees the same state.</li>
+</ul>
+<h4 id="composite-nodes-composite">Composite nodes (<code>Composite*</code>)</h4>
+<ul>
+<li><strong>Purpose</strong>: Reusable graphs that appear in the Add Node dialog once you save them via the composite dialog.</li>
+<li><strong>Inputs/Outputs</strong>: defined per composite; you pick which internal nodes’ handles become exposed.</li>
+<li><strong>Properties</strong>: From the action bar you can open the Composite Manager to export/import/delete composites. When you create a composite, the UI automatically generates default <code>external_id</code>s (<code>I.XX</code>, <code>O.XX</code>), lets you categorize/tag the composite, and stores the graph plus version metadata.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
