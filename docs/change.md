@@ -8,8 +8,10 @@
 
 ---
 
-##### V2.1.3 - 08.12.2025
-- **I:** Flow: Added the Flow Reference guide with workspace controls, live-mode helpers, device/composite workflows, and a per-node catalog covering every template from the Add Node catalog.
+##### V2.1.5 - 09.12.2025
+- **I:** Flow: Add Composite Nodes
+- **I:** Flow: Add Teleport Nodes
+- **I:** Flow: UI Improvement
 
 ##### V2.1.2 - 06.12.2025
 - **F:** Flow: Added edge value muxer
