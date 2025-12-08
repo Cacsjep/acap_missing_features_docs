@@ -17,7 +17,14 @@ nav:
   - Event Trigger: event_trigger.md
   - Features: 
     - Overview: features.md
-    - Flow: flow.md
+    - Flow: 
+      - Overview: flow.md
+      - Logic & Flow Control: flow/logic_nodes.md
+      - Data & Math: flow/data_manipulation.md
+      - Devices & ANPR: flow/device_nodes.md
+      - Timing: flow/timing_nodes.md
+      - Advanced & Scripting: flow/advanced_nodes.md
+      - Composites: flow/composites.md
     - Image to SD-Card: img_sdcard.md
     - Metadata Dispatch: metadispatch.md
     - Notifications: notifications.md
@@ -45,4 +52,4 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
 
-copyright: Copyright &copy; Commend Österreich GmbH 
+copyright: Copyright &copy; Commend Österreich GmbH
