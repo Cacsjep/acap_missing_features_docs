@@ -13,6 +13,8 @@
 - **I:** Flow: Add Teleport Nodes
 - **I:** Flow: UI Improvement
 
+---
+
 ##### V2.1.2 - 06.12.2025
 - **F:** Flow: Added edge value muxer
 - **B:** Flow: Fix invalid port usage of rtsp port
