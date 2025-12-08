@@ -19,6 +19,7 @@ nav:
     - Overview: features.md
     - Flow: 
       - Overview: flow.md
+      - Reference: flow/reference.md
       - Logic & Flow Control: flow/logic_nodes.md
       - Data & Math: flow/data_manipulation.md
       - Devices & ANPR: flow/device_nodes.md

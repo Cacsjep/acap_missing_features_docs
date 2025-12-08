@@ -75,6 +75,8 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 Use **Add Node** to drag any template. Each entry lists what it does, its ports, and what you can configure.
 
+For a complete, per-node breakdown covering every template in the catalog (inputs, outputs, tips, and dialog flows), see [Flow Reference](flow/reference.md).
+
 ##### Axis and device
 
 - **Axis Device Log**  
