@@ -8,6 +8,10 @@ Below is an overview of the features provided by Missing Feature ACAP.
 
 Design automation visually by dragging nodes onto a canvas and wiring them together. Includes Axis device nodes, HTTP/JSON utilities, Lua scripting, device management (per-device credentials, snapshots/resolutions reused across nodes), and type-safe wiring with per-node help.
 
+#### Scene Analysis Triggers
+
+Define area and line triggers on a live stream, watch Axis scene-metadata overlays, and delete/rename shapes before saving the configuration. The feature listens on `/metadata_trigger`, lets you filter by score or class, and visualizes every bounding box with color-coded corners and text labels (see `flow/scene_analysis.md` for a walkthrough).
+
 #### Image to SD Card
 
 Automatically saves an image whenever a specified event occurs (for example, during motion detection). You can configure both the retention period and the maximum storage capacity (in GB) to suit your requirements. With built-in video generation, snapshots can be transformed into a timelapse sequence—ideal for long-term observation and quick playback of key events.

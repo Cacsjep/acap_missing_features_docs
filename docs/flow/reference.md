@@ -82,8 +82,20 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 #### Vaxtor Cloud ANPR (`VaxtorCloudAnpr`)
 - **Purpose**: Captures a snapshot from a device, uploads it to Vaxtor Cloud, and returns plate/vehicle metadata.
 - **Inputs**: `Execute`, `Reset`.
-- **Outputs**: `Success`, `Plate Found`, `Number`, `Country`, `State`, `Category`, `Read Confidence`, `Vehicle Make/Model/Color/Class`, `Status`, `Error`, `Executed`.
-- **Properties**: Configure the OAuth2 client credentials, API URL, timeout, whether to reuse a device/resolution snapshot (`extra_data.use_resolution`), and optionally pick a resolution from the Device dialog. The helper dialog explains which fields are required.
+- **Outputs**: `Success`, `Plate Found`, `Number`, `Country`, `State`, `Category`, `Read Confidence`, `Vehicle Make/Model/Color/Class`, `Status`, `Error`, `Executed`, `Image ID` (string that references the cached JPEG produced for the request).
+- **Properties**: Configure the OAuth2 client credentials, API URL, timeout, whether to reuse a device/resolution snapshot (`extra_data.use_resolution`), and optionally pick a resolution from the Device dialog. The helper dialog explains which fields are required. Pass the `Image ID` output to a `JpegViewer` to preview the snapshot without shipping the binary through the websocket.
+
+#### Image Snapshot (`ImageSnapshot`)
+- **Purpose**: Captures a JPEG snapshot from the selected Axis device so you can use that image elsewhere in the graph without transporting raw bytes over the websocket.
+- **Inputs**: `Capture`, `Reset`.
+- **Outputs**: `Success`, `Image ID`, `Error`, `Executed` (rising edge when the capture completes).
+- **Properties**: Pick a device in the same dialog used for Axis outputs/streams, and optionally force `use_resolution`+ `resolution_idx` to grab a specific stream size. The emitted `Image ID` can feed downstream nodes such as `JPEG Viewer` or the HTTP node when you want to reference the image again.
+
+#### JPEG Viewer (`JpegViewer`)
+- **Purpose**: Renders a cached JPEG by asking the backend for the image referenced by `Image ID`, avoiding huge websocket payloads.
+- **Inputs**: `Image ID` (string from `Http`, `Vaxtor Cloud ANPR`, `Image Snapshot`, or any node that exposes a cached image identifier).
+- **Outputs**: none (the node only paints the image on the canvas).
+- **Properties**: Adjust the width/height, toggle the border, and let the node talk to the shared in-memory image store (10 images max, 30 MB total) over the regular HTTP API. Only one viewer per `Image ID` exists in memory—when the ID expires or a new image replaces it, the viewer automatically stops requesting the obsolete image.
 
 #### License Plates (`LicensePlateList`)
 - **Purpose**: Matches incoming plate strings against the whitelist managed in the standalone License Plate List feature.
@@ -285,10 +297,10 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Properties**: Adjust indent, height, and color theme for the rendered box.
 
 #### HTTP Request (`Http`)
-- **Purpose**: Fires GET/POST/PUT/etc. requests with optional body overrides and reports the response.
+- **Purpose**: Fires GET/POST/PUT/etc. requests with optional body overrides, reports the response, and caches JPEG bodies without shipping the raw bytes through the websocket.
 - **Inputs**: `Execute`, `Reset`, `Body`.
-- **Outputs**: `Success`, `Status`, `Body`, `Error`, `Executed`.
-- **Properties**: Configure URL, method, headers, body templates, authentication (none/basic/digest), TLS options, and optional device snapshot templates (`GenericData`).
+- **Outputs**: `Success`, `Status`, `Body`, `Error`, `Executed`, `Image ID` (string produced whenever the backend detects a JPEG body so you can visualize it with the JPEG Viewer or reuse the image later).
+- **Properties**: Configure URL, method, headers, body templates, authentication (none/basic/digest), TLS options, and optional device snapshot templates (`GenericData`). When `Image ID` is emitted you can drop it directly into `JpegViewer` or other display helpers instead of pushing megapixel blobs through the live graph.
 
 ### Visualization & debugging
 
