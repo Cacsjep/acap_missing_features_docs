@@ -15,6 +15,12 @@
 
 ---
 
+##### V2.2.3 - 14.12.2025
+- **C:** Flow + manifests: Bumped `manifest.json` and `manifestv11.json` to 2.2.3 so the latest Flow bundle reaches all AXIS OS targets.
+- **B:** Flow: Axis RTSP stream node validation now checks `props.data.extra_data.valid` correctly to avoid rejecting valid configurations.
+
+---
+
 ##### V2.2.2 - 14.12.2025
 - **I:** Flow: Axis RTSP stream node now validates and displays custom width/height settings, offers a custom-resolution picker, resyncs the stream when the provider client is removed, and logs frame-provider tear-downs to surface streaming issues more clearly.
 - **I:** Flow: Realigned the image-routing helpers with the cached JPEG store so the HTTP fetch routes and the embedded JPEG viewer stay in sync with the shared memory layer.
