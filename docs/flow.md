@@ -169,6 +169,9 @@ For a complete, per-node breakdown covering every template in the catalog (input
 - **JSON Key Extractor** - On `Extract`, pulls a key (dot notation allowed) from a JSON string; `Reset` clears. Outputs: `Value`, `Found`. Properties: key and output type.
 - **JSON to Node** - Splits a JSON object into individual outputs for each top-level key; configure keys and sample JSON for auto-generation.  
 - **JSON Array Selector** - Selects an array element by index from a JSON string; outputs the item JSON plus `Found`/`Processed` flags.
+- **TCP Server** - Accepts raw TCP connections and converts each payload to a string. Outputs: a per-request `New Message` pulse, the latest `Message`, and an `Error` string when listener failures occur. Properties: bind port, per-second rate limit and enable input.
+- **TCP Message Sender** - Sends the provided string payload to a configured host/port on every rising `Send` trigger. Outputs a one-cycle `Success` pulse plus `Error`. Properties assume a host/IP, port, and timeout.
+- **Webhook Listener** - Runs an HTTP or HTTPS endpoint (self-signed TLS) and exposes the request body plus any configured query params as outputs. Accepts Basic/Digest auth, enforces a 1‑15 rps rate limit, and always responds with `{"success":bool,"message":string}` to guide clients. Outputs: `New Request`, `Body`, `Error`, plus one string output for each query parameter.
 
 ##### Debug and visualization
 

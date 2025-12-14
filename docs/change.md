@@ -8,6 +8,11 @@
 
 ---
 
+##### V2.2.4 - 15.12.2025
+- **F:** Flow: Added the TCP Server node for raw TCP listeners (`New Message` pulse, message/error outputs, per-second rate limiting), plus the TCP Message Sender that triggers on a rising send input and reports success/error.
+- **F:** Flow: Added the Webhook Listener node (HTTP/HTTPS with Basic/Digest auth, JSON responses, configurable query-param outputs, and a one-cycle `New Request` pulse) and documented the JSON response contract in the Flow guide.
+---
+
 ##### V2.2.3 - 14.12.2025
 - **B:** Flow: Axis RTSP stream node validation now checks correctly to avoid rejecting valid configurations.
 - **I:** Flow: Axis RTSP stream node now validates and displays custom width/height settings, offers a custom-resolution picker, resyncs the stream when the provider client is removed, and logs frame-provider tear-downs to surface streaming issues more clearly.
