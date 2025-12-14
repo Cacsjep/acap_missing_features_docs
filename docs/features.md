@@ -10,7 +10,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 #### Scene Analysis Triggers
 
-Define area and line triggers on a live stream, watch Axis scene-metadata overlays, and delete/rename shapes before saving the configuration. The feature listens on `/metadata_trigger`, lets you filter by score or class, and visualizes every bounding box with color-coded corners and text labels (see `flow/scene_analysis.md` for a walkthrough).
+Create event triggers based on metadata analysis.
 
 #### Image to SD Card
 

@@ -8,28 +8,10 @@
 
 ---
 
-##### V2.1.5 - 09.12.2025
-- **I:** Flow: Add Composite Nodes
-- **I:** Flow: Add Teleport Nodes
-- **I:** Flow: UI Improvement
-
----
-
 ##### V2.2.3 - 14.12.2025
-- **C:** Flow + manifests: Bumped `manifest.json` and `manifestv11.json` to 2.2.3 so the latest Flow bundle reaches all AXIS OS targets.
-- **B:** Flow: Axis RTSP stream node validation now checks `props.data.extra_data.valid` correctly to avoid rejecting valid configurations.
-
----
-
-##### V2.2.2 - 14.12.2025
+- **B:** Flow: Axis RTSP stream node validation now checks correctly to avoid rejecting valid configurations.
 - **I:** Flow: Axis RTSP stream node now validates and displays custom width/height settings, offers a custom-resolution picker, resyncs the stream when the provider client is removed, and logs frame-provider tear-downs to surface streaming issues more clearly.
 - **I:** Flow: Realigned the image-routing helpers with the cached JPEG store so the HTTP fetch routes and the embedded JPEG viewer stay in sync with the shared memory layer.
-
----
-
-##### V2.2.1 - 12.12.2025
-- **C:** Flow + manifests: Bumped manifest versions to 2.2.1 (primary and v11) so the new Flow bundle reaches all AXIS OS targets.
-
 ---
 
 ##### V2.2.0 - 12.12.2025
@@ -37,6 +19,13 @@
 - **F:** Flow: Introduced the `JsonList` node plus column-management UI for splitting array payloads into per-column outputs.
 - **I:** Flow: Refactored Vaxtor Cloud ANPR outputs into structured metadata (plate, vehicle, confidence, status) and emit an `Image ID` so downstream viewers can load cached snapshots without moving the JPEG bytes over WebSocket.
 - **I:** Flow: Polished the metadata-triggers visualization helpers with cross-line tracking, ROI conversions, and smoother highlight/update logic for the overlay controls.
+
+---
+
+##### V2.1.5 - 09.12.2025
+- **I:** Flow: Add Composite Nodes
+- **I:** Flow: Add Teleport Nodes
+- **I:** Flow: UI Improvement
 
 ---
 

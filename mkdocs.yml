@@ -31,6 +31,7 @@ nav:
     - Notifications: notifications.md
     - Occupancy counting: occupancy.md
     - Parking Times: parking_times.md
+    - Scene Analysis Triggers:  scene_analysis.md
     - License Plate List: license_plate_list.md
 
   - General Settings: general_settings.md
