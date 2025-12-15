@@ -8,7 +8,12 @@
 
 ---
 
-##### V2.2.4 - 15.12.2025
+##### V2.2.6 - 16.12.2025
+- **F:** Flow: Added the Axis Parameter node so flows can read any AXParameter key as a string and publish both the value and any ParamHandler error.
+
+---
+
+##### V2.2.5 - 15.12.2025
 - **F:** Flow: Added the TCP Server node for raw TCP listeners (`New Message` pulse, message/error outputs, per-second rate limiting), plus the TCP Message Sender that triggers on a rising send input and reports success/error.
 - **F:** Flow: Added the Webhook Listener node (HTTP/HTTPS with Basic/Digest auth, JSON responses, configurable query-param outputs, and a one-cycle `New Request` pulse) and documented the JSON response contract in the Flow guide.
 ---

@@ -73,6 +73,12 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Outputs**: `Error`.
 - **Properties**: Set the event name and choose stateless vs. stateful behavior; expose additional custom fields via the properties drawer. The UX warns (via `state.show_axis_create_dialog`) that Axis only sees these events while the graph is live.
 
+#### Axis Parameter (`AxisParameter`)
+- **Purpose**: Reads any AXParameter key through the ACAP parameter handler and exposes the latest string value together with any error messages.
+- **Inputs**: `Parameter Name` (string) – the AXParameter path you want to read, for example `Properties.System.SerialNumber` or `Image.I0.Appearance.Resolution`. Wire other nodes to build dynamic keys or type a fallback in the properties drawer.
+- **Outputs**: `Value` (string) – last successful parameter value; `Error` (string) – populated when the request fails (missing permissions, typos, or the device is unreachable).
+- **Notes**: The properties drawer includes a dedicated field so you can keep reading the same parameter even when nothing is connected. When another node drives the `Parameter Name` input the property field is ignored.
+
 #### Axis Outputs (`AxisOutput`)
 - **Purpose**: Fires VAPIX commands that toggle physical Axis output ports (relays/digital outs).
 - **Inputs**: configured per device inside the Axis dialog (the node populates inputs on the fly when selecting the device and available ports).
@@ -301,6 +307,12 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Inputs**: `Execute`, `Reset`, `Body`.
 - **Outputs**: `Success`, `Status`, `Body`, `Error`, `Executed`, `Image ID` (string produced whenever the backend detects a JPEG body so you can visualize it with the JPEG Viewer or reuse the image later).
 - **Properties**: Configure URL, method, headers, body templates, authentication (none/basic/digest), TLS options, and optional device snapshot templates (`GenericData`). When `Image ID` is emitted you can drop it directly into `JpegViewer` or other display helpers instead of pushing megapixel blobs through the live graph.
+
+#### Webhook Listener (`Webhook`)
+- **Purpose**: Runs an HTTP/HTTPS endpoint that accepts Basic or Digest authentication, applies the configured rate limit (1–15 requests per second), and emits each payload plus optional query parameters into the flow with a stable response contract.
+- **Inputs**: `Enable` (boolean gate), `Custom Response` (boolean flag), `Response Body` (string), `Response Code` (int). The first toggles the listener, while the remaining fields let you override the automatic `{ "success": ..., "message": ... }` reply per request.
+- **Outputs**: `New Request` (boolean pulse), `Body` (string raw request body or pre-parsed payload), `Error` (string describing validation/auth failures), plus one string output per configured query parameter.
+- **Properties**: Set the port (HTTP/HTTPS), path, TLS certificate/key, request rate limit, and auth credentials in the inspector. Query parameters defined here automatically generate matching string outputs so you can pick tokens like `device_id` or `token` without parsing them manually. The node always replies with the JSON body `{"success":bool,"message":string}` so clients know whether to retry.
 
 ### Visualization & debugging
 
