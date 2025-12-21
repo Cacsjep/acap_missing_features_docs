@@ -15,6 +15,15 @@ The Axis Camera Application Platform (ACAP) enables you to extend your Axis came
 
 ---
 
+## Accessing the Missing Features Web UI
+
+Missing Features runs on a **dedicated web server** inside the camera that listens on port `8888` (HTTP + HTTPS are proxied through `https://<camera-ip>:8888`). This server is separate from Axis’s default web interface.
+
+- **Default credentials:** `admin` / `admin`. The login screen enforces a password change the first time you sign in.
+- **Secure access:** If you switch to the **Uploaded certificate** mode in Settings, the web server swaps to the custom PEM/key pair only after validation so the UI never restarts with an invalid certificate. If you decide to revert to the built-in self-signed certificate, the mode switch also closes the current TLS connection and reloads with the generated cert.
+
+Make sure `Allow unsigned apps` remains enabled while you upload the `.eap`, and remember to close the dedicated UI when you finish so the camera can continue serving its primary interface.
+
 !!! tip "Enable: Allow unsigned apps"
     [![](images/allow.PNG)](images/allow.PNG)
 

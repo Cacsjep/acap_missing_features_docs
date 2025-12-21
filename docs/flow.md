@@ -27,7 +27,7 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 - **Add Node:** Opens the catalog. Drag a template to the canvas. Axis nodes open an extra dialog to pick ports or events before placement.
 - **IO Table:** Opens a live table listing every node with its inputs/outputs and current values.
 - **Fit to View:** Reframes the canvas around all nodes.
-- **Export / Import:** Download or load a graph JSON. Import is disabled while the flow is running.
+- **Export / Import:** Download or load a graph JSON. Import is disabled while the flow is running, and the button is hidden for roles that lack the Flow update permission so read-only operators never see the dialog.
 - **Introduction:** Reopen the short walkthrough (video steps).
 
 **Video: Floating action bar**
@@ -121,12 +121,8 @@ For a complete, per-node breakdown covering every template in the catalog (input
 
 ##### Inputs and manual controls
 
-- **Manual Input** - Constant output; pick data type and value.  
 - **Enable Input** - Always outputs `true`.  
 - **Button** - Outputs `true` while pressed, `false` on release (live mode).
-
-**Video: Manual inputs and buttons**
-<video controls muted loop playsinline src="manual.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 **Video: Handle shapes and colors**
 <video controls muted loop playsinline src="io.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>

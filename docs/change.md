@@ -8,6 +8,13 @@
 
 ---
 
+##### V2.4.1 - 21.12.2025
+- **F:** Flow: Added the node test harness that runs Axis, HTTP/Webhook, SD card, TCP, and SQL nodes locally, plus the TCP Server/Sender nodes, Axis SD-Card helpers, and SQL CRUD nodes so developers can verify behavior before runtime.
+- **I:** Switch from reverse proxy mode into full reachable webserver mode, what includes seperate user and role/permission system to have control about non admin user tasks in webui.
+- **C:** Removed features: Metadata Dispatch and Occupancy Counting no longer ship with this release.
+
+---
+
 ##### V2.2.6 - 16.12.2025
 - **F:** Flow: Added the Axis Parameter node so flows can read any AXParameter key as a string and publish both the value and any ParamHandler error.
 
@@ -254,4 +261,3 @@
 - **C:** 12.4 SDK Adding to build pipeline
 
 ---
-

@@ -26,7 +26,7 @@ This document gathers every Flow-related control, helper, and node so that a UI-
 
 ### Persistence, import/export, and diagnostics
 - **Save/load lifecycle**: Flow calls `/flow/load` on mount and restores the last saved graph, including the previous run state (the server returns `run_state` and the UI re-enters live mode if needed). When you stop execution, `stopGraph(true)` first posts `/flow/save`, so the exact layout and node data are persisted on disk.
-- **Graph import/export**: Export downloads the current graph as JSON (`exportGraph`), while Import uses a hidden file input so you can drop a `.json` file (`handleImportFileChange`). Import is blocked during live mode; the UI warns you to stop execution before loading.
+- **Graph import/export**: Export downloads the current graph as JSON (`exportGraph`), while Import uses a hidden file input so you can drop a `.json` file (`handleImportFileChange`). Import is blocked during live mode; the UI warns you to stop execution before loading. The dialog only exists for users that hold the `feature_flow_update` permission, so read-only roles never see the button and cannot trigger an upload.
 - **Logging**: Runtime log messages arrive via the websocket (`ws.onmessage` handles messages with `type === 'log'`) and feed `state.loggingMessages`. Nodes such as the Logging node consume that array to show level, timestamp, node name/ID, and the message itself. Keeping a Logging node in the graph lets you see backend notes while you tune HTTP calls or Axis rules.
 - **IO Table**: When the graph is running, click "IO Table" to open a compact table showing every node, input/output name, data type (bool/int/float/string), and the current state. It groups rows by node title and highlights boolean states with colored dots.
 
@@ -60,6 +60,17 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Inputs**: `Write` (boolean trigger), `Message` (string message).
 - **Outputs**: none.
 - **Notes**: The dialog uses the Axis device list (same Device dialog) to reuse stored credentials.
+
+#### Axis SD Card nodes
+
+- **Axis SD Card Status** reports whether the SD card is present, writable, full, set up, or exiting via five boolean outputs.
+- **Axis SD Card File Exists** checks the configured `Path` whenever `Execute` goes true and pulses `Exists`.
+- **Axis SD Card Remove File** deletes the relative path on a rising `Execute` trigger and pulses `Removed` when the file is deleted.
+- **Axis SD Card Write File** overwrites or creates a file at `Path` with the provided `Data` whenever `Execute` rises and emits `Written`.
+- **Axis SD Card Append File** adds the payload to the file on each `Execute` rising edge, optionally adding a newline when `New Line After` is true.
+- **Axis SD Card Read File** reads a file into `Data` when `Execute` pulses, asserts `File Not Exists` if the path is absent, and uses `Reset` to clear the cached result.
+- **Axis SD Card List Files** emits a JSON `Data` array of every file and a `Count` whenever `Execute` runs; `Reset` clears the cached list.
+- **Axis SD Card Usage** reports the gigabytes in use on every `Execute`; `Reset` clears the accumulated output.
 
 #### Axis Metadata Event (Subscribe) (`MetaDataEventSubscribe`)
 - **Purpose**: Connects to Axis metadata event streams on a device and pushes every payload into the flow as node outputs.
@@ -111,10 +122,7 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 
 ### Inputs & manual controls
 
-#### Manual Input (`InputManual`)
-- **Purpose**: Provides a typed constant (boolean/int/float/string) that you can tweak by clicking the DataType chip in the title or the Data Type selector in the properties panel.
-- **Inputs**: none.
-- **Outputs**: `Value` (defaults to `true`, datatype adjusts when you change the selector).
+- **Note**: The Manual Input node has been removed; constant values are now configured directly in the properties panel of each node (look for the `Value`, `Constant`, or inline fields in the node settings).
 
 #### Enable Input (`Enable`)
 - **Purpose**: Simple helper that always outputs `true`. Use it as a permanent enable signal for timers, HTTP requests, or to gate composite execution.
@@ -302,6 +310,14 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Outputs**: none.
 - **Properties**: Adjust indent, height, and color theme for the rendered box.
 
+#### SQL nodes
+- **SQL Connection** creates or reuses a database handle (MySQL, Postgres, SQL Server, Sqlite). `Connect` opens the connection via DSN or `Path` (sqlite files are resolved on the Axis SD card), and the node emits `Connected` plus a reusable `Conn Key`.
+- **SQL Query** executes a `SELECT` statement whenever `Execute` rises; it requires the `Conn Key`, accepts optional JSON `Params`, and outputs `Rows JSON`, `Row Count`, and a `Done` pulse.
+- **SQL Insert** / **SQL Update** / **SQL Delete** each run a data-modifying statement on a rising `Execute`, reusing the `Conn Key` plus JSON parameters. `Insert` additionally returns `Last Insert ID`; all three pulse `Done` and report `Rows Affected`.
+- **Note**: Use the same `Conn Key` across multiple statements to keep the database connection alive, and supply driver/host/path details in the connection node’s properties.
+
+### Networking and parsing
+
 #### HTTP Request (`Http`)
 - **Purpose**: Fires GET/POST/PUT/etc. requests with optional body overrides, reports the response, and caches JPEG bodies without shipping the raw bytes through the websocket.
 - **Inputs**: `Execute`, `Reset`, `Body`.
@@ -313,6 +329,18 @@ The Flow canvas is backed by node templates coming from `ax_msf/flow/templates.g
 - **Inputs**: `Enable` (boolean gate), `Custom Response` (boolean flag), `Response Body` (string), `Response Code` (int). The first toggles the listener, while the remaining fields let you override the automatic `{ "success": ..., "message": ... }` reply per request.
 - **Outputs**: `New Request` (boolean pulse), `Body` (string raw request body or pre-parsed payload), `Error` (string describing validation/auth failures), plus one string output per configured query parameter.
 - **Properties**: Set the port (HTTP/HTTPS), path, TLS certificate/key, request rate limit, and auth credentials in the inspector. Query parameters defined here automatically generate matching string outputs so you can pick tokens like `device_id` or `token` without parsing them manually. The node always replies with the JSON body `{"success":bool,"message":string}` so clients know whether to retry.
+
+#### TCP Server (`TcpServer`)
+- **Purpose**: Listens on a configured TCP port and turns each received payload into a string that the Flow can consume.
+- **Inputs**: none; configuration happens in the properties (port, rate limit per second).
+- **Outputs**: `New Message` pulses true for one cycle when a client sends data, and `Message` holds the latest payload.
+- **Properties**: Pick the port (1–65535) and enable per-second rate limiting to keep overloads in check.
+
+#### TCP Message Sender (`TcpSender`)
+- **Purpose**: Sends a string payload to a remote host when `Send` has a rising edge.
+- **Inputs**: `Send` (boolean trigger), `Message` (string payload).
+- **Outputs**: `Sent` pulses true when the packet is successfully delivered.
+- **Properties**: Enter the destination host/IP and port; the node validates the settings before dialing once per trigger.
 
 ### Visualization & debugging
 
