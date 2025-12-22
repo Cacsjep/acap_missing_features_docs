@@ -8,6 +8,14 @@
 
 ---
 
+##### V2.4.5 - 22.12.2025
+- **I:** Flow: Add WebRtc Node
+- **I:** Flow: Add Rtmp Stream Node
+- **B:** Flow: Fix fast Node drag not work from node selector 
+- **B:** Fix Redirect on same page not work correctly
+
+---
+
 ##### V2.4.1 - 21.12.2025
 - **F:** Flow: Added the node test harness that runs Axis, HTTP/Webhook, SD card, TCP, and SQL nodes locally, plus the TCP Server/Sender nodes, Axis SD-Card helpers, and SQL CRUD nodes so developers can verify behavior before runtime.
 - **I:** Switch from reverse proxy mode into full reachable webserver mode, what includes seperate user and role/permission system to have control about non admin user tasks in webui.
