@@ -27,9 +27,6 @@ nav:
       - Advanced & Scripting: flow/advanced_nodes.md
       - Composites: flow/composites.md
     - Image to SD-Card: img_sdcard.md
-    - Metadata Dispatch: metadispatch.md
-    - Notifications: notifications.md
-    - Occupancy counting: occupancy.md
     - Parking Times: parking_times.md
     - Scene Analysis Triggers:  scene_analysis.md
     - License Plate List: license_plate_list.md
