@@ -1,17 +1,35 @@
 # Changelog
 
-##### Legend  
-- **I:** Improvement  
-- **B:** Bugfix 
-- **F:** New Feature  
-- **C:** Change  
+##### Legend
+- **I:** Improvement
+- **B:** Bugfix
+- **F:** New Feature
+- **C:** Change
+
+---
+
+##### V2.5.0 - 25.12.2025
+- **F:** Dashboard: New dashboard feature for real-time data visualization with 8 widget types (Text, Number, Gauge, Bool State, Table, Chart, AXIS Live Stream, Image Gallery)
+- **F:** Flow: Modbus TCP Client node for industrial protocol connectivity
+- **F:** Flow: Modbus Read/Write nodes for Coil, Int, Float, and String data types
+- **F:** Flow: Collection nodes for List operations (Length, GetAt, SetAt, Push, Pop, InsertAt, RemoveAt, Contains, IndexOf, ForEach)
+- **F:** Flow: Collection nodes for Map operations (Get, Set, Remove, ContainsKey, Keys, Values, Merge)
+- **F:** Flow: Collection nodes for Set operations (Add, Remove, Contains)
+- **F:** Flow: String manipulation nodes (Concat, Replace, Split, Join, Trim, Lower, Upper)
+- **F:** Flow: Regex nodes (Match, Replace, FindAll)
+- **F:** Flow: Encoding nodes (Base64 Encode/Decode)
+- **F:** Flow: Image Cache nodes (Info, Delete) for in-memory image management
+- **F:** Flow: JSON utility nodes (Parse, Get, Set, Remove, Validate, Placeholder JSON)
+- **I:** Documentation: Comprehensive updates for all new node categories and Dashboard feature
+- **I:** Documentation: Full SQLite tutorial with database creation, queries, and practical examples
+- **I:** Documentation: Input nodes, Seven Segment display, and detailed HTTP Request configuration
 
 ---
 
 ##### V2.4.5 - 22.12.2025
 - **I:** Flow: Add WebRtc Node
 - **I:** Flow: Add Rtmp Stream Node
-- **B:** Flow: Fix fast Node drag not work from node selector 
+- **B:** Flow: Fix fast Node drag not work from node selector
 - **B:** Fix Redirect on same page not work correctly
 
 ---
@@ -143,129 +161,3 @@
 - **C:** Add AXIS OS 12 build steps for CV25, ARTPEC7, and ARTPEC8 (video and non-video variants).
 - **C:** Update primary `manifest.json` (schemaVersion bump); add `manifestv11.json` for AXIS OS 11 targets; apply version bumps across manifests for interim releases.
 
----
-
-##### V1.0.95 – 05.09.2025
-- **B:** Websocket issue with 12.5 reverse proxy manifest modification
-
----
-
-##### V1.0.94 – 23.07.2025
-- **I:** Add SMS Eagle for SMS and Voice calls to notifications feature.
-
----
-
-##### V1.0.93 – 04.07.2025
-- **I:** Use axparmenter to obtain resolution and number of image configurations.
-
----
-
-##### V1.0.92 – 02.07.2025
-- **C:** Increase max. resolution (ui validation) for timelaps generation.
-
----
-
-##### V1.0.91 – 23.06.2025
-- **C:** Remove Event Countdown feature, could be used with older versions.
-- **C:** Remove MQTT UI Defaults.
-- **C:** Made non present of SD-Card more verbose, not show error toast message.
-- **C:** Update open source licenses.
-  
----
-
-##### V1.0.90 – 21.06.2025
-- **I:** Unify SD-Card Managment for all features, now it is more reslilent to SD-Card failures.
-- **I:** Adding SD-Card cache for metadata dispatcher
-- **I:** Adding MQTT sink for metadata dispatcher
-- **I:** Adding feature start watchdog, in case of camera starts and external services prevent the feature from start.
-- **I:** Improve stop code for some features.
-- **I:** Adding SD-Card info to webui when one exists.
-  
----
-
-##### V1.0.89 – 13.06.2025
-- **I:** Add delete button for metrics database (SD-Card)
-- **I:** Split .eap builds into cv25, artep6, artpec7, metadata scene etc..
-
----
-
-##### V1.0.88 – 12.06.2025
-- **I:** Only transmit scene analytics when observations exists
-- **B:** Fix consolidated issue that only one was possbile to add
-  
----
-
-##### V1.0.86 – 11.06.2025
-- **I:** Add Metadata scene description analytics metric
-- **I:** Add Metadata consolidated analytics metric
-- **I:** Add JSON export for metrics export when stored on SD-Card
-- **C:** Split artpec-builds into artep6 and artpec7+
-  
----
-
-##### V1.0.85 – 10.06.2025
-- **B:** Fix RAM issue when downloading large meta data from SD-Card (CSV), now it use streams and DB operate in WAL mode.
-- **C:** Correct sorting on metrices in metadata dispatcher (UI)
-- **I:** Add PTZ movment metric
-  
----
-
-##### V1.0.82 – 06.06.202
-- **F:** Add image to FTP feature
-- **F:** Update goxis lib fixes SD-Card release callback issue
-- **I:** Update golang version to latest
-
----
-
-##### V1.0.73 – 06.06.2025
-- **I:** Add loading indicator for csv download on sd-card metadata dispatch
-
----
-
-##### V1.0.72 – 06.06.2025
-- **I:** Add SD-Card sink to metadata dispatcher
-
----
-
-##### V1.0.71 – 03.06.2025
-- **B:** Fix an issue with event countdown that can lead into deadlock when stopping multiple times fast.
-
----
-
-##### V1.0.7 – 01.06.2025
-- **I:** Improve Image loading for SD-Card feature
-- **B:** Fix image deletion regarding to database entries for SD-Card feature (File was deleted but not DB entrie)
-
----
-
-
-##### V1.0.6 – 25.05.2025
-- **I:** Add UI Popup for counting rule occupancy in area
-
----
-
-##### V1.0.5 – 22.05.2025
-- **I:** Add config import / export
-
----
-
-##### V1.0.4 – 22.05.2025
-- **I:** Add seven.io voice ringtime
-
----
-
-##### V1.0.3 – 22.05.2025
-- **I:** Add seven.io balance check before perform api call (sms, voice)
-
----
-
-##### V1.0.2 – 22.05.2025
-- **I:** Add doc link for event trigger component
-- **B:** Fix race condition in countdown feature
-
----
-
-##### V1.0.1 – 22.05.2025
-- **C:** 12.4 SDK Adding to build pipeline
-
----

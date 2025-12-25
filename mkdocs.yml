@@ -15,20 +15,27 @@ nav:
   - Compatibility: compat.md
   - Enable or Disable Features: endis.md
   - Event Trigger: event_trigger.md
-  - Features: 
+  - Features:
     - Overview: features.md
-    - Flow: 
+    - Flow:
       - Overview: flow.md
       - Reference: flow/reference.md
+      - Input & Output: flow/input_output_nodes.md
       - Logic & Flow Control: flow/logic_nodes.md
       - Data & Math: flow/data_manipulation.md
       - Devices & ANPR: flow/device_nodes.md
       - Timing: flow/timing_nodes.md
+      - Network & Modbus: flow/network_nodes.md
+      - Database & SQL: flow/database_nodes.md
+      - Collections & JSON: flow/collections_nodes.md
+      - String & Text: flow/string_nodes.md
+      - Storage & SD Card: flow/storage_nodes.md
       - Advanced & Scripting: flow/advanced_nodes.md
       - Composites: flow/composites.md
+    - Dashboard: dashboard.md
     - Image to SD-Card: img_sdcard.md
     - Parking Times: parking_times.md
-    - Scene Analysis Triggers:  scene_analysis.md
+    - Scene Analysis Triggers: scene_analysis.md
     - License Plate List: license_plate_list.md
 
   - General Settings: general_settings.md
