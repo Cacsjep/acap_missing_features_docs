@@ -9,6 +9,11 @@
 ---
 
 ##### V2.5.0 - 25.12.2025
+- **F:** Dashboard: Multi-dashboard support with browser-like tabs (add, rename, delete dashboards)
+- **F:** Dashboard: New toolbar design with integrated tab management and action buttons
+- **F:** Dashboard: Fullscreen mode includes entire view, hides edit controls in Live mode
+- **F:** Dashboard: AXIS Live Stream widget now uses WebRTC for low-latency streaming
+- **F:** Dashboard: Stream statistics overlay (resolution, framerate, bitrate, codec, packets lost, jitter)
 - **F:** Dashboard: New dashboard feature for real-time data visualization with 8 widget types (Text, Number, Gauge, Bool State, Table, Chart, AXIS Live Stream, Image Gallery)
 - **F:** Dashboard: Chart widget bar thickness configuration for better visualization control
 - **F:** Flow: SQL Table node for visual table creation and data insertion without writing SQL
