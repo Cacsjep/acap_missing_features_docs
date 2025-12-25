@@ -1,0 +1,1859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../compat/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Changelog - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v250-25122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.5.0 - 25.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v245-22122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.4.5 - 22.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v241-21122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.4.1 - 21.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v226-16122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.6 - 16.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v225-15122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.5 - 15.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v223-14122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.3 - 14.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v220-12122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.0 - 12.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v215-09122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.5 - 09.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v212-06122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.2 - 06.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v210-04122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.0 - 04.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2039-28102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.39 – 28.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2031-27102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.31 – 27.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2024-26102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.24 – 26.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2023-25102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.23 – 25.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2014-24102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.14 – 24.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2013-23102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.13 – 23.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2011-23102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.11 – 23.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-28102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V1.1.3 – 28.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enable or Disable Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event_trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Trigger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Modbus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licensing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v250-25122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.5.0 - 25.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v245-22122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.4.5 - 22.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v241-21122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.4.1 - 21.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v226-16122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.6 - 16.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v225-15122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.5 - 15.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v223-14122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.3 - 14.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v220-12122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.2.0 - 12.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v215-09122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.5 - 09.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v212-06122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.2 - 06.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v210-04122025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.1.0 - 04.12.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2039-28102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.39 – 28.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2031-27102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.31 – 27.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2024-26102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.24 – 26.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2023-25102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.23 – 25.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2014-24102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.14 – 24.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2013-23102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.13 – 23.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2011-23102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V2.0.11 – 23.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v113-28102025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V1.1.3 – 28.10.2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="changelog">Changelog</h1>
+<h5 id="legend">Legend</h5>
+<ul>
+<li><strong>I:</strong> Improvement</li>
+<li><strong>B:</strong> Bugfix</li>
+<li><strong>F:</strong> New Feature</li>
+<li><strong>C:</strong> Change</li>
+</ul>
+<hr />
+<h5 id="v250-25122025">V2.5.0 - 25.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Dashboard: Multi-dashboard support with browser-like tabs (add, rename, delete dashboards)</li>
+<li><strong>F:</strong> Dashboard: New toolbar design with integrated tab management and action buttons</li>
+<li><strong>F:</strong> Dashboard: Fullscreen mode includes entire view, hides edit controls in Live mode</li>
+<li><strong>F:</strong> Dashboard: AXIS Live Stream widget now uses WebRTC for low-latency streaming</li>
+<li><strong>F:</strong> Dashboard: Stream statistics overlay (resolution, framerate, bitrate, codec, packets lost, jitter)</li>
+<li><strong>F:</strong> Dashboard: New dashboard feature for real-time data visualization with 8 widget types (Text, Number, Gauge, Bool State, Table, Chart, AXIS Live Stream, Image Gallery)</li>
+<li><strong>F:</strong> Dashboard: Chart widget bar thickness configuration for better visualization control</li>
+<li><strong>F:</strong> Flow: SQL Table node for visual table creation and data insertion without writing SQL</li>
+<li><strong>F:</strong> Flow: SQL Table Read node for visual query building with relative time filters (last 15m, 1h, 7d, etc.)</li>
+<li><strong>F:</strong> Flow: Modbus TCP Client node for industrial protocol connectivity</li>
+<li><strong>F:</strong> Flow: Modbus Read/Write nodes for Coil, Int, Float, and String data types</li>
+<li><strong>F:</strong> Flow: Collection nodes for List operations (Length, GetAt, SetAt, Push, Pop, InsertAt, RemoveAt, Contains, IndexOf, ForEach)</li>
+<li><strong>F:</strong> Flow: Collection nodes for Map operations (Get, Set, Remove, ContainsKey, Keys, Values, Merge)</li>
+<li><strong>F:</strong> Flow: Collection nodes for Set operations (Add, Remove, Contains)</li>
+<li><strong>F:</strong> Flow: String manipulation nodes (Concat, Replace, Split, Join, Trim, Lower, Upper)</li>
+<li><strong>F:</strong> Flow: Regex nodes (Match, Replace, FindAll)</li>
+<li><strong>F:</strong> Flow: Encoding nodes (Base64 Encode/Decode)</li>
+<li><strong>F:</strong> Flow: Image Cache nodes (Info, Delete) for in-memory image management</li>
+<li><strong>F:</strong> Flow: JSON utility nodes (Parse, Get, Set, Remove, Validate, Placeholder JSON)</li>
+<li><strong>I:</strong> Flow: Multi-database support for SQL nodes (SQLite, MySQL, PostgreSQL, SQL Server)</li>
+<li><strong>I:</strong> Flow: SQL nodes now use local time instead of UTC for timestamp columns</li>
+<li><strong>I:</strong> Documentation: Comprehensive updates for all new node categories and Dashboard feature</li>
+<li><strong>I:</strong> Documentation: SQL Table and SQL Table Read nodes with visual query examples</li>
+<li><strong>I:</strong> Documentation: Full SQLite tutorial with database creation, queries, and practical examples</li>
+<li><strong>I:</strong> Documentation: Input nodes, Seven Segment display, and detailed HTTP Request configuration</li>
+</ul>
+<hr />
+<h5 id="v245-22122025">V2.4.5 - 22.12.2025</h5>
+<ul>
+<li><strong>I:</strong> Flow: Add WebRtc Node</li>
+<li><strong>I:</strong> Flow: Add Rtmp Stream Node</li>
+<li><strong>B:</strong> Flow: Fix fast Node drag not work from node selector</li>
+<li><strong>B:</strong> Fix Redirect on same page not work correctly</li>
+</ul>
+<hr />
+<h5 id="v241-21122025">V2.4.1 - 21.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added the node test harness that runs Axis, HTTP/Webhook, SD card, TCP, and SQL nodes locally, plus the TCP Server/Sender nodes, Axis SD-Card helpers, and SQL CRUD nodes so developers can verify behavior before runtime.</li>
+<li><strong>I:</strong> Switch from reverse proxy mode into full reachable webserver mode, what includes seperate user and role/permission system to have control about non admin user tasks in webui.</li>
+<li><strong>C:</strong> Removed features: Metadata Dispatch and Occupancy Counting no longer ship with this release.</li>
+</ul>
+<hr />
+<h5 id="v226-16122025">V2.2.6 - 16.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added the Axis Parameter node so flows can read any AXParameter key as a string and publish both the value and any ParamHandler error.</li>
+</ul>
+<hr />
+<h5 id="v225-15122025">V2.2.5 - 15.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added the TCP Server node for raw TCP listeners (<code>New Message</code> pulse, message/error outputs, per-second rate limiting), plus the TCP Message Sender that triggers on a rising send input and reports success/error.</li>
+<li><strong>F:</strong> Flow: Added the Webhook Listener node (HTTP/HTTPS with Basic/Digest auth, JSON responses, configurable query-param outputs, and a one-cycle <code>New Request</code> pulse) and documented the JSON response contract in the Flow guide.</li>
+</ul>
+<hr />
+<h5 id="v223-14122025">V2.2.3 - 14.12.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Axis RTSP stream node validation now checks correctly to avoid rejecting valid configurations.</li>
+<li><strong>I:</strong> Flow: Axis RTSP stream node now validates and displays custom width/height settings, offers a custom-resolution picker, resyncs the stream when the provider client is removed, and logs frame-provider tear-downs to surface streaming issues more clearly.</li>
+<li><strong>I:</strong> Flow: Realigned the image-routing helpers with the cached JPEG store so the HTTP fetch routes and the embedded JPEG viewer stay in sync with the shared memory layer.</li>
+</ul>
+<hr />
+<h5 id="v220-12122025">V2.2.0 - 12.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added the Scene Analysis Triggers feature (<code>metadata_trigger</code>) with backend helpers, live <code>VdoLiveStream</code>, SVG overlays, editable area/line triggers, bounding boxes, direction markers, filter controls, WebSocket metadata, and event hooks that persist the trigger definitions.</li>
+<li><strong>F:</strong> Flow: Introduced the <code>JsonList</code> node plus column-management UI for splitting array payloads into per-column outputs.</li>
+<li><strong>I:</strong> Flow: Refactored Vaxtor Cloud ANPR outputs into structured metadata (plate, vehicle, confidence, status) and emit an <code>Image ID</code> so downstream viewers can load cached snapshots without moving the JPEG bytes over WebSocket.</li>
+<li><strong>I:</strong> Flow: Polished the metadata-triggers visualization helpers with cross-line tracking, ROI conversions, and smoother highlight/update logic for the overlay controls.</li>
+</ul>
+<hr />
+<h5 id="v215-09122025">V2.1.5 - 09.12.2025</h5>
+<ul>
+<li><strong>I:</strong> Flow: Add Composite Nodes</li>
+<li><strong>I:</strong> Flow: Add Teleport Nodes</li>
+<li><strong>I:</strong> Flow: UI Improvement</li>
+</ul>
+<hr />
+<h5 id="v212-06122025">V2.1.2 - 06.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added edge value muxer</li>
+<li><strong>B:</strong> Flow: Fix invalid port usage of rtsp port</li>
+</ul>
+<hr />
+<h5 id="v210-04122025">V2.1.0 - 04.12.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow: Added Vaxtor Cloud ANPR node (Axis snapshot upload with OAuth2 client credentials, token caching, plate &amp; vehicle outputs, success/error status).</li>
+<li><strong>F:</strong> Flow: Added JSON-to-Node and JSON Array Selector nodes to split API responses into per-key outputs or indexed items.</li>
+<li><strong>F:</strong> Flow: Added License Plate List node for whitelists with validity windows and per-tag outputs.</li>
+<li><strong>I:</strong> Flow: Device management integrated into Flow (shared device list, non-video flag, resolution-aware snapshots reused by nodes like HTTP image uploads and Vaxtor).</li>
+<li><strong>I:</strong> Flow: Connection safety refinements and help coverage for the new nodes.</li>
+</ul>
+<hr />
+<h5 id="v2039-28102025">V2.0.39 – 28.10.2025</h5>
+<ul>
+<li><strong>I:</strong> Flow: Prevent multiple connection to inputs</li>
+<li><strong>I:</strong> Flow: Prevent connetion with diffrent data types</li>
+<li><strong>B:</strong> Flow: Connection saving failed when validation multiple connections</li>
+<li><strong>I:</strong> Flow: Add safe mode to turn on or off invalid connection message </li>
+<li><strong>I:</strong> Flow: Add Lua Node</li>
+<li><strong>I:</strong> Flow: Add Lua json methods</li>
+<li><strong>I:</strong> Flow: Add Lua time methods</li>
+<li><strong>B:</strong> Flow: Fix invalid shape on inputs</li>
+</ul>
+<hr />
+<h5 id="v2031-27102025">V2.0.31 – 27.10.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Osci was not correclty renderd when flow was alread running</li>
+<li><strong>I:</strong> Flow: Node Help Dialog Added</li>
+<li><strong>I:</strong> Flow: Improve UI, Colors, Node Action Bar</li>
+<li><strong>I:</strong> Flow: Bend points now added on mouse hold down</li>
+<li><strong>I:</strong> Flow: Add body override for HTTP Node</li>
+<li><strong>I:</strong> Flow: Add raw json output to axis metadata event subscribe</li>
+<li><strong>I:</strong> Flow: Add speedometer node</li>
+</ul>
+<hr />
+<h5 id="v2024-26102025">V2.0.24 – 26.10.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Bend points on dragging moved all even if only one was selected.</li>
+<li><strong>I:</strong> Flow: Imporve UI Contrast</li>
+<li><strong>I:</strong> Flow: Add help dialog for nodes</li>
+</ul>
+<hr />
+<h5 id="v2023-25102025">V2.0.23 – 25.10.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Bend points not moving when use selection.</li>
+<li><strong>I:</strong> Flow: Bend points adding on left mouse done instead of click, Higlight edge connector on hover.</li>
+<li><strong>B:</strong> Flow: Axis event create, now waits for completion callback.</li>
+<li><strong>I:</strong> Flow: Axis event create no use the input name for the key in the event instead of the ID.</li>
+<li><strong>I:</strong> Flow: Add node action toolbar text under the icon.</li>
+<li><strong>I:</strong> Flow: Counter/Fifo/Lifo node, add edge detection</li>
+<li><strong>I:</strong> Flow: Add panic recover on node exectuion, Increase over all stability for exectuion</li>
+<li><strong>I:</strong> Flow: Axis output port dialog improved, when there is not output founded.</li>
+<li><strong>I:</strong> Flow: General stability Improvments</li>
+</ul>
+<hr />
+<h5 id="v2014-24102025">V2.0.14 – 24.10.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Compare node had invalid output type</li>
+<li><strong>I:</strong> Flow: Tooltip for node disconnection added</li>
+<li><strong>I:</strong> Flow: Manual Input node shows the value state</li>
+<li><strong>C:</strong> Flow: Remove Lock funcion from floating bar</li>
+</ul>
+<hr />
+<h5 id="v2013-23102025">V2.0.13 – 23.10.2025</h5>
+<ul>
+<li><strong>B:</strong> Flow: Axis Meta Create note now allow stateless and statefull events</li>
+<li><strong>F:</strong> Flow: Timer Sequence Node</li>
+</ul>
+<hr />
+<h5 id="v2011-23102025">V2.0.11 – 23.10.2025</h5>
+<ul>
+<li><strong>F:</strong> Flow Feature Release</li>
+<li><strong>C:</strong> Remove AWS integration from SD-Card feature</li>
+<li><strong>C:</strong> Old event based features removed (Camera Bridge, Timed Sequence, Sunset and Sunrise, Countdown)</li>
+<li><strong>I:</strong> Reduce application footprint</li>
+</ul>
+<hr />
+<h5 id="v113-28102025">V1.1.3 – 28.10.2025</h5>
+<ul>
+<li><strong>F:</strong> Add builds for devices without video </li>
+<li><strong>F:</strong> Add <code>LoggingSink</code> to emit metrics to application logs for diagnostics.</li>
+<li><strong>I:</strong> Unknown metadata datatypes now default to string so all keys are preserved in pipeline output.</li>
+<li><strong>B:</strong> Add SD reliability fixes and guards around non-VDO / non-storage builds to prevent runtime errors when features are disabled.</li>
+<li><strong>B:</strong> Fix models to align with VDO decoupling and new build variants.</li>
+<li><strong>B:</strong> Streaming endpoints now always return consistent JSON error objects instead of plain responses when the sink type is incorrect or on failures.</li>
+<li><strong>C:</strong> Add AXIS OS 12 build steps for CV25, ARTPEC7, and ARTPEC8 (video and non-video variants).</li>
+<li><strong>C:</strong> Update primary <code>manifest.json</code> (schemaVersion bump); add <code>manifestv11.json</code> for AXIS OS 11 targets; apply version bumps across manifests for interim releases.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
