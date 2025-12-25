@@ -10,6 +10,9 @@
 
 ##### V2.5.0 - 25.12.2025
 - **F:** Dashboard: New dashboard feature for real-time data visualization with 8 widget types (Text, Number, Gauge, Bool State, Table, Chart, AXIS Live Stream, Image Gallery)
+- **F:** Dashboard: Chart widget bar thickness configuration for better visualization control
+- **F:** Flow: SQL Table node for visual table creation and data insertion without writing SQL
+- **F:** Flow: SQL Table Read node for visual query building with relative time filters (last 15m, 1h, 7d, etc.)
 - **F:** Flow: Modbus TCP Client node for industrial protocol connectivity
 - **F:** Flow: Modbus Read/Write nodes for Coil, Int, Float, and String data types
 - **F:** Flow: Collection nodes for List operations (Length, GetAt, SetAt, Push, Pop, InsertAt, RemoveAt, Contains, IndexOf, ForEach)
@@ -20,7 +23,10 @@
 - **F:** Flow: Encoding nodes (Base64 Encode/Decode)
 - **F:** Flow: Image Cache nodes (Info, Delete) for in-memory image management
 - **F:** Flow: JSON utility nodes (Parse, Get, Set, Remove, Validate, Placeholder JSON)
+- **I:** Flow: Multi-database support for SQL nodes (SQLite, MySQL, PostgreSQL, SQL Server)
+- **I:** Flow: SQL nodes now use local time instead of UTC for timestamp columns
 - **I:** Documentation: Comprehensive updates for all new node categories and Dashboard feature
+- **I:** Documentation: SQL Table and SQL Table Read nodes with visual query examples
 - **I:** Documentation: Full SQLite tutorial with database creation, queries, and practical examples
 - **I:** Documentation: Input nodes, Seven Segment display, and detailed HTTP Request configuration
 

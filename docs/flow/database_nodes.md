@@ -340,6 +340,173 @@ Params JSON: `[42]`
 
 ---
 
+## SQL Table
+
+Create and insert data into a database table without writing SQL. Define your table structure visually with columns, and the node automatically creates the table and handles inserts.
+
+### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Conn Key | String | Connection from SQL Connection node |
+| Insert | Boolean | Rising edge inserts a new row with values from column inputs |
+| Clear | Boolean | Rising edge deletes all rows from the table |
+| *Column Inputs* | Various | One input per column you define (created via Sync Inputs) |
+
+### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Success | Boolean | True when last operation succeeded |
+| Last ID | Integer | Auto-generated ID of last inserted row |
+| Row Count | Integer | Total number of rows in the table |
+
+### Properties
+
+| Property | Description |
+|----------|-------------|
+| Table Name | Name of the database table |
+| Include ID Column | Add auto-incrementing primary key (recommended) |
+| Include Timestamp | Add automatic `datetime` column with current time |
+| Columns | Define columns with name, data type, default value, and max length |
+
+### Column Configuration
+
+Click **Add Column** to define table columns:
+
+- **Column Name**: Use lowercase with underscores (e.g., `sensor_value`)
+- **Data Type**: Boolean, Integer, Float, or String
+- **Default Value**: Optional SQL default
+- **Max Length**: For strings, 0 = unlimited (TEXT), or specify max chars (VARCHAR)
+
+Click **Sync Inputs** after defining columns to create the corresponding node inputs.
+
+### How It Works
+
+1. **Auto-Create Table**: The table is automatically created if it doesn't exist
+2. **Auto-Migrate**: New columns are automatically added when you update the schema
+3. **Insert on Trigger**: Send a rising edge to Insert to save a row with current input values
+4. **Clear on Trigger**: Send a rising edge to Clear to delete all rows
+
+### Example: Event Logger
+
+**Properties:**
+- Table Name: `events`
+- Include ID: Yes
+- Include Timestamp: Yes
+- Columns:
+    - `event_type` (String)
+    - `source` (String)
+    - `value` (Float)
+
+**Generated SQL:**
+```sql
+CREATE TABLE IF NOT EXISTS events (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  event_type TEXT,
+  source TEXT,
+  value REAL,
+  datetime DATETIME DEFAULT (datetime('now', 'localtime'))
+);
+```
+
+Wire your data sources to the column inputs, then trigger Insert to log a row.
+
+---
+
+## SQL Table Read
+
+Query a database table and output rows as JSON. Configure the query visually without writing SQL.
+
+### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Conn Key | String | Connection from SQL Connection node |
+| Read | Boolean | Rising edge executes the query and updates outputs |
+
+### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Success | Boolean | True when query succeeded |
+| Rows JSON | String | Query results as JSON array of objects |
+| Row Count | Integer | Number of rows returned |
+
+### Properties
+
+| Property | Description |
+|----------|-------------|
+| Table Name | Name of the table to query |
+| Columns | Columns to select (`*` for all, or comma-separated) |
+| Order By | Column to sort by |
+| Order Direction | Descending (newest first) or Ascending |
+| Limit | Maximum rows to return |
+| Offset | Skip this many rows (for pagination) |
+| Filters | WHERE conditions to filter rows |
+
+### Filters
+
+Add filters to select specific rows. Each filter has:
+
+- **Column**: The column to filter on
+- **Value Type**:
+    - **Static Value**: Enter a fixed value with comparison operator (=, !=, >, <, LIKE, etc.)
+    - **Relative Time**: Filter by time range (last 15 minutes, 1 hour, 7 days, etc.)
+
+When using **Relative Time**, the operator is automatically set to `>` (greater than) to get recent records.
+
+### Time Filter Presets
+
+| Preset | Description |
+|--------|-------------|
+| 1m - 45m | Minutes (1, 2, 5, 10, 15, 20, 30, 45) |
+| 1h - 24h | Hours (1, 2, 3, 4, 6, 8, 12, 18, 24) |
+| 2d - 180d | Days (2, 3, 5, 7, 14, 21, 30, 60, 90, 180) |
+| 1y | One year |
+
+### Example: Recent Events
+
+**Properties:**
+- Table Name: `events`
+- Columns: `*`
+- Order By: `datetime`
+- Order Direction: Descending
+- Limit: 100
+- Filter: `datetime` > Last 15 minutes
+
+**Generated SQL:**
+```sql
+SELECT * FROM events
+WHERE datetime > datetime('now', 'localtime', '-15 minutes')
+ORDER BY datetime DESC
+LIMIT 100;
+```
+
+### Example: Filtered Query
+
+**Properties:**
+- Table Name: `temperatures`
+- Columns: `datetime, temperature`
+- Filter 1: `sensor_id` = `Sensor-1` (Static Value)
+- Filter 2: `datetime` > Last 1 hour (Relative Time)
+- Order By: `datetime`
+- Limit: 50
+
+**Generated SQL:**
+```sql
+SELECT datetime, temperature FROM temperatures
+WHERE sensor_id = 'Sensor-1'
+  AND datetime > datetime('now', 'localtime', '-1 hours')
+ORDER BY datetime DESC
+LIMIT 50;
+```
+
+!!! tip
+    Use SQL Table and SQL Table Read together: SQL Table to log data, SQL Table Read to query it back for display in Dashboard widgets.
+
+---
+
 ## Complete Example: Temperature Logger
 
 This example logs temperature readings from a Modbus sensor and displays recent values.
