@@ -10,10 +10,12 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 
 **Key Features:**
 
+- **Multi-dashboard support** with browser-like tabs
 - 8 widget types for different visualization needs
 - Drag-and-drop widget placement
 - Real-time data updates via WebSocket
 - Edit and Live modes
+- Fullscreen mode for dedicated displays
 - Permission-based access control
 
 ---
@@ -25,6 +27,22 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 1. Navigate to **Flow Dashboard** from the main menu
 2. The dashboard loads in **Live Mode** by default
 
+### Toolbar
+
+The dashboard toolbar provides quick access to all controls:
+
+```
+[Tab 1] [Tab 2] [+] | [Add Widget] | [Live/Edit] [Fullscreen]
+```
+
+| Element | Description |
+|---------|-------------|
+| **Tabs** | Switch between dashboards |
+| **+ Button** | Add a new dashboard (Edit Mode only) |
+| **Add Widget** | Open widget creation dialog |
+| **Live/Edit** | Toggle between modes |
+| **Fullscreen** | Enter fullscreen view |
+
 ### Switching Modes
 
 | Mode | Description |
@@ -32,7 +50,25 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 | **Live Mode** | View real-time data, no editing possible |
 | **Edit Mode** | Add, configure, and arrange widgets |
 
-Click **Switch to Edit Mode** to enable editing (requires `feature_flow_dashboard_update` permission).
+Click the **Live/Edit** button to toggle modes (requires `feature_flow_dashboard_update` permission).
+
+---
+
+## Multi-Dashboard Support
+
+Create multiple dashboards to organize your monitoring views. Each dashboard has its own independent set of widgets.
+
+### Managing Dashboards
+
+| Action | How To |
+|--------|--------|
+| **Switch Dashboard** | Click on a tab |
+| **Add Dashboard** | Click the **+** button (Edit Mode) |
+| **Rename Dashboard** | Double-click the tab name, or click the pencil icon on the active tab |
+| **Delete Dashboard** | Click the **X** button on a tab (only visible when multiple dashboards exist) |
+
+!!! tip
+    Use separate dashboards for different purposes: one for live monitoring, another for historical data, and another for specific zones or devices.
 
 ---
 
@@ -222,7 +258,7 @@ Visualizes JSON data as line or bar charts.
 
 ### AXIS Live Stream Widget
 
-Displays live video from an Axis camera.
+Displays live video from an Axis camera using WebRTC for low-latency streaming.
 
 **Best for:** Camera monitoring, visual verification
 
@@ -232,13 +268,34 @@ Displays live video from an Axis camera.
 |--------|-------------|
 | Device | Select from Device Management |
 | Resolution | Stream resolution |
-| Width/Height | Display dimensions |
 
 **Connection States:**
-- Idle - Not connected
-- Connecting - Establishing stream
-- Connected - Live video
-- Error - Connection failed (retries every 5 seconds)
+
+The widget shows detailed connection progress:
+
+- Initializing...
+- Creating peer connection...
+- Setting up media channels...
+- Creating offer...
+- Sending offer to server...
+- Processing server response...
+- Waiting for ICE candidates...
+- Establishing connection...
+- Connected, waiting for stream...
+- Buffering video...
+
+**Stream Statistics:**
+
+Click the chart icon (top-right of video) when streaming to view real-time statistics:
+
+| Stat | Description |
+|------|-------------|
+| Resolution | Current video resolution |
+| Framerate | Frames per second |
+| Bitrate | Stream bandwidth |
+| Codec | Video codec (H264, VP8, etc.) |
+| Packets Lost | Network quality indicator |
+| Jitter | Connection stability (ms) |
 
 **Note:** This widget does not require a Flow node connection.
 
@@ -265,6 +322,28 @@ Shows images from the Flow image cache.
 - Shows image metadata (size, content type)
 
 **Note:** This widget does not require a Flow node connection.
+
+---
+
+## Fullscreen Mode
+
+Click the fullscreen button to enter a distraction-free viewing mode.
+
+**In Fullscreen:**
+
+- The entire dashboard view fills the screen (toolbar + widgets)
+- Tabs remain visible for switching between dashboards
+- Press **Escape** or click the fullscreen button again to exit
+
+**Fullscreen in Live Mode:**
+
+When fullscreen is active in Live Mode, edit controls are automatically hidden:
+
+- Add dashboard (+) button
+- Rename/delete tab buttons
+- Add widget button
+
+This provides a clean monitoring interface for operators.
 
 ---
 
