@@ -6,6 +6,14 @@
 - **F:** New Feature
 - **C:** Change
 
+
+##### V2.6.3 - 31.12.2025
+- **F:** Flow: Add Video Source Event types for subscribe
+- **B:** Flow: Source and data keys fix
+- **I:** Flow: Rework device management
+- **I:** Flow: Add device discovery
+- **I:** Flow: Add SQL Table and Read node
+
 ---
 
 ##### V2.5.0 - 25.12.2025
