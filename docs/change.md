@@ -6,6 +6,15 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V2.6.4 - 02.01.2026
+- **B:** Flow: Map Set one cycle output fix
+- **B:** Flow: Using AXIS Output Node with an IO Modul
+- **F:** Flow: Add Collection Create Nodes
+- **C:** Flow: License Plate Node emits now only for one cylce
+- **C:** Flow: Remove raw json output from event subscribe node
+- **I:** Flow: Rework Node Tags
+- **I:** Flow: Add Space Key Bindings to open Node dialog
+
 
 ##### V2.6.3 - 31.12.2025
 - **F:** Flow: Add Video Source Event types for subscribe
