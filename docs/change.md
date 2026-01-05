@@ -6,7 +6,7 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V2.6.5 - 05.01.2026
+##### V2.6.6 - 05.01.2026
 - **F:** Spot Color Detection Added
 - **I:** Flow: Add OPC UA Nodes
 - **I:** Flow-Dashboard: Add Button Widget
