@@ -6,6 +6,11 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V2.6.5 - 05.01.2026
+- **F:** Spot Color Detection Added
+- **I:** Flow: Add OPC UA Nodes
+- **I:** Flow-Dashboard: Add Button Widget
+
 ##### V2.6.4 - 02.01.2026
 - **B:** Flow: Map Set one cycle output fix
 - **B:** Flow: Using AXIS Output Node with an IO Modul
