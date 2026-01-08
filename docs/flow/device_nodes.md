@@ -9,7 +9,7 @@ The **Axis RTSP Stream** node displays a live video stream from an Axis device a
 **Type**: `AxisRtspStreamNode`
 
 ### Functionality
-Connects to a camera's RTSP stream. Supports visualizing region-of-interest (ROI) and object detection metadata overlays.
+Connects to a device's RTSP stream. Supports visualizing region-of-interest (ROI) and object detection metadata overlays.
 
 ### Inputs
 - **ROI** (JSON): Region of Interest polygon points (if overlay enabled).
@@ -76,6 +76,57 @@ Fires outputs when a specific event occurs on the device (e.g., specific MQTT to
 
 ---
 
+## Analytics Metadata
+
+The **Analytics Metadata** node receives raw analytics metadata from the device's built-in object detection (AXIS Object Analytics).
+
+**Category**: Device
+**Type**: `AnalyticsMetadataNode`
+
+### Functionality
+
+Streams real-time object detection data from the device's analytics engine. Supports two modes for different use cases.
+
+### Modes
+
+| Mode | Description |
+|------|-------------|
+| **Scene Description** | Real-time frames with current observations (objects in frame) |
+| **Consolidated Track** | Complete track data after an object leaves the scene |
+
+### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| New Data | Boolean | Pulses true when new metadata arrives |
+| JSON | String | Raw JSON containing observations or track data |
+| Error | String | Error message if streaming fails |
+
+### Properties
+
+- **Mode**: Select Scene Description or Consolidated Track
+- **Framerate**: How often to poll for new data (frames per second)
+
+### Scene Description JSON Example
+
+```json
+{
+  "observations": [
+    {
+      "id": "track_123",
+      "type": "Human",
+      "boundingBox": {"x": 0.2, "y": 0.3, "width": 0.1, "height": 0.3},
+      "confidence": 0.95
+    }
+  ]
+}
+```
+
+!!! tip
+    Use Scene Description for real-time monitoring and triggering. Use Consolidated Track for logging complete object paths after they leave the frame.
+
+---
+
 ## License Plate List
 The **License Plate List** node checks a plate string against a configured local database.
 
@@ -107,7 +158,7 @@ The **Vaxtor Cloud ANPR** node sends an image to the Vaxtor Cloud for recognitio
 **Type**: `VaxtorCloudAnprNode`
 
 ### Functionality
-Captures an image from the connected camera and uploads it to the Vaxtor Cloud API for analysis.
+Captures an image from the connected device and uploads it to the Vaxtor Cloud API for analysis.
 
 ### Inputs
 - **Execute** (Boolean): Triggers the capture and upload.

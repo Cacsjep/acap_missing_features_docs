@@ -2,21 +2,17 @@ site_name: ACAP Missing Features Documentation
 theme:
   name: material
   palette:
-    scheme: slate 
-    primary: yellow 
+    scheme: slate
+    primary: yellow
 
     toggle:
       icon: material/weather-night
       name: Switch to light mode
 
 nav:
-  - About: index.md
-  - Changelog: change.md
-  - Compatibility: compat.md
-  - Enable or Disable Features: endis.md
-  - Event Trigger: event_trigger.md
+  - Installation: index.md
+  - Limitations: limitations.md
   - Features:
-    - Overview: features.md
     - Flow:
       - Overview: flow.md
       - Reference: flow/reference.md
@@ -25,7 +21,7 @@ nav:
       - Data & Math: flow/data_manipulation.md
       - Devices & ANPR: flow/device_nodes.md
       - Timing: flow/timing_nodes.md
-      - Network & Modbus: flow/network_nodes.md
+      - Network & Protocols: flow/network_nodes.md
       - Database & SQL: flow/database_nodes.md
       - Collections & JSON: flow/collections_nodes.md
       - String & Text: flow/string_nodes.md
@@ -33,14 +29,12 @@ nav:
       - Advanced & Scripting: flow/advanced_nodes.md
       - Composites: flow/composites.md
     - Dashboard: dashboard.md
+    - Spot Color Detector: spot_color.md
     - Image to SD-Card: img_sdcard.md
-    - Parking Times: parking_times.md
     - Scene Analysis Triggers: scene_analysis.md
     - License Plate List: license_plate_list.md
-
   - General Settings: general_settings.md
-  - Installation: install.md
-  - Licensing: licensing.md
+  - Changelog: change.md
   - Support: support.md
 
 extra_css:

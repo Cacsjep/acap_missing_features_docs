@@ -609,6 +609,85 @@ Run this periodically with a Timer to prevent the database from growing too larg
 
 ---
 
+## Parking Monitor
+
+The **Parking Monitor** node tracks vehicle entry/exit times, calculates parking duration, and detects overparking. Uses SQL storage for persistence.
+
+**Category**: Database, Plates
+
+### Functionality
+
+Manages a parking database with automatic overparking detection and cleanup. Ideal for parking lot monitoring systems.
+
+### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Conn Key | String | Connection from SQL Connection node |
+| Plate | String | License plate text |
+| Tags | String | Optional tags for the entry (e.g., zone, vehicle type) |
+| Enter | Boolean | Rising edge records vehicle entry |
+| Exit | Boolean | Rising edge records vehicle exit |
+| Check Overstay | Boolean | Rising edge checks for overparked vehicles |
+| Cleanup | Boolean | Rising edge deletes old entries |
+| Delete | Boolean | Rising edge deletes specific plate |
+| Delete Plate | String | Plate to delete when Delete triggers |
+| Max Park Mins | Integer | Max parking minutes before overparked |
+| Max Hold Mins | Integer | Delete entries older than this on cleanup |
+
+### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Overparked | Boolean | Pulses true when overparked plate found |
+| Overprk Plate | String | The overparked license plate |
+| Overprk Mins | Integer | Minutes parked for overparked plate |
+| Entries JSON | String | All entries sorted by minutes (longest first) |
+
+### Properties
+
+| Property | Description |
+|----------|-------------|
+| Table Name | Database table name (default: `parking_entries`) |
+| Auto Check Overstay | Enable automatic overstay checking |
+| Check Interval | Seconds between auto checks (default: 10) |
+| Auto Cleanup | Enable automatic cleanup of old entries |
+| Cleanup Interval | Seconds between auto cleanups (default: 3600) |
+| Max Park Minutes | Default max parking time (default: 120) |
+| Max Hold Minutes | Default max entry age for cleanup (default: 720) |
+
+### Entries JSON Format
+
+```json
+[
+  {
+    "plate": "ABC123",
+    "tags": "Zone A",
+    "entry_time": 1704444000,
+    "entry_time_human": "2024-01-05 08:12:00",
+    "minutes": 125,
+    "seconds": 7512,
+    "is_overparked": true,
+    "is_exit": false,
+    "exit_time": 0,
+    "exit_time_human": ""
+  }
+]
+```
+
+### Usage Example
+
+1. Add **SQL Connection** node (SQLite or other database)
+2. Add **Parking Monitor** node and connect `Conn Key`
+3. Wire LPR events (from Metadata Event Subscribe or Vaxtor) to `Plate`, `Enter`, and `Exit`
+4. Enable auto check overstay in properties, or wire a Timer to `Check Overstay`
+5. Wire `Overparked` output to trigger alerts
+
+!!! tip
+    Use the `Tags` input to categorize entries by zone, camera, or vehicle type. This data is included in the Entries JSON.
+
+---
+
 ## Best Practices
 
 1. **Use parameters** (?) instead of string concatenation to prevent SQL injection

@@ -4,10 +4,29 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 ---
 
+## Multi-Flow Support
+
+Flow now supports **multiple flows** with a browser-like tab interface. Each flow is independent and can be started/stopped individually.
+
+### Flow Tabs
+
+| Action | How To |
+|--------|--------|
+| **Switch Flow** | Click on a tab |
+| **Add Flow** | Click the **+** button (Edit Mode only) |
+| **Rename Flow** | Double-click the tab name, or click the pencil icon |
+| **Delete Flow** | Click the **X** button on a tab (requires at least 2 flows) |
+
+- A **green play icon** indicates a running flow
+- Flows can run simultaneously—start multiple flows for parallel automation
+- Each flow has its own canvas, nodes, and execution state
+
+---
+
 #### Open the Flow Builder
 
-- **Launch the app UI** and pick **Flow** from the feature list.
-- The last saved flow loads automatically; if none is stored, a short intro dialog appears.
+- **Launch the app UI** and pick **Flow** from the feature list
+- The last active flow loads automatically; switch tabs to access other flows
 
 ---
 
@@ -21,14 +40,16 @@ Design automation visually by dragging nodes onto a canvas and wiring them toget
 
 ---
 
-#### Floating Action Bar (left, draggable)
+#### Action Bar
 
-- **Start / Stop Execution:** Switches between edit mode and live mode. Live mode locks editing, animates edges, and runs the graph. Stopping saves the graph.
+The action bar provides quick access to flow controls:
+
+- **Start:** Runs the flow (auto-saves before starting). Switches to live mode where editing is locked and edges animate.
+- **Save:** Manually save the current flow. A toast notification confirms the save. The flow also auto-saves when starting.
 - **Add Node:** Opens the catalog. Drag a template to the canvas. Axis nodes open an extra dialog to pick ports or events before placement.
-- **IO Table:** Opens a live table listing every node with its inputs/outputs and current values.
+- **IO Table:** Opens a live table listing every node with its inputs/outputs and current values (available in live mode).
 - **Fit to View:** Reframes the canvas around all nodes.
-- **Export / Import:** Download or load a graph JSON. Import is disabled while the flow is running, and the button is hidden for roles that lack the Flow update permission so read-only operators never see the dialog.
-- **Introduction:** Reopen the short walkthrough (video steps).
+- **More Menu:** Export/Import flow JSON, toggle Safe Mode, Helper Lines, Simple Edges, and set background color.
 
 **Video: Floating action bar**
 <video controls muted loop playsinline src="bar.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
@@ -98,8 +119,8 @@ For a complete, per-node breakdown covering every template in the catalog (input
 !!! warning
     Axis Metadata Event (Create) nodes are only visible in the Axis event rule list while the flow is running.
 
-- **Axis Live Stream**  
-    - What it does: RTSP video preview from an Axis camera (live mode only).  
+- **Axis Live Stream**
+    - What it does: RTSP video preview from an Axis device (live mode only).
     - Properties: IP, port, username, password, channel. Shows connecting/error overlays and retries every 5 s on failure.
 
 - **Axis Outputs**  
@@ -177,7 +198,7 @@ For a complete, per-node breakdown covering every template in the catalog (input
 - **Oscilloscope** - Plots up to five signals. Properties: line colors, per-input data type, min/max ranges for numeric inputs.  
 - **Logging** - Live log viewer (level, time, node id/name, message) from the flow runtime.  
 - **Text** - Static label. Properties: text and size.  
-- **Axis Live Stream** - Also handy for visual debugging of camera feeds.
+- **Axis Live Stream** - Also handy for visual debugging of video feeds.
 - **Speedometer** - The Speedometer visualizes a numeric input value using a gauge-style dial.
 
 ---

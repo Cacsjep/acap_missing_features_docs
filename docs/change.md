@@ -6,6 +6,19 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.0.2 - 08.01.2026
+- **F:** Flow: Multi-flow support with tabbed interface (run multiple flows simultaneously)
+- **F:** Flow: Add manual Save button to toolbar (in addition to auto-save on run)
+- **F:** Flow: Add Channel Publisher/Subscriber nodes for cross-flow communication
+- **F:** Flow: Add Analytics Metadata node for AXIS Object Analytics data
+- **F:** Flow: Add Tags input to Parking Monitor for categorizing entries
+- **F:** Dashboard: Add Static Text widget for labels and headers (no node required)
+- **F:** Dashboard: Add String Input widget for text entry controls
+- **F:** Spot Color Detector feature for detecting colors in video regions
+- **I:** Flow: Save confirmation toast notification
+- **C:** Removed legacy Parking Times feature (use Parking Monitor node instead)
+- **C:** Documentation restructured: Installation is now the landing page
+
 ##### V2.6.6 - 05.01.2026
 - **F:** Spot Color Detection Added
 - **I:** Flow: Add OPC UA Nodes
@@ -110,87 +123,4 @@
 - **B:** Flow: Fix invalid port usage of rtsp port
 
 ---
-
-##### V2.1.0 - 04.12.2025
-- **F:** Flow: Added Vaxtor Cloud ANPR node (Axis snapshot upload with OAuth2 client credentials, token caching, plate & vehicle outputs, success/error status).
-- **F:** Flow: Added JSON-to-Node and JSON Array Selector nodes to split API responses into per-key outputs or indexed items.
-- **F:** Flow: Added License Plate List node for whitelists with validity windows and per-tag outputs.
-- **I:** Flow: Device management integrated into Flow (shared device list, non-video flag, resolution-aware snapshots reused by nodes like HTTP image uploads and Vaxtor).
-- **I:** Flow: Connection safety refinements and help coverage for the new nodes.
-
----
-
-##### V2.0.39 – 28.10.2025
-- **I:** Flow: Prevent multiple connection to inputs
-- **I:** Flow: Prevent connetion with diffrent data types
-- **B:** Flow: Connection saving failed when validation multiple connections
-- **I:** Flow: Add safe mode to turn on or off invalid connection message 
-- **I:** Flow: Add Lua Node
-- **I:** Flow: Add Lua json methods
-- **I:** Flow: Add Lua time methods
-- **B:** Flow: Fix invalid shape on inputs
-
----
-
-##### V2.0.31 – 27.10.2025
-- **B:** Flow: Osci was not correclty renderd when flow was alread running
-- **I:** Flow: Node Help Dialog Added
-- **I:** Flow: Improve UI, Colors, Node Action Bar
-- **I:** Flow: Bend points now added on mouse hold down
-- **I:** Flow: Add body override for HTTP Node
-- **I:** Flow: Add raw json output to axis metadata event subscribe
-- **I:** Flow: Add speedometer node
-
----
-
-##### V2.0.24 – 26.10.2025
-- **B:** Flow: Bend points on dragging moved all even if only one was selected.
-- **I:** Flow: Imporve UI Contrast
-- **I:** Flow: Add help dialog for nodes
-
----
-
-##### V2.0.23 – 25.10.2025
-- **B:** Flow: Bend points not moving when use selection.
-- **I:** Flow: Bend points adding on left mouse done instead of click, Higlight edge connector on hover.
-- **B:** Flow: Axis event create, now waits for completion callback.
-- **I:** Flow: Axis event create no use the input name for the key in the event instead of the ID.
-- **I:** Flow: Add node action toolbar text under the icon.
-- **I:** Flow: Counter/Fifo/Lifo node, add edge detection
-- **I:** Flow: Add panic recover on node exectuion, Increase over all stability for exectuion
-- **I:** Flow: Axis output port dialog improved, when there is not output founded.
-- **I:** Flow: General stability Improvments
----
-
-##### V2.0.14 – 24.10.2025
-- **B:** Flow: Compare node had invalid output type
-- **I:** Flow: Tooltip for node disconnection added
-- **I:** Flow: Manual Input node shows the value state
-- **C:** Flow: Remove Lock funcion from floating bar
-
----
-
-##### V2.0.13 – 23.10.2025
-- **B:** Flow: Axis Meta Create note now allow stateless and statefull events
-- **F:** Flow: Timer Sequence Node
-
----
-
-##### V2.0.11 – 23.10.2025
-- **F:** Flow Feature Release
-- **C:** Remove AWS integration from SD-Card feature
-- **C:** Old event based features removed (Camera Bridge, Timed Sequence, Sunset and Sunrise, Countdown)
-- **I:** Reduce application footprint
-
----
-
-##### V1.1.3 – 28.10.2025
-- **F:** Add builds for devices without video 
-- **F:** Add `LoggingSink` to emit metrics to application logs for diagnostics.
-- **I:** Unknown metadata datatypes now default to string so all keys are preserved in pipeline output.
-- **B:** Add SD reliability fixes and guards around non-VDO / non-storage builds to prevent runtime errors when features are disabled.
-- **B:** Fix models to align with VDO decoupling and new build variants.
-- **B:** Streaming endpoints now always return consistent JSON error objects instead of plain responses when the sink type is incorrect or on failures.
-- **C:** Add AXIS OS 12 build steps for CV25, ARTPEC7, and ARTPEC8 (video and non-video variants).
-- **C:** Update primary `manifest.json` (schemaVersion bump); add `manifestv11.json` for AXIS OS 11 targets; apply version bumps across manifests for interim releases.
 

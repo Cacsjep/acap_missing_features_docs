@@ -480,3 +480,88 @@ To send a camera image via HTTP:
 3. Use the Image ID from the snapshot in your request
 
 The HTTP node can reference cached images when sending to external services.
+
+---
+
+## Cross-Flow Communication
+
+Channel nodes allow communication between different flows. Use them to share data or coordinate actions across flows running in parallel.
+
+### Channel Publisher
+
+Publishes values to a named channel. Multiple flows can subscribe to this channel.
+
+**Category**: Input, Output
+
+#### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Value | Configurable | The value to publish |
+
+#### Properties
+
+| Property | Description |
+|----------|-------------|
+| Channel Name | Unique identifier for the channel |
+| Data Type | Boolean, Integer, Float, or String |
+
+#### How It Works
+
+1. Configure a channel name (e.g., `motion_detected`)
+2. Set the data type to match your values
+3. Wire any value to the input
+4. All subscribers to this channel receive the value in real-time
+
+---
+
+### Channel Subscriber
+
+Receives values from a named channel published by another flow.
+
+**Category**: Input, Output
+
+#### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Value | Configurable | The received value |
+
+#### Properties
+
+| Property | Description |
+|----------|-------------|
+| Channel Name | Name of the channel to subscribe to |
+| Data Type | Must match the publisher's data type |
+
+#### How It Works
+
+1. Enter the same channel name as the publisher
+2. Set the same data type as the publisher
+3. The output updates whenever the publisher sends a new value
+
+---
+
+### Cross-Flow Example
+
+**Flow 1: Motion Detection**
+```
+[Metadata Event Subscribe] → [Edge Detection] → [Channel Publisher]
+                                                   Channel: motion_zone_1
+                                                   Type: Boolean
+```
+
+**Flow 2: Alert Handler**
+```
+[Channel Subscriber] → [OR Gate] → [HTTP Request]
+   Channel: motion_zone_1             (Send alert)
+```
+
+**Flow 3: Logging**
+```
+[Channel Subscriber] → [SQL Insert]
+   Channel: motion_zone_1    (Log to database)
+```
+
+!!! tip
+    Use channel names that describe the data (e.g., `entrance_motion`, `temperature_sensor_1`). This makes it easier to connect the right publisher and subscriber.

@@ -6,10 +6,10 @@ Nodes for file operations on the Axis SD card and image caching.
 
 ## SD Card Overview
 
-The Axis camera's SD card can be used for persistent storage of logs, configuration, and captured images. These nodes provide full file system access within the SD card.
+The Axis device's SD card can be used for persistent storage of logs, configuration, and captured images. These nodes provide full file system access within the SD card.
 
 !!! warning
-    Ensure an SD card is inserted and formatted before using these nodes. Check the camera's Storage settings.
+    Ensure an SD card is inserted and formatted before using these nodes. Check the device's Storage settings.
 
 ---
 

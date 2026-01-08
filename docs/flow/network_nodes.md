@@ -266,6 +266,117 @@ A typical Modbus setup:
 
 ---
 
+## OPC UA
+
+OPC UA (Open Platform Communications Unified Architecture) is a machine-to-machine communication protocol for industrial automation. The Flow provides nodes to connect to OPC UA servers and read/write variables.
+
+### OPC UA Client
+
+The **OPC UA Client** node establishes and manages a connection to an OPC UA server.
+
+**Category**: Network, OPC UA
+
+#### Functionality
+
+Creates a persistent connection to an OPC UA server. Other OPC UA nodes use the `Conn Key` output to share this connection.
+
+#### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Connect | Boolean | Rising edge opens the connection; falling edge closes it |
+
+#### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Connected | Boolean | True while connection is active |
+| Conn Key | String | Unique key to pass to read/write nodes |
+| Error | String | Connection error message (if any) |
+
+#### Properties
+
+- **Endpoint URL**: OPC UA server endpoint (e.g., `opc.tcp://192.168.1.100:4840`)
+- **Security Mode**: None, Sign, or SignAndEncrypt
+- **Security Policy**: None, Basic256Sha256, etc.
+- **Username**: Optional authentication username
+- **Password**: Optional authentication password
+
+!!! tip
+    Keep one OPC UA Client node and wire its `Conn Key` to multiple read/write nodes. This shares the connection efficiently.
+
+---
+
+### OPC UA Read
+
+Reads a value from an OPC UA node variable.
+
+**Category**: Network, OPC UA
+
+#### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Conn Key | String | Connection from OPC UA Client |
+| Read | Boolean | Rising edge triggers the read |
+
+#### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Read | Boolean | Pulses true when read completes |
+| Value | Configurable | The variable value (type selectable) |
+| Error | String | Error message if read fails |
+
+#### Properties
+
+- **Node ID**: The OPC UA node identifier (e.g., `ns=1;s=Temperature`)
+- **Output Type**: Select the data type (Boolean, Integer, Float, String)
+
+---
+
+### OPC UA Write
+
+Writes a value to an OPC UA node variable.
+
+**Category**: Network, OPC UA
+
+#### Inputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Conn Key | String | Connection from OPC UA Client |
+| Write | Boolean | Rising edge triggers the write |
+| Value | Configurable | The value to write (type selectable) |
+
+#### Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Written | Boolean | Pulses true when write completes |
+| Error | String | Error message if write fails |
+
+#### Properties
+
+- **Node ID**: The OPC UA node identifier (e.g., `ns=1;s=SetPoint`)
+- **Input Type**: Select the data type (Boolean, Integer, Float, String)
+
+---
+
+### OPC UA Example
+
+A typical OPC UA setup:
+
+1. Add an **OPC UA Client** node and configure the server endpoint URL
+2. Wire an **Enable** node or trigger to the `Connect` input
+3. Add **OPC UA Read/Write** nodes and connect their `Conn Key` input to the client's output
+4. Use timers or triggers to control when reads/writes occur
+
+!!! warning
+    Ensure the OPC UA server is accessible from the camera network. Firewall rules may need adjustment for port 4840 (default OPC UA port).
+
+---
+
 ## Media Streaming
 
 ### WebRTC Stream

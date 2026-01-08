@@ -11,7 +11,7 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 **Key Features:**
 
 - **Multi-dashboard support** with browser-like tabs
-- 8 widget types for different visualization needs
+- 11 widget types for different visualization needs
 - Drag-and-drop widget placement
 - Real-time data updates via WebSocket
 - Edit and Live modes
@@ -258,9 +258,9 @@ Visualizes JSON data as line or bar charts.
 
 ### AXIS Live Stream Widget
 
-Displays live video from an Axis camera using WebRTC for low-latency streaming.
+Displays live video from an Axis device using WebRTC for low-latency streaming.
 
-**Best for:** Camera monitoring, visual verification
+**Best for:** Video monitoring, visual verification
 
 **Settings:**
 
@@ -320,6 +320,74 @@ Shows images from the Flow image cache.
 - Click to enlarge
 - Download individual images
 - Shows image metadata (size, content type)
+
+**Note:** This widget does not require a Flow node connection.
+
+---
+
+### Button Control Widget
+
+Interactive button to control Boolean Input or Button nodes from the dashboard.
+
+**Best for:** Manual triggers, operator controls, on/off switches
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Mode | `toggle` (stays on/off) or `momentary` (on while pressed) |
+| Active Color | Color when button is active |
+| Inactive Color | Color when button is inactive |
+| Active Icon | Icon when active |
+| Inactive Icon | Icon when inactive |
+| Active Label | Text when active (e.g., "ON") |
+| Inactive Label | Text when inactive (e.g., "OFF") |
+| Button Size | Button dimensions in pixels |
+| Icon Size | Icon size in pixels |
+
+**Accepts:** Boolean outputs from `node_button` or `node_bool_input` nodes only
+
+**Note:** The button sends commands back to the Flow node via WebSocket.
+
+---
+
+### String Input Widget
+
+Text input field to send string values to String Input nodes.
+
+**Best for:** Text entry, search fields, configuration values
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Placeholder | Hint text when empty |
+| Min Width | Minimum field width |
+| Dense | Compact layout mode |
+| Clearable | Show clear button |
+
+**Accepts:** String outputs from `node_string_input` nodes only
+
+**Note:** Press Enter or blur the field to send the value to the Flow.
+
+---
+
+### Static Text Widget
+
+Displays static text without connecting to any node.
+
+**Best for:** Labels, headers, instructions, section dividers
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Text Content | The text to display (supports multiple lines) |
+| Text Size | Font size in pixels |
+| Text Color | Text color (hex) |
+| Text Align | Left, center, or right alignment |
+| Bold | Enable bold text |
+| Italic | Enable italic text |
 
 **Note:** This widget does not require a Flow node connection.
 
