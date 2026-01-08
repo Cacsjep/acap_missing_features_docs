@@ -10,14 +10,15 @@
 - **F:** Flow: Multi-flow support with tabbed interface (run multiple flows simultaneously)
 - **F:** Flow: Add manual Save button to toolbar (in addition to auto-save on run)
 - **F:** Flow: Add Channel Publisher/Subscriber nodes for cross-flow communication
-- **F:** Flow: Add Analytics Metadata node for AXIS Object Analytics data
+- **F:** Flow: Add Analytics Metadata node
 - **F:** Flow: Add Tags input to Parking Monitor for categorizing entries
 - **F:** Dashboard: Add Static Text widget for labels and headers (no node required)
 - **F:** Dashboard: Add String Input widget for text entry controls
 - **F:** Spot Color Detector feature for detecting colors in video regions
 - **I:** Flow: Save confirmation toast notification
 - **C:** Removed legacy Parking Times feature (use Parking Monitor node instead)
-- **C:** Documentation restructured: Installation is now the landing page
+- **B:** Flow: Composites does not respect static input nodes.
+- **B:** Flow: Composites parameter change not worked correctly.
 
 ##### V2.6.6 - 05.01.2026
 - **F:** Spot Color Detection Added

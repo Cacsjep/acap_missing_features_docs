@@ -35,6 +35,7 @@ nav:
     - License Plate List: license_plate_list.md
   - General Settings: general_settings.md
   - Changelog: change.md
+  - Video Tutorials: videos.md
   - Support: support.md
 
 extra_css:

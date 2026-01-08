@@ -101,6 +101,96 @@ For best compatibility with video streaming features:
 
 ---
 
+## SD Card Requirements
+
+Several features require an SD card to be inserted and formatted:
+
+- **Storage Nodes:** All SD Card file operations
+- **Image to SD-Card:** Saving captured images
+- **Database (SQLite):** Local database storage
+
+---
+
+## Image Cache Limits
+
+The in-memory image cache has the following constraints:
+
+| Constraint | Value |
+|------------|-------|
+| Maximum cached images | 10 |
+| Maximum cache size | 30 MB |
+| Eviction policy | Oldest images removed first |
+
+When the cache is full, the oldest images are automatically evicted to make room for new ones.
+
+---
+
+## Database Constraints
+
+### Connection Settings
+
+| Setting | Default Value |
+|---------|---------------|
+| Connection timeout | 10 seconds |
+| Max retry attempts | 3 |
+| Retry delay | 1 second |
+| Slow query threshold | 5 seconds |
+
+### Supported databases
+
+SQLite, MySQL, PostgreSQL, SQL Server 
+
+!!! note
+    External databases (MySQL, PostgreSQL, SQL Server) require network access from the Axis device to the database server.
+
+---
+
+## Network Timeouts
+
+### Protocol-Specific Timeouts
+
+| Protocol | Timeout/Interval |
+|----------|------------------|
+| TCP Sender dial | 2 seconds |
+| HTTP Request | Configurable (default varies) |
+| Webhook Request | 30 seconds |
+| Modbus TCP heartbeat | 2 seconds |
+| OPC UA heartbeat | 5 seconds |
+| OPC UA client close | 2 seconds |
+| RTMP dial | 5 seconds |
+| RTMP read/write | 2 seconds |
+
+### Default Ports
+
+| Protocol | Default Port |
+|----------|--------------|
+| Modbus TCP | 502 |
+| Valid port range | 1 - 65535 |
+
+---
+
+### Spot Color Detector
+
+| Setting | Value |
+|---------|-------|
+| Maximum sample points | 8000 |
+| Default analysis interval | 500 ms |
+| Default framerate | 5 FPS |
+| Default hysteresis threshold | 30.0 |
+
+---
+
+## File Download Limits
+
+When downloading files via the SD Card Explorer:
+
+| File Type | Maximum Size |
+|-----------|--------------|
+| Text files | 25 MB |
+| Binary files | 50 MB |
+
+---
+
 ## Summary
 
 | Feature | Requires |
@@ -108,3 +198,6 @@ For best compatibility with video streaming features:
 | Web UI Access | TCP port 8888 open |
 | Live Video Streaming | UDP traffic allowed |
 | Remote Access | Port forwarding, VPN, or same network |
+| SD Card Features | Inserted and formatted SD card |
+| External Databases | Network access to database server |
+| Modbus TCP | Port 502 (default) accessible |
