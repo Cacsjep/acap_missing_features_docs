@@ -2,6 +2,9 @@
 
 Design automation visually by dragging nodes onto a canvas and wiring them together. Flows can listen to Axis events, apply logic and timing, call HTTP endpoints, and debug live data without coding.
 
+!!! tip "Video Tutorials"
+    Watch tutorials and demos on the [Missing Features YouTube channel](https://www.youtube.com/@mfacap).
+
 ---
 
 ## Multi-Flow Support
@@ -40,21 +43,21 @@ Flow now supports **multiple flows** with a browser-like tab interface. Each flo
 
 ---
 
-#### Action Bar
+#### Toolbars
 
-The action bar provides quick access to flow controls:
+Flow uses two toolbars for quick access to controls:
 
-- **Start:** Runs the flow (auto-saves before starting). Switches to live mode where editing is locked and edges animate.
-- **Save:** Manually save the current flow. A toast notification confirms the save. The flow also auto-saves when starting.
+**Top Toolbar:**
+
+- **Start/Stop:** Runs or stops the flow. Auto-saves before starting. Switches to live mode where editing is locked and edges animate.
+- **Save:** Manually save the current flow. A toast notification confirms the save.
 - **Add Node:** Opens the catalog. Drag a template to the canvas. Axis nodes open an extra dialog to pick ports or events before placement.
+
+**Bottom Toolbar:**
+
 - **IO Table:** Opens a live table listing every node with its inputs/outputs and current values (available in live mode).
 - **Fit to View:** Reframes the canvas around all nodes.
 - **More Menu:** Export/Import flow JSON, toggle Safe Mode, Helper Lines, Simple Edges, and set background color.
-
-**Video: Floating action bar**
-<video controls muted loop playsinline src="bar.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
-
-
 
 ---
 
@@ -67,15 +70,6 @@ The action bar provides quick access to flow controls:
 - **Edge colors:** Mirror the source output in live mode; turn gray in edit mode.
 - **Connections:** Each input accepts a single connection. Mismatched data types are blocked (bool only to bool, string only to string, numeric to numeric). Safe mode shows warning toasts when a connection is rejected.
 
-**Video: Adding nodes**
-<video controls muted loop playsinline src="addnode.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
-
-**Video: Connect and disconnect**
-<video controls muted loop playsinline src="connect.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
-
-**Video: Rectangle selection and delete**
-<video controls muted loop playsinline src="delete.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
-
 ---
 
 #### Node Properties and Actions
@@ -86,9 +80,6 @@ The action bar provides quick access to flow controls:
   - Nodes with missing required data show an orange dotted border until fixed.
   - Device pickers pull from **Device Management (Flow)**; update devices there to refresh selectors.
 - A small badge at the top-right shows the last execution time while running; a warning banner appears if the websocket reconnects.
-
-**Video: Node properties**
-<video controls muted loop playsinline src="props.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 ---
 
@@ -109,12 +100,11 @@ For a complete, per-node breakdown covering every template in the catalog (input
     - Inputs: `Enable`.  
     - Outputs: `Connected`, `Error`, `New Event`, plus one output per Axis field; override inputs let you simulate values.
 
-- **Axis Metadata Event (Create)**  
-    - What it does: Create a custom stateless Axis event on this device (visible in Axis rules while running).  
-    - Inputs: `Send` plus user-added fields marked as **Trigger (Source)** or **Data**.  
-    - Outputs: `Error`.  
+- **Axis Metadata Event (Create)**
+    - What it does: Create a custom stateless Axis event on this device (visible in Axis rules while running).
+    - Inputs: `Send` plus user-added fields marked as **Trigger (Source)** or **Data**.
+    - Outputs: `Error`.
     - Properties: Event name; add/remove fields and choose their type/direction.
-<video controls muted loop playsinline src="axiscreate.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 !!! warning
     Axis Metadata Event (Create) nodes are only visible in the Axis event rule list while the flow is running.
@@ -123,12 +113,11 @@ For a complete, per-node breakdown covering every template in the catalog (input
     - What it does: RTSP video preview from an Axis device (live mode only).
     - Properties: IP, port, username, password, channel. Shows connecting/error overlays and retries every 5 s on failure.
 
-- **Axis Outputs**  
-    - What it does: Toggle Axis output ports via VAPIX.  
-    - Inputs: `EN` plus one input per discovered port.  
-    - Outputs: `Success`, `Status`, `Error`.  
+- **Axis Outputs**
+    - What it does: Toggle Axis output ports via VAPIX.
+    - Inputs: `EN` plus one input per discovered port.
+    - Outputs: `Success`, `Status`, `Error`.
     - Tip: Recreate the node if device credentials or port mapping change.
-<video controls muted loop playsinline src="axissub.mp4" style="max-width: 640px; width: 100%; border-radius: 6px;"></video>
 
 - **Vaxtor Cloud ANPR**  
     - What it does: Captures a snapshot from the selected device and sends it to Vaxtor Cloud ALPR.  
@@ -144,9 +133,6 @@ For a complete, per-node breakdown covering every template in the catalog (input
 
 - **Enable Input** - Always outputs `true`.  
 - **Button** - Outputs `true` while pressed, `false` on release (live mode).
-
-**Video: Handle shapes and colors**
-<video controls muted loop playsinline src="io.mp4" style="max-width: 640px; width: 100%; border-radius: 6px; margin-top: 6px;"></video>
 
 ##### Timing and pulses
 

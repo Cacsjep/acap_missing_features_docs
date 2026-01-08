@@ -6,7 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V3.0.2 - 08.01.2026
+##### V3.0.4 - 08.01.2026
+- **F:** Flow: Add label support for license plate list entries
+- **I:** Security: Rate limiting for login attempts
+- **I:** Security: Enhanced password change validation
+- **I:** Auth: Loading state for authentication initialization
+- **C:** Flow: Removed IntroductionDialog and tutorial videos (moved to YouTube channel)
 - **F:** Flow: Multi-flow support with tabbed interface (run multiple flows simultaneously)
 - **F:** Flow: Add manual Save button to toolbar (in addition to auto-save on run)
 - **F:** Flow: Add Channel Publisher/Subscriber nodes for cross-flow communication
@@ -14,7 +19,8 @@
 - **F:** Flow: Add Tags input to Parking Monitor for categorizing entries
 - **F:** Dashboard: Add Static Text widget for labels and headers (no node required)
 - **F:** Dashboard: Add String Input widget for text entry controls
-- **F:** Spot Color Detector feature for detecting colors in video regions
+- **F:** Spot Color Detector: Add Rectangle triggers for flexible region placement (handles lens distortion)
+- **F:** Spot Color Detector: Add combined platform events (all_circles_state, all_rects_state) with individual color fields per trigger
 - **I:** Flow: Save confirmation toast notification
 - **C:** Removed legacy Parking Times feature (use Parking Monitor node instead)
 - **B:** Flow: Composites does not respect static input nodes.
