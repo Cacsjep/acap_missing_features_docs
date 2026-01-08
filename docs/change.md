@@ -6,6 +6,9 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.0.5 - 09.01.2026
+- **I:** Dashboard: AXIS Live Stream widget now shows errors in display area instead of toast notifications
+
 ##### V3.0.4 - 08.01.2026
 - **F:** Flow: Add label support for license plate list entries
 - **I:** Security: Rate limiting for login attempts
