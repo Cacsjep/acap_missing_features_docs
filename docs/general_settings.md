@@ -1,7 +1,7 @@
 # General Settings / Bottom Bar
 
 General Settings is reachable via the cog icon in the bottom-left corner. 
-The dialog wraps three tabs: **Users**, **Roles**, and **Server**.
+The dialog wraps four tabs: **Users**, **Roles**, **UI**, and **Server**.
 
 ---
 
@@ -19,6 +19,23 @@ The dialog wraps three tabs: **Users**, **Roles**, and **Server**.
 - The matrix groups permissions by feature or CRUD resource, shows a search field, and collapses each group until you expand it (searching automatically expands everything so matches are always visible). Clicking a checkbox immediately sends the update to the backend and shows a toast; admin and other protected roles cannot be edited, renamed, or deleted.
 - Long-pressing the dots menu lets you duplicate a role so you can copy its permission set and tweak the clone before assigning it to a user.
 - The backend now derives permission groups from feature names or prefixes (e.g., Parking Times, Image to SD Card, Settings), so the matrix stays organized even when new permissions are added.
+
+## UI tab
+
+Configure the appearance and behavior of the user interface.
+
+### Toast Messages
+
+Toast messages are the temporary notifications that appear to confirm actions or report errors.
+
+| Option | Description |
+|--------|-------------|
+| Position | Where toast messages appear on screen (`top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`) |
+| Duration | How long toast messages remain visible (1000ms - 10000ms) |
+
+**Default:** Top-right position, 4000ms duration.
+
+---
 
 ## Server tab
 

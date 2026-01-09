@@ -188,6 +188,8 @@ Displays JSON arrays as scrollable tables.
 |--------|-------------|
 | Headers | Column definitions (key-value pairs) |
 | Auto-detect | Analyzes JSON to suggest headers |
+| Show Export Button | Enable CSV export button (top-right corner) |
+| Show Search Field | Enable search field to filter rows by any column value |
 
 **Accepts:** String (JSON array)
 
@@ -203,6 +205,12 @@ Displays JSON arrays as scrollable tables.
 1. Add the Table widget connected to a JSON output
 2. Click **Auto-detect Headers** or manually define columns
 3. Map JSON keys to display labels
+4. Optionally enable **Show Export Button** for CSV downloads
+5. Optionally enable **Show Search Field** to filter rows
+
+**Features:**
+- CSV export downloads all table data with configured column headers
+- Search filters rows where any visible column contains the search term
 
 ---
 
