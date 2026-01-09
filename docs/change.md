@@ -6,6 +6,18 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.0.7 - 09.01.2026
+- **F:** Settings: New "UI" tab with configurable toast message position and duration
+- **F:** Dashboard: Table widget now supports optional CSV export button
+- **F:** Dashboard: Table widget now supports optional search field for filtering rows
+- **B:** Flow: SQL Connection node no longer reconnects every cycle (fixed 2-3ms idle overhead)
+- **B:** Flow: Fix JSON float64 to int type conversion in rtmp node
+- **F:** Flow: Parking Monitor Exit plate delete input and methods added
+- **B:** Flow: Parking Monitor auto timer operations with same interval no longer block each other
+- **B:** Flow: Parking Monitor input index alignment after Label input was added
+- **B:** Flow: Teleporter node copy now correctly copies hidden edges
+- **B:** Discovery: Auth detection now tries HTTPS first to correctly detect "Recommended" auth policy on newer Axis devices
+
 ##### V3.0.6 - 09.01.2026
 - **I:** Dashboard: AXIS Live Stream widget now shows errors in display area instead of toast notifications
 - **B:** Flow: Fix RTSP URL generation for credentials containing special characters
