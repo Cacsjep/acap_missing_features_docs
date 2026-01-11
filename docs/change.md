@@ -6,6 +6,13 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.0.8 - 11.01.2026
+- **B:** Flow: Cache node now correctly serializes values (was showing empty objects)
+- **B:** Flow: JSON Get/Set/Remove nodes now correctly pulse `done` only on rising edge (was stuck true)
+- **I:** Video Components rewritten to use webcodecs instead of webrtc to elimintate NAT (Spot Color, Metadata Trigger, Flow AXIS Live Stream, Dashboard Live Stream)
+- **I:** Logging: WebSocket close errors (1000/1001) now logged at DEBUG level instead of ERROR
+- **I:** Logging: WebCodecs ping/write errors now logged at DEBUG level
+
 ##### V3.0.7 - 09.01.2026
 - **F:** Settings: New "UI" tab with configurable toast message position and duration
 - **F:** Dashboard: Table widget now supports optional CSV export button

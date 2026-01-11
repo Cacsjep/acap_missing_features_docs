@@ -31,73 +31,64 @@ Ensure port `8888` is open for TCP traffic:
 
 ---
 
-## Live Video Streaming (UDP Requirements)
+## Live Video Streaming
 
-Several features use live video streaming that relies on **UDP connections**:
+Several features use live video streaming via **WebCodecs over WebSocket**:
 
 - **Dashboard:** AXIS Live Stream widget
 - **Scene Analysis Triggers:** Live preview with overlays
 - **Spot Color Detector:** Video feed for color detection regions
+- **Flow:** AXIS Live Stream node
 
 ### How It Works
 
-The video streaming uses a peer-to-peer connection that requires UDP traffic:
+Video streaming uses WebCodecs for H.264 decoding over a WebSocket connection:
 
-1. The browser and device exchange connection information
-2. A direct UDP connection is established for video data
-3. Video frames are streamed with low latency
+1. Browser connects to the device via WebSocket (TCP)
+2. Device sends H.264 video frames over the WebSocket
+3. Browser decodes frames using WebCodecs API
 
 ### Network Requirements
 
 | Requirement | Details |
 |-------------|---------|
-| **Protocol** | UDP (User Datagram Protocol) |
-| **Ports** | Dynamic high ports (typically 49152-65535) |
-| **Direction** | Bidirectional between browser and device |
+| **Protocol** | TCP (WebSocket on port 8888) |
+| **Ports** | Same port as web UI (8888) |
+| **Direction** | Standard HTTP/WebSocket |
 
-### NAT and Router Considerations
+### Advantages Over Previous WebRTC Approach
 
-When the Axis device is behind a NAT router or firewall, UDP connections may fail. Here are solutions:
-
-#### Option 1: Same Network (Recommended)
-
-Keep the browser/client on the **same local network** as the Axis device. This avoids NAT traversal issues entirely.
-
-#### Option 2: Port Forwarding
-
-If accessing remotely, configure your router to forward:
-
-- Port `8888` TCP (for the web UI)
-- UDP port range for video streaming (consult your network administrator)
-
-#### Option 3: VPN
-
-Use a VPN to place the client on the same virtual network as the device. This bypasses NAT issues.
+| Aspect | WebCodecs (Current) | WebRTC (Previous) |
+|--------|---------------------|-------------------|
+| NAT Traversal | Not needed - uses TCP | Required STUN/TURN |
+| Firewall | Only port 8888 needed | Required UDP ports |
+| Remote Access | Works if UI works | Often failed remotely |
+| Setup | No configuration | Needed relay servers |
 
 ### Troubleshooting Video Streams
 
 | Issue | Possible Cause | Solution |
 |-------|----------------|----------|
-| Video not loading | UDP blocked by firewall | Allow UDP traffic or use same network |
-| Stream keeps reconnecting | Unstable UDP path | Check network stability |
-| "Connecting..." forever | NAT traversal failed | Use VPN or same network |
-| Black video with no error | Firewall dropping UDP | Configure firewall to allow UDP |
+| Video not loading | WebSocket blocked | Check port 8888 is accessible |
+| Decoder error | Browser compatibility | Use Chrome, Firefox, or Edge |
+| Stream freezes | Network interruption | Check network stability |
+| No video, no error | Device not streaming | Verify device is accessible |
 
 ---
 
 ## Browser Requirements
 
-For best compatibility with video streaming features:
+For best compatibility with video streaming features (WebCodecs API):
 
 | Browser | Support |
 |---------|---------|
-| Chrome | Fully supported |
-| Firefox | Fully supported |
-| Edge | Fully supported |
-| Safari | Supported (may require permissions) |
+| Chrome 94+ | Fully supported |
+| Firefox 130+ | Fully supported |
+| Edge 94+ | Fully supported |
+| Safari 16.4+ | Supported |
 
 !!! tip
-    If video streaming doesn't work, try a different browser or check that your browser allows the required permissions (camera/microphone permissions may be requested for peer connection setup).
+    WebCodecs is a modern browser API for hardware-accelerated video decoding. If video streaming doesn't work, ensure your browser is up to date.
 
 ---
 
@@ -196,8 +187,8 @@ When downloading files via the SD Card Explorer:
 | Feature | Requires |
 |---------|----------|
 | Web UI Access | TCP port 8888 open |
-| Live Video Streaming | UDP traffic allowed |
-| Remote Access | Port forwarding, VPN, or same network |
+| Live Video Streaming | TCP port 8888 (same as UI) |
+| Remote Access | Port 8888 forwarding or VPN |
 | SD Card Features | Inserted and formatted SD card |
 | External Databases | Network access to database server |
 | Modbus TCP | Port 502 (default) accessible |

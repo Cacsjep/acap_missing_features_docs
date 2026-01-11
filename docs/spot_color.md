@@ -40,7 +40,7 @@ Define circular "spots" on the video feed and configure a color palette. The sys
 
 ### Circle Triggers
 
-Each circle defines a detection region:
+Each circle defines a circular detection region:
 
 | Property | Description |
 |----------|-------------|
@@ -61,6 +61,29 @@ Each circle defines a detection region:
 - Click the trash icon to delete
 - Drag to reposition
 - Drag the resize handle to change size
+
+### Rectangle Triggers
+
+Rectangles provide flexible detection regions that can handle lens distortion better than circles.
+
+| Property | Description |
+|----------|-------------|
+| Name | Unique identifier for the rectangle (used in events) |
+| Position | Top-left corner coordinates (drag to move) |
+| Size | Width and height (drag corner to resize) |
+
+**Adding Rectangles:**
+
+1. Click **Add Rectangle** button
+2. Enter a name for the rectangle
+3. Drag to position it over the target
+4. Resize by dragging the corners
+
+**When to Use Rectangles:**
+
+- Detection areas near the edges of the image (where lens distortion is strongest)
+- Rectangular indicators or displays
+- When you need to match the shape of the target area precisely
 
 ### Color Palette
 
@@ -112,17 +135,39 @@ The UI displays processing time per frame:
 
 ## Events
 
-Each circle generates an AXIS event when its color changes:
+### Individual Trigger Events
 
-**Event Name:** `{circle_name}_state`
+Each circle and rectangle generates an AXIS event when its color changes:
+
+**Event Name:** `{trigger_name}_state`
 
 **Event Data:**
 
 | Field | Description |
 |-------|-------------|
-| circle_name | Name of the circle |
+| trigger_name | Name of the circle or rectangle |
 | color_name | Matched palette color name |
 | confidence | Match confidence (0-1) |
+
+### Combined Events
+
+Combined events fire whenever any trigger changes state, providing all trigger states in one event:
+
+| Event Name | Description |
+|------------|-------------|
+| `all_circles_state` | State of all circle triggers |
+| `all_rects_state` | State of all rectangle triggers |
+
+**Combined Event Data:**
+
+Each combined event includes individual color fields for every trigger:
+
+| Field | Description |
+|-------|-------------|
+| `{trigger_name}_color` | Current color for each trigger |
+| `{trigger_name}_confidence` | Match confidence for each trigger |
+
+This allows you to capture the state of all triggers in a single event subscription.
 
 ### Using Events in AXIS Rules
 
@@ -147,10 +192,10 @@ Use the **Axis Metadata Event (Subscribe)** node to receive color change events:
 
 The preview shows:
 
-- Real-time video feed via WebRTC
-- Circle overlays with current state
-- For each circle:
-  - Circle name
+- Real-time video feed via WebCodecs (no NAT/firewall issues)
+- Circle and rectangle overlays with current state
+- For each trigger:
+  - Trigger name
   - Detected color (actual RGB from frame)
   - Matched color (nearest palette color)
   - Edit/Delete controls
@@ -159,8 +204,9 @@ The preview shows:
 
 | Button | Action |
 |--------|--------|
-| Add Circle | Create new detection region |
-| Show/Hide | Toggle circle overlay visibility |
+| Add Circle | Create new circular detection region |
+| Add Rectangle | Create new rectangular detection region |
+| Show/Hide | Toggle overlay visibility |
 | Fullscreen | Expand preview to full screen |
 
 ---

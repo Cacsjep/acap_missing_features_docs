@@ -379,24 +379,31 @@ A typical OPC UA setup:
 
 ## Media Streaming
 
-### WebRTC Stream
+### AXIS Live Stream
 
-The **WebRTC Stream** node streams video from an Axis device over WebRTC protocol.
+The **AXIS Live Stream** node displays live video from an Axis device using WebCodecs for H.264 decoding.
 
 **Category**: Axis, Network
 
 #### Functionality
 
-Enables real-time video streaming with low latency. Supports both LAN connections and TURN/STUN for NAT traversal.
+Enables real-time video streaming with low latency. Uses WebCodecs instead of WebRTC, eliminating NAT traversal issues - works reliably behind firewalls without STUN/TURN servers.
 
 #### Properties
 
 - **Device**: Select the Axis device from Device Management
 - **Resolution**: Optional resolution override
-- **TURN/STUN**: Configure relay servers for remote access
+
+#### Stream Statistics
+
+When streaming, view real-time stats including:
+
+- Resolution and framerate
+- Bitrate
+- Decode queue size
 
 !!! tip
-    WebRTC provides lower latency than RTSP for interactive applications.
+    WebCodecs provides reliable streaming without NAT/firewall configuration. The stream connects directly via WebSocket.
 
 ---
 

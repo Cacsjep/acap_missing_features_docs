@@ -266,7 +266,7 @@ Visualizes JSON data as line or bar charts.
 
 ### AXIS Live Stream Widget
 
-Displays live video from an Axis device using WebRTC for low-latency streaming.
+Displays live video from an Axis device using WebCodecs for low-latency H.264 decoding. Unlike WebRTC, this approach works reliably behind NAT and firewalls without requiring STUN/TURN servers.
 
 **Best for:** Video monitoring, visual verification
 
@@ -279,33 +279,26 @@ Displays live video from an Axis device using WebRTC for low-latency streaming.
 
 **Connection States:**
 
-The widget shows detailed connection progress:
+The widget shows connection progress:
 
-- Initializing...
-- Creating peer connection...
-- Setting up media channels...
-- Creating offer...
-- Sending offer to server...
-- Processing server response...
-- Waiting for ICE candidates...
-- Establishing connection...
-- Connected, waiting for stream...
-- Buffering video...
+- Connecting...
+- Waiting for codec info...
+- Initializing decoder...
+- Streaming...
 
 **Stream Statistics:**
 
-Click the chart icon (top-right of video) when streaming to view real-time statistics:
+Click the stats button when streaming to view real-time statistics:
 
 | Stat | Description |
 |------|-------------|
 | Resolution | Current video resolution |
 | Framerate | Frames per second |
 | Bitrate | Stream bandwidth |
-| Codec | Video codec (H264, VP8, etc.) |
-| Packets Lost | Network quality indicator |
-| Jitter | Connection stability (ms) |
+| Codec | Video codec (H.264) |
+| Decode Queue | Frames waiting to be decoded |
 
-**Note:** This widget does not require a Flow node connection.
+**Note:** This widget does not require a Flow node connection. Errors are displayed directly in the stream area.
 
 ---
 
