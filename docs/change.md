@@ -6,6 +6,20 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.0.9 - 13.01.2026
+- **F:** Settings: User management now supports Default Dashboard and Allowed Dashboards per user
+- **F:** Dashboard: Export and Import dashboards via More menu (for users with edit permission)
+- **I:** Settings: Delete confirmation dialogs for users and roles
+- **I:** Settings: Users now have single role instead of multiple roles
+- **I:** Settings: Username duplicate validation on user creation
+- **I:** Flow: Parking Monitor node properties reorganized into logical sections (Overstay Detection, Data Cleanup, Exit Cleanup)
+- **C:** Flow: Parking Monitor date format changed to German format (DD.MM.YYYY HH:MM:SS)
+- **I:** Dashboard: Table widget date renderer now supports both German and ISO date formats
+- **B:** Dashboard: String Input widget fixed race condition where server updates could overwrite user input while typing
+- **C:** Dashboard: String Input widget value is now sent only on Enter key or clicking away (not on every keystroke)
+- **F:** Dashboard: String Input widget added Style option (Outlined, Filled, Underlined, Solo, Solo Filled, Plain)
+- **C:** Device Discovery: Devices are no longer auto-selected when global credentials are entered, users must manually select devices to add
+
 ##### V3.0.8 - 11.01.2026
 - **B:** Flow: Cache node now correctly serializes values (was showing empty objects)
 - **B:** Flow: JSON Get/Set/Remove nodes now correctly pulse `done` only on rising edge (was stuck true)
