@@ -129,17 +129,6 @@ The feature generates AXIS platform events:
 
 ---
 
-## Permissions
-
-| Permission | Description |
-|------------|-------------|
-| **feature_parkingtimes_read** | View parking monitor and live data |
-| **feature_parkingtimes_update** | Configure zones and settings |
-
-Users with only read permission will see the Monitor panel but not the Configuration panel.
-
----
-
 ## Troubleshooting
 
 | Issue | Solution |
