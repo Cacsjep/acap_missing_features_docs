@@ -117,37 +117,6 @@ Action: Set video profile to "Night"
 
 ---
 
-## Integration with Flow
-
-Use the sunrise/sunset events in Flow:
-
-- Subscribe to the Sun Events topic
-- Use the daylight state as a condition
-- Trigger different flows for day vs night operation
-
----
-
-## API Endpoint
-
-Get current sunrise/sunset information:
-
-```
-GET /api/sunsetinfo
-```
-
-Response:
-```json
-{
-  "timesavailable": true,
-  "sunrise": "2024-01-15 07:45:32",
-  "sunset": "2024-01-15 16:38:15",
-  "sunriseAt": "scheduled",
-  "sunsetAt": "scheduled"
-}
-```
-
----
-
 ## Troubleshooting
 
 | Issue | Solution |

@@ -110,20 +110,6 @@ This is useful for:
 
 ---
 
-## API Access
-
-The occupancy count can also be adjusted via API:
-
-```
-GET /api/change_occupancy/{zone_id}/{delta}
-```
-
-Where:
-- `zone_id`: The unique identifier of the zone
-- `delta`: The count change (+1 or -1)
-
----
-
 ## Integration with Flow
 
 The Occupancy Monitor integrates with Flow:
@@ -132,13 +118,3 @@ The Occupancy Monitor integrates with Flow:
 - Trigger actions when thresholds are exceeded
 - Send notifications based on occupancy levels
 
----
-
-## Permissions
-
-| Permission | Description |
-|------------|-------------|
-| **feature_multiple_occupancy_read** | View occupancy monitor and real-time data |
-| **feature_multiple_occupancy_update** | Configure zones and settings |
-
-Users with only read permission will see the Monitor panel but not the Configuration panel.

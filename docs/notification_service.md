@@ -82,16 +82,6 @@ Use the **Test SMS** button to send a test message and verify your configuration
 
 ---
 
-## Integration with Flow
-
-The Notification Service can be triggered from Flow using the appropriate nodes:
-
-- Use **HTTP Request** nodes to call external notification APIs
-- Combine with event triggers to send alerts based on camera events
-- Use **Timer** nodes to implement rate limiting and prevent notification floods
-
----
-
 ## Troubleshooting
 
 | Issue | Solution |
