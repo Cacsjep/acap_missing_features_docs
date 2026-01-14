@@ -33,6 +33,10 @@ nav:
     - Image to SD-Card: img_sdcard.md
     - Scene Analysis Triggers: scene_analysis.md
     - License Plate List: license_plate_list.md
+    - Parking Times: parking_times.md
+    - Occupancy Monitor: occupancy_monitor.md
+    - Notification Service: notification_service.md
+    - Sunrise & Sunset Events: sunrise_sunset.md
   - General Settings: general_settings.md
   - Changelog: change.md
   - Video Tutorials: videos.md

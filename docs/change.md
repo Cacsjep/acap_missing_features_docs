@@ -6,6 +6,15 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.1 - 14.01.2026
+- **F:** Restored: Notification Service feature for SMS/Voice alerts via Seven.io, SMSEagle, and Teltonika
+- **F:** Restored: Occupancy Monitor feature for multi-zone occupancy counting
+- **F:** Restored: Parking Times feature for license plate parking duration tracking
+- **F:** Restored: Sunrise & Sunset Events feature for location-based daylight events
+- **I:** Spot Color Detector: Added drag handle to circle/rect menus for repositioning
+- **I:** Occupancy Monitor: Configuration panel hidden for users with read-only permission
+- **I:** Parking Times: Configuration panel hidden for users with read-only permission
+
 ##### V3.0.9 - 13.01.2026
 - **F:** Settings: User management now supports Default Dashboard and Allowed Dashboards per user
 - **F:** Dashboard: Export and Import dashboards via More menu (for users with edit permission)
