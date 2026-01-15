@@ -6,6 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.2 - 15.01.2026
+- **B:** ParkingTimes: Fixed WebSocket connection not closing on component unmount (memory leak)
+- **B:** OccupancyMultiple: Fixed WebSocket connection not closing on component unmount (memory leak)
+
 ##### V3.1.1 - 14.01.2026
 - **F:** Restored: Notification Service feature for SMS/Voice alerts via Seven.io, SMSEagle, and Teltonika
 - **F:** Restored: Occupancy Monitor feature for multi-zone occupancy counting
