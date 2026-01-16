@@ -6,9 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V3.1.2 - 15.01.2026
+##### V3.1.3 - 15.01.2026
 - **B:** ParkingTimes: Fixed WebSocket connection not closing on component unmount (memory leak)
 - **B:** OccupancyMultiple: Fixed WebSocket connection not closing on component unmount (memory leak)
+- **B:** Spot Color Detector: Fixed endless loading state when restarting with no triggers configured
 
 ##### V3.1.1 - 14.01.2026
 - **F:** Restored: Notification Service feature for SMS/Voice alerts via Seven.io, SMSEagle, and Teltonika
