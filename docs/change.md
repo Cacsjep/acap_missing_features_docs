@@ -6,6 +6,19 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.5 - 21.01.2026
+- **F:** Parking Management: New standalone feature for comprehensive parking lot management
+- **F:** Dashboard: Media Image widget for displaying static images from SD card media folder
+- **F:** Dashboard: Media Video widget for looping videos from SD card media folder
+- **F:** Dashboard: YouTube widget for embedding YouTube videos
+- **F:** Dashboard: Clock widget for displaying time with timezone support
+- **F:** Dashboard: Markdown widget for formatted text display
+- **F:** Dashboard: Weather widget for current weather using Open-Meteo
+- **B:** WebSocket: Fixed server-side connection leak - connections now properly close when client disconnects
+- **I:** Notification Service: Replaced custom buttons with Vuetify components for consistency
+- **I:** Notification Service: Ring time validation extended from 5-30 to 5-60 seconds
+- **I:** Logging: All WebSocket-related messages changed from INFO to DEBUG level
+
 ##### V3.1.3 - 15.01.2026
 - **B:** ParkingTimes: Fixed WebSocket connection not closing on component unmount (memory leak)
 - **B:** OccupancyMultiple: Fixed WebSocket connection not closing on component unmount (memory leak)

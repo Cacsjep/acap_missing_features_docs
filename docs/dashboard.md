@@ -11,7 +11,7 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 **Key Features:**
 
 - **Multi-dashboard support** with browser-like tabs
-- 11 widget types for different visualization needs
+- 17 widget types for different visualization needs
 - Drag-and-drop widget placement
 - Real-time data updates via WebSocket
 - Edit and Live modes
@@ -391,6 +391,175 @@ Displays static text without connecting to any node.
 | Italic | Enable italic text |
 
 **Note:** This widget does not require a Flow node connection.
+
+---
+
+### Media Image Widget
+
+Displays a static image from the SD card media folder.
+
+**Best for:** Logos, floor plans, reference images, static visuals
+
+**Setup:**
+
+1. Create a `media` folder on the SD card using the SD Card Explorer
+2. Upload images (JPG, PNG, GIF, WebP) to the media folder
+3. Add the Media Image widget to your dashboard
+4. Select the image file from the dropdown
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Image File | Select from available images in media folder |
+| Display Mode | `Contain` (fit inside), `Cover` (fill, may crop), `Fill` (stretch), `None` (original size) |
+
+**Supported formats:** JPG, JPEG, PNG, GIF, WebP
+
+**Note:** This widget does not require a Flow node connection.
+
+---
+
+### Media Video Widget
+
+Displays a looping video from the SD card media folder.
+
+**Best for:** Instructional videos, promotional content, ambient displays
+
+**Setup:**
+
+1. Create a `media` folder on the SD card using the SD Card Explorer
+2. Upload videos (MP4, WebM) to the media folder
+3. Add the Media Video widget to your dashboard
+4. Select the video file from the dropdown
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Video File | Select from available videos in media folder |
+| Display Mode | `Contain`, `Cover`, `Fill`, or `None` |
+| Muted | Start video muted (default: enabled) |
+| Loop | Loop video continuously (default: enabled) |
+| Show Controls | Display video player controls (default: enabled) |
+| Autoplay | Auto-start when dashboard goes live (default: enabled) |
+
+**Supported formats:** MP4, WebM
+
+**Note:** This widget does not require a Flow node connection. Autoplay requires muted to be enabled in most browsers.
+
+---
+
+### YouTube Widget
+
+Embeds a YouTube video player.
+
+**Best for:** Training videos, external content, video tutorials
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| YouTube URL | Full YouTube URL or video ID (11 characters) |
+| Autoplay | Auto-start video (requires muted) |
+| Muted | Start video muted |
+| Loop | Loop video continuously |
+
+**Supported URL formats:**
+
+- `https://www.youtube.com/watch?v=VIDEO_ID`
+- `https://youtu.be/VIDEO_ID`
+- `https://www.youtube.com/embed/VIDEO_ID`
+- Direct video ID: `dQw4w9WgXcQ`
+
+**Note:** This widget does not require a Flow node connection. Due to browser autoplay policies, autoplay typically requires the video to be muted.
+
+---
+
+### Clock Widget
+
+Displays current time with configurable timezone and format.
+
+**Best for:** Time displays, world clocks, shift schedules
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| 24-hour format | Use 24-hour time (14:30) vs 12-hour (2:30 PM) |
+| Show seconds | Include seconds in display |
+| Show date | Display date below time |
+| Timezone | Select timezone (local, UTC, or major cities) |
+| Time Size | Font size for time display (12-200 px) |
+| Time Color | Color of time text |
+| Date Size | Font size for date display (8-72 px) |
+| Date Color | Color of date text |
+
+**Available Timezones:** Local, UTC, Europe (London, Paris, Berlin, Stockholm, Moscow), Americas (New York, Chicago, Denver, Los Angeles), Asia (Tokyo, Shanghai, Dubai, Singapore), Pacific (Sydney, Auckland)
+
+**Note:** This widget does not require a Flow node connection.
+
+---
+
+### Markdown Widget
+
+Displays formatted markdown text.
+
+**Best for:** Instructions, notes, formatted documentation, announcements
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Markdown Content | Text with markdown formatting |
+| Font Size | Base font size (8-48 px) |
+| Text Color | Default text color |
+
+**Supported Markdown:**
+
+- `# Heading 1`, `## Heading 2`, `### Heading 3`
+- `**bold**` and `*italic*`
+- `~~strikethrough~~`
+- `` `inline code` ``
+- `[link text](url)`
+- Lists with `-` or `*`
+- Horizontal rules with `---`
+
+**Note:** This widget does not require a Flow node connection.
+
+---
+
+### Weather Widget
+
+Displays current weather conditions using Open-Meteo.
+
+**Best for:** Environmental monitoring, outdoor activity planning, lobby displays
+
+**Settings:**
+
+| Option | Description |
+|--------|-------------|
+| Latitude | Location latitude (decimal degrees) |
+| Longitude | Location longitude (decimal degrees) |
+| Display Name | Optional location label shown in widget |
+| Temperature Unit | Celsius or Fahrenheit (also affects wind speed) |
+| Refresh Interval | How often to fetch new data (5, 15, 30 min, or 1 hour) |
+| Show humidity and wind | Display additional weather details |
+| Show location name | Display the location label |
+| Icon Size | Weather icon size (24-128 px) |
+| Temperature Size | Temperature text size (16-120 px) |
+| Temperature Color | Color of temperature display |
+
+**Displayed Information:**
+
+- Current temperature with unit
+- Weather condition icon (sunny, cloudy, rain, snow, fog, thunderstorm)
+- Humidity percentage (optional)
+- Wind speed in km/h or mph (optional)
+- Location name (optional)
+- Open-Meteo attribution
+
+**Note:** This widget does not require a Flow node connection. Weather data is provided by Open-Meteo.
 
 ---
 
