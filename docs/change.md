@@ -6,6 +6,16 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.6 - 22.01.2026
+- **I:** Parking Management: Camera offline status now shows red indicator instead of gray
+- **I:** Parking Management: Real-time camera connection status updates when cameras disconnect/reconnect
+- **I:** Parking Management: Devices sorted by ID for stable UI ordering
+- **I:** Parking Management: Plates show correct tags for "exit without entry" events
+- **B:** Parking Management: Fixed CSS overflow - zones can now scroll properly when expanded
+- **B:** Parking Management: Fixed plate date validation (FromDate/ToDate now checked)
+- **B:** Parking Management: Fixed zone full behavior - entries are now created even when zone is full
+- **B:** Parking Management: Fixed multi-zone camera support - events processed for all zones
+
 ##### V3.1.5 - 21.01.2026
 - **F:** Parking Management: New standalone feature for comprehensive parking lot management
 - **F:** Dashboard: Media Image widget for displaying static images from SD card media folder

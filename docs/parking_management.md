@@ -44,6 +44,9 @@ Each parking zone represents a physical area (parking level, section, or lot):
 | **Capacity** | Maximum number of vehicles (0 = unlimited) |
 | **Default Stale Timeout** | Minutes before parked entries are marked as stale (overrides global setting) |
 
+!!! note "Zone Full Behavior"
+    When a zone reaches capacity, new entries are still recorded for tracking purposes and a "Zone Full" event is fired. Use IO Rules to trigger barriers or signage when capacity is reached.
+
 ### Entry/Exit Cameras
 
 Each zone can have multiple cameras configured as entry, exit, or both:
@@ -77,9 +80,13 @@ Tags from the License Plate List determine parking rules:
 When a plate is detected, the system:
 
 1. Looks up the plate in the License Plate List
-2. Finds matching tags
-3. Applies the most restrictive max parking time
-4. Marks entry as overtime when exceeded
+2. Validates the plate's date range (From/To dates if set)
+3. Finds matching tags
+4. Applies the most restrictive max parking time
+5. Marks entry as overtime when exceeded
+
+!!! note "Date Validation"
+    Plates with a **From Date** that hasn't been reached yet, or a **To Date** that has passed, will be denied access even if they have valid tags.
 
 ---
 
@@ -137,9 +144,16 @@ Each zone shows:
 
 Shows health of all configured cameras:
 
-- Online/Offline indicator
+- **Green dot**: Camera online and connected
+- **Red dot**: Camera offline or connection lost
 - Last detected plate
 - Last activity timestamp
+
+!!! note "Multi-Zone Cameras"
+    A single camera can serve multiple zones (e.g., nested parking areas). The camera status shows all zones it serves, and events are processed for each zone independently.
+
+!!! note "Real-time Status"
+    Camera status updates automatically when a camera disconnects or reconnects - no page refresh needed.
 
 ### Plate Event Log
 
