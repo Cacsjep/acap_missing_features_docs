@@ -28,7 +28,11 @@ The Parking Management interface is organized into tabs:
 | **History** | Searchable parking entry history with table/grid views and CSV export |
 | **Zones** | Configure parking zones with entry/exit cameras |
 | **Access Control** | Set up IO actions and automated access rules |
+| **Plate List** | Embedded License Plate List for managing plates and tags |
 | **General** | Global settings like stale timeout, history retention, and snapshot cleanup |
+
+!!! tip "Integrated Plate Management"
+    The Plate List tab provides direct access to the License Plate List feature without leaving Parking Management. Changes to plates and tags are automatically available in Zones and Access Control when switching tabs.
 
 ---
 
@@ -56,6 +60,9 @@ Each zone can have multiple cameras configured as entry, exit, or both:
 | **Camera** | Select from registered Flow Devices |
 | **Role** | Entry, Exit, or Entry & Exit |
 | **Capture Snapshot** | Store entry/exit images on SD card |
+
+!!! tip "Managing Devices"
+    Use the **Devices** button in the toolbar (visible on Zones and Access Control tabs) to add or configure cameras and IO devices.
 
 #### Camera Roles
 
@@ -111,26 +118,60 @@ Automated actions triggered by parking events:
 | Setting | Description |
 |---------|-------------|
 | **Name** | Rule identifier |
-| **Event** | Entry, Exit, or Overtime |
+| **Event** | Entry, Exit, Unauthorized, Overtime, or Zone Full |
 | **Zones** | Which zones trigger this rule (empty = all) |
 | **Tags** | Which tags trigger this rule (empty = all) |
 | **Device** | Target device |
 | **Port** | IO port number |
 | **Action** | Pulse, Activate, or Deactivate |
 
+#### Event Types
+
+| Event | Description |
+|-------|-------------|
+| **Entry** | Vehicle entered a zone |
+| **Exit** | Vehicle exited a zone |
+| **Unauthorized** | Unknown plate or plate without allowed tags |
+| **Overtime** | Vehicle exceeded max parking time |
+| **Zone Full** | Zone reached its capacity limit |
+
 #### Example Rules
 
 | Use Case | Event | Condition | Action |
 |----------|-------|-----------|--------|
 | Open barrier for staff | Entry | Tag = "staff" | Pulse port 1 |
-| Red light on full | Entry | Zone at capacity | Activate port 2 |
-| Alert on overtime | Overtime | Any | Pulse alarm port |
+| Open barrier for visitors | Entry | Tag = "visitor" | Pulse port 1 |
+| Open exit barrier | Exit | Any | Pulse port 2 |
 
 ---
 
 ## Live View
 
-The Live tab displays:
+The Live tab displays real-time parking information with statistics and monitoring tools.
+
+### Top Bar Statistics
+
+The top bar shows key metrics at a glance:
+
+| Stat | Description |
+|------|-------------|
+| **Parked** | Total vehicles currently parked |
+| **Avg Duration** | Average parking time of current vehicles |
+| **Zone Capacity** | Occupancy per zone (e.g., "Level 1: 5/20") |
+| **Overtime** | Count of vehicles exceeding max parking time |
+| **Utilization** | Overall parking lot utilization percentage |
+
+### Parked Vehicles
+
+Shows all currently parked vehicles with:
+
+- Header row with column labels
+- Time parked (duration)
+- Vehicle name (from License Plate List)
+- Zone and camera
+- License plate number
+- Tag assignment
+- Parking progress bar (visual indicator of parking duration)
 
 ### Zone Cards
 
@@ -157,13 +198,33 @@ Shows health of all configured cameras:
 
 ### Plate Event Log
 
-Real-time feed of plate detections:
+Real-time feed of plate detections with detailed event information:
 
-- Plate number
-- Camera name
-- Timestamp
-- Zone assignment
-- Match status (known/unknown)
+| Column | Description |
+|--------|-------------|
+| **ID** | Unique event identifier |
+| **Time** | Detection timestamp |
+| **State** | Event state (Entry, Exit, Entry Denied, etc.) |
+| **Plate** | License plate number |
+| **Name** | Name from License Plate List |
+| **Zone** | Parking zone |
+| **Camera** | Camera that detected the plate |
+| **Type** | Detection type |
+| **Color** | Vehicle color (if detected) |
+| **Size** | Image size in pixels |
+| **Act** | Action status |
+| **Img** | Snapshot thumbnail (click to view) |
+
+#### Event States
+
+| State | Color | Description |
+|-------|-------|-------------|
+| **Entry** | Green | Vehicle entered the zone |
+| **Exit** | Blue | Vehicle exited the zone |
+| **Entry Denied** | Red | Entry denied (unauthorized or zone full) |
+| **Tag Not Allowed** | Orange | Plate has tag but not allowed in this zone |
+| **Exit (No Entry)** | Cyan | Exit detected without matching entry |
+| **Add to Plate List** | Purple | Plate added to License Plate List |
 
 ### Manual Actions
 
@@ -245,9 +306,14 @@ Parking Management generates AXIS Metadata events:
 |-------|-------------|
 | **Entry** | Vehicle entered a zone |
 | **Exit** | Vehicle exited a zone |
+| **Unauthorized** | Unknown plate or plate without allowed tags attempted entry |
 | **Overtime** | Vehicle exceeded max parking time |
+| **Zone Full** | Zone reached capacity limit |
 
 Events include metadata: plate, zone, tag, duration, camera name.
+
+!!! tip "Event Automation"
+    Use IO Rules in the Access Control tab to trigger actions (open barriers, activate lights, sound alarms) when these events occur.
 
 ---
 
