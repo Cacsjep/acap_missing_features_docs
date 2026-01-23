@@ -6,17 +6,18 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V3.1.7 - 23.01.2026
-- **F:** Parking Management: Added embedded Plate List tab for managing license plates directly within Parking Management
-- **F:** Parking Management: Help dialogs for Zone configuration, IO Port Actions, and Event Rules
-- **F:** Parking Management: Devices button in toolbar for quick access to device management
+##### V3.1.8 - 23.01.2026
+- **I:** Parking Management: Added embedded Plate List tab for managing license plates directly within Parking Management
+- **I:** Parking Management: Help dialogs for Zone configuration, IO Port Actions, and Event Rules
+- **I:** Parking Management: Devices button in toolbar for quick access to device management
 - **I:** Parking Management: Consistent section styling across all tabs (header/content layout)
 - **I:** Parking Management: Live view top bar now shows zone capacity per zone, overtime count, and utilization percentage
 - **I:** Parking Management: Plate Log improvements - ID column, better column layout, help dialog with event state explanations
 - **I:** Parking Management: Parked Vehicles improvements - header row, combined Duration/Progress into "Parking" column, help dialog
 - **I:** Parking Management: Zone panels redesigned from expansion panels to section layout
 - **I:** Parking Management: Tags automatically refresh when leaving Plate List tab
-- **F:** Parking Management: Added Zone Full and Unauthorized event types for IO Rules
+- **I:** Parking Management: Added Zone Full and Unauthorized event types for IO Rules
+- **C:** Parking Monitor: Removed because now parking managment do this.
 
 ##### V3.1.6 - 22.01.2026
 - **I:** Parking Management: Camera offline status now shows red indicator instead of gray
