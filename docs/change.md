@@ -6,6 +6,14 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.9 - 27.01.2026
+- **F:** Parking Management: IO Actions can now be configured to show on specific cameras ("Show on cameras" setting)
+- **F:** Parking Management: Camera live preview dialog now displays IO action buttons for configured actions
+- **B:** Parking Management: Fixed plate events not being sent to all connected browsers (was only sending to one random client when multiple browsers were open)
+- **B:** Flow: Modbus operations now use timeout wrapper (2s) to prevent blocking the flow when device is unresponsive
+- **B:** Flow: Modbus heartbeat checks are now async to avoid blocking the flow execution
+- **I:** Flow: Modbus error detection improved to distinguish network errors from protocol errors (only reconnects on actual connection loss)
+
 ##### V3.1.8 - 23.01.2026
 - **I:** Parking Management: Added embedded Plate List tab for managing license plates directly within Parking Management
 - **I:** Parking Management: Help dialogs for Zone configuration, IO Port Actions, and Event Rules

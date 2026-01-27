@@ -101,7 +101,7 @@ When a plate is detected, the system:
 
 ### IO Actions
 
-Manual actions that can be triggered from the Live view:
+Manual actions that can be triggered from the Live view or camera preview:
 
 | Setting | Description |
 |---------|-------------|
@@ -110,6 +110,10 @@ Manual actions that can be triggered from the Live view:
 | **Port** | IO port number to control |
 | **Action** | Pulse, Activate, or Deactivate |
 | **Duration** | Pulse duration in milliseconds (for Pulse action) |
+| **Show on cameras** | Select which cameras should display this action button in their live preview |
+
+!!! tip "Camera Preview Actions"
+    When you configure "Show on cameras" for an IO action, the action button will appear below the video stream when viewing that camera's live preview. This is useful for triggering barriers or gates while watching the camera feed.
 
 ### IO Rules
 
