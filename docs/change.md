@@ -6,6 +6,15 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.10 - 28.01.2026
+- **F:** Settings: Backup & Restore feature for exporting and importing all configuration data
+- **F:** Settings: Automatic daily backup with configurable time
+- **F:** Flow: Localhost API bypass - HTTP nodes can now call local API endpoints without authentication
+- **B:** Flow: Fixed HTTP node state being reset when license plates were modified (flow no longer restarts on plate changes)
+- **B:** Parking Management: Fixed invalid port usage in event connection.
+- **I:** Flow: Added panic recovery with stack trace logging to flow execution
+- **C:** License Plate List: Modifying plates/tags no longer affects running flows; recreate License Plate nodes to use new tags
+
 ##### V3.1.9 - 27.01.2026
 - **F:** Parking Management: IO Actions can now be configured to show on specific cameras ("Show on cameras" setting)
 - **F:** Parking Management: Camera live preview dialog now displays IO action buttons for configured actions

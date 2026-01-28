@@ -149,6 +149,9 @@ Verifies if a license plate exists in the internal list and checks its validity 
 - **Not Valid Yet** (Boolean): True if valid from current time > now.
 - **Tag outputs**: Boolean outputs for each tag (e.g., "Staff", "VIP") associated with the plate.
 
+!!! note "Tag output updates"
+    Tag outputs are created when you add the node to your flow based on the tags that exist at that time. If you add new tags to the License Plate List feature later, you must **delete and recreate** the node to get outputs for the new tags. Plate data updates are reflected immediately without recreating the node.
+
 ---
 
 ## Vaxtor Cloud ANPR

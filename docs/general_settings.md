@@ -1,7 +1,7 @@
 # General Settings / Bottom Bar
 
-General Settings is reachable via the cog icon in the bottom-left corner. 
-The dialog wraps four tabs: **Users**, **Roles**, **UI**, and **Server**.
+General Settings is reachable via the cog icon in the bottom-left corner.
+The dialog wraps five tabs: **Users**, **Roles**, **UI**, **Server**, and **Backup**.
 
 ---
 
@@ -49,6 +49,48 @@ Choose from `Debug`, `Info`, `Warning`, or `Error` to control how much data the 
 - When you select the uploaded mode, the card surfaces a status badge (`Uploaded certificate pair is stored and active` or `No valid uploaded certificate found`) plus a **Replace Certificate** button that reveals fresh `Certificate PEM` and `Private Key PEM` inputs.
 - The **Upload Certificate Pair** button turns green once both files are selected and stays disabled otherwise; it validates the PEM pair before storing it so your camera never switches to an unusable certificate.
 - Saving Settings is blocked until a valid uploaded pair exists, preventing the web server from restarting with broken TLS. When the running certificate actually changes (mode toggle or replaced pair), the backend closes the HTTP connection so Axis OS can reload the new certificate cleanly—expect a short reconnect while the browser re-establishes the session.
+
+---
+
+## Backup tab
+
+Create and restore backups of your entire configuration.
+
+### What's included in backups
+
+| Included | Not included |
+|----------|--------------|
+| Users, roles, permissions | Parking snapshots (entry/exit images) |
+| All flow configurations | SD card captured images |
+| Composite node definitions | Default TLS certificates |
+| Device connections | |
+| License plate lists and tags | |
+| Parking zones and entries | |
+| Notification settings | |
+| Custom TLS certificates | |
+
+### Manual backup
+
+- Click **Create Backup Now** to generate a backup immediately
+- Click **Download** to save the backup file to your computer
+- Backup files are ZIP archives containing the database and configuration files
+
+### Automatic backup
+
+- Enable **daily auto-backup** with the toggle switch
+- Set the backup time (24h format, e.g., "03:00")
+- Only one auto-backup is kept (overwrites the previous one daily)
+
+### Restoring a backup
+
+1. Select a backup file using the file picker
+2. Click **Restore Backup**
+3. Confirm the restore in the dialog
+4. The application will restart automatically
+5. After restart, you'll be redirected to the login page
+
+!!! warning
+    Restoring a backup **replaces all current configuration** including users, flows, and settings. This action cannot be undone. Always download a backup of your current configuration before restoring.
 
 ---
 
