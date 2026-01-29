@@ -1,0 +1,3975 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../network_nodes/">
+      
+      
+        <link rel="next" href="../collections_nodes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Database & SQL - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database & SQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLite Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Event Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Example: Event Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-database-and-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create the Database and Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-insert-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Insert Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-query-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Query Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Connection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-params-json-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Params JSON Dynamically
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Delete
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Event Logger
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-table-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Table Read
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Table Read">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-filter-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Filter Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-recent-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Recent Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-filtered-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Filtered Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example-temperature-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Temperature Logger
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Example: Temperature Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-sql-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common SQL Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common SQL Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-latest-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Latest Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-records-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count Records Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-over-time-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Average Over Time Period
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-minmax-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find Min/Max Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-old-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup Old Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parking-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parking Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parking Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entries-json-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entries JSON Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../occupancy_monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLite Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-event-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Event Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Example: Event Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-database-and-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create the Database and Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-insert-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Insert Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-query-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Query Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Connection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Connection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Query
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Insert
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Insert">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-params-json-dynamically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Params JSON Dynamically
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Update
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Delete
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-event-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Event Logger
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-table-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQL Table Read
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Table Read">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-filter-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Filter Presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-recent-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Recent Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-filtered-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Filtered Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example-temperature-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Temperature Logger
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Example: Temperature Logger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-sql-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common SQL Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common SQL Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-latest-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get Latest Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-records-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count Records Today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average-over-time-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Average Over Time Period
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-minmax-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find Min/Max Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-old-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup Old Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parking-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parking Monitor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parking Monitor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entries-json-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entries JSON Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="database-nodes">Database Nodes</h1>
+<p>Nodes for connecting to SQL databases and executing queries. Supports SQLite, MySQL, PostgreSQL, and SQL Server.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The database nodes allow you to store and retrieve data from SQL databases directly within your Flow. This is useful for:</p>
+<ul>
+<li>Logging events with timestamps</li>
+<li>Storing sensor readings over time</li>
+<li>Managing device configurations</li>
+<li>Building reports from historical data</li>
+</ul>
+<hr />
+<h2 id="sqlite-quick-start">SQLite Quick Start</h2>
+<p>SQLite is the easiest database to use because it stores everything in a single file on the SD card - no server needed.</p>
+<h3 id="complete-example-event-logging">Complete Example: Event Logging</h3>
+<p>This example creates a database, table, and logs events with timestamps.</p>
+<h4 id="step-1-create-the-database-and-table">Step 1: Create the Database and Table</h4>
+<p>First, create the SQLite database file and table structure. You only need to do this once.</p>
+<p><strong>Using SD Card Write File node:</strong></p>
+<p>Create a file called <code>init.sql</code> on the SD card with this content:</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">timestamp</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">event_type</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">source</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="nb">REAL</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">);</span>
+</span></code></pre></div>
+<p>Then use SQL Connection + SQL Query to execute this:</p>
+<ol>
+<li>Add <strong>SQL Connection</strong> node</li>
+<li>Driver: <code>sqlite</code></li>
+<li>Path: <code>events.db</code> (stored on SD card)</li>
+<li>
+<p>Connect the <code>Connect</code> input to an Enable node</p>
+</li>
+<li>
+<p>Add <strong>SQL Query</strong> node</p>
+</li>
+<li>Connect <code>Conn Key</code> from the SQL Connection</li>
+<li>SQL: <code>CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT DEFAULT CURRENT_TIMESTAMP, event_type TEXT NOT NULL, source TEXT, value REAL)</code></li>
+<li>Trigger <code>Execute</code> once to create the table</li>
+</ol>
+<h4 id="step-2-insert-events">Step 2: Insert Events</h4>
+<p>Now log events when they occur:</p>
+<ol>
+<li>Add <strong>SQL Insert</strong> node</li>
+<li>Connect <code>Conn Key</code> from SQL Connection</li>
+<li>SQL: <code>INSERT INTO events (event_type, source, value) VALUES (?, ?, ?)</code></li>
+<li>Params JSON: Use Placeholder JSON or build manually</li>
+</ol>
+<p><strong>Example Flow for Motion Detection Logging:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[Metadata Event Subscribe] → [Edge Detection] → [SQL Insert]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        ↓                                              ↓
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   &quot;motion&quot; event                              Logs to database
+</span></code></pre></div>
+<p><strong>Params JSON format:</strong>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="s2">&quot;motion_detected&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Camera-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">]</span>
+</span></code></pre></div></p>
+<h4 id="step-3-query-data">Step 3: Query Data</h4>
+<p>Read back the logged events:</p>
+<ol>
+<li>Add <strong>SQL Query</strong> node</li>
+<li>SQL: <code>SELECT * FROM events ORDER BY timestamp DESC LIMIT 10</code></li>
+<li>Connect output to JSON Viewer or Table widget</li>
+</ol>
+<p><strong>Output format:</strong>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-25 10:30:45&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;motion_detected&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Camera-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">},</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-25 10:28:12&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;door_open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Entrance&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">]</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="sql-connection">SQL Connection</h2>
+<p>Establishes a connection to a database. Other SQL nodes use the connection key from this node.</p>
+<h3 id="inputs">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connect</td>
+<td>Boolean</td>
+<td>Rising edge opens connection, falling edge closes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connected</td>
+<td>Boolean</td>
+<td>True while connection is active</td>
+</tr>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Pass this to other SQL nodes</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Connection error message</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver</td>
+<td>Database type: <code>sqlite</code>, <code>mysql</code>, <code>postgres</code>, <code>sqlserver</code></td>
+</tr>
+<tr>
+<td>Host</td>
+<td>Server address (not used for SQLite)</td>
+</tr>
+<tr>
+<td>Port</td>
+<td>Server port (not used for SQLite)</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Database name (not used for SQLite)</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>Login username (not used for SQLite)</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>Login password (not used for SQLite)</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>SQLite file path on SD card (e.g., <code>mydata.db</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="driver-specific-configuration">Driver-Specific Configuration</h3>
+<h4 id="sqlite">SQLite</h4>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Driver: sqlite
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Path: mydata.db
+</span></code></pre></div>
+The file is created on the camera's SD card. No host/port/credentials needed.</p>
+<h4 id="mysql">MySQL</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Driver: mysql
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Host: 192.168.1.100
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Port: 3306
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Database: myapp
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Username: user
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Password: ****
+</span></code></pre></div>
+<h4 id="postgresql">PostgreSQL</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Driver: postgres
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Host: 192.168.1.100
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Port: 5432
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Database: myapp
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Username: user
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Password: ****
+</span></code></pre></div>
+<h4 id="sql-server">SQL Server</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Driver: sqlserver
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Host: 192.168.1.100
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Port: 1433
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Database: myapp
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Username: user
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Password: ****
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep one SQL Connection node and wire its <code>Conn Key</code> to multiple query/insert nodes. This shares the connection efficiently.</p>
+</div>
+<hr />
+<h2 id="sql-query">SQL Query</h2>
+<p>Executes a SELECT statement and returns results as JSON.</p>
+<h3 id="inputs_1">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>Boolean</td>
+<td>Rising edge runs the query</td>
+</tr>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>String</td>
+<td>The SELECT statement</td>
+</tr>
+<tr>
+<td>Params JSON</td>
+<td>String</td>
+<td>Optional JSON array of parameter values</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Boolean</td>
+<td>Clears cached results</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_1">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Pulses true when query completes</td>
+</tr>
+<tr>
+<td>Rows JSON</td>
+<td>String</td>
+<td>JSON array of result rows</td>
+</tr>
+<tr>
+<td>Row Count</td>
+<td>Integer</td>
+<td>Number of rows returned</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Error message if query fails</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<p><strong>Simple query:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">event_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;motion&#39;</span>
+</span></code></pre></div></p>
+<p><strong>Query with parameters (safer, prevents SQL injection):</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">?</span>
+</span></code></pre></div>
+Params JSON: <code>["Camera-1", 0.5]</code></p>
+<p><strong>Query with date filter:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-1 hour&#39;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>Aggregate query:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">event_type</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">event_type</span>
+</span></code></pre></div></p>
+<hr />
+<h2 id="sql-insert">SQL Insert</h2>
+<p>Inserts new rows into a table.</p>
+<h3 id="inputs_2">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>Boolean</td>
+<td>Rising edge runs the insert</td>
+</tr>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>String</td>
+<td>The INSERT statement</td>
+</tr>
+<tr>
+<td>Params JSON</td>
+<td>String</td>
+<td>JSON array of values to insert</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_2">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Pulses true when insert completes</td>
+</tr>
+<tr>
+<td>Rows Affected</td>
+<td>Integer</td>
+<td>Number of rows inserted (usually 1)</td>
+</tr>
+<tr>
+<td>Last Insert ID</td>
+<td>Integer</td>
+<td>Auto-generated ID of inserted row</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Error message if insert fails</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples_1">Examples</h3>
+<p><strong>Insert with parameters:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span><span class="w"> </span><span class="k">source</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)</span>
+</span></code></pre></div>
+Params JSON: <code>["temperature", "Sensor-1", 23.5]</code></p>
+<p><strong>Insert with current timestamp (SQLite):</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span><span class="w"> </span><span class="k">source</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)</span>
+</span></code></pre></div>
+The <code>timestamp</code> column uses <code>DEFAULT CURRENT_TIMESTAMP</code> automatically.</p>
+<h3 id="building-params-json-dynamically">Building Params JSON Dynamically</h3>
+<p>Use <strong>Placeholder JSON</strong> node to build the parameters:</p>
+<p>Template:
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">[</span><span class="s2">&quot;$event_type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;$source&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">$value</span><span class="p">]</span>
+</span></code></pre></div></p>
+<p>This creates inputs for <code>event_type</code>, <code>source</code>, and <code>value</code> that you can wire from other nodes.</p>
+<hr />
+<h2 id="sql-update">SQL Update</h2>
+<p>Updates existing rows in a table.</p>
+<h3 id="inputs_3">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>Boolean</td>
+<td>Rising edge runs the update</td>
+</tr>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>String</td>
+<td>The UPDATE statement</td>
+</tr>
+<tr>
+<td>Params JSON</td>
+<td>String</td>
+<td>JSON array of parameter values</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_3">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Pulses true when update completes</td>
+</tr>
+<tr>
+<td>Rows Affected</td>
+<td>Integer</td>
+<td>Number of rows modified</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Error message if update fails</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples_2">Examples</h3>
+<p><strong>Update single row:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">devices</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">last_seen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">device_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</span></code></pre></div>
+Params JSON: <code>["Camera-1"]</code></p>
+<p><strong>Update with multiple conditions:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">processed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">event_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">processed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</span></code></pre></div>
+Params JSON: <code>["motion"]</code></p>
+<hr />
+<h2 id="sql-delete">SQL Delete</h2>
+<p>Deletes rows from a table.</p>
+<h3 id="inputs_4">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>Boolean</td>
+<td>Rising edge runs the delete</td>
+</tr>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>String</td>
+<td>The DELETE statement</td>
+</tr>
+<tr>
+<td>Params JSON</td>
+<td>String</td>
+<td>JSON array of parameter values</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_4">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Pulses true when delete completes</td>
+</tr>
+<tr>
+<td>Rows Affected</td>
+<td>Integer</td>
+<td>Number of rows deleted</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Error message if delete fails</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples_3">Examples</h3>
+<p><strong>Delete old records:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-30 days&#39;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><strong>Delete by ID:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</span></code></pre></div>
+Params JSON: <code>[42]</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Always use a WHERE clause to avoid deleting all rows accidentally.</p>
+</div>
+<hr />
+<h2 id="sql-table">SQL Table</h2>
+<p>Create and insert data into a database table without writing SQL. Define your table structure visually with columns, and the node automatically creates the table and handles inserts.</p>
+<h3 id="inputs_5">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>Boolean</td>
+<td>Rising edge inserts a new row with values from column inputs</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td>Boolean</td>
+<td>Rising edge deletes all rows from the table</td>
+</tr>
+<tr>
+<td><em>Column Inputs</em></td>
+<td>Various</td>
+<td>One input per column you define (created via Sync Inputs)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_5">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Success</td>
+<td>Boolean</td>
+<td>True when last operation succeeded</td>
+</tr>
+<tr>
+<td>Last ID</td>
+<td>Integer</td>
+<td>Auto-generated ID of last inserted row</td>
+</tr>
+<tr>
+<td>Row Count</td>
+<td>Integer</td>
+<td>Total number of rows in the table</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_1">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table Name</td>
+<td>Name of the database table</td>
+</tr>
+<tr>
+<td>Include ID Column</td>
+<td>Add auto-incrementing primary key (recommended)</td>
+</tr>
+<tr>
+<td>Include Timestamp</td>
+<td>Add automatic <code>datetime</code> column with current time</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>Define columns with name, data type, default value, and max length</td>
+</tr>
+</tbody>
+</table>
+<h3 id="column-configuration">Column Configuration</h3>
+<p>Click <strong>Add Column</strong> to define table columns:</p>
+<ul>
+<li><strong>Column Name</strong>: Use lowercase with underscores (e.g., <code>sensor_value</code>)</li>
+<li><strong>Data Type</strong>: Boolean, Integer, Float, or String</li>
+<li><strong>Default Value</strong>: Optional SQL default</li>
+<li><strong>Max Length</strong>: For strings, 0 = unlimited (TEXT), or specify max chars (VARCHAR)</li>
+</ul>
+<p>Click <strong>Sync Inputs</strong> after defining columns to create the corresponding node inputs.</p>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li><strong>Auto-Create Table</strong>: The table is automatically created if it doesn't exist</li>
+<li><strong>Auto-Migrate</strong>: New columns are automatically added when you update the schema</li>
+<li><strong>Insert on Trigger</strong>: Send a rising edge to Insert to save a row with current input values</li>
+<li><strong>Clear on Trigger</strong>: Send a rising edge to Clear to delete all rows</li>
+</ol>
+<h3 id="example-event-logger">Example: Event Logger</h3>
+<p><strong>Properties:</strong>
+- Table Name: <code>events</code>
+- Include ID: Yes
+- Include Timestamp: Yes
+- Columns:
+    - <code>event_type</code> (String)
+    - <code>source</code> (String)
+    - <code>value</code> (Float)</p>
+<p><strong>Generated SQL:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="n">event_type</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="k">source</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="n">datetime</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;localtime&#39;</span><span class="p">))</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">);</span>
+</span></code></pre></div></p>
+<p>Wire your data sources to the column inputs, then trigger Insert to log a row.</p>
+<hr />
+<h2 id="sql-table-read">SQL Table Read</h2>
+<p>Query a database table and output rows as JSON. Configure the query visually without writing SQL.</p>
+<h3 id="inputs_6">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>Boolean</td>
+<td>Rising edge executes the query and updates outputs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_6">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Success</td>
+<td>Boolean</td>
+<td>True when query succeeded</td>
+</tr>
+<tr>
+<td>Rows JSON</td>
+<td>String</td>
+<td>Query results as JSON array of objects</td>
+</tr>
+<tr>
+<td>Row Count</td>
+<td>Integer</td>
+<td>Number of rows returned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table Name</td>
+<td>Name of the table to query</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>Columns to select (<code>*</code> for all, or comma-separated)</td>
+</tr>
+<tr>
+<td>Order By</td>
+<td>Column to sort by</td>
+</tr>
+<tr>
+<td>Order Direction</td>
+<td>Descending (newest first) or Ascending</td>
+</tr>
+<tr>
+<td>Limit</td>
+<td>Maximum rows to return</td>
+</tr>
+<tr>
+<td>Offset</td>
+<td>Skip this many rows (for pagination)</td>
+</tr>
+<tr>
+<td>Filters</td>
+<td>WHERE conditions to filter rows</td>
+</tr>
+</tbody>
+</table>
+<h3 id="filters">Filters</h3>
+<p>Add filters to select specific rows. Each filter has:</p>
+<ul>
+<li><strong>Column</strong>: The column to filter on</li>
+<li><strong>Value Type</strong>:<ul>
+<li><strong>Static Value</strong>: Enter a fixed value with comparison operator (=, !=, &gt;, &lt;, LIKE, etc.)</li>
+<li><strong>Relative Time</strong>: Filter by time range (last 15 minutes, 1 hour, 7 days, etc.)</li>
+</ul>
+</li>
+</ul>
+<p>When using <strong>Relative Time</strong>, the operator is automatically set to <code>&gt;</code> (greater than) to get recent records.</p>
+<h3 id="time-filter-presets">Time Filter Presets</h3>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1m - 45m</td>
+<td>Minutes (1, 2, 5, 10, 15, 20, 30, 45)</td>
+</tr>
+<tr>
+<td>1h - 24h</td>
+<td>Hours (1, 2, 3, 4, 6, 8, 12, 18, 24)</td>
+</tr>
+<tr>
+<td>2d - 180d</td>
+<td>Days (2, 3, 5, 7, 14, 21, 30, 60, 90, 180)</td>
+</tr>
+<tr>
+<td>1y</td>
+<td>One year</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-recent-events">Example: Recent Events</h3>
+<p><strong>Properties:</strong>
+- Table Name: <code>events</code>
+- Columns: <code>*</code>
+- Order By: <code>datetime</code>
+- Order Direction: Descending
+- Limit: 100
+- Filter: <code>datetime</code> &gt; Last 15 minutes</p>
+<p><strong>Generated SQL:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;localtime&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-15 minutes&#39;</span><span class="p">)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">DESC</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h3 id="example-filtered-query">Example: Filtered Query</h3>
+<p><strong>Properties:</strong>
+- Table Name: <code>temperatures</code>
+- Columns: <code>datetime, temperature</code>
+- Filter 1: <code>sensor_id</code> = <code>Sensor-1</code> (Static Value)
+- Filter 2: <code>datetime</code> &gt; Last 1 hour (Relative Time)
+- Order By: <code>datetime</code>
+- Limit: 50</p>
+<p><strong>Generated SQL:</strong>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">datetime</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">temperatures</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">sensor_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Sensor-1&#39;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;localtime&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-1 hours&#39;</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">DESC</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+</span></code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use SQL Table and SQL Table Read together: SQL Table to log data, SQL Table Read to query it back for display in Dashboard widgets.</p>
+</div>
+<hr />
+<h2 id="complete-example-temperature-logger">Complete Example: Temperature Logger</h2>
+<p>This example logs temperature readings from a Modbus sensor and displays recent values.</p>
+<h3 id="database-schema">Database Schema</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">temperatures</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="k">timestamp</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="n">sensor_id</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="n">temperature</span><span class="w"> </span><span class="nb">REAL</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="flow-structure">Flow Structure</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>[Modbus TCP Client] ─→ [Modbus Read Float] ─→ [SQL Insert]
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>        │                      │                    │
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>        │                      ↓                    │
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>        │              temperature value            │
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>        │                                           │
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>        └──────────────────────────────────────────→ (Conn Key)
+</span></code></pre></div>
+<h3 id="node-configuration">Node Configuration</h3>
+<p><strong>1. SQL Connection</strong>
+- Driver: <code>sqlite</code>
+- Path: <code>temperatures.db</code></p>
+<p><strong>2. SQL Query (create table - run once)</strong>
+- SQL: <code>CREATE TABLE IF NOT EXISTS temperatures (id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT DEFAULT CURRENT_TIMESTAMP, sensor_id TEXT NOT NULL, temperature REAL NOT NULL)</code></p>
+<p><strong>3. Pulse Generator</strong>
+- Period: 60 seconds (log every minute)</p>
+<p><strong>4. Modbus Read Float</strong>
+- Address: 100 (your sensor register)</p>
+<p><strong>5. Placeholder JSON</strong>
+- Template: <code>["Sensor-1", $temperature]</code>
+- Wire temperature from Modbus Read Float</p>
+<p><strong>6. SQL Insert</strong>
+- SQL: <code>INSERT INTO temperatures (sensor_id, temperature) VALUES (?, ?)</code>
+- Params JSON: from Placeholder JSON</p>
+<p><strong>7. SQL Query (for display)</strong>
+- SQL: <code>SELECT timestamp, temperature FROM temperatures ORDER BY id DESC LIMIT 100</code>
+- Wire to Dashboard Chart widget</p>
+<hr />
+<h2 id="common-sql-patterns">Common SQL Patterns</h2>
+<h3 id="get-latest-value">Get Latest Value</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">readings</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span>
+</span></code></pre></div>
+<h3 id="count-records-today">Count Records Today</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="nb">date</span><span class="p">(</span><span class="k">timestamp</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="average-over-time-period">Average Over Time Period</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">average</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">readings</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-1 hour&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="find-minmax-values">Find Min/Max Values</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">min_temp</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">max_temp</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">temperatures</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="nb">date</span><span class="p">(</span><span class="k">timestamp</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="cleanup-old-data">Cleanup Old Data</h3>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">datetime</span><span class="p">(</span><span class="s1">&#39;now&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;-7 days&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Run this periodically with a Timer to prevent the database from growing too large.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"database is locked"</td>
+<td>Only one connection can write at a time. Check for parallel inserts.</td>
+</tr>
+<tr>
+<td>"no such table"</td>
+<td>Run the CREATE TABLE query first</td>
+</tr>
+<tr>
+<td>"SQLITE_READONLY"</td>
+<td>SD card might be full or write-protected</td>
+</tr>
+<tr>
+<td>Connection fails</td>
+<td>For remote databases, check network/firewall settings</td>
+</tr>
+<tr>
+<td>Empty results</td>
+<td>Verify table name and column names match exactly</td>
+</tr>
+<tr>
+<td>Wrong data types</td>
+<td>Ensure Params JSON values match expected types</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="parking-monitor">Parking Monitor</h2>
+<p>The <strong>Parking Monitor</strong> node tracks vehicle entry/exit times, calculates parking duration, and detects overparking. Uses SQL storage for persistence.</p>
+<p><strong>Category</strong>: Database, Plates</p>
+<h3 id="functionality">Functionality</h3>
+<p>Manages a parking database with automatic overparking detection and cleanup. Ideal for parking lot monitoring systems.</p>
+<h3 id="inputs_7">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conn Key</td>
+<td>String</td>
+<td>Connection from SQL Connection node</td>
+</tr>
+<tr>
+<td>Plate</td>
+<td>String</td>
+<td>License plate text</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>String</td>
+<td>Optional tags for the entry (e.g., zone, vehicle type)</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>Boolean</td>
+<td>Rising edge records vehicle entry</td>
+</tr>
+<tr>
+<td>Exit</td>
+<td>Boolean</td>
+<td>Rising edge records vehicle exit</td>
+</tr>
+<tr>
+<td>Check Overstay</td>
+<td>Boolean</td>
+<td>Rising edge checks for overparked vehicles</td>
+</tr>
+<tr>
+<td>Cleanup</td>
+<td>Boolean</td>
+<td>Rising edge deletes old entries</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Boolean</td>
+<td>Rising edge deletes specific plate</td>
+</tr>
+<tr>
+<td>Delete Plate</td>
+<td>String</td>
+<td>Plate to delete when Delete triggers</td>
+</tr>
+<tr>
+<td>Max Park Mins</td>
+<td>Integer</td>
+<td>Max parking minutes before overparked</td>
+</tr>
+<tr>
+<td>Max Hold Mins</td>
+<td>Integer</td>
+<td>Delete entries older than this on cleanup</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs_7">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overparked</td>
+<td>Boolean</td>
+<td>Pulses true when overparked plate found</td>
+</tr>
+<tr>
+<td>Overprk Plate</td>
+<td>String</td>
+<td>The overparked license plate</td>
+</tr>
+<tr>
+<td>Overprk Mins</td>
+<td>Integer</td>
+<td>Minutes parked for overparked plate</td>
+</tr>
+<tr>
+<td>Entries JSON</td>
+<td>String</td>
+<td>All entries sorted by minutes (longest first)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_3">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table Name</td>
+<td>Database table name (default: <code>parking_entries</code>)</td>
+</tr>
+<tr>
+<td>Auto Check Overstay</td>
+<td>Enable automatic overstay checking</td>
+</tr>
+<tr>
+<td>Check Interval</td>
+<td>Seconds between auto checks (default: 10)</td>
+</tr>
+<tr>
+<td>Auto Cleanup</td>
+<td>Enable automatic cleanup of old entries</td>
+</tr>
+<tr>
+<td>Cleanup Interval</td>
+<td>Seconds between auto cleanups (default: 3600)</td>
+</tr>
+<tr>
+<td>Max Park Minutes</td>
+<td>Default max parking time (default: 120)</td>
+</tr>
+<tr>
+<td>Max Hold Minutes</td>
+<td>Default max entry age for cleanup (default: 720)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="entries-json-format">Entries JSON Format</h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">[</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nt">&quot;plate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ABC123&quot;</span><span class="p">,</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Zone A&quot;</span><span class="p">,</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="nt">&quot;entry_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1704444000</span><span class="p">,</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="nt">&quot;entry_time_human&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01-05 08:12:00&quot;</span><span class="p">,</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="nt">&quot;minutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">    </span><span class="nt">&quot;seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7512</span><span class="p">,</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="w">    </span><span class="nt">&quot;is_overparked&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a><span class="w">    </span><span class="nt">&quot;is_exit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="w">    </span><span class="nt">&quot;exit_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="w">    </span><span class="nt">&quot;exit_time_human&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="p">]</span>
+</span></code></pre></div>
+<h3 id="usage-example">Usage Example</h3>
+<ol>
+<li>Add <strong>SQL Connection</strong> node (SQLite or other database)</li>
+<li>Add <strong>Parking Monitor</strong> node and connect <code>Conn Key</code></li>
+<li>Wire LPR events (from Metadata Event Subscribe or Vaxtor) to <code>Plate</code>, <code>Enter</code>, and <code>Exit</code></li>
+<li>Enable auto check overstay in properties, or wire a Timer to <code>Check Overstay</code></li>
+<li>Wire <code>Overparked</code> output to trigger alerts</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the <code>Tags</code> input to categorize entries by zone, camera, or vehicle type. This data is included in the Entries JSON.</p>
+</div>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Use parameters</strong> (?) instead of string concatenation to prevent SQL injection</li>
+<li><strong>Create indexes</strong> for columns you frequently search on</li>
+<li><strong>Periodically delete old data</strong> to keep the database small</li>
+<li><strong>Test queries</strong> in SQL Query node before using in Insert/Update</li>
+<li><strong>Keep one connection</strong> and share it across multiple SQL nodes</li>
+<li><strong>Handle errors</strong> by connecting the Error output to a Logging node</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

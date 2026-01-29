@@ -1,0 +1,3325 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../flow/composites/">
+      
+      
+        <link rel="next" href="../spot_color/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Dashboard - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-the-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening the Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-dashboard-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Dashboard Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Dashboard Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Widgets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Number Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauge-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauge Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-state-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bool State Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-live-stream-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AXIS Live Stream Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-gallery-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Gallery Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-control-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button Control Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-input-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Input Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-text-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Text Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-image-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Image Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-video-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Video Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clock Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fullscreen-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fullscreen Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widget-appearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Appearance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-administrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Administrators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occupancy_monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opening-the-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opening the Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Switching Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-dashboard-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Dashboard Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Dashboard Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Dashboards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Widgets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Number Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauge-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gauge Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bool-state-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bool State Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-live-stream-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AXIS Live Stream Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-gallery-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Gallery Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button-control-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button Control Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-input-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Input Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-text-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Text Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-image-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Image Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-video-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Video Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#youtube-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YouTube Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clock-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clock Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather Widget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fullscreen-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fullscreen Mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widget Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widget-appearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Appearance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting Widgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-administrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Administrators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layout Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dashboard">Dashboard</h1>
+<p>The Dashboard feature provides a customizable monitoring interface where you can visualize Flow node data using various widgets. Create real-time displays for operators without exposing the underlying Flow complexity.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Dashboards display live data from your Flow nodes through configurable widgets. Each widget connects to a specific node input or output and updates in real-time.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Multi-dashboard support</strong> with browser-like tabs</li>
+<li>17 widget types for different visualization needs</li>
+<li>Drag-and-drop widget placement</li>
+<li>Real-time data updates via WebSocket</li>
+<li>Edit and Live modes</li>
+<li>Fullscreen mode for dedicated displays</li>
+<li>Permission-based access control</li>
+</ul>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="opening-the-dashboard">Opening the Dashboard</h3>
+<ol>
+<li>Navigate to <strong>Flow Dashboard</strong> from the main menu</li>
+<li>The dashboard loads in <strong>Live Mode</strong> by default</li>
+</ol>
+<h3 id="toolbar">Toolbar</h3>
+<p>The dashboard toolbar provides quick access to all controls:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Tab 1] [Tab 2] [+] | [Add Widget] | [Live/Edit] [Fullscreen]
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabs</strong></td>
+<td>Switch between dashboards</td>
+</tr>
+<tr>
+<td><strong>+ Button</strong></td>
+<td>Add a new dashboard (Edit Mode only)</td>
+</tr>
+<tr>
+<td><strong>Add Widget</strong></td>
+<td>Open widget creation dialog</td>
+</tr>
+<tr>
+<td><strong>Live/Edit</strong></td>
+<td>Toggle between modes</td>
+</tr>
+<tr>
+<td><strong>Fullscreen</strong></td>
+<td>Enter fullscreen view</td>
+</tr>
+</tbody>
+</table>
+<h3 id="switching-modes">Switching Modes</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Live Mode</strong></td>
+<td>View real-time data, no editing possible</td>
+</tr>
+<tr>
+<td><strong>Edit Mode</strong></td>
+<td>Add, configure, and arrange widgets</td>
+</tr>
+</tbody>
+</table>
+<p>Click the <strong>Live/Edit</strong> button to toggle modes (requires <code>feature_flow_dashboard_update</code> permission).</p>
+<hr />
+<h2 id="multi-dashboard-support">Multi-Dashboard Support</h2>
+<p>Create multiple dashboards to organize your monitoring views. Each dashboard has its own independent set of widgets.</p>
+<h3 id="managing-dashboards">Managing Dashboards</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch Dashboard</strong></td>
+<td>Click on a tab</td>
+</tr>
+<tr>
+<td><strong>Add Dashboard</strong></td>
+<td>Click the <strong>+</strong> button (Edit Mode)</td>
+</tr>
+<tr>
+<td><strong>Rename Dashboard</strong></td>
+<td>Double-click the tab name, or click the pencil icon on the active tab</td>
+</tr>
+<tr>
+<td><strong>Delete Dashboard</strong></td>
+<td>Click the <strong>X</strong> button on a tab (only visible when multiple dashboards exist)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use separate dashboards for different purposes: one for live monitoring, another for historical data, and another for specific zones or devices.</p>
+</div>
+<hr />
+<h2 id="adding-widgets">Adding Widgets</h2>
+<ol>
+<li>Click <strong>Add Widget</strong> in Edit Mode</li>
+<li>Select a widget type from the dropdown</li>
+<li>Choose the <strong>Source Node</strong> from your Flow</li>
+<li>Select <strong>Port Type</strong> (Input or Output)</li>
+<li>Select the specific <strong>Port</strong></li>
+<li>Click <strong>Add</strong> - the widget appears on the canvas</li>
+</ol>
+<p>The widget automatically finds an empty space on the dashboard.</p>
+<hr />
+<h2 id="widget-types">Widget Types</h2>
+<h3 id="text-widget">Text Widget</h3>
+<p>Displays any node value as text.</p>
+<p><strong>Best for:</strong> Labels, status messages, string outputs</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Color</td>
+<td>Text color</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Font size (8-170 px)</td>
+</tr>
+<tr>
+<td>Background Color</td>
+<td>Widget background</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> All data types (Boolean, Integer, Float, String)</p>
+<hr />
+<h3 id="number-display">Number Display</h3>
+<p>Shows numeric values with threshold-based color coding.</p>
+<p><strong>Best for:</strong> Sensor readings, counters, measurements</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Color</td>
+<td>Default text color</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Font size</td>
+</tr>
+<tr>
+<td>Min Value</td>
+<td>Threshold for minimum color</td>
+</tr>
+<tr>
+<td>Max Value</td>
+<td>Threshold for maximum color</td>
+</tr>
+<tr>
+<td>Min Color</td>
+<td>Color when below minimum</td>
+</tr>
+<tr>
+<td>Max Color</td>
+<td>Color when above maximum</td>
+</tr>
+<tr>
+<td>Decimals</td>
+<td>Decimal places to display</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> Integer, Float</p>
+<p><strong>Example:</strong> Temperature display that turns blue below 10C and red above 30C.</p>
+<hr />
+<h3 id="gauge-widget">Gauge Widget</h3>
+<p>Displays values on a speedometer-style dial.</p>
+<p><strong>Best for:</strong> Percentages, levels, speeds, utilization metrics</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>Minimum gauge value</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Maximum gauge value</td>
+</tr>
+<tr>
+<td>Segments</td>
+<td>Number of colored sections</td>
+</tr>
+<tr>
+<td>Needle Color</td>
+<td>Pointer color</td>
+</tr>
+<tr>
+<td>Start Color</td>
+<td>Left-side gradient color</td>
+</tr>
+<tr>
+<td>End Color</td>
+<td>Right-side gradient color</td>
+</tr>
+<tr>
+<td>Value Format</td>
+<td><code>.0f</code>, <code>.1f</code>, or <code>.2f</code> decimals</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> Integer, Float</p>
+<hr />
+<h3 id="bool-state-widget">Bool State Widget</h3>
+<p>Shows boolean states with icons and labels.</p>
+<p><strong>Best for:</strong> On/Off states, alarms, door status, connection status</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True Icon</td>
+<td>Icon when true (72 options)</td>
+</tr>
+<tr>
+<td>False Icon</td>
+<td>Icon when false</td>
+</tr>
+<tr>
+<td>True Color</td>
+<td>Color when true</td>
+</tr>
+<tr>
+<td>False Color</td>
+<td>Color when false</td>
+</tr>
+<tr>
+<td>True Label</td>
+<td>Text when true (e.g., "OPEN")</td>
+</tr>
+<tr>
+<td>False Label</td>
+<td>Text when false (e.g., "CLOSED")</td>
+</tr>
+<tr>
+<td>Icon Size</td>
+<td>Icon dimensions</td>
+</tr>
+<tr>
+<td>Text Size</td>
+<td>Label font size</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Icons:</strong> Power, toggle switches, checkboxes, locks, doors, network status, alerts, and more.</p>
+<p><strong>Accepts:</strong> Boolean</p>
+<hr />
+<h3 id="table-widget">Table Widget</h3>
+<p>Displays JSON arrays as scrollable tables.</p>
+<p><strong>Best for:</strong> Event logs, device lists, data records</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headers</td>
+<td>Column definitions (key-value pairs)</td>
+</tr>
+<tr>
+<td>Auto-detect</td>
+<td>Analyzes JSON to suggest headers</td>
+</tr>
+<tr>
+<td>Show Export Button</td>
+<td>Enable CSV export button (top-right corner)</td>
+</tr>
+<tr>
+<td>Show Search Field</td>
+<td>Enable search field to filter rows by any column value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> String (JSON array)</p>
+<p><strong>Example Input:</strong>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10:30&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Motion&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Entry&quot;</span><span class="p">},</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10:45&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Door Open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Main&quot;</span><span class="p">}</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">]</span>
+</span></code></pre></div></p>
+<p><strong>Setup:</strong>
+1. Add the Table widget connected to a JSON output
+2. Click <strong>Auto-detect Headers</strong> or manually define columns
+3. Map JSON keys to display labels
+4. Optionally enable <strong>Show Export Button</strong> for CSV downloads
+5. Optionally enable <strong>Show Search Field</strong> to filter rows</p>
+<p><strong>Features:</strong>
+- CSV export downloads all table data with configured column headers
+- Search filters rows where any visible column contains the search term</p>
+<hr />
+<h3 id="chart-widget">Chart Widget</h3>
+<p>Visualizes JSON data as line or bar charts.</p>
+<p><strong>Best for:</strong> Trends, historical data, time series, comparisons</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chart Type</td>
+<td><code>bar</code> or <code>line</code></td>
+</tr>
+<tr>
+<td>X-Axis Mode</td>
+<td><code>index</code> (sequential) or <code>time</code> (datetime)</td>
+</tr>
+<tr>
+<td>X-Axis Key</td>
+<td>JSON property for time axis</td>
+</tr>
+<tr>
+<td>Time Parse Mode</td>
+<td><code>iso</code>, <code>epoch_ms</code>, or <code>epoch_s</code></td>
+</tr>
+<tr>
+<td>Time Unit</td>
+<td>second, minute, hour, day, week, month, quarter, year</td>
+</tr>
+<tr>
+<td>Zoom/Pan</td>
+<td><code>none</code>, <code>x</code>, <code>y</code>, or <code>xy</code></td>
+</tr>
+<tr>
+<td>Grid Line Color</td>
+<td>Chart grid color</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Series Configuration:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Key</td>
+<td>JSON property to plot</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Series name in legend</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Line/bar color</td>
+</tr>
+<tr>
+<td>Fill</td>
+<td>Fill area under line</td>
+</tr>
+<tr>
+<td>Tension</td>
+<td>Line smoothness (0-1)</td>
+</tr>
+<tr>
+<td>Point Radius</td>
+<td>Data point size</td>
+</tr>
+<tr>
+<td>Border Width</td>
+<td>Line thickness</td>
+</tr>
+<tr>
+<td>Stepped</td>
+<td>Step-style line</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> String (JSON array)</p>
+<p><strong>Example Input:</strong>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01T10:00:00Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">22.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;humidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">},</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p">{</span><span class="nt">&quot;datetime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01T11:00:00Z&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">23.1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;humidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">]</span>
+</span></code></pre></div></p>
+<p><strong>Features:</strong>
+- Multiple data series on one chart
+- Auto-detect series from JSON structure
+- Zoom with mouse wheel or pinch
+- Pan by dragging
+- Reset button appears when zoomed</p>
+<hr />
+<h3 id="axis-live-stream-widget">AXIS Live Stream Widget</h3>
+<p>Displays live video from an Axis device using WebCodecs for low-latency H.264 decoding. Unlike WebRTC, this approach works reliably behind NAT and firewalls without requiring STUN/TURN servers.</p>
+<p><strong>Best for:</strong> Video monitoring, visual verification</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device</td>
+<td>Select from Device Management</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Stream resolution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Connection States:</strong></p>
+<p>The widget shows connection progress:</p>
+<ul>
+<li>Connecting...</li>
+<li>Waiting for codec info...</li>
+<li>Initializing decoder...</li>
+<li>Streaming...</li>
+</ul>
+<p><strong>Stream Statistics:</strong></p>
+<p>Click the stats button when streaming to view real-time statistics:</p>
+<table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resolution</td>
+<td>Current video resolution</td>
+</tr>
+<tr>
+<td>Framerate</td>
+<td>Frames per second</td>
+</tr>
+<tr>
+<td>Bitrate</td>
+<td>Stream bandwidth</td>
+</tr>
+<tr>
+<td>Codec</td>
+<td>Video codec (H.264)</td>
+</tr>
+<tr>
+<td>Decode Queue</td>
+<td>Frames waiting to be decoded</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> This widget does not require a Flow node connection. Errors are displayed directly in the stream area.</p>
+<hr />
+<h3 id="image-gallery-widget">Image Gallery Widget</h3>
+<p>Shows images from the Flow image cache.</p>
+<p><strong>Best for:</strong> Captured snapshots, event images, visual logs</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grid Size</td>
+<td><code>small</code> (120px), <code>medium</code> (180px), <code>large</code> (240px), <code>xlarge</code> (320px)</td>
+</tr>
+<tr>
+<td>Refresh Interval</td>
+<td>Milliseconds between updates (default: 3000)</td>
+</tr>
+<tr>
+<td>Show Metadata</td>
+<td>Display file size overlay</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features:</strong>
+- Auto-refreshing grid of cached images
+- Click to enlarge
+- Download individual images
+- Shows image metadata (size, content type)</p>
+<p><strong>Note:</strong> This widget does not require a Flow node connection.</p>
+<hr />
+<h3 id="button-control-widget">Button Control Widget</h3>
+<p>Interactive button to control Boolean Input or Button nodes from the dashboard.</p>
+<p><strong>Best for:</strong> Manual triggers, operator controls, on/off switches</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode</td>
+<td><code>toggle</code> (stays on/off) or <code>momentary</code> (on while pressed)</td>
+</tr>
+<tr>
+<td>Active Color</td>
+<td>Color when button is active</td>
+</tr>
+<tr>
+<td>Inactive Color</td>
+<td>Color when button is inactive</td>
+</tr>
+<tr>
+<td>Active Icon</td>
+<td>Icon when active</td>
+</tr>
+<tr>
+<td>Inactive Icon</td>
+<td>Icon when inactive</td>
+</tr>
+<tr>
+<td>Active Label</td>
+<td>Text when active (e.g., "ON")</td>
+</tr>
+<tr>
+<td>Inactive Label</td>
+<td>Text when inactive (e.g., "OFF")</td>
+</tr>
+<tr>
+<td>Button Size</td>
+<td>Button dimensions in pixels</td>
+</tr>
+<tr>
+<td>Icon Size</td>
+<td>Icon size in pixels</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> Boolean outputs from <code>node_button</code> or <code>node_bool_input</code> nodes only</p>
+<p><strong>Note:</strong> The button sends commands back to the Flow node via WebSocket.</p>
+<hr />
+<h3 id="string-input-widget">String Input Widget</h3>
+<p>Text input field to send string values to String Input nodes.</p>
+<p><strong>Best for:</strong> Text entry, search fields, configuration values</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Placeholder</td>
+<td>Hint text when empty</td>
+</tr>
+<tr>
+<td>Min Width</td>
+<td>Minimum field width</td>
+</tr>
+<tr>
+<td>Dense</td>
+<td>Compact layout mode</td>
+</tr>
+<tr>
+<td>Clearable</td>
+<td>Show clear button</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accepts:</strong> String outputs from <code>node_string_input</code> nodes only</p>
+<p><strong>Note:</strong> Press Enter or blur the field to send the value to the Flow.</p>
+<hr />
+<h3 id="static-text-widget">Static Text Widget</h3>
+<p>Displays static text without connecting to any node.</p>
+<p><strong>Best for:</strong> Labels, headers, instructions, section dividers</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text Content</td>
+<td>The text to display (supports multiple lines)</td>
+</tr>
+<tr>
+<td>Text Size</td>
+<td>Font size in pixels</td>
+</tr>
+<tr>
+<td>Text Color</td>
+<td>Text color (hex)</td>
+</tr>
+<tr>
+<td>Text Align</td>
+<td>Left, center, or right alignment</td>
+</tr>
+<tr>
+<td>Bold</td>
+<td>Enable bold text</td>
+</tr>
+<tr>
+<td>Italic</td>
+<td>Enable italic text</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> This widget does not require a Flow node connection.</p>
+<hr />
+<h3 id="media-image-widget">Media Image Widget</h3>
+<p>Displays a static image from the SD card media folder.</p>
+<p><strong>Best for:</strong> Logos, floor plans, reference images, static visuals</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Create a <code>media</code> folder on the SD card using the SD Card Explorer</li>
+<li>Upload images (JPG, PNG, GIF, WebP) to the media folder</li>
+<li>Add the Media Image widget to your dashboard</li>
+<li>Select the image file from the dropdown</li>
+</ol>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image File</td>
+<td>Select from available images in media folder</td>
+</tr>
+<tr>
+<td>Display Mode</td>
+<td><code>Contain</code> (fit inside), <code>Cover</code> (fill, may crop), <code>Fill</code> (stretch), <code>None</code> (original size)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supported formats:</strong> JPG, JPEG, PNG, GIF, WebP</p>
+<p><strong>Note:</strong> This widget does not require a Flow node connection.</p>
+<hr />
+<h3 id="media-video-widget">Media Video Widget</h3>
+<p>Displays a looping video from the SD card media folder.</p>
+<p><strong>Best for:</strong> Instructional videos, promotional content, ambient displays</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Create a <code>media</code> folder on the SD card using the SD Card Explorer</li>
+<li>Upload videos (MP4, WebM) to the media folder</li>
+<li>Add the Media Video widget to your dashboard</li>
+<li>Select the video file from the dropdown</li>
+</ol>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Video File</td>
+<td>Select from available videos in media folder</td>
+</tr>
+<tr>
+<td>Display Mode</td>
+<td><code>Contain</code>, <code>Cover</code>, <code>Fill</code>, or <code>None</code></td>
+</tr>
+<tr>
+<td>Muted</td>
+<td>Start video muted (default: enabled)</td>
+</tr>
+<tr>
+<td>Loop</td>
+<td>Loop video continuously (default: enabled)</td>
+</tr>
+<tr>
+<td>Show Controls</td>
+<td>Display video player controls (default: enabled)</td>
+</tr>
+<tr>
+<td>Autoplay</td>
+<td>Auto-start when dashboard goes live (default: enabled)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supported formats:</strong> MP4, WebM</p>
+<p><strong>Note:</strong> This widget does not require a Flow node connection. Autoplay requires muted to be enabled in most browsers.</p>
+<hr />
+<h3 id="youtube-widget">YouTube Widget</h3>
+<p>Embeds a YouTube video player.</p>
+<p><strong>Best for:</strong> Training videos, external content, video tutorials</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YouTube URL</td>
+<td>Full YouTube URL or video ID (11 characters)</td>
+</tr>
+<tr>
+<td>Autoplay</td>
+<td>Auto-start video (requires muted)</td>
+</tr>
+<tr>
+<td>Muted</td>
+<td>Start video muted</td>
+</tr>
+<tr>
+<td>Loop</td>
+<td>Loop video continuously</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supported URL formats:</strong></p>
+<ul>
+<li><code>https://www.youtube.com/watch?v=VIDEO_ID</code></li>
+<li><code>https://youtu.be/VIDEO_ID</code></li>
+<li><code>https://www.youtube.com/embed/VIDEO_ID</code></li>
+<li>Direct video ID: <code>dQw4w9WgXcQ</code></li>
+</ul>
+<p><strong>Note:</strong> This widget does not require a Flow node connection. Due to browser autoplay policies, autoplay typically requires the video to be muted.</p>
+<hr />
+<h3 id="clock-widget">Clock Widget</h3>
+<p>Displays current time with configurable timezone and format.</p>
+<p><strong>Best for:</strong> Time displays, world clocks, shift schedules</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24-hour format</td>
+<td>Use 24-hour time (14:30) vs 12-hour (2:30 PM)</td>
+</tr>
+<tr>
+<td>Show seconds</td>
+<td>Include seconds in display</td>
+</tr>
+<tr>
+<td>Show date</td>
+<td>Display date below time</td>
+</tr>
+<tr>
+<td>Timezone</td>
+<td>Select timezone (local, UTC, or major cities)</td>
+</tr>
+<tr>
+<td>Time Size</td>
+<td>Font size for time display (12-200 px)</td>
+</tr>
+<tr>
+<td>Time Color</td>
+<td>Color of time text</td>
+</tr>
+<tr>
+<td>Date Size</td>
+<td>Font size for date display (8-72 px)</td>
+</tr>
+<tr>
+<td>Date Color</td>
+<td>Color of date text</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Timezones:</strong> Local, UTC, Europe (London, Paris, Berlin, Stockholm, Moscow), Americas (New York, Chicago, Denver, Los Angeles), Asia (Tokyo, Shanghai, Dubai, Singapore), Pacific (Sydney, Auckland)</p>
+<p><strong>Note:</strong> This widget does not require a Flow node connection.</p>
+<hr />
+<h3 id="markdown-widget">Markdown Widget</h3>
+<p>Displays formatted markdown text.</p>
+<p><strong>Best for:</strong> Instructions, notes, formatted documentation, announcements</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown Content</td>
+<td>Text with markdown formatting</td>
+</tr>
+<tr>
+<td>Font Size</td>
+<td>Base font size (8-48 px)</td>
+</tr>
+<tr>
+<td>Text Color</td>
+<td>Default text color</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supported Markdown:</strong></p>
+<ul>
+<li><code># Heading 1</code>, <code>## Heading 2</code>, <code>### Heading 3</code></li>
+<li><code>**bold**</code> and <code>*italic*</code></li>
+<li><code>~~strikethrough~~</code></li>
+<li><code>`inline code`</code></li>
+<li><code>[link text](url)</code></li>
+<li>Lists with <code>-</code> or <code>*</code></li>
+<li>Horizontal rules with <code>---</code></li>
+</ul>
+<p><strong>Note:</strong> This widget does not require a Flow node connection.</p>
+<hr />
+<h3 id="weather-widget">Weather Widget</h3>
+<p>Displays current weather conditions using Open-Meteo.</p>
+<p><strong>Best for:</strong> Environmental monitoring, outdoor activity planning, lobby displays</p>
+<p><strong>Settings:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latitude</td>
+<td>Location latitude (decimal degrees)</td>
+</tr>
+<tr>
+<td>Longitude</td>
+<td>Location longitude (decimal degrees)</td>
+</tr>
+<tr>
+<td>Display Name</td>
+<td>Optional location label shown in widget</td>
+</tr>
+<tr>
+<td>Temperature Unit</td>
+<td>Celsius or Fahrenheit (also affects wind speed)</td>
+</tr>
+<tr>
+<td>Refresh Interval</td>
+<td>How often to fetch new data (5, 15, 30 min, or 1 hour)</td>
+</tr>
+<tr>
+<td>Show humidity and wind</td>
+<td>Display additional weather details</td>
+</tr>
+<tr>
+<td>Show location name</td>
+<td>Display the location label</td>
+</tr>
+<tr>
+<td>Icon Size</td>
+<td>Weather icon size (24-128 px)</td>
+</tr>
+<tr>
+<td>Temperature Size</td>
+<td>Temperature text size (16-120 px)</td>
+</tr>
+<tr>
+<td>Temperature Color</td>
+<td>Color of temperature display</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Displayed Information:</strong></p>
+<ul>
+<li>Current temperature with unit</li>
+<li>Weather condition icon (sunny, cloudy, rain, snow, fog, thunderstorm)</li>
+<li>Humidity percentage (optional)</li>
+<li>Wind speed in km/h or mph (optional)</li>
+<li>Location name (optional)</li>
+<li>Open-Meteo attribution</li>
+</ul>
+<p><strong>Note:</strong> This widget does not require a Flow node connection. Weather data is provided by Open-Meteo.</p>
+<hr />
+<h2 id="fullscreen-mode">Fullscreen Mode</h2>
+<p>Click the fullscreen button to enter a distraction-free viewing mode.</p>
+<p><strong>In Fullscreen:</strong></p>
+<ul>
+<li>The entire dashboard view fills the screen (toolbar + widgets)</li>
+<li>Tabs remain visible for switching between dashboards</li>
+<li>Press <strong>Escape</strong> or click the fullscreen button again to exit</li>
+</ul>
+<p><strong>Fullscreen in Live Mode:</strong></p>
+<p>When fullscreen is active in Live Mode, edit controls are automatically hidden:</p>
+<ul>
+<li>Add dashboard (+) button</li>
+<li>Rename/delete tab buttons</li>
+<li>Add widget button</li>
+</ul>
+<p>This provides a clean monitoring interface for operators.</p>
+<hr />
+<h2 id="widget-layout">Widget Layout</h2>
+<h3 id="positioning">Positioning</h3>
+<p>In Edit Mode:
+- <strong>Drag</strong> the handle icon (top-left) to move widgets
+- <strong>Resize</strong> using the handle (bottom-right)
+- Widgets snap to a grid for alignment
+- Collision detection prevents overlapping</p>
+<h3 id="widget-appearance">Widget Appearance</h3>
+<p>Each widget has appearance settings:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show Name</td>
+<td>Display widget title</td>
+</tr>
+<tr>
+<td>Widget Name</td>
+<td>Custom title text</td>
+</tr>
+<tr>
+<td>Background Color</td>
+<td>Widget background</td>
+</tr>
+</tbody>
+</table>
+<p>Access via the <strong>Appearance</strong> tab in the widget properties panel.</p>
+<h3 id="deleting-widgets">Deleting Widgets</h3>
+<p>Click the <strong>delete icon</strong> (top-right of widget) in Edit Mode.</p>
+<hr />
+<h2 id="dashboard-workflow">Dashboard Workflow</h2>
+<h3 id="for-administrators">For Administrators</h3>
+<ol>
+<li>Design your Flow with the nodes you want to monitor</li>
+<li>Switch to Flow Dashboard</li>
+<li>Enter Edit Mode</li>
+<li>Add widgets for each value you want to display</li>
+<li>Configure widget appearance and thresholds</li>
+<li>Arrange widgets logically</li>
+<li>Switch to Live Mode to verify</li>
+<li>Set user permissions for operators</li>
+</ol>
+<h3 id="for-operators">For Operators</h3>
+<ol>
+<li>Open Flow Dashboard (loads in Live Mode)</li>
+<li>Monitor real-time values</li>
+<li>Use fullscreen mode for dedicated displays</li>
+<li>Widgets update automatically as Flow data changes</li>
+</ol>
+<hr />
+<h2 id="permissions">Permissions</h2>
+<p>Dashboard access is controlled by the permission system:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feature_flow_dashboard_read</code></td>
+<td>View dashboard in Live Mode</td>
+</tr>
+<tr>
+<td><code>feature_flow_dashboard_update</code></td>
+<td>Edit dashboard (add/remove/configure widgets)</td>
+</tr>
+</tbody>
+</table>
+<p>Operators typically have read-only access, while administrators can modify the dashboard layout.</p>
+<hr />
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="layout-tips">Layout Tips</h3>
+<ul>
+<li>Group related widgets together</li>
+<li>Use consistent sizing for similar data types</li>
+<li>Place critical information prominently</li>
+<li>Leave space for future additions</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>Limit the number of high-frequency updating widgets</li>
+<li>Use appropriate refresh intervals for Image Gallery</li>
+<li>Consider network bandwidth for live streams</li>
+</ul>
+<h3 id="data-visualization">Data Visualization</h3>
+<ul>
+<li>Match widget type to data type (gauges for ranges, tables for lists)</li>
+<li>Set meaningful thresholds for color-coded displays</li>
+<li>Use descriptive widget names</li>
+<li>Configure appropriate decimal places for numeric data</li>
+</ul>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Widget shows no data</td>
+<td>Verify Flow is running and node is outputting data</td>
+</tr>
+<tr>
+<td>Table shows "Invalid JSON"</td>
+<td>Check that the connected output produces valid JSON array</td>
+</tr>
+<tr>
+<td>Chart not updating</td>
+<td>Verify JSON structure matches configured series keys</td>
+</tr>
+<tr>
+<td>Live stream not connecting</td>
+<td>Check device credentials in Device Management</td>
+</tr>
+<tr>
+<td>Widget disappeared</td>
+<td>Ensure you have edit permission; check if accidentally deleted</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

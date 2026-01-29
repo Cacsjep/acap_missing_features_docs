@@ -1,0 +1,1911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../limitations/">
+      
+      
+        <link rel="next" href="reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overview - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multi-flow-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Flow Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Flow Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Tabs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-the-flow-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open the Flow Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management-for-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management (for Flow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolbars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbars
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-and-wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas and Wiring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-properties-and-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Properties and Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-and-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis and device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs-and-manual-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs and manual controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-and-pulses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing and pulses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-selection-and-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic, selection, and math
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-buffers-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data, buffers, routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-and-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking and parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug and visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occupancy_monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#multi-flow-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Flow Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Flow Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Tabs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flow Tabs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-the-flow-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open the Flow Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device-management-for-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device Management (for Flow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolbars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toolbars
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas-and-wiring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas and Wiring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-properties-and-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Properties and Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Node Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-and-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis and device
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs-and-manual-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs and manual controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-and-pulses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing and pulses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-selection-and-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic, selection, and math
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-buffers-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data, buffers, routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking-and-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking and parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-and-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug and visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="flow">Flow</h1>
+<p>Design automation visually by dragging nodes onto a canvas and wiring them together. Flows can listen to Axis events, apply logic and timing, call HTTP endpoints, and debug live data without coding.</p>
+<div class="admonition tip">
+<p class="admonition-title">Video Tutorials</p>
+<p>Watch tutorials and demos on the <a href="https://www.youtube.com/@mfacap">Missing Features YouTube channel</a>.</p>
+</div>
+<hr />
+<h2 id="multi-flow-support">Multi-Flow Support</h2>
+<p>Flow now supports <strong>multiple flows</strong> with a browser-like tab interface. Each flow is independent and can be started/stopped individually.</p>
+<h3 id="flow-tabs">Flow Tabs</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch Flow</strong></td>
+<td>Click on a tab</td>
+</tr>
+<tr>
+<td><strong>Add Flow</strong></td>
+<td>Click the <strong>+</strong> button (Edit Mode only)</td>
+</tr>
+<tr>
+<td><strong>Rename Flow</strong></td>
+<td>Double-click the tab name, or click the pencil icon</td>
+</tr>
+<tr>
+<td><strong>Delete Flow</strong></td>
+<td>Click the <strong>X</strong> button on a tab (requires at least 2 flows)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A <strong>green play icon</strong> indicates a running flow</li>
+<li>Flows can run simultaneously—start multiple flows for parallel automation</li>
+<li>Each flow has its own canvas, nodes, and execution state</li>
+</ul>
+<hr />
+<h4 id="open-the-flow-builder">Open the Flow Builder</h4>
+<ul>
+<li><strong>Launch the app UI</strong> and pick <strong>Flow</strong> from the feature list</li>
+<li>The last active flow loads automatically; switch tabs to access other flows</li>
+</ul>
+<hr />
+<h4 id="device-management-for-flow">Device Management (for Flow)</h4>
+<ul>
+<li>Add/edit devices once and reuse them across Flow nodes (Axis outputs, RTSP preview, HTTP image uploads, Vaxtor Cloud ANPR).</li>
+<li>Fields: Name, IP/Protocol/Port, RTSP port, username/password, auth type (digest/basic/none), channel, <strong>Non-video device</strong> flag, optional resolution list.</li>
+<li>Snapshots: nodes that send images pull a snapshot from the selected device; non-video devices will reject snapshot requests.</li>
+<li>Resolutions: if available, nodes can request a specific resolution; otherwise the default stream is used.</li>
+<li>If Axis passwords change, update the device entry; recreate Axis Output nodes if port mappings change.</li>
+</ul>
+<hr />
+<h4 id="toolbars">Toolbars</h4>
+<p>Flow uses two toolbars for quick access to controls:</p>
+<p><strong>Top Toolbar:</strong></p>
+<ul>
+<li><strong>Start/Stop:</strong> Runs or stops the flow. Auto-saves before starting. Switches to live mode where editing is locked and edges animate.</li>
+<li><strong>Save:</strong> Manually save the current flow. A toast notification confirms the save.</li>
+<li><strong>Add Node:</strong> Opens the catalog. Drag a template to the canvas. Axis nodes open an extra dialog to pick ports or events before placement.</li>
+</ul>
+<p><strong>Bottom Toolbar:</strong></p>
+<ul>
+<li><strong>IO Table:</strong> Opens a live table listing every node with its inputs/outputs and current values (available in live mode).</li>
+<li><strong>Fit to View:</strong> Reframes the canvas around all nodes.</li>
+<li><strong>More Menu:</strong> Export/Import flow JSON, toggle Safe Mode, Helper Lines, Simple Edges, and set background color.</li>
+</ul>
+<hr />
+<h4 id="canvas-and-wiring">Canvas and Wiring</h4>
+<ul>
+<li><strong>Pan/Zoom:</strong> Drag the background to pan; use the mouse wheel to zoom.</li>
+<li><strong>Select/Delete:</strong> Hold <strong>Shift</strong> and drag to multi-select; press <strong>Delete</strong> to remove selected nodes/edges.</li>
+<li><strong>Edges:</strong> Hover to add bend points (yellow). Right-click a bend point to remove. Double-click an edge or click its small <strong>x</strong> to delete.</li>
+<li><strong>Handles:</strong> Outputs on the right, inputs on the left. Shapes indicate type: <strong>round</strong> = bool, <strong>square</strong> = int/float, <strong>diamond</strong> = string. In live mode booleans glow green/red; int uses magenta, float uses purple, string uses cyan.</li>
+<li><strong>Edge colors:</strong> Mirror the source output in live mode; turn gray in edit mode.</li>
+<li><strong>Connections:</strong> Each input accepts a single connection. Mismatched data types are blocked (bool only to bool, string only to string, numeric to numeric). Safe mode shows warning toasts when a connection is rejected.</li>
+</ul>
+<hr />
+<h4 id="node-properties-and-actions">Node Properties and Actions</h4>
+<ul>
+<li>Hover a node to show a toolbar for <strong>copy</strong>, <strong>delete</strong>, and <strong>disconnect all edges</strong> (disabled in live mode).</li>
+<li>Click a node in edit mode to open the right-side drawer:</li>
+<li>Rename <strong>Title/Sub Title</strong>, change <strong>Header Color</strong>, and rename inputs/outputs.</li>
+<li>Nodes with missing required data show an orange dotted border until fixed.</li>
+<li>Device pickers pull from <strong>Device Management (Flow)</strong>; update devices there to refresh selectors.</li>
+<li>A small badge at the top-right shows the last execution time while running; a warning banner appears if the websocket reconnects.</li>
+</ul>
+<hr />
+<h4 id="node-reference">Node Reference</h4>
+<p>Use <strong>Add Node</strong> to drag any template. Each entry lists what it does, its ports, and what you can configure.</p>
+<p>For a complete, per-node breakdown covering every template in the catalog (inputs, outputs, tips, and dialog flows), see <a href="reference/">Flow Reference</a>.</p>
+<h5 id="axis-and-device">Axis and device</h5>
+<ul>
+<li>
+<p><strong>Axis Device Log</strong>  </p>
+<ul>
+<li>What it does: Write a message to the Axis device syslog.  </li>
+<li>Inputs: <code>Write</code> (bool), <code>Message</code> (string).</li>
+</ul>
+</li>
+<li>
+<p><strong>Axis Metadata Event (Subscribe)</strong>  </p>
+<ul>
+<li>What it does: Subscribe to Axis metadata events and expose fields as outputs.  </li>
+<li>Inputs: <code>Enable</code>.  </li>
+<li>Outputs: <code>Connected</code>, <code>Error</code>, <code>New Event</code>, plus one output per Axis field; override inputs let you simulate values.</li>
+</ul>
+</li>
+<li>
+<p><strong>Axis Metadata Event (Create)</strong></p>
+<ul>
+<li>What it does: Create a custom stateless Axis event on this device (visible in Axis rules while running).</li>
+<li>Inputs: <code>Send</code> plus user-added fields marked as <strong>Trigger (Source)</strong> or <strong>Data</strong>.</li>
+<li>Outputs: <code>Error</code>.</li>
+<li>Properties: Event name; add/remove fields and choose their type/direction.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Axis Metadata Event (Create) nodes are only visible in the Axis event rule list while the flow is running.</p>
+</div>
+<ul>
+<li>
+<p><strong>Axis Live Stream</strong></p>
+<ul>
+<li>What it does: RTSP video preview from an Axis device (live mode only).</li>
+<li>Properties: IP, port, username, password, channel. Shows connecting/error overlays and retries every 5 s on failure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Axis Outputs</strong></p>
+<ul>
+<li>What it does: Toggle Axis output ports via VAPIX.</li>
+<li>Inputs: <code>EN</code> plus one input per discovered port.</li>
+<li>Outputs: <code>Success</code>, <code>Status</code>, <code>Error</code>.</li>
+<li>Tip: Recreate the node if device credentials or port mapping change.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vaxtor Cloud ANPR</strong>  </p>
+<ul>
+<li>What it does: Captures a snapshot from the selected device and sends it to Vaxtor Cloud ALPR.  </li>
+<li>Inputs: <code>Execute</code>, <code>Reset</code>.  </li>
+<li>Outputs: <code>Success</code>, <code>Plate Found</code>, plate fields (number, country, state, category, confidence), vehicle fields (make, model, color, class), <code>Status</code>, <code>Error</code>, <code>Executed</code> pulse.  </li>
+<li>Properties: Client ID/Secret, scope (api), token URL, API URL, timeout, device + optional resolution (from Device Management).</li>
+</ul>
+</li>
+<li>
+<p><strong>License Plates</strong>  </p>
+<ul>
+<li>What it does: Matches detected plates against a whitelist with validity windows and per-tag outputs.  </li>
+<li>Inputs/Outputs: Dynamic outputs per tag plus match info; configure plates, dates, tags, and deviation in the License Plate List feature.</li>
+</ul>
+</li>
+</ul>
+<h5 id="inputs-and-manual-controls">Inputs and manual controls</h5>
+<ul>
+<li><strong>Enable Input</strong> - Always outputs <code>true</code>.  </li>
+<li><strong>Button</strong> - Outputs <code>true</code> while pressed, <code>false</code> on release (live mode).</li>
+</ul>
+<h5 id="timing-and-pulses">Timing and pulses</h5>
+<ul>
+<li><strong>Debounce</strong> - Boolean filter; output changes only after the input is stable for the set time. Properties: unit (ms/s/m), amount.  </li>
+<li><strong>Edge Detection</strong> - Rising or falling edge detector; outputs a pulse.  </li>
+<li><strong>Pulse Buffer with Release</strong> - Buffers pulses until <code>Release</code> goes true. Inputs: <code>Set</code>, <code>Release</code>, <code>Clear</code>. Property: buffer size.  </li>
+<li><strong>Timer on Delay (TON)</strong> - <code>Active</code> turns true after <code>Enable</code> stays true for the configured time; outputs elapsed time.  </li>
+<li><strong>Timer off Delay (TOF)</strong> - <code>Active</code> turns true immediately on rising edge and stays true for the set time after <code>Enable</code> goes false.  </li>
+<li><strong>Pulse Timer (TP)</strong> - Fixed-length pulse on each rising edge of <code>Enable</code>; outputs elapsed time.  </li>
+<li><strong>Pulse Generator</strong> - Periodic single-cycle pulse while <code>Enable</code> is true.  </li>
+<li><strong>Step Sequencer</strong> - Advances one step per <code>Step</code> pulse; exactly one output is true. Property: steps (2-16).  </li>
+<li><strong>Timed Sequenced</strong> - Runs timers in order while enabled, then wraps back to the first timer. </li>
+<li><strong>Counter</strong> - Counts up/down on pulses; <code>Reset</code> clears to zero.</li>
+</ul>
+<h5 id="logic-selection-and-math">Logic, selection, and math</h5>
+<ul>
+<li><strong>Boolean gates (AND, NAND, OR, NOR, XOR, XNOR, NOT)</strong> - Standard two-input gates (NOT is single-input).  </li>
+<li><strong>Compare</strong> - Compares <code>A</code> and <code>B</code> (<code>==, !=, &gt;, &lt;, &gt;=, &lt;=, contains, startswith, endswith</code>). Properties: operator; data type (int/float/string); inputs reset to the chosen type.  </li>
+<li><strong>Value Selector</strong> - Switch between two inputs with <code>Select</code> (false = input 1, true = input 2). Property: shared data type.  </li>
+<li><strong>Multiplexer</strong> - Route one of many value inputs to output based on numeric <code>Index</code>. Properties: data type; add/remove value inputs; output also reports selected index.  </li>
+<li><strong>Move</strong> - Pass <code>Value</code> to output when <code>Enable</code> is true.  </li>
+<li><strong>Math</strong> - Add/Subtract/Multiply/Divide <code>A</code> and <code>B</code> when <code>Enable</code> is true. Outputs: <code>Done</code>, <code>Result</code>. Property: operation.  </li>
+<li><strong>Advanced Math</strong> - ABS, SQRT, SIN, COS, TAN, SIGN on <code>Value</code> when <code>Enable</code> is true. Outputs: <code>Done</code>, <code>Value</code>. Property: operation.  </li>
+<li><strong>Flip-Flop</strong> - Set/Reset latch. Properties: mode <code>RS</code> (reset-dominant) or <code>SR</code> (set-dominant); input labels update automatically.  </li>
+<li><strong>Value Latch</strong> - Stores the last value when <code>Set</code> is true; holds until <code>Reset</code>. Property: data type syncs input/output.</li>
+<li><strong>Lua Script</strong> - Execute custom Lua against inputs/outputs; includes JSON/time helpers and preserves state between executions. Reserved error output fires on script/runtime failures.</li>
+</ul>
+<h5 id="data-buffers-routing">Data, buffers, routing</h5>
+<ul>
+<li><strong>Queue First-In First-Out / Queue Last-In First-Out</strong> - Push while <code>Enable</code> is true; <code>Pop</code> returns the next value; <code>Reset</code> clears. Outputs: <code>Value</code>, <code>Has</code>, <code>Count</code>. Properties: max size, data type.  </li>
+<li><strong>Data Table</strong> - Multi-output register block; add/remove outputs and set data types.  </li>
+<li><strong>Routing helpers</strong> - Combine Value Selector, Multiplexer, and Move to branch, gate, or forward values unchanged.</li>
+</ul>
+<h5 id="networking-and-parsing">Networking and parsing</h5>
+<ul>
+<li><strong>HTTP Request</strong> - Fires when <code>Enable</code> is true; <code>Reset</code> clears state. Outputs: <code>Success</code>, <code>Status</code>, <code>Body</code>, <code>Error</code>. Properties: URL, method, body type (none/form/JSON/raw/XML), auth (none/basic/digest), headers, params, timeout, skip TLS verify.  </li>
+<li><strong>JSON Key Extractor</strong> - On <code>Extract</code>, pulls a key (dot notation allowed) from a JSON string; <code>Reset</code> clears. Outputs: <code>Value</code>, <code>Found</code>. Properties: key and output type.</li>
+<li><strong>JSON to Node</strong> - Splits a JSON object into individual outputs for each top-level key; configure keys and sample JSON for auto-generation.  </li>
+<li><strong>JSON Array Selector</strong> - Selects an array element by index from a JSON string; outputs the item JSON plus <code>Found</code>/<code>Processed</code> flags.</li>
+<li><strong>TCP Server</strong> - Accepts raw TCP connections and converts each payload to a string. Outputs: a per-request <code>New Message</code> pulse, the latest <code>Message</code>, and an <code>Error</code> string when listener failures occur. Properties: bind port, per-second rate limit and enable input.</li>
+<li><strong>TCP Message Sender</strong> - Sends the provided string payload to a configured host/port on every rising <code>Send</code> trigger. Outputs a one-cycle <code>Success</code> pulse plus <code>Error</code>. Properties assume a host/IP, port, and timeout.</li>
+<li><strong>Webhook Listener</strong> - Runs an HTTP or HTTPS endpoint (self-signed TLS) and exposes the request body plus any configured query params as outputs. Accepts Basic/Digest auth, enforces a 1‑15 rps rate limit, and always responds with <code>{"success":bool,"message":string}</code> to guide clients. Outputs: <code>New Request</code>, <code>Body</code>, <code>Error</code>, plus one string output for each query parameter.</li>
+</ul>
+<h5 id="debug-and-visualization">Debug and visualization</h5>
+<ul>
+<li><strong>Bool Debug Output</strong> - Large icon/label that follows the boolean state. Properties: icons, colors, labels for true/false.  </li>
+<li><strong>String Debug Output</strong> - Shows latest string input.  </li>
+<li><strong>Value Debug Output</strong> - Table of all input states (bool/int/float/string).  </li>
+<li><strong>Oscilloscope</strong> - Plots up to five signals. Properties: line colors, per-input data type, min/max ranges for numeric inputs.  </li>
+<li><strong>Logging</strong> - Live log viewer (level, time, node id/name, message) from the flow runtime.  </li>
+<li><strong>Text</strong> - Static label. Properties: text and size.  </li>
+<li><strong>Axis Live Stream</strong> - Also handy for visual debugging of video feeds.</li>
+<li><strong>Speedometer</strong> - The Speedometer visualizes a numeric input value using a gauge-style dial.</li>
+</ul>
+<hr />
+<h4 id="tips">Tips</h4>
+<ul>
+<li>If a node shows an orange dotted border, open its properties and complete the required fields (URL, event name, etc.).</li>
+<li>Keep a <strong>Logging</strong> node in your flow to see backend messages when testing HTTP calls or Axis events.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
