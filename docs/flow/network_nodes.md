@@ -6,249 +6,75 @@ Nodes for industrial protocols, TCP/IP communication, and media streaming.
 
 ## Modbus TCP
 
-Modbus TCP is an industrial protocol widely used in building automation, PLCs, and SCADA systems. The Flow provides a complete set of nodes to connect to Modbus TCP servers and read/write various data types.
+Modbus TCP is an industrial protocol widely used in building automation, PLCs, and SCADA systems. The **Modbus** node provides a unified interface to connect to Modbus TCP servers and read/write various data types.
 
-### Modbus TCP Client
+### Modbus Node
 
-The **Modbus TCP Client** node establishes and manages a connection to a Modbus TCP server.
+The **Modbus** node establishes a connection to a Modbus TCP server and manages multiple configurable items (coils, registers) in a single node.
 
 **Category**: Network, Modbus
 
 #### Functionality
 
-Creates a persistent connection to a Modbus server. Other Modbus nodes use the `Conn Key` output to share this connection.
+- Connects to a Modbus TCP server with automatic reconnection (5-second retry on connection loss)
+- Configurable items define what data to read/write (coils, integers, floats, strings)
+- Each item gets its own read trigger, write trigger, value input, and value output
+- Built-in keepalive mechanism reads coil 0 every 2 seconds to prevent idle timeouts
+- Uses Big-Endian byte order (IEEE 754 standard) for floats and strings
 
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Connect | Boolean | Rising edge opens the connection; falling edge closes it |
-
-#### Outputs
+#### Base Inputs
 
 | Name | Type | Description |
 |------|------|-------------|
-| Connected | Boolean | True while connection is active |
-| Conn Key | String | Unique key to pass to read/write nodes |
+| Enable | Boolean | TRUE connects to the server; FALSE disconnects |
+| Read All | Boolean | Rising edge triggers read of all configured items |
+| Write All | Boolean | Rising edge triggers write of all items using their Value inputs |
+
+#### Base Outputs
+
+| Name | Type | Description |
+|------|------|-------------|
+| Connected | Boolean | TRUE while connected to the Modbus server |
+| Op Complete | Boolean | Pulses TRUE for one cycle when any read/write operation completes |
+
+#### Per-Item I/O
+
+For each configured item, the node generates:
+
+| Name | Type | Description |
+|------|------|-------------|
+| {name} Read (input) | Boolean | Rising edge triggers read of this item |
+| {name} Write (input) | Boolean | Rising edge triggers write of this item |
+| {name} Value (input) | Configurable | Value to write when Write is triggered |
+| {name} (output) | Configurable | Current value read from this item |
 
 #### Properties
 
 - **Host**: IP address or hostname of the Modbus server (e.g., `192.168.1.100`)
 - **Port**: TCP port (default: `502`)
-- **Slave ID**: Modbus slave/unit ID (default: `1`)
+- **Unit ID**: Modbus unit/slave identifier (0-255, default: `1`)
 
-!!! tip
-    Keep one TCP Client node and wire its `Conn Key` to multiple read/write nodes. This shares the connection efficiently.
+#### Item Configuration
 
----
+Click **Add Item** to configure Modbus data points:
 
-### Modbus Write Coil
+| Property | Description |
+|----------|-------------|
+| Name | Unique identifier for this item (creates I/O labels) |
+| Type | Data type: `coil`, `int`, `float`, or `string` |
+| Address | Register/coil address (coils use 1-based addressing, registers use 0-based) |
+| Length | For strings only: maximum character length |
 
-Writes a boolean value to a single coil register.
+After adding or removing items, click **Sync I/O** to update the node's inputs and outputs.
 
-**Category**: Network, Modbus
+#### Item Types
 
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Write | Boolean | Rising edge triggers the write |
-| Value | Boolean | The value to write (ON/OFF) |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Written | Boolean | Pulses true when write completes |
-
-#### Properties
-
-- **Address**: Coil address (0-65535)
-
----
-
-### Modbus Read Coil
-
-Reads a boolean value from a single coil register.
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Read | Boolean | Rising edge triggers the read |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Read | Boolean | Pulses true when read completes |
-| Value | Boolean | The coil state |
-
-#### Properties
-
-- **Address**: Coil address (0-65535)
-
----
-
-### Modbus Write Int
-
-Writes a 16-bit integer value to a holding register.
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Write | Boolean | Rising edge triggers the write |
-| Value | Integer | The value to write (-32768 to 32767) |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Written | Boolean | Pulses true when write completes |
-
-#### Properties
-
-- **Address**: Holding register address (0-65535)
-
----
-
-### Modbus Read Int
-
-Reads a 16-bit integer value from a holding register.
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Read | Boolean | Rising edge triggers the read |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Read | Boolean | Pulses true when read completes |
-| Value | Integer | The register value |
-
-#### Properties
-
-- **Address**: Holding register address (0-65535)
-
----
-
-### Modbus Write Float
-
-Writes a 32-bit IEEE 754 floating-point value to two consecutive holding registers.
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Write | Boolean | Rising edge triggers the write |
-| Value | Float | The floating-point value |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Written | Boolean | Pulses true when write completes |
-
-#### Properties
-
-- **Address**: Starting holding register address (uses 2 registers)
-
----
-
-### Modbus Read Float
-
-Reads a 32-bit IEEE 754 floating-point value from two consecutive holding registers.
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Read | Boolean | Rising edge triggers the read |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Read | Boolean | Pulses true when read completes |
-| Value | Float | The floating-point value |
-
-#### Properties
-
-- **Address**: Starting holding register address (uses 2 registers)
-
----
-
-### Modbus Write String
-
-Writes a string to multiple holding registers (2 ASCII characters per register).
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Write | Boolean | Rising edge triggers the write |
-| Value | String | The text to write |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Written | Boolean | Pulses true when write completes |
-
-#### Properties
-
-- **Address**: Starting holding register address
-- **Length**: Maximum string length (number of registers = length / 2)
-
----
-
-### Modbus Read String
-
-Reads a string from multiple holding registers (2 ASCII characters per register).
-
-**Category**: Network, Modbus
-
-#### Inputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Conn Key | String | Connection from Modbus TCP Client |
-| Read | Boolean | Rising edge triggers the read |
-
-#### Outputs
-
-| Name | Type | Description |
-|------|------|-------------|
-| Read | Boolean | Pulses true when read completes |
-| Value | String | The retrieved text |
-
-#### Properties
-
-- **Address**: Starting holding register address
-- **Length**: Number of characters to read
+| Type | Description | Registers Used |
+|------|-------------|----------------|
+| coil | Boolean value (ON/OFF) | 1 coil |
+| int | 16-bit signed integer (-32768 to 32767) | 1 register |
+| float | 32-bit IEEE 754 floating-point | 2 registers |
+| string | ASCII text (2 characters per register) | length / 2 registers |
 
 ---
 
@@ -256,13 +82,18 @@ Reads a string from multiple holding registers (2 ASCII characters per register)
 
 A typical Modbus setup:
 
-1. Add a **Modbus TCP Client** node and configure the server IP and port
-2. Wire an **Enable** node or trigger to the `Connect` input
-3. Add **Modbus Read/Write** nodes and connect their `Conn Key` input to the client's output
-4. Use timers or triggers to control when reads/writes occur
+1. Add a **Modbus** node and configure the server Host, Port, and Unit ID
+2. Add items for the data points you need (coils, registers)
+3. Click **Sync I/O** to generate the inputs and outputs
+4. Wire an **Enable** signal or constant TRUE to connect
+5. Use the per-item Read/Write inputs or Read All/Write All for batch operations
+6. Monitor **Op Complete** to trigger downstream logic when operations finish
+
+!!! tip
+    Use **Read All** with a timer to poll all items periodically. Use per-item **Read** triggers for on-demand reads.
 
 !!! warning
-    Ensure the Modbus server is accessible from the camera network. Firewall rules may need adjustment.
+    Ensure the Modbus server is accessible from the camera network. Firewall rules may need adjustment for port 502.
 
 ---
 

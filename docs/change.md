@@ -6,6 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.11 - 29.01.2026
+- **C:** Flow: Unified Modbus node replaces the 9 separate Modbus nodes (TCP Client, Read/Write Coil, Int, Float, String)
+- **B:** Flow: Multiple node errors at once, leads into slowing down flow, because of log writing at high rate. 
+
 ##### V3.1.10 - 28.01.2026
 - **F:** Settings: Backup & Restore feature for exporting and importing all configuration data
 - **F:** Settings: Automatic daily backup with configurable time
