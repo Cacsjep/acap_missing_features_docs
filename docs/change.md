@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.13 - 02.02.2026
+- **I:** Ship html files dedicated and not embeeded in binary to reduce memory footprint.
+- **C:** Update open source depenencies
+- **C:** Flow: Refactor loading states
+- **B:** Parking Management: Show Port Name instead of Port Index in action overview
+
 ##### V3.1.11 - 29.01.2026
 - **C:** Flow: Unified Modbus node replaces the 9 separate Modbus nodes (TCP Client, Read/Write Coil, Int, Float, String)
 - **B:** Flow: Multiple node errors at once, leads into slowing down flow, because of log writing at high rate. 
