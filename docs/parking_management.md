@@ -27,7 +27,7 @@ The Parking Management interface is organized into tabs:
 | **Live** | Real-time zone occupancy, camera status, plate event log, and manual IO actions |
 | **History** | Searchable parking entry history with table/grid views and CSV export |
 | **Zones** | Configure parking zones with entry/exit cameras |
-| **Access Control** | Set up IO actions and automated access rules |
+| **Access & Events** | IO actions, event rules, and email notifications for overparking |
 | **Plate List** | Embedded License Plate List for managing plates and tags |
 | **General** | Global settings like stale timeout, history retention, and snapshot cleanup |
 
@@ -97,7 +97,9 @@ When a plate is detected, the system:
 
 ---
 
-## Access Control
+## Access & Events
+
+The Access & Events tab contains IO actions, event rules, and email notifications for overparking alerts.
 
 ### IO Actions
 
@@ -146,6 +148,33 @@ Automated actions triggered by parking events:
 | Open barrier for staff | Entry | Tag = "staff" | Pulse port 1 |
 | Open barrier for visitors | Entry | Tag = "visitor" | Pulse port 1 |
 | Open exit barrier | Exit | Any | Pulse port 2 |
+
+### Email Notifications
+
+Receive email alerts when vehicles exceed their maximum parking time.
+
+| Setting | Description |
+|---------|-------------|
+| **Enable** | Toggle email notifications on/off |
+| **SMTP Host** | Email server address (e.g., smtp.gmail.com) |
+| **Port** | SMTP port (587 for TLS, 465 for SSL) |
+| **Username** | SMTP authentication username |
+| **Password** | SMTP authentication password |
+| **Use TLS/SSL** | Enable encrypted connection |
+| **From Address** | Sender email address |
+| **Recipients** | Comma-separated list of recipient emails |
+| **Zones** | Select specific zones or leave empty for all zones |
+| **Attach Entry Snapshot** | Include the entry photo in the email |
+
+!!! tip "Gmail Setup"
+    For Gmail, use `smtp.gmail.com` with port 587 and TLS enabled. You'll need to create an App Password in your Google Account settings (Security → 2-Step Verification → App passwords).
+
+!!! note "When Emails Are Sent"
+    An email is sent when a vehicle's parking duration exceeds its maximum allowed time. The system checks every minute. Each vehicle triggers only one email per parking session.
+
+#### Test Email
+
+Use the **Test** button to verify your SMTP configuration. The test sends a sample email to all configured recipients.
 
 ---
 

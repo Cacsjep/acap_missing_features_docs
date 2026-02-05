@@ -6,6 +6,18 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.16 - 05.02.2026
+- **I:** Flow: SQL Table Read node now supports aggregations (SUM, AVG, MIN, MAX)
+- **I:** Flow: SQL Table node now supports retention policy, max entreies or per minutes
+- **I:** Flow: SQL Table node now works in async mode
+- **I:** Flow: SQL Table Read node now works in async mode
+
+##### V3.1.15 - 03.02.2026
+- **F:** Parking Management: Email notifications for overparking events
+- **F:** Parking Management: Free Flow possibilty
+- **I:** Dashboard: Chart widget auto-adjusts time unit when data range exceeds configured unit limits
+- **B:** Dashboard: Chart widget no longer crashes when timestamps span large time ranges
+
 ##### V3.1.14 - 02.02.2026
 - **I:** Ship html files dedicated and not embeeded in binary to reduce memory footprint.
 - **C:** Update open source depenencies
