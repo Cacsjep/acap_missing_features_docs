@@ -1,0 +1,2903 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../license_plate_list/">
+      
+      
+        <link rel="next" href="../parking_times/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Parking Management - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#parking-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Parking Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zones-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zones Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zones Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entryexit-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry/Exit Cameras
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry/Exit Cameras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag-based-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag-Based Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access &amp; Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access &amp; Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IO Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IO Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IO Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Email Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Email
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-bar-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Bar Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parked-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parked Vehicles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plate-event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plate Event Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plate Event Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-parking-management-vs-parking-monitor-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Parking Management vs. Parking Monitor Node
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../occupancy_monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zones-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zones Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zones Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Zones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entryexit-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry/Exit Cameras
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry/Exit Cameras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tag-based-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag-Based Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access &amp; Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access &amp; Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IO Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IO Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IO Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Notifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Email Notifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Email
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-bar-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Bar Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parked-vehicles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parked Vehicles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plate-event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plate Event Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plate Event Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grid-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grid View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-parking-management-vs-parking-monitor-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Parking Management vs. Parking Monitor Node
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="parking-management">Parking Management</h1>
+<p>The Parking Management feature provides comprehensive parking lot management with license plate recognition, zone-based tracking, access control automation, and detailed statistics.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Parking Management offers:</p>
+<ul>
+<li><strong>Multi-zone support</strong> with individual capacity limits and utilization tracking</li>
+<li><strong>Entry/Exit camera integration</strong> with automatic plate matching</li>
+<li><strong>Snapshot capture</strong> on entry and exit for evidence</li>
+<li><strong>Tag-based access rules</strong> with configurable max parking times</li>
+<li><strong>IO Actions</strong> for barrier control and signage</li>
+<li><strong>Real-time monitoring</strong> via WebSocket with live zone occupancy</li>
+<li><strong>History &amp; Statistics</strong> with filtering, export, and analytics</li>
+</ul>
+<hr />
+<h2 id="tabs">Tabs</h2>
+<p>The Parking Management interface is organized into tabs:</p>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Live</strong></td>
+<td>Real-time zone occupancy, camera status, plate event log, and manual IO actions</td>
+</tr>
+<tr>
+<td><strong>History</strong></td>
+<td>Searchable parking entry history with table/grid views and CSV export</td>
+</tr>
+<tr>
+<td><strong>Zones</strong></td>
+<td>Configure parking zones with entry/exit cameras</td>
+</tr>
+<tr>
+<td><strong>Access &amp; Events</strong></td>
+<td>IO actions, event rules, and email notifications for overparking</td>
+</tr>
+<tr>
+<td><strong>Plate List</strong></td>
+<td>Embedded License Plate List for managing plates and tags</td>
+</tr>
+<tr>
+<td><strong>General</strong></td>
+<td>Global settings like stale timeout, history retention, and snapshot cleanup</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Integrated Plate Management</p>
+<p>The Plate List tab provides direct access to the License Plate List feature without leaving Parking Management. Changes to plates and tags are automatically available in Zones and Access Control when switching tabs.</p>
+</div>
+<hr />
+<h2 id="zones-configuration">Zones Configuration</h2>
+<h3 id="creating-zones">Creating Zones</h3>
+<p>Each parking zone represents a physical area (parking level, section, or lot):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zone Name</strong></td>
+<td>Descriptive name (e.g., "Level 1", "Visitor Parking")</td>
+</tr>
+<tr>
+<td><strong>Capacity</strong></td>
+<td>Maximum number of vehicles (0 = unlimited)</td>
+</tr>
+<tr>
+<td><strong>Default Stale Timeout</strong></td>
+<td>Minutes before parked entries are marked as stale (overrides global setting)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Zone Full Behavior</p>
+<p>When a zone reaches capacity, new entries are still recorded for tracking purposes and a "Zone Full" event is fired. Use IO Rules to trigger barriers or signage when capacity is reached.</p>
+</div>
+<h3 id="entryexit-cameras">Entry/Exit Cameras</h3>
+<p>Each zone can have multiple cameras configured as entry, exit, or both:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Select from registered Flow Devices</td>
+</tr>
+<tr>
+<td><strong>Role</strong></td>
+<td>Entry, Exit, or Entry &amp; Exit</td>
+</tr>
+<tr>
+<td><strong>Capture Snapshot</strong></td>
+<td>Store entry/exit images on SD card</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Managing Devices</p>
+<p>Use the <strong>Devices</strong> button in the toolbar (visible on Zones and Access Control tabs) to add or configure cameras and IO devices.</p>
+</div>
+<h4 id="camera-roles">Camera Roles</h4>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entry</strong></td>
+<td>Creates new parking entry when plate detected</td>
+</tr>
+<tr>
+<td><strong>Exit</strong></td>
+<td>Matches plate to existing entry and records exit time</td>
+</tr>
+<tr>
+<td><strong>Entry &amp; Exit</strong></td>
+<td>Handles both directions (single-point access)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tag-based-rules">Tag-Based Rules</h2>
+<p>Tags from the License Plate List determine parking rules:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tag</strong></td>
+<td>Tag name from License Plate List (e.g., "staff", "visitor", "vip")</td>
+</tr>
+<tr>
+<td><strong>Max Parking Minutes</strong></td>
+<td>Maximum allowed parking time (0 = unlimited)</td>
+</tr>
+<tr>
+<td><strong>Zones</strong></td>
+<td>Which zones this rule applies to (empty = all zones)</td>
+</tr>
+</tbody>
+</table>
+<p>When a plate is detected, the system:</p>
+<ol>
+<li>Looks up the plate in the License Plate List</li>
+<li>Validates the plate's date range (From/To dates if set)</li>
+<li>Finds matching tags</li>
+<li>Applies the most restrictive max parking time</li>
+<li>Marks entry as overtime when exceeded</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Date Validation</p>
+<p>Plates with a <strong>From Date</strong> that hasn't been reached yet, or a <strong>To Date</strong> that has passed, will be denied access even if they have valid tags.</p>
+</div>
+<hr />
+<h2 id="access-events">Access &amp; Events</h2>
+<p>The Access &amp; Events tab contains IO actions, event rules, and email notifications for overparking alerts.</p>
+<h3 id="io-actions">IO Actions</h3>
+<p>Manual actions that can be triggered from the Live view or camera preview:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Display name for the button</td>
+</tr>
+<tr>
+<td><strong>Device</strong></td>
+<td>Target device with IO ports</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>IO port number to control</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Pulse, Activate, or Deactivate</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>Pulse duration in milliseconds (for Pulse action)</td>
+</tr>
+<tr>
+<td><strong>Show on cameras</strong></td>
+<td>Select which cameras should display this action button in their live preview</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Camera Preview Actions</p>
+<p>When you configure "Show on cameras" for an IO action, the action button will appear below the video stream when viewing that camera's live preview. This is useful for triggering barriers or gates while watching the camera feed.</p>
+</div>
+<h3 id="io-rules">IO Rules</h3>
+<p>Automated actions triggered by parking events:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Rule identifier</td>
+</tr>
+<tr>
+<td><strong>Event</strong></td>
+<td>Entry, Exit, Unauthorized, Overtime, or Zone Full</td>
+</tr>
+<tr>
+<td><strong>Zones</strong></td>
+<td>Which zones trigger this rule (empty = all)</td>
+</tr>
+<tr>
+<td><strong>Tags</strong></td>
+<td>Which tags trigger this rule (empty = all)</td>
+</tr>
+<tr>
+<td><strong>Device</strong></td>
+<td>Target device</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>IO port number</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Pulse, Activate, or Deactivate</td>
+</tr>
+</tbody>
+</table>
+<h4 id="event-types">Event Types</h4>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entry</strong></td>
+<td>Vehicle entered a zone</td>
+</tr>
+<tr>
+<td><strong>Exit</strong></td>
+<td>Vehicle exited a zone</td>
+</tr>
+<tr>
+<td><strong>Unauthorized</strong></td>
+<td>Unknown plate or plate without allowed tags</td>
+</tr>
+<tr>
+<td><strong>Overtime</strong></td>
+<td>Vehicle exceeded max parking time</td>
+</tr>
+<tr>
+<td><strong>Zone Full</strong></td>
+<td>Zone reached its capacity limit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-rules">Example Rules</h4>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Event</th>
+<th>Condition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open barrier for staff</td>
+<td>Entry</td>
+<td>Tag = "staff"</td>
+<td>Pulse port 1</td>
+</tr>
+<tr>
+<td>Open barrier for visitors</td>
+<td>Entry</td>
+<td>Tag = "visitor"</td>
+<td>Pulse port 1</td>
+</tr>
+<tr>
+<td>Open exit barrier</td>
+<td>Exit</td>
+<td>Any</td>
+<td>Pulse port 2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="email-notifications">Email Notifications</h3>
+<p>Receive email alerts when vehicles exceed their maximum parking time.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable</strong></td>
+<td>Toggle email notifications on/off</td>
+</tr>
+<tr>
+<td><strong>SMTP Host</strong></td>
+<td>Email server address (e.g., smtp.gmail.com)</td>
+</tr>
+<tr>
+<td><strong>Port</strong></td>
+<td>SMTP port (587 for TLS, 465 for SSL)</td>
+</tr>
+<tr>
+<td><strong>Username</strong></td>
+<td>SMTP authentication username</td>
+</tr>
+<tr>
+<td><strong>Password</strong></td>
+<td>SMTP authentication password</td>
+</tr>
+<tr>
+<td><strong>Use TLS/SSL</strong></td>
+<td>Enable encrypted connection</td>
+</tr>
+<tr>
+<td><strong>From Address</strong></td>
+<td>Sender email address</td>
+</tr>
+<tr>
+<td><strong>Recipients</strong></td>
+<td>Comma-separated list of recipient emails</td>
+</tr>
+<tr>
+<td><strong>Zones</strong></td>
+<td>Select specific zones or leave empty for all zones</td>
+</tr>
+<tr>
+<td><strong>Attach Entry Snapshot</strong></td>
+<td>Include the entry photo in the email</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Gmail Setup</p>
+<p>For Gmail, use <code>smtp.gmail.com</code> with port 587 and TLS enabled. You'll need to create an App Password in your Google Account settings (Security → 2-Step Verification → App passwords).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">When Emails Are Sent</p>
+<p>An email is sent when a vehicle's parking duration exceeds its maximum allowed time. The system checks every minute. Each vehicle triggers only one email per parking session.</p>
+</div>
+<h4 id="test-email">Test Email</h4>
+<p>Use the <strong>Test</strong> button to verify your SMTP configuration. The test sends a sample email to all configured recipients.</p>
+<hr />
+<h2 id="live-view">Live View</h2>
+<p>The Live tab displays real-time parking information with statistics and monitoring tools.</p>
+<h3 id="top-bar-statistics">Top Bar Statistics</h3>
+<p>The top bar shows key metrics at a glance:</p>
+<table>
+<thead>
+<tr>
+<th>Stat</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parked</strong></td>
+<td>Total vehicles currently parked</td>
+</tr>
+<tr>
+<td><strong>Avg Duration</strong></td>
+<td>Average parking time of current vehicles</td>
+</tr>
+<tr>
+<td><strong>Zone Capacity</strong></td>
+<td>Occupancy per zone (e.g., "Level 1: 5/20")</td>
+</tr>
+<tr>
+<td><strong>Overtime</strong></td>
+<td>Count of vehicles exceeding max parking time</td>
+</tr>
+<tr>
+<td><strong>Utilization</strong></td>
+<td>Overall parking lot utilization percentage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parked-vehicles">Parked Vehicles</h3>
+<p>Shows all currently parked vehicles with:</p>
+<ul>
+<li>Header row with column labels</li>
+<li>Time parked (duration)</li>
+<li>Vehicle name (from License Plate List)</li>
+<li>Zone and camera</li>
+<li>License plate number</li>
+<li>Tag assignment</li>
+<li>Parking progress bar (visual indicator of parking duration)</li>
+</ul>
+<h3 id="zone-cards">Zone Cards</h3>
+<p>Each zone shows:</p>
+<ul>
+<li>Current occupancy vs. capacity</li>
+<li>Utilization percentage bar</li>
+<li>List of currently parked vehicles with duration</li>
+</ul>
+<h3 id="camera-status">Camera Status</h3>
+<p>Shows health of all configured cameras:</p>
+<ul>
+<li><strong>Green dot</strong>: Camera online and connected</li>
+<li><strong>Red dot</strong>: Camera offline or connection lost</li>
+<li>Last detected plate</li>
+<li>Last activity timestamp</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Multi-Zone Cameras</p>
+<p>A single camera can serve multiple zones (e.g., nested parking areas). The camera status shows all zones it serves, and events are processed for each zone independently.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Real-time Status</p>
+<p>Camera status updates automatically when a camera disconnects or reconnects - no page refresh needed.</p>
+</div>
+<h3 id="plate-event-log">Plate Event Log</h3>
+<p>Real-time feed of plate detections with detailed event information:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID</strong></td>
+<td>Unique event identifier</td>
+</tr>
+<tr>
+<td><strong>Time</strong></td>
+<td>Detection timestamp</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>Event state (Entry, Exit, Entry Denied, etc.)</td>
+</tr>
+<tr>
+<td><strong>Plate</strong></td>
+<td>License plate number</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name from License Plate List</td>
+</tr>
+<tr>
+<td><strong>Zone</strong></td>
+<td>Parking zone</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Camera that detected the plate</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Detection type</td>
+</tr>
+<tr>
+<td><strong>Color</strong></td>
+<td>Vehicle color (if detected)</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>Image size in pixels</td>
+</tr>
+<tr>
+<td><strong>Act</strong></td>
+<td>Action status</td>
+</tr>
+<tr>
+<td><strong>Img</strong></td>
+<td>Snapshot thumbnail (click to view)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="event-states">Event States</h4>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entry</strong></td>
+<td>Green</td>
+<td>Vehicle entered the zone</td>
+</tr>
+<tr>
+<td><strong>Exit</strong></td>
+<td>Blue</td>
+<td>Vehicle exited the zone</td>
+</tr>
+<tr>
+<td><strong>Entry Denied</strong></td>
+<td>Red</td>
+<td>Entry denied (unauthorized or zone full)</td>
+</tr>
+<tr>
+<td><strong>Tag Not Allowed</strong></td>
+<td>Orange</td>
+<td>Plate has tag but not allowed in this zone</td>
+</tr>
+<tr>
+<td><strong>Exit (No Entry)</strong></td>
+<td>Cyan</td>
+<td>Exit detected without matching entry</td>
+</tr>
+<tr>
+<td><strong>Add to Plate List</strong></td>
+<td>Purple</td>
+<td>Plate added to License Plate List</td>
+</tr>
+</tbody>
+</table>
+<h3 id="manual-actions">Manual Actions</h3>
+<p>Execute IO Actions directly from the interface (requires <code>parking_execute_action</code> permission).</p>
+<hr />
+<h2 id="history-view">History View</h2>
+<h3 id="table-view">Table View</h3>
+<p>Sortable data table with columns:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plate</strong></td>
+<td>License plate number</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name from License Plate List (if matched)</td>
+</tr>
+<tr>
+<td><strong>Zone</strong></td>
+<td>Parking zone</td>
+</tr>
+<tr>
+<td><strong>Entry Time</strong></td>
+<td>When vehicle entered</td>
+</tr>
+<tr>
+<td><strong>Exit Time</strong></td>
+<td>When vehicle exited</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td>Total parking time</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Parked, Exited, or Stale</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td>Matched tag from plate list</td>
+</tr>
+<tr>
+<td><strong>Overtime</strong></td>
+<td>Warning if exceeded max time</td>
+</tr>
+<tr>
+<td><strong>Snapshots</strong></td>
+<td>Click to view entry/exit images</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grid-view">Grid View</h3>
+<p>Visual card layout showing entry snapshots with plate overlay.</p>
+<h3 id="filters">Filters</h3>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plate</strong></td>
+<td>Search by plate number</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Parked, Exited, or Stale</td>
+</tr>
+<tr>
+<td><strong>Zone</strong></td>
+<td>Filter by zone</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td>Filter by matched tag</td>
+</tr>
+<tr>
+<td><strong>From/To Date</strong></td>
+<td>Date range filter</td>
+</tr>
+</tbody>
+</table>
+<h3 id="export">Export</h3>
+<p>Download filtered entries as CSV file.</p>
+<h3 id="entry-actions">Entry Actions</h3>
+<p>Right-click or use action menu on entries:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Edit</strong></td>
+<td>Correct plate number</td>
+</tr>
+<tr>
+<td><strong>Extend</strong></td>
+<td>Add extra parking time</td>
+</tr>
+<tr>
+<td><strong>Add to List</strong></td>
+<td>Add plate to License Plate List with tags</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Remove entry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="general-settings">General Settings</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default Stale Timeout</strong></td>
+<td>Minutes before entries without exit are marked stale (default: 1440 = 24h)</td>
+</tr>
+<tr>
+<td><strong>History Retention Days</strong></td>
+<td>How long to keep history entries (default: 7 days)</td>
+</tr>
+<tr>
+<td><strong>Snapshot Max GB</strong></td>
+<td>Maximum SD card storage for snapshots</td>
+</tr>
+<tr>
+<td><strong>Snapshot Cleanup Days</strong></td>
+<td>Delete snapshots older than this</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cleanup-actions">Cleanup Actions</h3>
+<ul>
+<li><strong>Delete All Parked</strong>: Remove all currently parked entries</li>
+<li><strong>Delete All History</strong>: Clear all historical entries</li>
+</ul>
+<hr />
+<h2 id="events">Events</h2>
+<p>Parking Management generates AXIS Metadata events:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entry</strong></td>
+<td>Vehicle entered a zone</td>
+</tr>
+<tr>
+<td><strong>Exit</strong></td>
+<td>Vehicle exited a zone</td>
+</tr>
+<tr>
+<td><strong>Unauthorized</strong></td>
+<td>Unknown plate or plate without allowed tags attempted entry</td>
+</tr>
+<tr>
+<td><strong>Overtime</strong></td>
+<td>Vehicle exceeded max parking time</td>
+</tr>
+<tr>
+<td><strong>Zone Full</strong></td>
+<td>Zone reached capacity limit</td>
+</tr>
+</tbody>
+</table>
+<p>Events include metadata: plate, zone, tag, duration, camera name.</p>
+<div class="admonition tip">
+<p class="admonition-title">Event Automation</p>
+<p>Use IO Rules in the Access Control tab to trigger actions (open barriers, activate lights, sound alarms) when these events occur.</p>
+</div>
+<hr />
+<h2 id="comparison-parking-management-vs-parking-monitor-node">Comparison: Parking Management vs. Parking Monitor Node</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Parking Management</th>
+<th>Parking Monitor Node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>Standalone feature</td>
+<td>Flow node</td>
+</tr>
+<tr>
+<td><strong>Zones</strong></td>
+<td>Multi-zone with capacity</td>
+<td>No zone concept</td>
+</tr>
+<tr>
+<td><strong>Cameras</strong></td>
+<td>Built-in camera management</td>
+<td>Manual event wiring</td>
+</tr>
+<tr>
+<td><strong>Snapshots</strong></td>
+<td>Automatic capture</td>
+<td>Manual with flow</td>
+</tr>
+<tr>
+<td><strong>Access Control</strong></td>
+<td>Built-in IO actions/rules</td>
+<td>Manual with flow</td>
+</tr>
+<tr>
+<td><strong>Statistics</strong></td>
+<td>Built-in dashboard</td>
+<td>Manual with flow</td>
+</tr>
+<tr>
+<td><strong>History UI</strong></td>
+<td>Table/Grid with filters</td>
+<td>Basic table</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Complete parking solution</td>
+<td>Custom integrations</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

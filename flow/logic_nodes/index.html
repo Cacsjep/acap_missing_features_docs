@@ -1,0 +1,4088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../input_output_nodes/">
+      
+      
+        <link rel="next" href="../data_manipulation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Logic & Flow Control - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#logic-flow-control-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Logic & Flow Control
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#and-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AND Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OR Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOT Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xor-gate-exclusive-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XOR Gate (Exclusive OR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nand-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAND Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOR Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xnor-gate-exclusive-nor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XNOR Gate (Exclusive NOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String Empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impulse-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impulse Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impulse Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Cycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-value-mux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Value Mux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Value Mux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State &amp; Memory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State &amp; Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flip-flop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flip Flop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flip Flop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-latch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Latch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value Latch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fifo-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIFO Queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FIFO Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifo-queue-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LIFO Queue (Stack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputs_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-value-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key-Value Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key-Value Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing &amp; Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing &amp; Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplexer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplexer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Selector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value Selector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Move">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bit Add
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bit Add">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../occupancy_monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Occupancy Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#logic-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Gates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logic Gates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#and-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AND Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OR Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOT Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xor-gate-exclusive-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XOR Gate (Exclusive OR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nand-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAND Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nor-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOR Gate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xnor-gate-exclusive-nor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XNOR Gate (Exclusive NOR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Empty
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="String Empty">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impulse-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impulse Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impulse Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Cycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Next Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-value-mux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Value Mux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Value Mux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State &amp; Memory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State &amp; Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flip-flop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flip Flop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flip Flop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-latch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Latch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value Latch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fifo-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIFO Queue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FIFO Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifo-queue-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LIFO Queue (Stack)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outputs_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-value-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key-Value Store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key-Value Store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing &amp; Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing &amp; Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiplexer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiplexer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Selector
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Value Selector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Move">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Math Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit-add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bit Add
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bit Add">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="logic-flow-control-nodes">Logic &amp; Flow Control Nodes</h1>
+<p>Nodes for boolean logic, state management, and signal routing.</p>
+<hr />
+<h2 id="logic-gates">Logic Gates</h2>
+<h3 id="and-gate">AND Gate</h3>
+<p>Outputs true only when all inputs are true.</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="or-gate">OR Gate</h3>
+<p>Outputs true when any input is true.</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="not-gate">NOT Gate</h3>
+<p>Inverts the input signal.</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="xor-gate-exclusive-or">XOR Gate (Exclusive OR)</h3>
+<p>Outputs true when inputs differ.</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nand-gate">NAND Gate</h3>
+<p>Outputs false only when all inputs are true (inverted AND).</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="nor-gate">NOR Gate</h3>
+<p>Outputs true only when all inputs are false (inverted OR).</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="xnor-gate-exclusive-nor">XNOR Gate (Exclusive NOR)</h3>
+<p>Outputs true when inputs are the same.</p>
+<p><strong>Category</strong>: Logic</p>
+<table>
+<thead>
+<tr>
+<th>Input A</th>
+<th>Input B</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>false</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td><strong>true</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="comparison">Comparison</h2>
+<h3 id="compare">Compare</h3>
+<p>Compares two values using various operators.</p>
+<p><strong>Category</strong>: Logic, Compare</p>
+<h4 id="inputs">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Configurable</td>
+<td>First value</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Configurable</td>
+<td>Second value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Result</td>
+<td>Boolean</td>
+<td>Comparison result</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties">Properties</h4>
+<ul>
+<li><strong>Operator</strong>: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>contains</code>, <code>startswith</code>, <code>endswith</code></li>
+<li><strong>Data Type</strong>: Integer, Float, or String</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>String comparisons support <code>contains</code>, <code>startswith</code>, and <code>endswith</code> operators.</p>
+</div>
+<hr />
+<h3 id="string-empty">String Empty</h3>
+<p>Checks if a string is empty or whitespace-only.</p>
+<p><strong>Category</strong>: Logic, Compare</p>
+<h4 id="inputs_1">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Text to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_1">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Result</td>
+<td>Boolean</td>
+<td>True if empty</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="edge-detection">Edge Detection</h2>
+<h3 id="edge">Edge</h3>
+<p>Detects rising or falling edges in a boolean signal.</p>
+<p><strong>Category</strong>: Logic, Edge</p>
+<h4 id="functionality">Functionality</h4>
+<p>Emits a single-cycle pulse when the input transitions. Configure for rising edge (false→true) or falling edge (true→false).</p>
+<h4 id="inputs_2">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Boolean</td>
+<td>Signal to monitor</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_2">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Boolean</td>
+<td>Pulses true on edge</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties_1">Properties</h4>
+<ul>
+<li><strong>Mode</strong>: Rising or Falling</li>
+</ul>
+<hr />
+<h3 id="impulse-storage">Impulse Storage</h3>
+<p>Buffers pulses until a release signal allows them through.</p>
+<p><strong>Category</strong>: Logic, Edge</p>
+<h4 id="inputs_3">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add</td>
+<td>Boolean</td>
+<td>Rising edge stores a pulse</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>Boolean</td>
+<td>Rising edge releases one pulse</td>
+</tr>
+<tr>
+<td>Clear</td>
+<td>Boolean</td>
+<td>Clears all stored pulses</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_3">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pulse</td>
+<td>Boolean</td>
+<td>Released pulse</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties_2">Properties</h4>
+<ul>
+<li><strong>Buffer Size</strong>: Maximum stored pulses</li>
+</ul>
+<hr />
+<h3 id="next-cycle">Next Cycle</h3>
+<p>Delays a pulse to the next execution cycle.</p>
+<p><strong>Category</strong>: Logic, Time</p>
+<h4 id="inputs_4">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trigger</td>
+<td>Boolean</td>
+<td>Rising edge to delay</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_4">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pulse</td>
+<td>Boolean</td>
+<td>Delayed pulse (next cycle)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="edge-value-mux">Edge Value Mux</h3>
+<p>Routes values based on which trigger fires.</p>
+<p><strong>Category</strong>: Edge, Logic</p>
+<h4 id="functionality_1">Functionality</h4>
+<p>When any trigger has a rising edge, outputs a pulse and the corresponding value.</p>
+<h4 id="inputs_5">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trigger 1-4</td>
+<td>Boolean</td>
+<td>Trigger signals</td>
+</tr>
+<tr>
+<td>Value 1-4</td>
+<td>String</td>
+<td>Associated values</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_5">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pulse</td>
+<td>Boolean</td>
+<td>One-cycle pulse</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Value from triggered input</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="state-memory">State &amp; Memory</h2>
+<h3 id="flip-flop">Flip Flop</h3>
+<p>Stores a single bit with Set/Reset control.</p>
+<p><strong>Category</strong>: Memory, Edge</p>
+<h4 id="inputs_6">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set</td>
+<td>Boolean</td>
+<td>Sets state to true</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Boolean</td>
+<td>Sets state to false</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_6">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Boolean</td>
+<td>Current state</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties_3">Properties</h4>
+<ul>
+<li><strong>Mode</strong>: RS (reset-dominant) or SR (set-dominant)</li>
+</ul>
+<hr />
+<h3 id="value-latch">Value Latch</h3>
+<p>Captures and holds a value until reset.</p>
+<p><strong>Category</strong>: Memory, Data</p>
+<h4 id="inputs_7">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Configurable</td>
+<td>Value to capture</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>Boolean</td>
+<td>Rising edge captures value</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Boolean</td>
+<td>Clears stored value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_7">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Configurable</td>
+<td>Stored value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="fifo-queue">FIFO Queue</h3>
+<p>First-In First-Out buffer for values.</p>
+<p><strong>Category</strong>: Memory, Data</p>
+<h4 id="inputs_8">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Integer</td>
+<td>Value to add</td>
+</tr>
+<tr>
+<td>Add</td>
+<td>Boolean</td>
+<td>Rising edge enqueues</td>
+</tr>
+<tr>
+<td>Pop</td>
+<td>Boolean</td>
+<td>Rising edge dequeues</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>Boolean</td>
+<td>Clears queue</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_8">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Integer</td>
+<td>Front value (oldest)</td>
+</tr>
+<tr>
+<td>Has</td>
+<td>Boolean</td>
+<td>True if queue not empty</td>
+</tr>
+<tr>
+<td>Count</td>
+<td>Integer</td>
+<td>Number of items</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="lifo-queue-stack">LIFO Queue (Stack)</h3>
+<p>Last-In First-Out buffer for values.</p>
+<p><strong>Category</strong>: Memory, Data</p>
+<p>Same interface as FIFO, but <code>Pop</code> returns the most recently added value.</p>
+<hr />
+<h3 id="data-table">Data Table</h3>
+<p>Multi-value register block with configurable outputs.</p>
+<p><strong>Category</strong>: Memory, Data</p>
+<h4 id="outputs_9">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O.01-O.08</td>
+<td>Integer</td>
+<td>Configurable outputs</td>
+</tr>
+</tbody>
+</table>
+<p>Configure values in the properties panel.</p>
+<hr />
+<h3 id="key-value-store">Key-Value Store</h3>
+<p>Simple in-memory key-value storage.</p>
+<p><strong>Category</strong>: Memory</p>
+<h4 id="inputs_9">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set</td>
+<td>Boolean</td>
+<td>Rising edge stores value</td>
+</tr>
+<tr>
+<td>Get</td>
+<td>Boolean</td>
+<td>Rising edge retrieves value</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>Boolean</td>
+<td>Rising edge deletes key</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>String</td>
+<td>Storage key</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Value to store</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_10">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Operation complete</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Retrieved value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="cache">Cache</h3>
+<p>Key-value cache with time-to-live.</p>
+<p><strong>Category</strong>: Memory</p>
+<h4 id="inputs_10">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set</td>
+<td>Boolean</td>
+<td>Rising edge stores value</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>Boolean</td>
+<td>Rising edge deletes key</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>String</td>
+<td>Cache key</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Value to cache</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_11">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Done</td>
+<td>Boolean</td>
+<td>Operation complete</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>String</td>
+<td>Cached value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties_4">Properties</h4>
+<ul>
+<li><strong>TTL</strong>: Time-to-live in seconds</li>
+</ul>
+<hr />
+<h2 id="routing-selection">Routing &amp; Selection</h2>
+<h3 id="multiplexer">Multiplexer</h3>
+<p>Routes one of many inputs to the output based on index.</p>
+<p><strong>Category</strong>: Logic, Data</p>
+<h4 id="inputs_11">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index</td>
+<td>Integer</td>
+<td>Selects input (1-based)</td>
+</tr>
+<tr>
+<td>Value-1...N</td>
+<td>Configurable</td>
+<td>Input values</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_12">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Configurable</td>
+<td>Selected value</td>
+</tr>
+<tr>
+<td>Selected Index</td>
+<td>Integer</td>
+<td>Active input number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="properties_5">Properties</h4>
+<ul>
+<li><strong>Data Type</strong>: Int, Float, or String</li>
+<li>Use Properties panel to add/remove inputs</li>
+</ul>
+<hr />
+<h3 id="value-selector">Value Selector</h3>
+<p>Binary switch between two values.</p>
+<p><strong>Category</strong>: Logic, Data</p>
+<h4 id="inputs_12">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select</td>
+<td>Boolean</td>
+<td>False=Input 1, True=Input 2</td>
+</tr>
+<tr>
+<td>Input 1</td>
+<td>Configurable</td>
+<td>Value when false</td>
+</tr>
+<tr>
+<td>Input 2</td>
+<td>Configurable</td>
+<td>Value when true</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_13">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Configurable</td>
+<td>Selected value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="move">Move</h3>
+<p>Passes value through when enabled.</p>
+<p><strong>Category</strong>: Data, Transform</p>
+<h4 id="inputs_13">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execute</td>
+<td>Boolean</td>
+<td>True passes value</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Integer</td>
+<td>Input value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_14">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Integer</td>
+<td>Output (when enabled)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="math-operations">Math Operations</h2>
+<h3 id="bit-add">Bit Add</h3>
+<p>Combines boolean inputs into an integer bitfield.</p>
+<p><strong>Category</strong>: Math</p>
+<h4 id="inputs_14">Inputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bit 1-8</td>
+<td>Boolean</td>
+<td>Individual bits</td>
+</tr>
+</tbody>
+</table>
+<h4 id="outputs_15">Outputs</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Integer</td>
+<td>Combined bitwise value</td>
+</tr>
+</tbody>
+</table>
+<p>Bit 1 = LSB (value 1), Bit 8 = MSB (value 128)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

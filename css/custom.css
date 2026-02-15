@@ -1,0 +1,19 @@
+h4 {
+    font-size: 0.9em;     /* Adjust font size as needed */
+  }
+
+h5, h4, h3, h2 {
+    color: #ffc107 !important;       /* Change to your desired color */
+}
+p, ul {
+  font-size: 14px;
+}
+
+body {
+  background: black;
+}
+
+:root  > * {
+  --md-primary-fg-color: #ffeb3b;
+  --md-default-bg-color: #000000;
+}
