@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.18 - 15.02.2026
+- **B:** Flow Device: Fix RTSP password url escape.
+- **I:** Flow Device: Better Unauth message during save.
+- **I:** Rtsp Live Widget/Node: Better error messages.
+
+
 ##### V3.1.17 - 06.02.2026
 - **I:** Flow: SQL Table Read node now supports aggregations (SUM, AVG, MIN, MAX)
 - **I:** Flow: SQL Table node now supports retention policy, max entreies or per minutes
