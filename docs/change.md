@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.19 - 23.03.2026
+- **B:** Spot Color Detector: Fixed color trigger state transitions so dark and black colors no longer get stuck as Unknown, and hysteresis now compares how much better the new live
+  measurement matches instead of comparing palette colors to each other. 
+- **I** Updated the UI to allow hysteresis to be disabled (0 = nearest color only) and
+  clarified the setting text to match the actual behavior.
+
 ##### V3.1.18 - 15.02.2026
 - **B:** Flow Device: Fix RTSP password url escape.
 - **I:** Flow Device: Better Unauth message during save.
