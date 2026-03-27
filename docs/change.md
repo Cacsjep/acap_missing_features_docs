@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.1.21 - 27.03.2026
+- **B:** Flow Device: Snap/resolution queries were reading from the local device instead of the remote camera, causing wrong resolution lists. Now fetches resolution, rotation, and available resolutions directly from the remote device.
+- **I:** Flow: SQL Connection node help now includes DSN examples for PostgreSQL, MySQL, and SQL Server.
+- **C:** Flow: License Plate node output structure updated. Added Input Plate
+- **B:** Flow: Webhook node removed unused error output.
+
 ##### V3.1.19 - 23.03.2026
 - **B:** Spot Color Detector: Fixed color trigger state transitions so dark and black colors no longer get stuck as Unknown, and hysteresis now compares how much better the new live
   measurement matches instead of comparing palette colors to each other. 
