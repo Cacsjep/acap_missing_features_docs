@@ -4,33 +4,6 @@ This page covers important technical limitations and network requirements you sh
 
 ---
 
-## Dedicated Web Server on Port 8888
-
-Missing Features runs its own **dedicated web server** separate from the standard Axis web interface.
-
-| Aspect | Details |
-|--------|---------|
-| **Port** | `8888` (HTTPS) |
-| **Access URL** | `https://<device-ip>:8888` |
-| **Protocol** | HTTPS with self-signed certificate (or custom certificate) |
-
-### Firewall Configuration
-
-Ensure port `8888` is open for TCP traffic:
-
-- **Inbound:** Allow connections to port 8888 on the Axis device
-- **From:** Any client that needs to access the Missing Features UI
-
-### Common Issues
-
-| Issue | Solution |
-|-------|----------|
-| Cannot access UI | Check firewall rules allow port 8888 |
-| Connection refused | Verify ACAP is running on the device |
-| Certificate warning | Expected with self-signed cert; add exception or upload custom certificate |
-
----
-
 ## Live Video Streaming
 
 Several features use live video streaming via **WebCodecs over WebSocket**:
@@ -52,16 +25,16 @@ Video streaming uses WebCodecs for H.264 decoding over a WebSocket connection:
 
 | Requirement | Details |
 |-------------|---------|
-| **Protocol** | TCP (WebSocket on port 8888) |
-| **Ports** | Same port as web UI (8888) |
-| **Direction** | Standard HTTP/WebSocket |
+| **Protocol** | TCP (WebSocket over HTTPS) |
+| **Ports** | Same port as web UI (Axis HTTP/HTTPS, typically 443) |
+| **Direction** | Standard HTTP/WebSocket, routed through the Axis reverse proxy |
 
 ### Advantages Over Previous WebRTC Approach
 
 | Aspect | WebCodecs (Current) | WebRTC (Previous) |
 |--------|---------------------|-------------------|
 | NAT Traversal | Not needed - uses TCP | Required STUN/TURN |
-| Firewall | Only port 8888 needed | Required UDP ports |
+| Firewall | Only the Axis web port needed | Required UDP ports |
 | Remote Access | Works if UI works | Often failed remotely |
 | Setup | No configuration | Needed relay servers |
 
@@ -69,7 +42,7 @@ Video streaming uses WebCodecs for H.264 decoding over a WebSocket connection:
 
 | Issue | Possible Cause | Solution |
 |-------|----------------|----------|
-| Video not loading | WebSocket blocked | Check port 8888 is accessible |
+| Video not loading | WebSocket blocked | Verify the Axis web interface is reachable from the client |
 | Decoder error | Browser compatibility | Use Chrome, Firefox, or Edge |
 | Stream freezes | Network interruption | Check network stability |
 | No video, no error | Device not streaming | Verify device is accessible |
@@ -186,9 +159,9 @@ When downloading files via the SD Card Explorer:
 
 | Feature | Requires |
 |---------|----------|
-| Web UI Access | TCP port 8888 open |
-| Live Video Streaming | TCP port 8888 (same as UI) |
-| Remote Access | Port 8888 forwarding or VPN |
+| Web UI Access | Standard Axis HTTP/HTTPS port (typically 443) |
+| Live Video Streaming | Standard Axis HTTP/HTTPS port (same as UI) |
+| Remote Access | Reachability to the Axis web interface (direct or VPN) |
 | SD Card Features | Inserted and formatted SD card |
 | External Databases | Network access to database server |
 | Modbus TCP | Port 502 (default) accessible |

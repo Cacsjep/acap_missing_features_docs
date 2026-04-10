@@ -10,7 +10,6 @@ The Axis Camera Application Platform (ACAP) enables you to extend your Axis devi
 - **ACAP Application File:** Obtain the `.eap` file for the ACAP application
 - **Allow unsigned apps:** Enable "allow unsigned apps" in device settings
 - **Network Connection:** Ensure your computer is on the same network as the device
-- <span style="background-color: #FFA726; color: black; padding: 2px 6px; border-radius: 3px; font-weight: bold;">Port 8888 Access:</span> Missing Features runs its own web server on port `8888`. Ensure this port is accessible from your network (check firewall rules if needed)
 - **Administrator Credentials:** You need admin access to the device's web interface
 
 ---
@@ -41,21 +40,16 @@ This is the simplest method if you're installing on a single device.
 !!! tip "Enable: Allow unsigned apps"
     [![](images/allow.PNG)](images/allow.PNG)
 
-!!! warning "Port 8888 Access Required"
-    Missing Features runs its own web server on port **8888**. After installation, access the UI at:
-
-    `https://<device-ip>:8888`
-
-    Ensure this port is not blocked by firewalls. The UI is separate from the standard Axis web interface.
-
 ---
 
 ## Accessing the Missing Features Web UI
 
-Missing Features runs on a **dedicated web server** inside the device that listens on port `8888` (HTTP + HTTPS are proxied through `https://<device-ip>:8888`). This server is separate from Axis's default web interface.
+Missing Features is exposed through the Axis device's built-in reverse proxy — no separate port needs to be opened. After installation, access the UI via the standard Axis web interface:
+
+`https://<device-ip>/local/ax_msf/ax_msf/`
 
 - **Default credentials:** `admin` / `admin`. The login screen enforces a password change the first time you sign in.
-- **Secure access:** If you switch to the **Uploaded certificate** mode in Settings, the web server swaps to the custom PEM/key pair only after validation so the UI never restarts with an invalid certificate.
+- **No firewall changes needed:** Traffic flows through the same HTTP/HTTPS port as the Axis web interface (typically 443).
 
 ---
 

@@ -35,7 +35,6 @@ nav:
     - License Plate List: license_plate_list.md
     - Parking Management: parking_management.md
     - Parking Times: parking_times.md
-    - Occupancy Monitor: occupancy_monitor.md
     - Notification Service: notification_service.md
     - Sunrise & Sunset Events: sunrise_sunset.md
   - General Settings: general_settings.md

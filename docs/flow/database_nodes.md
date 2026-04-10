@@ -369,6 +369,17 @@ Create and insert data into a database table without writing SQL. Define your ta
 | Include ID Column | Add auto-incrementing primary key (recommended) |
 | Include Timestamp | Add automatic `datetime` column with current time |
 | Columns | Define columns with name, data type, default value, and max length |
+| Retention Policy | Automatically delete old rows by **Max Entries** (keep newest N rows) or **Max Age** (keep rows newer than X minutes). Set to 0 to disable |
+
+### Retention Policy
+
+When enabled, the retention policy runs periodically and deletes rows that exceed the configured limit:
+
+- **Max Entries**: Keeps the newest N rows by ID/timestamp, deleting older ones.
+- **Max Age (minutes)**: Deletes rows whose timestamp is older than the configured cutoff. Cutoff formatting is adapted per database (SQLite, MySQL, PostgreSQL, SQL Server).
+
+!!! tip "Async Mode"
+    Async mode is recommended when logging at high rates or writing to a remote database. Inserts are queued and written in the background; the Success output reflects queue acceptance rather than commit confirmation.
 
 ### Column Configuration
 
@@ -439,11 +450,26 @@ Query a database table and output rows as JSON. Configure the query visually wit
 |----------|-------------|
 | Table Name | Name of the table to query |
 | Columns | Columns to select (`*` for all, or comma-separated) |
+| Aggregation | Optional: `SUM`, `AVG`, `MIN`, or `MAX` applied to a selected column |
 | Order By | Column to sort by |
 | Order Direction | Descending (newest first) or Ascending |
 | Limit | Maximum rows to return |
 | Offset | Skip this many rows (for pagination) |
 | Filters | WHERE conditions to filter rows |
+| Async Mode | Execute queries asynchronously so the flow is not blocked while waiting for the database |
+
+### Aggregations
+
+Instead of returning raw rows, SQL Table Read can compute an aggregate over a column:
+
+| Function | Description |
+|----------|-------------|
+| `SUM` | Total of all values in the column |
+| `AVG` | Average value |
+| `MIN` | Smallest value |
+| `MAX` | Largest value |
+
+The aggregate result is returned as a single row in `Rows JSON`. Filters still apply, so you can aggregate over time windows (e.g. AVG of `temperature` over the last hour).
 
 ### Filters
 

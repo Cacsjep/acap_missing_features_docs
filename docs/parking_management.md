@@ -47,6 +47,14 @@ Each parking zone represents a physical area (parking level, section, or lot):
 | **Zone Name** | Descriptive name (e.g., "Level 1", "Visitor Parking") |
 | **Capacity** | Maximum number of vehicles (0 = unlimited) |
 | **Default Stale Timeout** | Minutes before parked entries are marked as stale (overrides global setting) |
+| **Free Flow** | When enabled, entries are recorded but access is never denied regardless of capacity, tags, or authorization |
+| **Re-entry Dedup Seconds** | For cameras configured as "Entry & Exit": time window during which a repeated read of the same plate is treated as a duplicate instead of an exit (0 = default 10s) |
+
+!!! note "Free Flow Mode"
+    Free Flow is useful for open parking lots where you want to track vehicles and collect statistics without enforcing access rules. All plates are allowed through; overtime and unauthorized events are still logged for reporting but do not affect entry decisions.
+
+!!! note "Re-entry Deduplication"
+    For single-point access cameras ("Entry & Exit" role), the system infers direction from database state — a plate not currently parked is treated as an entry, one already parked is treated as an exit. To prevent rapid re-reads from being misinterpreted as exits, a dedup window filters duplicate reads of the same plate. Duplicates within the window are emitted as duplicate/ignored events.
 
 !!! note "Zone Full Behavior"
     When a zone reaches capacity, new entries are still recorded for tracking purposes and a "Zone Full" event is fired. Use IO Rules to trigger barriers or signage when capacity is reached.

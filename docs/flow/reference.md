@@ -150,7 +150,7 @@ Displays a cached image on the canvas.
 Matches plates against the configured whitelist.
 
 - **Inputs**: `Process`, `Plate`, `Reset`
-- **Outputs**: `Matched Plate`, `In List`, `Not In List`, `Expired`, `Not Valid Yet`, `Processed`, `Total Plates`, plus tag outputs
+- **Outputs**: `Input Plate`, `Matched Plate`, `In List`, `Not In List`, `Expired`, `Not Valid Yet`, `Processed`, `Total Plates`, plus tag outputs
 
 ---
 

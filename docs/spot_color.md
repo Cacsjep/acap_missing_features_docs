@@ -36,7 +36,7 @@ Define circular "spots" on the video feed and configure a color palette. The sys
 |---------|-------------|
 | Video Channel | Select the video channel (default: 1) |
 | Resolution | Analysis resolution (lower = faster processing) |
-| Hysteresis Threshold | Color distance threshold to prevent flickering (10-100) |
+| Hysteresis Threshold | Color distance threshold to prevent flickering (0-100). Set to `0` to disable hysteresis and always match the nearest palette color |
 
 ### Circle Triggers
 
@@ -116,13 +116,14 @@ The palette defines which colors the system recognizes:
 
 ### Hysteresis
 
-The hysteresis threshold prevents rapid flickering between similar colors:
+The hysteresis threshold prevents rapid flickering between similar colors. The value measures how much *better* a new live measurement must match a different palette color before the state switches:
 
+- **0:** Hysteresis disabled — always match the nearest palette color (no stickiness)
 - **Low value (10-20):** More sensitive, may flicker in variable lighting
-- **High value (50-100):** More stable, requires larger color differences
+- **High value (50-100):** More stable, requires a clearly better match before switching
 - **Default (30):** Balanced for most scenarios
 
-The threshold represents Euclidean distance in RGB color space.
+The threshold is compared in Euclidean RGB color space against the difference between the current match and candidate matches — not between palette colors themselves.
 
 ### Processing Time
 

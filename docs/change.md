@@ -6,6 +6,15 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.2.1 - 10.04.2026
+- **F:** Parking Management: Re-entry deduplication for cameras configured as "both" - quick re-reads are no longer misinterpreted as exits. Configurable per zone via "Re-entry Dedup Seconds" (0 = default 10s).
+- **I:** Parking Management: "Both" camera direction is now inferred from DB state (not-in-DB = entry, in-DB = exit); duplicate reads within the dedup window are emitted as duplicate/ignored events.
+
+##### V3.2.0 - 31.03.2026
+- **C:** Removed legacy Multiple Occupancy feature (controller, model, routes, UI, and DB migration).
+- **C:** App now runs behind a reverse proxy. Internal TLS/bootstrap HTTP server removed.
+- **I:** Manifest: Added reverseProxy entries routing HTTP and WS traffic to the local app.
+
 ##### V3.1.21 - 27.03.2026
 - **B:** Flow Device: Snap/resolution queries were reading from the local device instead of the remote camera, causing wrong resolution lists. Now fetches resolution, rotation, and available resolutions directly from the remote device.
 - **I:** Flow: SQL Connection node help now includes DSN examples for PostgreSQL, MySQL, and SQL Server.
