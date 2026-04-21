@@ -6,7 +6,17 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V3.2.1 - 10.04.2026
+##### V3.2.4 - 21.04.2026
+- **F:** License Plate List: New per-plate **Ignore** toggle. Ignored plates bypass all Parking Management processing.
+- **I:** License Plate List: Plates flagged as ignored now show an "Ignored" chip in the plate table.
+- **I:** Parking Management: Live event log shows a new `IGNORE` badge for plate-ignored detections.
+- **B:** Fixed 401 errors on AXIS OS 11.x cameras — the Apache reverse proxy strips the `Authorization` header when the ACAP declares anonymous access. Tokens now travel in a custom `X-Auth-Token` header.
+- **B:** Manifest: Split reverseProxy into two apiPaths (`ax_msf` for HTTP, `ax_msf_ws` for WebSocket). AXIS OS 11 cannot register two rules on the same apiPath, which caused the whole app to return 404. WebSocket traffic is re-normalized to the main route on the backend.
+- **F:** First-boot: Setup now skips the legacy `admin/admin` login step. Opening the app on a fresh install goes straight to a "set admin password" form.
+- **C:** Removed the legacy "Default Credentials" hint dialog and the `login_hint` endpoint.
+- **I:** EULA Accept button now shows a loading indicator while the request is in flight.
+
+##### V3.2.2 - 10.04.2026
 - **F:** Parking Management: Re-entry deduplication for cameras configured as "both" - quick re-reads are no longer misinterpreted as exits. Configurable per zone via "Re-entry Dedup Seconds" (0 = default 10s).
 - **I:** Parking Management: "Both" camera direction is now inferred from DB state (not-in-DB = entry, in-DB = exit); duplicate reads within the dedup window are emitted as duplicate/ignored events.
 

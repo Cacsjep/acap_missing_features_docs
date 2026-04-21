@@ -24,6 +24,7 @@ Manage a whitelist of license plates (with validity windows and tags) and expose
 - **Name**: optional label (owner/vehicle).
 - **Tags**: optional labels (e.g., `staff`, `vip`, `visitor`); duplicates and spacing are normalized.
 - **Valid From / Valid To**: optional; truncated to the hour; omitted means always valid.
+- **Ignore**: optional toggle. When enabled, Parking Management **skips the plate entirely** — no entry/exit is recorded, no unauthorized event is fired, and no IO/email rules run. The detection still appears in the live event log tagged `IGNORE` so operators can see it was observed. Useful for silencing known false positives (e.g., a nearby billboard read as a plate) or service vehicles that should never generate events.
 
 Save to commit changes; the cache refreshes immediately.
 

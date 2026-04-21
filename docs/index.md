@@ -48,7 +48,7 @@ Missing Features is exposed through the Axis device's built-in reverse proxy —
 
 `https://<device-ip>/local/ax_msf/ax_msf/`
 
-- **Default credentials:** `admin` / `admin`. The login screen enforces a password change the first time you sign in.
+- **First boot:** On a fresh install the UI prompts you to set a password for the built-in `admin` user — no interim `admin/admin` login step.
 - **No firewall changes needed:** Traffic flows through the same HTTP/HTTPS port as the Axis web interface (typically 443).
 
 ---
