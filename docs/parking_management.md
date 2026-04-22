@@ -57,7 +57,10 @@ Each parking zone represents a physical area (parking level, section, or lot):
     For single-point access cameras ("Entry & Exit" role), the system infers direction from database state — a plate not currently parked is treated as an entry, one already parked is treated as an exit. To prevent rapid re-reads from being misinterpreted as exits, a dedup window filters duplicate reads of the same plate. Duplicates within the window are emitted as duplicate/ignored events.
 
 !!! note "Zone Full Behavior"
-    When a zone reaches capacity, new entries are still recorded for tracking purposes and a "Zone Full" event is fired. Use IO Rules to trigger barriers or signage when capacity is reached.
+    When a zone reaches capacity, new entries are still recorded for tracking purposes. A **Zone Full Rising** event is fired on the entry that crosses the threshold, and a **Zone Full Falling** event is fired when the zone drops back below capacity. Use IO Rules to trigger barriers or signage on either edge.
+
+!!! note "Zone Count Changed (ACAP only)"
+    In addition to the Access Control event types, each zone exposes a raw ACAP platform event `PM_<zone>_CountChanged` (with `count` and `capacity` payload) that fires on every occupancy change. This event is intentionally **not** available in the Event Type dropdown — it is only reachable from other Axis events or flow.
 
 ### Entry/Exit Cameras
 
@@ -132,7 +135,7 @@ Automated actions triggered by parking events:
 | Setting | Description |
 |---------|-------------|
 | **Name** | Rule identifier |
-| **Event** | Entry, Exit, Unauthorized, Overtime, or Zone Full |
+| **Event** | Entry, Exit, Unauthorized, Overtime, Zone Full Rising, or Zone Full Falling |
 | **Zones** | Which zones trigger this rule (empty = all) |
 | **Tags** | Which tags trigger this rule (empty = all) |
 | **Device** | Target device |
@@ -147,7 +150,11 @@ Automated actions triggered by parking events:
 | **Exit** | Vehicle exited a zone |
 | **Unauthorized** | Unknown plate or plate without allowed tags |
 | **Overtime** | Vehicle exceeded max parking time |
-| **Zone Full** | Zone reached its capacity limit |
+| **Zone Full Rising** | Zone just reached its capacity limit (fires once on the threshold crossing) |
+| **Zone Full Falling** | Zone dropped below its capacity limit (fires once when an exit brings count under max) |
+
+!!! tip "ACAP-only event: Count Changed"
+    A `PM_<zone>_CountChanged` event (payload: `count`, `capacity`) is fired on every occupancy change. It is **not** selectable as an IO Rule event type - it is exposed only on the Axis device events external services/integrations or flow (Onvif Event only).
 
 #### Example Rules
 
@@ -196,7 +203,7 @@ The top bar shows key metrics at a glance:
 
 | Stat | Description |
 |------|-------------|
-| **Parked** | Total vehicles currently parked |
+| **Parked** | Total vehicles currently parked. **Click** to open a per-zone breakdown dialog showing each zone's current count (and capacity, if configured). |
 | **Avg Duration** | Average parking time of current vehicles |
 | **Zone Capacity** | Occupancy per zone (e.g., "Level 1: 5/20") |
 | **Overtime** | Count of vehicles exceeding max parking time |
@@ -349,7 +356,9 @@ Parking Management generates AXIS Metadata events:
 | **Exit** | Vehicle exited a zone |
 | **Unauthorized** | Unknown plate or plate without allowed tags attempted entry |
 | **Overtime** | Vehicle exceeded max parking time |
-| **Zone Full** | Zone reached capacity limit |
+| **Zone Full Rising** | Zone reached capacity limit (rising edge — fires once on crossing) |
+| **Zone Full Falling** | Zone dropped below capacity limit (falling edge — fires once on crossing) |
+| **Count Changed** | Zone occupancy changed (ACAP-only, not exposed in Access Control UI) |
 
 Events include metadata: plate, zone, tag, duration, camera name.
 

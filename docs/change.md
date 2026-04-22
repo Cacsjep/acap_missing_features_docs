@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.2.5 - 22.04.2026
+- **C:** Parking Management: The `Zone Full` event type has been split into **Zone Full Rising** (fires once on the entry that crosses the capacity threshold) and **Zone Full Falling** (fires once when an exit drops the zone below capacity). **Breaking:** existing IO Rules with `event_type = "zone_full"` need to be re-saved as `zone_full_rising`, and device-side ACAP rules bound to the old `PM_<zone>_Full` event name must be rebound to `PM_<zone>_FullRising`.
+- **F:** Parking Management: New ACAP-only platform event `PM_<zone>_CountChanged` (payload: `count`, `capacity`) fires on every occupancy change. Not selectable in the Access Control UI — exposed only on the Axis event bus for external services/integrations.
+- **F:** Parking Management: The "Parked" stat chip in the Live View is now clickable and opens a per-zone breakdown dialog showing each zone's current count / capacity.
+- **I:** Parking Management: Rising-edge is now strictly a crossing event. It no longer re-fires on each additional entry while the zone is already full.
+
 ##### V3.2.4 - 21.04.2026
 - **F:** License Plate List: New per-plate **Ignore** toggle. Ignored plates bypass all Parking Management processing.
 - **I:** License Plate List: Plates flagged as ignored now show an "Ignored" chip in the plate table.
