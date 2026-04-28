@@ -216,15 +216,15 @@ Displays JSON arrays as scrollable tables.
 
 ### Chart Widget
 
-Visualizes JSON data as line or bar charts.
+Visualizes JSON data as a mixed chart of line, bar and vertical-marker series.
 
-**Best for:** Trends, historical data, time series, comparisons
+**Best for:** Trends, historical data, time series, comparisons, correlating numeric values with boolean events.
 
 **Settings:**
 
 | Option | Description |
 |--------|-------------|
-| Chart Type | `bar` or `line` |
+| Default Series Type | `line` or `bar` — used as the default for newly added series. Each series can override this. |
 | X-Axis Mode | `index` (sequential) or `time` (datetime) |
 | X-Axis Key | JSON property for time axis |
 | Time Parse Mode | `iso`, `epoch_ms`, or `epoch_s` |
@@ -234,31 +234,65 @@ Visualizes JSON data as line or bar charts.
 
 **Series Configuration:**
 
+Every series exposes a **Series Type** selector that controls how it is drawn:
+
+| Series Type | Use For |
+|-------------|---------|
+| **Line** | Continuous numeric values (temperature, humidity, RPM) |
+| **Bar** | Discrete numeric values (counts per interval) |
+| **Vertical Marker** | Boolean events drawn as full-height vertical lines across the chart |
+
+Common per-series options:
+
 | Option | Description |
 |--------|-------------|
-| Data Key | JSON property to plot |
-| Label | Series name in legend |
-| Color | Line/bar color |
-| Fill | Fill area under line |
-| Tension | Line smoothness (0-1) |
-| Point Radius | Data point size |
-| Border Width | Line thickness |
-| Stepped | Step-style line |
+| Data Key | JSON property to read for this series |
+| Series Label | Name shown in the legend |
+
+Line / Bar options:
+
+| Option | Description |
+|--------|-------------|
+| Series Color | Line/bar color |
+| Fill (line) | Fill area under line |
+| Stepped (line) | Step-style line (no interpolation) |
+| Point Radius (line) | Data point size |
+| Border Width (line) | Line thickness |
+| Bar Thickness (bar) | Bar width in pixels |
+
+Vertical Marker options:
+
+| Option | Description |
+|--------|-------------|
+| Marker Mode | **Edges** — one line on every boolean transition (false→true and true→false). **All True** — one line on every sample where the value is true. |
+| Rising Edge Color (Edges mode) | Color of the line drawn when the value changes false → true |
+| Falling Edge Color (Edges mode) | Color of the line drawn when the value changes true → false |
+| Marker Color (All True mode) | Color of every marker |
+| Line Width | Vertical line thickness in pixels |
+| Line Style | Solid, dashed or dotted |
+| Marker Label | Optional short text drawn next to each marker |
+
+Boolean parsing for marker series accepts `true` / `false`, `0` / `1`, or the strings `"true"` / `"false"` / `"0"` / `"1"`.
 
 **Accepts:** String (JSON array)
 
-**Example Input:**
+**Example Input — temperature line + heater state markers:**
 ```json
 [
-  {"datetime": "2025-01-01T10:00:00Z", "temperature": 22.5, "humidity": 45},
-  {"datetime": "2025-01-01T11:00:00Z", "temperature": 23.1, "humidity": 43}
+  {"datetime": "2025-01-01T10:00:00Z", "temperature": 22.5, "heater": false},
+  {"datetime": "2025-01-01T10:05:00Z", "temperature": 23.1, "heater": true},
+  {"datetime": "2025-01-01T10:10:00Z", "temperature": 24.4, "heater": true},
+  {"datetime": "2025-01-01T10:15:00Z", "temperature": 23.8, "heater": false}
 ]
 ```
 
+In this example the chart can show `temperature` as a Line series and `heater` as a Vertical Marker series in **Edges** mode, drawing a red vertical line at 10:05 (heater turning on) and a grey one at 10:15 (heater turning off).
+
 **Features:**
-- Multiple data series on one chart
-- Auto-detect series from JSON structure
-- Zoom with mouse wheel or pinch
+- Multiple data series on one chart, each with its own type
+- Mix line, bar and vertical-marker series on the same canvas
+- Auto-detect series from JSON structure (boolean-looking columns are pre-configured as Vertical Marker series)
+- Zoom with mouse wheel or pinch (markers track zoom/pan)
 - Pan by dragging
 - Reset button appears when zoomed
 

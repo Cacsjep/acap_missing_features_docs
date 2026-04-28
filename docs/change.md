@@ -6,6 +6,18 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.2.7 - 28.04.2026
+- **F:** Dashboard: Chart widget series can now be set to **Vertical Marker**, drawing full-height vertical lines for boolean events (e.g. heater on/off) on top of temperature lines. Per-series **Series Type** selector (Line / Bar / Vertical Marker) lets one chart mix multiple line/bar series with one or more bool marker series.
+- **F:** Dashboard: Vertical Marker series support **Edges** mode (separate rising/falling colors on each true↔false transition) or **All True** mode (a marker on every true sample), with configurable line width, line style (solid/dashed/dotted) and optional inline label.
+- **I:** Dashboard: Chart widget Auto-detect now recognises boolean-looking columns and pre-configures them as Vertical Marker series.
+- **I:** Dashboard: Chart widget renderer switched to a mixed Chart.js base so a single chart can render line, bar and marker series side-by-side. Existing chart configurations keep rendering unchanged (the previous chart-wide type becomes the default for newly added series).
+
+##### V3.2.6 - 24.04.2026
+- **I:** Parking Management: Removed the 30‑second per-row DB update loop that rewrote every parked entry. With 1000+ parked vehicles this caused visible UI slowness and `database is locked` errors (notably during login). Durations are now computed on read and stay accurate across reboots.
+- **I:** Database: Enabled SQLite **WAL** mode with a 5s `busy_timeout` and `synchronous=NORMAL`. Concurrent readers no longer block against writers, and contending writers wait instead of failing immediately.
+- **B:** Color Spot Detector: Suppressed noisy `failed to undeclare … event: No declarations have been registered` errors emitted when the ACAP event handler is already torn down on shutdown/reload. Undeclares are now guarded and demoted to debug-level.
+- **F:** Login: When the login page is served over plain HTTP, a warning banner and a **Switch to HTTPS** button are shown.
+
 ##### V3.2.5 - 22.04.2026
 - **C:** Parking Management: The `Zone Full` event type has been split into **Zone Full Rising** (fires once on the entry that crosses the capacity threshold) and **Zone Full Falling** (fires once when an exit drops the zone below capacity). **Breaking:** existing IO Rules with `event_type = "zone_full"` need to be re-saved as `zone_full_rising`, and device-side ACAP rules bound to the old `PM_<zone>_Full` event name must be rebound to `PM_<zone>_FullRising`.
 - **F:** Parking Management: New ACAP-only platform event `PM_<zone>_CountChanged` (payload: `count`, `capacity`) fires on every occupancy change. Not selectable in the Access Control UI — exposed only on the Axis event bus for external services/integrations.
