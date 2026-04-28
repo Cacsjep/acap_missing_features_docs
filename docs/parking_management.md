@@ -54,13 +54,13 @@ Each parking zone represents a physical area (parking level, section, or lot):
     Free Flow is useful for open parking lots where you want to track vehicles and collect statistics without enforcing access rules. All plates are allowed through; overtime and unauthorized events are still logged for reporting but do not affect entry decisions.
 
 !!! note "Re-entry Deduplication"
-    For single-point access cameras ("Entry & Exit" role), the system infers direction from database state — a plate not currently parked is treated as an entry, one already parked is treated as an exit. To prevent rapid re-reads from being misinterpreted as exits, a dedup window filters duplicate reads of the same plate. Duplicates within the window are emitted as duplicate/ignored events.
+    For single-point access cameras ("Entry & Exit" role), the system infers direction from database state - a plate not currently parked is treated as an entry, one already parked is treated as an exit. To prevent rapid re-reads from being misinterpreted as exits, a dedup window filters duplicate reads of the same plate. Duplicates within the window are emitted as duplicate/ignored events.
 
 !!! note "Zone Full Behavior"
     When a zone reaches capacity, new entries are still recorded for tracking purposes. A **Zone Full Rising** event is fired on the entry that crosses the threshold, and a **Zone Full Falling** event is fired when the zone drops back below capacity. Use IO Rules to trigger barriers or signage on either edge.
 
 !!! note "Zone Count Changed (ACAP only)"
-    In addition to the Access Control event types, each zone exposes a raw ACAP platform event `PM_<zone>_CountChanged` (with `count` and `capacity` payload) that fires on every occupancy change. This event is intentionally **not** available in the Event Type dropdown — it is only reachable from other Axis events or flow.
+    In addition to the Access Control event types, each zone exposes a raw ACAP platform event `PM_<zone>_CountChanged` (with `count` and `capacity` payload) that fires on every occupancy change. This event is intentionally **not** available in the Event Type dropdown - it is only reachable from other Axis events or flow.
 
 ### Entry/Exit Cameras
 
@@ -274,6 +274,29 @@ Real-time feed of plate detections with detailed event information:
 | **Exit (No Entry)** | Cyan | Exit detected without matching entry |
 | **Add to Plate List** | Purple | Plate added to License Plate List |
 
+### Adding a Parked Vehicle Manually
+
+Use the **+** button in the Parked Vehicles header to register a vehicle that is already parked but was never seen by a camera (for example, vehicles that were on the lot before the system was deployed, or before a camera came online).
+
+| Field | Description |
+|-------|-------------|
+| **Zone** | Which parking zone the vehicle is in |
+| **Plate** | License plate (uppercased automatically) |
+| **Tag** | Optional. Tag picked from the License Plate tag list - used for max-parking-time and rule matching, just like an LPV-detected entry |
+| **Max parking time (minutes)** | Optional override. `0` means no limit. The vehicle is flagged overtime once this is exceeded |
+| **Entry time** | When parking actually started. Must fall inside the zone's stale-timeout window |
+
+Behaviour:
+
+- The plate name is auto-filled from the License Plate List when the plate exists there - there is no separate name field.
+- The entry is created with `Status = parked` and `EntryCameraName = "Manual"`, so a later exit detection by a real camera will match and close it normally.
+- **No IO actions, gates or platform events are fired** when adding a manual entry - registering a car that is already parked must not trigger barriers or notifications.
+- Capacity is **not** checked - manual entries are intentionally allowed past `max_capacity`, since the goal is to record reality.
+- Entry times older than the zone's stale timeout (or the global default if the zone uses 0) are rejected, otherwise the stale sweeper would silently mark the new row stale within minutes.
+- Adding a plate that is already parked in the chosen zone is rejected.
+
+Requires the `parking_manage_entries` permission. Endpoint: `POST /parking_management/entries/manual`.
+
 ### Manual Actions
 
 Execute IO Actions directly from the interface (requires `parking_execute_action` permission).
@@ -356,8 +379,8 @@ Parking Management generates AXIS Metadata events:
 | **Exit** | Vehicle exited a zone |
 | **Unauthorized** | Unknown plate or plate without allowed tags attempted entry |
 | **Overtime** | Vehicle exceeded max parking time |
-| **Zone Full Rising** | Zone reached capacity limit (rising edge — fires once on crossing) |
-| **Zone Full Falling** | Zone dropped below capacity limit (falling edge — fires once on crossing) |
+| **Zone Full Rising** | Zone reached capacity limit (rising edge - fires once on crossing) |
+| **Zone Full Falling** | Zone dropped below capacity limit (falling edge - fires once on crossing) |
 | **Count Changed** | Zone occupancy changed (ACAP-only, not exposed in Access Control UI) |
 
 Events include metadata: plate, zone, tag, duration, camera name.

@@ -6,6 +6,9 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.2.8 - 28.04.2026
+- **F:** Parking Management: Added a **+ Add Parked Vehicle** button in the Live View's Parked Vehicles header. Opens a form (zone, plate, tag from the License Plate tag list, max parking minutes, entry time via VueDatePicker) that registers a vehicle which was already parked before the camera saw it, so its eventual exit gets matched. The plate is uppercased and the plate name is auto-resolved from the License Plate list. No IO actions, gates or events are fired. The entry time must fall inside the zone's stale-timeout window - older times are rejected so the stale sweeper doesn't immediately demote the new row.
+
 ##### V3.2.7 - 28.04.2026
 - **F:** Dashboard: Chart widget series can now be set to **Vertical Marker**, drawing full-height vertical lines for boolean events (e.g. heater on/off) on top of temperature lines. Per-series **Series Type** selector (Line / Bar / Vertical Marker) lets one chart mix multiple line/bar series with one or more bool marker series.
 - **F:** Dashboard: Vertical Marker series support **Edges** mode (separate rising/falling colors on each true↔false transition) or **All True** mode (a marker on every true sample), with configurable line width, line style (solid/dashed/dotted) and optional inline label.
@@ -20,7 +23,7 @@
 
 ##### V3.2.5 - 22.04.2026
 - **C:** Parking Management: The `Zone Full` event type has been split into **Zone Full Rising** (fires once on the entry that crosses the capacity threshold) and **Zone Full Falling** (fires once when an exit drops the zone below capacity). **Breaking:** existing IO Rules with `event_type = "zone_full"` need to be re-saved as `zone_full_rising`, and device-side ACAP rules bound to the old `PM_<zone>_Full` event name must be rebound to `PM_<zone>_FullRising`.
-- **F:** Parking Management: New ACAP-only platform event `PM_<zone>_CountChanged` (payload: `count`, `capacity`) fires on every occupancy change. Not selectable in the Access Control UI — exposed only on the Axis event bus for external services/integrations.
+- **F:** Parking Management: New ACAP-only platform event `PM_<zone>_CountChanged` (payload: `count`, `capacity`) fires on every occupancy change. Not selectable in the Access Control UI - exposed only on the Axis event bus for external services/integrations.
 - **F:** Parking Management: The "Parked" stat chip in the Live View is now clickable and opens a per-zone breakdown dialog showing each zone's current count / capacity.
 - **I:** Parking Management: Rising-edge is now strictly a crossing event. It no longer re-fires on each additional entry while the zone is already full.
 
@@ -28,7 +31,7 @@
 - **F:** License Plate List: New per-plate **Ignore** toggle. Ignored plates bypass all Parking Management processing.
 - **I:** License Plate List: Plates flagged as ignored now show an "Ignored" chip in the plate table.
 - **I:** Parking Management: Live event log shows a new `IGNORE` badge for plate-ignored detections.
-- **B:** Fixed 401 errors on AXIS OS 11.x cameras — the Apache reverse proxy strips the `Authorization` header when the ACAP declares anonymous access. Tokens now travel in a custom `X-Auth-Token` header.
+- **B:** Fixed 401 errors on AXIS OS 11.x cameras - the Apache reverse proxy strips the `Authorization` header when the ACAP declares anonymous access. Tokens now travel in a custom `X-Auth-Token` header.
 - **B:** Manifest: Split reverseProxy into two apiPaths (`ax_msf` for HTTP, `ax_msf_ws` for WebSocket). AXIS OS 11 cannot register two rules on the same apiPath, which caused the whole app to return 404. WebSocket traffic is re-normalized to the main route on the backend.
 - **F:** First-boot: Setup now skips the legacy `admin/admin` login step. Opening the app on a fresh install goes straight to a "set admin password" form.
 - **C:** Removed the legacy "Default Credentials" hint dialog and the `login_hint` endpoint.
