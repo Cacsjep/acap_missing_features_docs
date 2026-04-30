@@ -1,0 +1,2209 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../spot_color/">
+      
+      
+        <link rel="next" href="../img_sdcard/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Gauge Reader - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gauge-reader" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gauge Reader
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/device_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow/composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gauge Reader
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gauge Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothing-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smoothing and events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-calibrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-calibrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hold-last-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hold-last-good
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-gauge-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-gauge event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-events-in-axis-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using events in AXIS rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-events-in-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using events in Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live preview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mode_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value range
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothing-and-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smoothing and events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-calibrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-calibrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hold-last-good" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hold-last-good
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-gauge-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-gauge event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combined-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combined event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-events-in-axis-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using events in AXIS rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-events-in-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using events in Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#live-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live preview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Live preview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mode_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gauge-reader">Gauge Reader</h1>
+<p>The Gauge Reader analyses a video stream to read the position of analog gauge needles. Each detected reading is converted to a numeric value (using the gauge's min/max range and unit) and emitted as an AXIS event so it can be used by other systems.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Place one or more virtual gauges over the live video. For each gauge you configure the pivot, the search ring (inner and outer radius), the angular sweep (min and max angle) and the value range. The system reads the current needle angle every frame, smooths it, and fires an AXIS event when the reading drifts past a configurable change threshold.</p>
+<p><strong>Use cases:</strong></p>
+<ul>
+<li>Industrial pressure, temperature or flow gauges that have no digital output</li>
+<li>Retrofitting analog dashboards into modern monitoring systems</li>
+<li>Periodic logging of legacy meters via the AXIS event bus or Flow</li>
+</ul>
+<hr />
+<h2 id="getting-started">Getting started</h2>
+<ol>
+<li>Open <strong>Gauge Reader</strong> from the feature menu.</li>
+<li>Drag the pivot dot to the centre of the gauge.</li>
+<li>Drag the radius handles so the search ring (annulus) is just inside the dial face and just before the needle tip.</li>
+<li>Drag the <strong>MIN</strong> and <strong>MAX</strong> handles to the start and end of the dial scale.</li>
+<li>Set <strong>Min value</strong> and <strong>Max value</strong> to match the printed scale. Set the <strong>Unit</strong> if you want the live readout to show one (e.g. <code>bar</code>, <code>psi</code>).</li>
+<li>Pick a <strong>Detection mode</strong> (see below) and run <strong>Auto-calibrate</strong> if you are not sure which one fits.</li>
+</ol>
+<hr />
+<h2 id="configuration">Configuration</h2>
+<h3 id="geometry">Geometry</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pivot</td>
+<td>Centre of the needle (drag the yellow dot)</td>
+</tr>
+<tr>
+<td>Inner radius</td>
+<td>Excludes pixels in the centre (pivot hub or screw)</td>
+</tr>
+<tr>
+<td>Outer radius</td>
+<td>Excludes pixels outside the dial. Set roughly to the needle tip</td>
+</tr>
+<tr>
+<td>Min / Max angle</td>
+<td>Start and end of the dial sweep</td>
+</tr>
+<tr>
+<td>CW / CCW</td>
+<td>Direction the value increases along the sweep</td>
+</tr>
+</tbody>
+</table>
+<p>The grey area on the overlay shows pixels the algorithm ignores: the disc inside the inner radius (the hub) and the wedge outside the min/max sweep.</p>
+<h3 id="value-range">Value range</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min value</td>
+<td>Numeric value at the <strong>MIN</strong> angle</td>
+</tr>
+<tr>
+<td>Max value</td>
+<td>Numeric value at the <strong>MAX</strong> angle</td>
+</tr>
+<tr>
+<td>Unit</td>
+<td>Optional unit string for the on-screen readout (e.g. <code>bar</code>, <code>psi</code>, <code>C</code>)</td>
+</tr>
+<tr>
+<td>Decimals</td>
+<td>Number of fraction digits in the displayed value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detection-mode">Detection mode</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge</td>
+<td>Default. Detects the needle as a thin edge. Works even when needle and dial are similar colours</td>
+</tr>
+<tr>
+<td>Dark</td>
+<td>Needle is clearly darker than the dial face</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Needle has a distinctive colour (red, orange). Pick the colour with the eyedropper</td>
+</tr>
+<tr>
+<td>Contour</td>
+<td>Best for cluttered dials with printed numbers and scale ticks. Finds the needle by tracing a connected shape that crosses both the inner and outer ring</td>
+</tr>
+</tbody>
+</table>
+<p>In <strong>Dark</strong> and <strong>Contour</strong> modes, leaving <strong>Luma threshold</strong> at <code>0</code> lets the algorithm derive a sensible cutoff from the mean luma of the search ring. The same auto-mode also detects "light needle on dark dial" cases (e.g. backlit gauges) and flips the comparison automatically.</p>
+<h3 id="smoothing-and-events">Smoothing and events</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smoothing</td>
+<td>0 reacts immediately, 0.95 is heavily damped. Higher values reduce jitter at the cost of latency</td>
+</tr>
+<tr>
+<td>Change threshold</td>
+<td>Minimum value drift (in the configured unit) before a new event is fired</td>
+</tr>
+</tbody>
+</table>
+<p>The change threshold is measured against the value at the <strong>last emitted</strong> event, not the previous frame. Without that, low-confidence readings could re-fire every frame even if the needle is physically still.</p>
+<h3 id="auto-calibrate">Auto-calibrate</h3>
+<p>The <strong>Auto-calibrate</strong> button runs the current frame through every detection mode and a sweep of thresholds, scoring each combination by peak strength and matched-pixel ratio. The best scoring configuration is written back to the gauge. Geometry (pivot, radii, angles) is not touched: that part is set visually with the overlay.</p>
+<hr />
+<h2 id="how-it-works">How it works</h2>
+<ol>
+<li>Each frame is read from the video pipeline as NV12 luma plus chroma.</li>
+<li>Pixels in the search ring (between inner and outer radius, inside the min/max sweep) are classified as "needle" using the chosen detection mode.</li>
+<li>The classified pixels feed an angular histogram. The histogram is smoothed and divided by the per-bin annulus density so a thicker scale arc does not get mistaken for a peak.</li>
+<li>A weighted PCA on the matched pixels around the peak refines the angle below 1 degree resolution.</li>
+<li><strong>Contour mode</strong> runs a connected-components pass on the matched pixels and picks the largest component that touches both the inner and outer ring. Printed numbers and scale ticks fail that "crosses both rings" test by construction.</li>
+<li>The angle is mapped to a numeric value using the configured min/max range, smoothed, and compared against the change threshold.</li>
+</ol>
+<h3 id="hold-last-good">Hold-last-good</h3>
+<p>If a single frame fails to produce a reading (motion blur, brief occlusion, focus hunt) the previous reading is kept for up to 2 seconds. While held, the on-screen needle dims and switches to a dashed stroke so the operator can see the value is not freshly measured.</p>
+<h3 id="confidence">Confidence</h3>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>Strong, decisive peak</td>
+</tr>
+<tr>
+<td>0.5 to 0.9</td>
+<td>Plausible, may benefit from a tighter ring or a different mode</td>
+</tr>
+<tr>
+<td>Below 0.3</td>
+<td>Noise dominates. Consider switching detection mode or adjusting the threshold</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="events">Events</h2>
+<h3 id="per-gauge-event">Per-gauge event</h3>
+<p>Each gauge fires its own AXIS event when the value crosses the change threshold.</p>
+<p><strong>Event name:</strong> <code>{gauge_label}_state</code> (for example <code>gauge1_state</code>)</p>
+<p><strong>Event data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gauge_name</td>
+<td>Display name of the gauge</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Current smoothed value (numeric)</td>
+</tr>
+<tr>
+<td>raw_angle</td>
+<td>Detected needle angle in degrees</td>
+</tr>
+<tr>
+<td>confidence</td>
+<td>Detection confidence between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+<p>The unit is <strong>not</strong> carried in the event payload (it would inject non-ASCII bytes for symbols like the degree sign and break some ONVIF consumers). Pair the value with the unit configured in the UI on the receiving side.</p>
+<h3 id="combined-event">Combined event</h3>
+<p>A single combined event fires whenever any gauge changes:</p>
+<table>
+<thead>
+<tr>
+<th>Event name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>all_gauges_state</code></td>
+<td>Summary of every configured gauge</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Combined event data:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>Number of gauges in the report</td>
+</tr>
+<tr>
+<td><code>gauge_{N}_value</code></td>
+<td>Current value of gauge N (1-indexed)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using-events-in-axis-rules">Using events in AXIS rules</h3>
+<p>While the Gauge Reader is running, events appear in the AXIS event system:</p>
+<ol>
+<li>Open the device's web interface</li>
+<li>Go to <strong>System &gt; Events</strong></li>
+<li>Find events under the Missing Features ACAP</li>
+<li>Create a rule triggered by a gauge state change</li>
+</ol>
+<h3 id="using-events-in-flow">Using events in Flow</h3>
+<p>Use the <strong>Axis Metadata Event (Subscribe)</strong> node:</p>
+<ol>
+<li>Add the subscribe node to the flow</li>
+<li>Pick the per-gauge event or <code>all_gauges_state</code></li>
+<li>Wire the value field into downstream logic</li>
+</ol>
+<hr />
+<h2 id="live-preview">Live preview</h2>
+<p>The preview shows:</p>
+<ul>
+<li>Real-time video via WebCodecs</li>
+<li>Overlay handles for pivot, radii and min/max angles</li>
+<li>The current detected needle as a coloured line. Solid red means a fresh reading. Dashed orange means a held value during the hold-last-good window.</li>
+<li>A small per-gauge readout with value, unit and confidence</li>
+</ul>
+<h3 id="controls">Controls</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add gauge</td>
+<td>Create a new virtual gauge</td>
+</tr>
+<tr>
+<td>Auto-calibrate</td>
+<td>Sweep detection modes and thresholds, pick the best</td>
+</tr>
+<tr>
+<td>Show / Hide</td>
+<td>Toggle the overlay</td>
+</tr>
+<tr>
+<td>Fullscreen</td>
+<td>Expand the preview to fill the screen</td>
+</tr>
+<tr>
+<td>Help</td>
+<td>Open the built-in help dialog</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="best-practices">Best practices</h2>
+<h3 id="geometry_1">Geometry</h3>
+<ul>
+<li>Keep the inner radius just outside the pivot hub. The hub matches in every direction and washes out the angular peak if it is included.</li>
+<li>Keep the outer radius just inside the printed numbers. Numbers and ticks are the most common false-positive source.</li>
+<li>Set min / max angle from the printed scale, not the physical end-stops of the needle. The end-stops often sit a few degrees outside the printed range.</li>
+</ul>
+<h3 id="detection-mode_1">Detection mode</h3>
+<ul>
+<li>Try <strong>Edge</strong> first. It tolerates same-colour needles and dials better than the threshold modes.</li>
+<li>Use <strong>Contour</strong> on busy dials with lots of printed text inside the ring.</li>
+<li>Use <strong>Color</strong> only when the needle is brightly coloured and the dial is not.</li>
+</ul>
+<h3 id="stability">Stability</h3>
+<ul>
+<li>Increase <strong>Smoothing</strong> if the value visibly jitters even when the needle is still.</li>
+<li>Increase <strong>Change threshold</strong> to reduce event volume. The threshold is in the gauge's own unit, so 1.0 on a 0 to 100 bar gauge means "1 bar of drift".</li>
+<li>Lower confidence readings often mean the search ring is too wide. Tighten it before changing detection modes.</li>
+</ul>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No needle detected</td>
+<td>Run Auto-calibrate. If it still fails, check that the search ring covers the needle and the min/max sweep matches the printed scale</td>
+</tr>
+<tr>
+<td>Needle points to the wrong side of the dial</td>
+<td>Flip the CW / CCW setting</td>
+</tr>
+<tr>
+<td>Reading bounces several units between frames</td>
+<td>Increase Smoothing, or tighten the search ring so background noise stops contributing</td>
+</tr>
+<tr>
+<td>Events fire on every frame</td>
+<td>Increase Change threshold. The threshold is compared to the last emitted value, so a value of 0 emits on every numeric jitter</td>
+</tr>
+<tr>
+<td>Diagnostic image shows lots of red</td>
+<td>Lower the Luma threshold (in Dark or Contour mode), or switch to Edge mode</td>
+</tr>
+<tr>
+<td>"Light needle on dark dial" not detected</td>
+<td>Leave Luma threshold at 0. The auto mode flips polarity for dark dials</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
