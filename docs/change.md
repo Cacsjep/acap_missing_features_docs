@@ -6,8 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
-##### V3.3.0 - 30.04.2026
+##### V3.3.1 - 30.04.2026
 - **F:** Gauge Reader: New feature that reads analog gauge needles from the video stream and emits AXIS events with the numeric value. Each gauge is configured with a pivot, search ring (inner / outer radius), angular sweep and value range.
+- **F:** Parking Management: New per-zone **Free Flow Plate Match** setting (Strict, 1 char, 2 chars). In free flow mode the parked-entry lookup now tolerates OCR drift between entry and exit reads (e.g. ABC123 entered, ABC1Z3 leaving). Strict (default) keeps the previous exact-match behaviour. Falls back to "no match" when two parked plates tie at the same distance, so the wrong vehicle is never released.
+- **I:** Parking Management: Rejected-event debounce in free flow mode now also walks the recent-rejection map with the configured edit distance, so a single physical car producing two consecutive misreads no longer fires two unauthorized events.
 
 ##### V3.2.8 - 28.04.2026
 - **F:** Parking Management: Added a **+ Add Parked Vehicle** button in the Live View's Parked Vehicles header. Opens a form (zone, plate, tag from the License Plate tag list, max parking minutes, entry time via VueDatePicker) that registers a vehicle which was already parked before the camera saw it, so its eventual exit gets matched. The plate is uppercased and the plate name is auto-resolved from the License Plate list. No IO actions, gates or events are fired. The entry time must fall inside the zone's stale-timeout window - older times are rejected so the stale sweeper doesn't immediately demote the new row.
