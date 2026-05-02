@@ -6,6 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.3.2 - 02.05.2026
+- **B:** Flow: Compare node failed with `unsupported input type int64` when wired to Int outputs from event-source nodes (e.g. Parking Management Exit/Overtime `Duration Minutes`, Zone Full `count`/`capacity`). The node now accepts `int64` alongside `int`, `float64` and numeric strings, with cross-type promotion in every direction.
+- **I:** Flow: Metadata Subscribe Int outputs now consistently emit `int64` (matching the rest of the flow runtime) instead of flipping from `int64` default to `int` after the first event.
+
 ##### V3.3.1 - 30.04.2026
 - **F:** Gauge Reader: New feature that reads analog gauge needles from the video stream and emits AXIS events with the numeric value. Each gauge is configured with a pivot, search ring (inner / outer radius), angular sweep and value range.
 - **F:** Parking Management: New per-zone **Free Flow Plate Match** setting (Strict, 1 char, 2 chars). In free flow mode the parked-entry lookup now tolerates OCR drift between entry and exit reads (e.g. ABC123 entered, ABC1Z3 leaving). Strict (default) keeps the previous exact-match behaviour. Falls back to "no match" when two parked plates tie at the same distance, so the wrong vehicle is never released.
