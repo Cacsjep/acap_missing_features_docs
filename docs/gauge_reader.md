@@ -16,14 +16,34 @@ Place one or more virtual gauges over the live video. For each gauge you configu
 
 ---
 
+## Profiles
+
+Each Gauge Reader instance can run **up to 4 independent profiles in parallel**. A profile owns its own video channel, resolution, framerate, analysis interval, preview configuration and gauge set. Profiles are useful when a device has multiple sensors/streams and each shows its own set of dials.
+
+The profile selector is the chip row at the top of the configuration column:
+
+| Action | How |
+|--------|-----|
+| Switch profile | Click any profile chip |
+| Add profile | Click the **+** icon next to the chips (max 4) |
+| Remove profile | Click the **×** on a profile chip (the last remaining profile cannot be removed) |
+| Rename / change channel | Adjust the Stream panel while the profile is active, then **Save** |
+
+Switching the active profile clears the live overlay (gauges, needles, status) immediately and reconnects the WebSocket to the new profile's emitter, so you do **not** see the previous profile's needles briefly during the switch.
+
+Per-profile events are described in the **Events** section below.
+
+---
+
 ## Getting started
 
 1. Open **Gauge Reader** from the feature menu.
-2. Drag the pivot dot to the centre of the gauge.
-3. Drag the radius handles so the search ring (annulus) is just inside the dial face and just before the needle tip.
-4. Drag the **MIN** and **MAX** handles to the start and end of the dial scale.
-5. Set **Min value** and **Max value** to match the printed scale. Set the **Unit** if you want the live readout to show one (e.g. `bar`, `psi`).
-6. Pick a **Detection mode** (see below) and run **Auto-calibrate** if you are not sure which one fits.
+2. (Optional) Click **+** in the profile bar to add another profile bound to a different channel.
+3. Drag the pivot dot to the centre of the gauge.
+4. Drag the radius handles so the search ring (annulus) is just inside the dial face and just before the needle tip.
+5. Drag the **MIN** and **MAX** handles to the start and end of the dial scale.
+6. Set **Min value** and **Max value** to match the printed scale. Set the **Unit** if you want the live readout to show one (e.g. `bar`, `psi`).
+7. Pick a **Detection mode** (see below) and run **Auto-calibrate** if you are not sure which one fits.
 
 ---
 
@@ -105,12 +125,13 @@ If a single frame fails to produce a reading (motion blur, brief occlusion, focu
 
 Each gauge fires its own AXIS event when the value crosses the change threshold.
 
-**Event name:** `{gauge_label}_state` (for example `gauge1_state`)
+**Event name:** `{gauge_label}_state_{profile_name}` (for example `gauge1_state_profile_1`)
 
 **Event data:**
 
 | Field | Description |
 |-------|-------------|
+| profile_name | Name of the profile that emitted the event |
 | gauge_name | Display name of the gauge |
 | value | Current smoothed value (numeric) |
 | raw_angle | Detected needle angle in degrees |
@@ -120,18 +141,21 @@ The unit is **not** carried in the event payload (it would inject non-ASCII byte
 
 ### Combined event
 
-A single combined event fires whenever any gauge changes:
+A single combined event fires per profile whenever any gauge in that profile changes:
 
 | Event name | Description |
 |------------|-------------|
-| `all_gauges_state` | Summary of every configured gauge |
+| `all_gauges_state_{profile_name}` | Summary of every configured gauge in the profile |
 
 **Combined event data:**
 
 | Field | Description |
 |-------|-------------|
+| profile_name | Name of the profile that emitted the event |
 | count | Number of gauges in the report |
 | `gauge_{N}_value` | Current value of gauge N (1-indexed) |
+
+The `_{profile_name}` suffix on the event name means each profile has its own combined event so subscribers can route events per stream.
 
 ### Using events in AXIS rules
 

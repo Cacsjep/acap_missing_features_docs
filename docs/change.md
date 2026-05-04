@@ -6,6 +6,18 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.4.0 - 04.05.2026
+- **F:** Spot Color Detector & Gauge Reader: Multi-profile support. Each feature can now run up to **4 independent profiles** in parallel, each with its own video channel, resolution, framerate, analysis interval, preview config and triggers/gauges. Switch between profiles via the chip selector at the top of the configuration column; add (+) or remove a profile inline.
+- **F:** Spot Color Detector & Gauge Reader: AXIS events are emitted **per profile** and now carry a `profile_name` data field. Combined event names are suffixed with the profile name (e.g. `all_circles_state_profile_1`, `all_gauges_state_profile_1`) so consumers can route them per stream.
+- **F:** Spot Color Detector: New in-app **Help** dialog (next to Fullscreen) covering profiles, triggers, color palette + hysteresis and event semantics.
+- **I:** Gauge Reader: Help dialog updated with a Profiles section.
+- **I:** Spot Color Detector: Layout reworked to a two-column expansion-panel form matching the Gauge Reader (Stream / Detection Settings / Color Palette / Status panels on the left, live overlay + action bar on the right).
+- **I:** Spot Color Detector & Gauge Reader: Profile switching now reconnects the live WebSocket immediately and clears the stale overlay shapes / live state so the user no longer sees the previous profile's circles/rects/gauges for ~5 s after switching.
+- **I:** Spot Color Detector & Gauge Reader: Preview FPS / delay knobs are now persisted into the active profile on save (previously they were tracked only in a UI buffer and lost on reload / profile switch).
+- **B:** Spot Color Detector: SVG rectangle group was not cleared when the video stream disconnected (only the circle group was) — stale rectangles could linger.
+- **B:** Spot Color Detector & Gauge Reader: `mousemove` / `mouseup` listeners attached to `document` during a drag are now removed in `onBeforeUnmount`, preventing a leak if the user navigated away mid-drag.
+- **C:** Database: Auto-migration folds the legacy single-stream rows of `color_trigger_features` and `gauge_reader_features` into a `profiles` JSON column, then drops the old columns. Existing configurations are preserved as "Profile 1".
+
 ##### V3.3.2 - 02.05.2026
 - **B:** Flow: Compare node failed with `unsupported input type int64` when wired to Int outputs from event-source nodes (e.g. Parking Management Exit/Overtime `Duration Minutes`, Zone Full `count`/`capacity`). The node now accepts `int64` alongside `int`, `float64` and numeric strings, with cross-type promotion in every direction.
 - **I:** Flow: Metadata Subscribe Int outputs now consistently emit `int64` (matching the rest of the flow runtime) instead of flipping from `int64` default to `int` after the first event.

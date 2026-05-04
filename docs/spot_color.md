@@ -1,12 +1,12 @@
 # Spot Color Detector
 
-The Spot Color Detector analyzes video frames to detect specific colors within defined circular regions. When a color changes, it triggers AXIS events that can be used in rules or captured by Flow nodes.
+The Spot Color Detector analyzes video frames to detect specific colors within defined circular or rectangular regions. When a color changes, it triggers AXIS events that can be used in rules or captured by Flow nodes.
 
 ---
 
 ## Overview
 
-Define circular "spots" on the video feed and configure a color palette. The system continuously analyzes each spot and detects which palette color is currently visible. When the color changes, an AXIS event is fired.
+Define circular "spots" or rectangular regions on the video feed and configure a color palette. The system continuously analyzes each region and detects which palette color is currently visible. When the color changes, an AXIS event is fired.
 
 **Use Cases:**
 
@@ -17,25 +17,47 @@ Define circular "spots" on the video feed and configure a color palette. The sys
 
 ---
 
+## Profiles
+
+Each Spot Color Detector instance can run **up to 4 independent profiles in parallel**. A profile owns its own video channel, resolution, framerate, analysis interval, preview configuration and trigger set (circles + rectangles). Profiles are useful when a device has multiple sensors/streams and each needs to be monitored separately.
+
+The profile selector is the chip row at the top of the configuration column:
+
+| Action | How |
+|--------|-----|
+| Switch profile | Click any profile chip |
+| Add profile | Click the **+** icon next to the chips (max 4) |
+| Remove profile | Click the **×** on a profile chip (the last remaining profile cannot be removed) |
+| Rename / change channel | Adjust the Stream panel while the profile is active, then **Save** |
+
+When a profile is added or switched the live overlay is cleared immediately and the WebSocket reconnects to the new profile's emitter — you do **not** see the previous profile's circles/rects briefly during the switch.
+
+Per-profile events are described in the **Events** section below.
+
+---
+
 ## Getting Started
 
 1. Navigate to **Spot Color Detector** from the feature menu
-2. The live video preview loads automatically
-3. Click **Add Circle** to create a detection region
-4. Position and resize the circle over the target area
-5. Configure the color palette with expected colors
-6. Start the feature to begin detection
+2. The live video preview loads automatically for the active profile
+3. (Optional) Click **+** in the profile bar to add another profile bound to a different channel
+4. Click **Add Circle** or **Add Rect** to create a detection region
+5. Position and resize the region over the target area
+6. Configure the color palette with expected colors
+7. Start the feature to begin detection
 
 ---
 
 ## Configuration
 
-### Video Settings
+### Video Settings (per profile)
 
 | Setting | Description |
 |---------|-------------|
-| Video Channel | Select the video channel (default: 1) |
-| Resolution | Analysis resolution (lower = faster processing) |
+| Video Channel | Select the video channel for this profile (default: 1) |
+| Resolution | Analysis resolution (lower = faster processing). The dropdown lists only resolutions reported by the selected channel |
+| Framerate | Analysis framerate |
+| Analysis Interval | Minimum time between two analyses (ms) |
 | Hysteresis Threshold | Color distance threshold to prevent flickering (0-100). Set to `0` to disable hysteresis and always match the nearest palette color |
 
 ### Circle Triggers
@@ -140,12 +162,13 @@ The UI displays processing time per frame:
 
 Each circle and rectangle generates an AXIS event when its color changes:
 
-**Event Name:** `{trigger_name}_state`
+**Event Name:** `{trigger_name}_state_{profile_name}`
 
 **Event Data:**
 
 | Field | Description |
 |-------|-------------|
+| profile_name | Name of the profile that emitted the event |
 | trigger_name | Name of the circle or rectangle |
 | color_name | Matched palette color name |
 | confidence | Match confidence (0-1) |
@@ -156,19 +179,20 @@ Combined events fire whenever any trigger changes state, providing all trigger s
 
 | Event Name | Description |
 |------------|-------------|
-| `all_circles_state` | State of all circle triggers |
-| `all_rects_state` | State of all rectangle triggers |
+| `all_circles_state_{profile_name}` | State of all circle triggers in the profile |
+| `all_rects_state_{profile_name}` | State of all rectangle triggers in the profile |
 
 **Combined Event Data:**
 
-Each combined event includes individual color fields for every trigger:
+Each combined event includes individual color fields for every trigger plus the profile identifier:
 
 | Field | Description |
 |-------|-------------|
+| `profile_name` | Name of the profile that emitted the event |
 | `{trigger_name}_color` | Current color for each trigger |
 | `{trigger_name}_confidence` | Match confidence for each trigger |
 
-This allows you to capture the state of all triggers in a single event subscription.
+This allows you to capture the state of all triggers in a single event subscription. The `_{profile_name}` suffix on the event name means each profile has its own combined event so subscribers can route events per stream.
 
 ### Using Events in AXIS Rules
 
@@ -206,9 +230,11 @@ The preview shows:
 | Button | Action |
 |--------|--------|
 | Add Circle | Create new circular detection region |
-| Add Rectangle | Create new rectangular detection region |
+| Add Rect | Create new rectangular detection region |
 | Show/Hide | Toggle overlay visibility |
 | Fullscreen | Expand preview to full screen |
+| Help | Open the in-app guide (profiles, triggers, palette, events) |
+| Save | Persist changes for all profiles |
 
 ---
 
