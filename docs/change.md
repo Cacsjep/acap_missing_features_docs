@@ -6,6 +6,11 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.4.2 - 04.05.2026
+- **I:** Gauge Reader: MIN / MAX angle handles redesigned. The old circles at the outer ring (which covered the printed scale) are replaced with a small pill-shaped chip sitting just *above* the centre of each radial line, oriented along it. The MIN / MAX label is centered on the chip and auto-flips when the angle would otherwise render upside-down (e.g. MIN at -135°). The dial face stays free of UI chrome.
+- **I:** Gauge Reader: Help dialog gained a **Sweep handles** section explaining the pivot, MIN / MAX chips and inner / outer ring dots, including that handles only appear on the active gauge.
+- **B:** Gauge Reader: In fullscreen the SVG overlay no longer drifted away from the underlying video. Added the same `:fullscreen` CSS that Color Trigger has so the stream stretches to the viewport instead of being capped at `max-height: 70vh`, keeping gauge geometry pixel-aligned with the video in both modes.
+
 ##### V3.4.0 - 04.05.2026
 - **F:** Spot Color Detector & Gauge Reader: Multi-profile support. Each feature can now run up to **4 independent profiles** in parallel, each with its own video channel, resolution, framerate, analysis interval, preview config and triggers/gauges. Switch between profiles via the chip selector at the top of the configuration column; add (+) or remove a profile inline.
 - **F:** Spot Color Detector & Gauge Reader: AXIS events are emitted **per profile** and now carry a `profile_name` data field. Combined event names are suffixed with the profile name (e.g. `all_circles_state_profile_1`, `all_gauges_state_profile_1`) so consumers can route them per stream.
