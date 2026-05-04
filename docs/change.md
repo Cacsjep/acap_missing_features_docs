@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.4.3 - 04.05.2026
+- **F:** Gauge Reader: New **Auto** detection mode. The reader now runs all four detection methods (Edge, Dark, Color, Contour) on every frame and picks the one that gives the strongest, most agreed-upon answer. If two or more methods land on the same angle, that becomes the reading. Best choice when lighting or gauge conditions are unpredictable, or when you don't want to commit to a single method. Costs a bit more CPU but on a typical analysis interval the difference is invisible.
+- **I:** Gauge Reader: **Dark** mode now handles faded and low-contrast gauges. Previously a faint needle on a slightly lighter dial could go undetected; the reader now figures out the right cutoff from the actual brightness range of the dial instead of assuming a fixed gap.
+- **B:** Gauge Reader: **Auto-calibrate** now saves the result immediately. Before this fix, clicking Auto-calibrate updated the live preview but the new settings were lost on the next service restart — making it look like Auto-calibrate "didn't do anything" later. No more separate Save click is needed for Auto-calibrate.
+- **I:** Gauge Reader: Help dialog updated. The Detection modes section now lists all five modes (Auto, Edge, Dark, Color, Contour) with one-line guidance for each, and notes that Auto-calibrate persists immediately.
+
 ##### V3.4.2 - 04.05.2026
 - **I:** Gauge Reader: MIN / MAX angle handles redesigned. The old circles at the outer ring (which covered the printed scale) are replaced with a small pill-shaped chip sitting just *above* the centre of each radial line, oriented along it. The MIN / MAX label is centered on the chip and auto-flips when the angle would otherwise render upside-down (e.g. MIN at -135°). The dial face stays free of UI chrome.
 - **I:** Gauge Reader: Help dialog gained a **Sweep handles** section explaining the pivot, MIN / MAX chips and inner / outer ring dots, including that handles only appear on the active gauge.

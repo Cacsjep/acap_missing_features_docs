@@ -74,12 +74,13 @@ The grey area on the overlay shows pixels the algorithm ignores: the disc inside
 
 | Mode | When to use |
 |------|-------------|
-| Edge | Default. Detects the needle as a thin edge. Works even when needle and dial are similar colours |
-| Dark | Needle is clearly darker than the dial face |
+| Auto | Most robust. Runs all four other modes per frame and picks the strongest consensus. Use when conditions vary or you don't want to commit to one mode. Costs ~4x the per-frame CPU of a single mode |
+| Edge | Detects the needle as a thin edge. Works even when needle and dial are similar colours |
+| Dark | Needle is clearly darker than the dial face. Threshold is set automatically by Otsu's method, so it adapts to whatever contrast the dial has — including faded or low-contrast gauges |
 | Color | Needle has a distinctive colour (red, orange). Pick the colour with the eyedropper |
 | Contour | Best for cluttered dials with printed numbers and scale ticks. Finds the needle by tracing a connected shape that crosses both the inner and outer ring |
 
-In **Dark** and **Contour** modes, leaving **Luma threshold** at `0` lets the algorithm derive a sensible cutoff from the mean luma of the search ring. The same auto-mode also detects "light needle on dark dial" cases (e.g. backlit gauges) and flips the comparison automatically.
+In **Dark** mode the threshold is derived from the luma histogram via Otsu's method (maximum inter-class variance) — it adapts to the actual dial-vs-needle contrast and handles "light needle on dark dial" cases automatically. In **Contour** mode the threshold is the annulus mean luma offset by 25 (or by half the observed luma range, whichever is smaller, so low-contrast dials still get a usable cutoff). Setting **Luma threshold** to a non-zero value overrides both.
 
 ### Smoothing and events
 
@@ -92,7 +93,9 @@ The change threshold is measured against the value at the **last emitted** event
 
 ### Auto-calibrate
 
-The **Auto-calibrate** button runs the current frame through every detection mode and a sweep of thresholds, scoring each combination by peak strength and matched-pixel ratio. The best scoring configuration is written back to the gauge. Geometry (pivot, radii, angles) is not touched: that part is set visually with the overlay.
+The **Auto-calibrate** button runs the current frame through every detection mode and a sweep of thresholds, scoring each combination by peak strength and matched-pixel ratio. The best scoring configuration is written back to the gauge **and persisted immediately** — no separate Save click is required, and the calibration survives a service restart. Geometry (pivot, radii, angles) is not touched: that part is set visually with the overlay.
+
+Auto-calibrate picks one specific mode (Edge, Dark, Color, or Contour) — the one that scored highest on the current frame. If you want the reader to keep choosing per frame instead of locking in one mode, switch the mode to **Auto** afterwards.
 
 ---
 
@@ -103,7 +106,8 @@ The **Auto-calibrate** button runs the current frame through every detection mod
 3. The classified pixels feed an angular histogram. The histogram is smoothed and divided by the per-bin annulus density so a thicker scale arc does not get mistaken for a peak.
 4. A weighted PCA on the matched pixels around the peak refines the angle below 1 degree resolution.
 5. **Contour mode** runs a connected-components pass on the matched pixels and picks the largest component that touches both the inner and outer ring. Printed numbers and scale ticks fail that "crosses both rings" test by construction.
-6. The angle is mapped to a numeric value using the configured min/max range, smoothed, and compared against the change threshold.
+6. **Auto mode** runs Edge, Dark, Contour, and (if a needle colour is configured) Color in turn, then picks a consensus answer: the largest cluster of modes whose predicted angles agree within 5°, with the highest-trust mode in that cluster as the final reading. If no two modes agree, the highest-trust mode overall wins. On synthetic data this reaches 98% within-2° on a hostile distribution that includes counterweights, half-needles, perspective tilt, low-contrast dials, glare, noise, blur, scale-text clutter, and intruding ticks.
+7. The angle is mapped to a numeric value using the configured min/max range, smoothed, and compared against the change threshold.
 
 ### Hold-last-good
 
@@ -207,9 +211,11 @@ The preview shows:
 
 ### Detection mode
 
-- Try **Edge** first. It tolerates same-colour needles and dials better than the threshold modes.
+- If you don't know which mode fits, pick **Auto**. It runs all four every frame and picks the strongest consensus. CPU cost is roughly 4x a single mode but on a typical analysis interval (≥ 200 ms) this is cheap.
+- For lowest CPU cost: try **Edge** first. It tolerates same-colour needles and dials better than the threshold modes.
 - Use **Contour** on busy dials with lots of printed text inside the ring.
 - Use **Color** only when the needle is brightly coloured and the dial is not.
+- Use **Dark** when the needle is plainly darker than the dial. The new Otsu threshold makes Dark mode work on low-contrast dials too — you no longer need to switch to Edge for faded gauges.
 
 ### Stability
 
