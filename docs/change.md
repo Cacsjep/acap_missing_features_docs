@@ -6,6 +6,15 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.5.0 - 05.05.2026
+- **F:** Spot Color Detector: New **Color Rules**. Each profile can define up to **12 named rules**, each watching one circle or rect for up to **4 palette colors**. Every rule emits two AXIS events — a persistent state event (one bool per color, plus `unknown`) and a one-shot trigger event — so you can wire "while red, close IO" and "when it turns red, send a notification" separately in the rule engine.
+- **C:** Spot Color Detector: The color palette is now **per profile** instead of feature-wide. Existing single-palette configs are migrated into each profile on first load.
+- **I:** Spot Color Detector: Palette colors and circle/rect regions can no longer be deleted while a Color Rule references them — a toast shows which rule is in the way.
+- **I:** Spot Color Detector: All AXIS events are now prefixed with `Spot Color -` in their nice name so they are easier to find in the device event browser.
+
+##### V3.4.4 - 05.05.2026
+- **F:** Gauge Reader: Add FPS setting
+
 ##### V3.4.3 - 04.05.2026
 - **F:** Gauge Reader: New **Auto** detection mode. The reader now runs all four detection methods (Edge, Dark, Color, Contour) on every frame and picks the one that gives the strongest, most agreed-upon answer. If two or more methods land on the same angle, that becomes the reading. Best choice when lighting or gauge conditions are unpredictable, or when you don't want to commit to a single method. Costs a bit more CPU but on a typical analysis interval the difference is invisible.
 - **I:** Gauge Reader: **Dark** mode now handles faded and low-contrast gauges. Previously a faint needle on a slightly lighter dial could go undetected; the reader now figures out the right cutoff from the actual brightness range of the dial instead of assuming a fixed gap.

@@ -19,7 +19,7 @@ Define circular "spots" or rectangular regions on the video feed and configure a
 
 ## Profiles
 
-Each Spot Color Detector instance can run **up to 4 independent profiles in parallel**. A profile owns its own video channel, resolution, framerate, analysis interval, preview configuration and trigger set (circles + rectangles). Profiles are useful when a device has multiple sensors/streams and each needs to be monitored separately.
+Each Spot Color Detector instance can run **up to 4 independent profiles in parallel**. A profile owns its own video channel, resolution, framerate, analysis interval, preview configuration, trigger set (circles + rectangles), color palette and color rules. Profiles are useful when a device has multiple sensors/streams and each needs to be monitored separately.
 
 The profile selector is the chip row at the top of the configuration column:
 
@@ -109,7 +109,7 @@ Rectangles provide flexible detection regions that can handle lens distortion be
 
 ### Color Palette
 
-The palette defines which colors the system recognizes:
+The palette defines which colors the system recognizes. Each **profile** has its own palette so two profiles watching different scenes can use different vocabularies.
 
 **Default Colors:**
 - Basic: Red, Green, Blue, Yellow, Orange, Purple, Cyan, Magenta, White, Black, Gray
@@ -123,6 +123,26 @@ The palette defines which colors the system recognizes:
 | Add Detected | Click "Add to Palette" on a circle's detected color |
 | Remove Color | Click the X on a color chip |
 | Reset Palette | Click "Reset" to restore defaults |
+
+A palette color cannot be deleted while a Color Rule references it — remove or edit the rule first.
+
+### Color Rules
+
+Color Rules turn "this region is currently showing one of these colors" into AXIS events that the device's rule engine can act on directly.
+
+Each rule is:
+
+- **Name** — letters, spaces, hyphen and underscore only. Becomes the event nice name.
+- **Trigger** — one circle or one rect on this profile.
+- **Colors** — up to **4** palette colors that should activate the rule.
+
+Up to **12 rules per profile**. The same circle or rect can be referenced by multiple rules — for example "Stop" on red and "Go" on green for the same traffic light.
+
+**Why a rule and not just the per-region event?** The Axis rule engine cannot match on a string field like `color_name == "Red"`. A Color Rule packages "this region + these colors" into events with bool fields, which the rule engine *can* condition on.
+
+**Each rule produces two events** (see Events below): a persistent state event and a one-shot trigger event.
+
+A circle or rect cannot be deleted while a Color Rule references it — remove or repoint the rule first.
 
 ---
 
@@ -172,6 +192,20 @@ Each circle and rectangle generates an AXIS event when its color changes:
 | trigger_name | Name of the circle or rectangle |
 | color_name | Matched palette color name |
 | confidence | Match confidence (0-1) |
+
+### Color Rule Events
+
+Each Color Rule registers two events. Both are prefixed with `Spot Color -` in the device event browser.
+
+| Event Name | Stateless | Description |
+|------------|-----------|-------------|
+| `rule_{event_key}_{profile_name}` | no  | Persistent state event. One bool per rule color (key = sanitized color name) plus a reserved `unknown` bool. Exactly one is true at a time. |
+| `rule_{event_key}_trigger_{profile_name}` | yes | Fired the moment the matched bucket changes — entering one of the rule's colors, flipping between them, or going into `unknown`. Same bool fields as the state event. |
+
+`event_key` is the rule name lowercased with spaces stripped.
+
+**Use the state event** when you want something to stay on while the color is showing (e.g. close an IO relay).
+**Use the trigger event** when you want a one-shot reaction the moment the color changes (e.g. send a notification).
 
 ### Combined Events
 
