@@ -6,6 +6,10 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.5.2 - 08.05.2026
+- **I:** Flow: Add List Iterator
+- **B:** Flow Dashboard: Fix Weather and Youtube Issue regarding to external request from axis webserver (CSP)
+
 ##### V3.5.0 - 05.05.2026
 - **F:** Spot Color Detector: New **Color Rules**. Each profile can define up to **12 named rules**, each watching one circle or rect for up to **4 palette colors**. Every rule emits two AXIS events — a persistent state event (one bool per color, plus `unknown`) and a one-shot trigger event — so you can wire "while red, close IO" and "when it turns red, send a notification" separately in the rule engine.
 - **C:** Spot Color Detector: The color palette is now **per profile** instead of feature-wide. Existing single-palette configs are migrated into each profile on first load.
