@@ -70,6 +70,17 @@ Writes messages to the Axis device system log.
 - **Inputs**: `Write` (trigger), `Message` (text)
 - **Outputs**: None
 
+#### Axis SVG Overlay
+
+Draws an SVG graphic onto a camera stream. `{{ name }}` placeholders in the SVG become inputs on the node automatically.
+
+- **Inputs**: `Enable`, plus one input per placeholder in your SVG
+- **Outputs**: None
+- **Properties**: Stream, Anchor (top-left / top-right / bottom-left / bottom-right / centre), SVG template (edited in the full-screen **SVG Editor**)
+- **Needs**: Overlay service enabled in **Settings → Overlay**
+
+The SVG Editor has a live preview and a built-in AI prompt you can paste into ChatGPT or Claude to generate overlays. See the [device nodes page](device_nodes.md#axis-svg-overlay) for the full guide.
+
 #### Axis SD Card Nodes
 
 File operations on the camera's SD card:

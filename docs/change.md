@@ -6,6 +6,11 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.6.0 - 21.05.2026
+- **F:** Flow: New **Axis SVG Overlay** node. Draws an SVG graphic onto the camera image. `{{ name }}` placeholders in the SVG become inputs on the node, so flow values can update the picture live. Supports if/else blocks for conditional graphics and simple math/comparison inside placeholders.
+- **F:** Flow: The Axis SVG Overlay node has a full-screen **SVG Editor** with a live preview and a built-in AI prompt. Paste it into ChatGPT or Claude, describe the overlay you want, and paste the result back.
+- **F:** Settings: New **Overlay** tab to turn the overlay service on or off. The Apply button shows a spinner while the service starts or stops and refreshes the status automatically.
+
 ##### V3.5.2 - 08.05.2026
 - **I:** Flow: Add List Iterator
 - **B:** Flow Dashboard: Fix Weather and Youtube Issue regarding to external request from axis webserver (CSP)

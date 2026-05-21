@@ -1,7 +1,7 @@
 # General Settings / Bottom Bar
 
 General Settings is reachable via the cog icon in the bottom-left corner.
-The dialog wraps five tabs: **Users**, **Roles**, **UI**, **Server**, and **Backup**.
+The dialog wraps six tabs: **Users**, **Roles**, **Server**, **Overlay**, **UI**, and **Backup**.
 
 ---
 
@@ -49,6 +49,20 @@ Choose from `Debug`, `Info`, `Warning`, or `Error` to control how much data the 
 - When you select the uploaded mode, the card surfaces a status badge (`Uploaded certificate pair is stored and active` or `No valid uploaded certificate found`) plus a **Replace Certificate** button that reveals fresh `Certificate PEM` and `Private Key PEM` inputs.
 - The **Upload Certificate Pair** button turns green once both files are selected and stays disabled otherwise; it validates the PEM pair before storing it so your camera never switches to an unusable certificate.
 - Saving Settings is blocked until a valid uploaded pair exists, preventing the web server from restarting with broken TLS. When the running certificate actually changes (mode toggle or replaced pair), the backend closes the HTTP connection so Axis OS can reload the new certificate cleanly—expect a short reconnect while the browser re-establishes the session.
+
+---
+
+## Overlay tab
+
+The **Overlay** tab turns the overlay rendering service on or off. Enable it so the **Axis SVG Overlay** flow node can draw onto your camera streams.
+
+| Field | Description |
+|---|---|
+| **Enable overlay rendering** | Turns the overlay service on or off. When off, no SVG overlays will appear on the camera image. |
+| **Status** | Shows whether the service is `running`, `stopped`, `starting`, `crashed`, or `unsupported` on this device. |
+| **Apply** | Saves the change. A spinner is shown while the service starts or stops; the status updates automatically. |
+
+If the status stays at `unsupported`, this Axis device does not support the overlay rendering feature.
 
 ---
 

@@ -22,6 +22,97 @@ Connects to a device's RTSP stream. Supports visualizing region-of-interest (ROI
 
 ---
 
+## Axis SVG Overlay
+
+The **Axis SVG Overlay** node draws an SVG graphic onto the camera image. The SVG is a small template, and any `{{ name }}` placeholder you put inside it becomes an input on the node, so values from your flow (sensor readings, statuses, counters) can change the picture live.
+
+**Category**: Device
+**Type**: `AxisSVGOverlayNode`
+
+**Before you start**: enable the overlay service in **Settings → Overlay**. Without it, nothing will be drawn on the stream.
+
+### Inputs
+
+| Name | Type | Description |
+|---|---|---|
+| **Enable** | Boolean | Turns the overlay on or off live. When false, the overlay is cleared from the stream. |
+| *(your variables)* | Any | One input per `{{ name }}` placeholder in your SVG. Inputs appear automatically when you save the template. Pick the data type for each one from the dropdown. |
+
+### Properties
+
+| Field | Description |
+|---|---|
+| **Stream** | Which camera stream to draw on (0 = main stream). |
+| **Anchor** | Where the SVG sits on the image: `top-left`, `top-right`, `bottom-left`, `bottom-right`, or `center`. Used when your SVG declares a `width` and `height`. |
+| **SVG Editor** | Opens a full-screen editor with the SVG on the left and a live preview on the right. |
+
+### SVG Editor
+
+Click **SVG Editor** to open the full-screen view. You edit the SVG on the left and watch the preview on the right. Two preview modes:
+
+- **Literal**: shows your `{{ name }}` placeholders as text, so you can check the layout and shapes.
+- **Sample values**: fills the placeholders with sample numbers so the overlay actually draws something.
+
+The right side also has a help section. The first panel, **LLM prompt: generate SVG with an AI assistant**, gives you a ready-made prompt you can paste into ChatGPT, Claude, or any other AI assistant. Type what overlay you want at the bottom of the prompt and the assistant will generate an SVG that works here. The other panels list the template syntax and supported SVG features.
+
+### Placeholders
+
+Anywhere in the SVG you can write `{{ name }}` to insert a value from a node input. You can do simple math and comparisons inside the braces too:
+
+- Numbers, text, true / false
+- `+ - * / %` for math
+- `<  >  ==  !=` for comparing
+- `cond ? a : b` to pick between two values (used a lot for colour changes)
+
+You can also wrap whole parts of the SVG with an if/else block:
+
+```xml
+{{#if alert}}
+  <circle cx="20" cy="20" r="6" fill="red"/>
+{{else}}
+  <circle cx="20" cy="20" r="6" fill="green"/>
+{{/if}}
+```
+
+!!! tip "Special characters inside { { } }"
+    If you need `<` or `&` inside an attribute, write `&lt;` and `&amp;` instead. The browser-style preview will warn you if something is wrong.
+
+### Sizing
+
+Two ways the SVG can fit on the camera image:
+
+| Mode | When | Result |
+|---|---|---|
+| **Fixed size** | Your `<svg>` has a `width` and `height` | The SVG is drawn at exactly that size and placed at the selected **Anchor** corner / centre. The rest of the image stays transparent. |
+| **Full stream** | No `width` and `height` (only `viewBox`) | The SVG is stretched to cover the whole camera image. |
+
+Compact sizes (for example 360×360 or 240×520) usually look best. Pick a corner with **Anchor** and leave the rest of the picture visible.
+
+### Example
+
+A vertical bar that fills as a `level` value (0–100) goes up, switching colour from green to amber to red:
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 300" width="60" height="300">
+  <style>
+    .track { fill:#1a1d24; stroke:#2d3340; stroke-width:1 }
+    .label { font:500 10px "DejaVu Sans"; fill:#cfd2db }
+  </style>
+  <rect class="track" x="20" y="40" width="20" height="240" rx="10"/>
+  <rect x="20"
+        y="{{ 280 - level * 2.4 }}"
+        width="20"
+        height="{{ level * 2.4 }}"
+        rx="10"
+        fill="{{ level &lt; 20 ? '#ef5350' : level &lt; 80 ? '#f8d54b' : '#8fcb6e' }}"/>
+  <text class="label" x="30" y="20" text-anchor="middle">{{ level }}%</text>
+</svg>
+```
+
+Connect a number (a sensor reading, a counter, anything) to the `level` input. Leave **Enable** turned on. The bar updates live on the camera image.
+
+---
+
 ## Axis Output
 The **Axis Output** node controls physical I/O ports on the device (e.g., relays, digital outs).
 
