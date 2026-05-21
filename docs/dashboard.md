@@ -17,7 +17,6 @@ Dashboards display live data from your Flow nodes through configurable widgets. 
 - Edit and Live modes
 - Fullscreen mode for dedicated displays
 - Permission-based access control
-
 ---
 
 ## Getting Started
