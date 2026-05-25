@@ -6,6 +6,26 @@
 - **F:** New Feature
 - **C:** Change
 
+##### V3.6.6 - 25.05.2026
+- **B:** Flow: **Json to Node** was writing the first parsed key into an unused **Error** output slot, shifting every dynamic key by one and silently dropping the last one. Removed the dead Error output so the backend slice indexes line up with the front-end again. Same bug existed in the **Add Json to Node** dialog (used when first creating the node from the palette) and is fixed too.
+
+##### V3.6.5 - 23.05.2026
+- **F:** Flow: New **OPC UA Multi Read** and **OPC UA Multi Write** nodes. Batch many OPC UA node IDs into a single request, with one value output per item (Multi Read) or one value input per item (Multi Write). Much faster than chaining several single Read/Write nodes when polling or pushing many tags at once.
+- **I:** Flow: OPC UA heartbeat is now **async with a 1500 ms timeout** and runs single-flight. A hung OPC UA server can no longer block the flow execution thread, and disconnects are picked up faster (heartbeat interval lowered to 1 s).
+- **B:** Flow: OPC UA Read / Multi Read no longer return stale cached values. `MaxAge` is now `0`, so every Read pulse fetches the current server value.
+- **I:** Flow: Axis SVG Overlay node properties dialog reworked. Larger editor pane, more SVG snippets, expanded inline help and AI-prompt section.
+- **B:** Flow: Axis SVG Overlay preview canvas fix.
+
+##### V3.6.4 - 22.05.2026
+- **B:** Overlay service: Listener close detection rewritten, fixing cases where the overlay service could fail to exit cleanly on shutdown.
+
+##### V3.6.3 - 22.05.2026
+- **B:** CI: Fix overlay binary not being shipped in the built ACAP.
+
+##### V3.6.2 - 21.05.2026
+- **F:** Parking Management: New combined **Detection** event per zone (stateless ACAP event). Fires on every plate read with `plate`, `plateName`, `allowed`, `inList`, `tags`, `camera` and the LPV plate crop (base64), so downstream systems get one unified feed instead of having to stitch Entry / Unauthorized events together.
+- **I:** Parking Management: `plateName` is now included in the Entry / Exit / Overtime event payloads.
+
 ##### V3.6.1 - 21.05.2026
 - **F:** Flow: New **Axis SVG Overlay** node. Draws an SVG graphic onto the camera image. `{{ name }}` placeholders in the SVG become inputs on the node, so flow values can update the picture live. Supports if/else blocks for conditional graphics and simple math/comparison inside placeholders.
 - **F:** Flow: The Axis SVG Overlay node has a full-screen **SVG Editor** with a live preview and a built-in AI prompt. Paste it into ChatGPT or Claude, describe the overlay you want, and paste the result back.

@@ -20,9 +20,9 @@ Flow now supports **multiple flows** with a browser-like tab interface. Each flo
 | **Rename Flow** | Double-click the tab name, or click the pencil icon |
 | **Delete Flow** | Click the **X** button on a tab (requires at least 2 flows) |
 
-- A **green play icon** indicates a running flow
-- Flows can run simultaneously—start multiple flows for parallel automation
-- Each flow has its own canvas, nodes, and execution state
+- A **green play icon** indicates a running flow.
+- Flows can run simultaneously—start multiple flows for parallel automation.
+- Each flow has its own canvas, nodes, and execution state.
 
 ---
 
