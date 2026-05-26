@@ -8,11 +8,11 @@ The Parking Times feature tracks vehicle parking duration using license plate re
 
 The Parking Times feature:
 
-- Tracks vehicle entry and exit times via LPR events
-- Calculates parking duration in real-time
-- Alerts when maximum parking time is exceeded
-- Supports multiple parking zones with different cameras
-- Provides live monitoring via WebSocket
+- Tracks vehicle entry and exit times via LPR events.
+- Calculates parking duration in real-time.
+- Alerts when maximum parking time is exceeded.
+- Supports multiple parking zones with different cameras.
+- Provides live monitoring via WebSocket.
 
 ---
 

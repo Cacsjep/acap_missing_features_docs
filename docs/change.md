@@ -6,6 +6,12 @@
 - **F:** New Feature
 - **C:** Change
 
+
+##### V3.6.7 - 26.05.2026
+- **B:** Flow: Removing a second or any additonal flow, does not auto switch to an existing one in UI.
+- **I:** Flow: Persistent edge mode, per default now its simple edge mode.
+- **I:** Flow: Add PTZ Controller Events to Metadata subscribe
+
 ##### V3.6.6 - 25.05.2026
 - **B:** Flow: **Json to Node** was writing the first parsed key into an unused **Error** output slot, shifting every dynamic key by one and silently dropping the last one. Removed the dead Error output so the backend slice indexes line up with the front-end again. Same bug existed in the **Add Json to Node** dialog (used when first creating the node from the palette) and is fixed too.
 
