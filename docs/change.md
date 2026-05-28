@@ -7,6 +7,15 @@
 - **C:** Change
 
 
+##### V3.6.11 - 28.05.2026
+- **F:** License Plate List: New per-plate **Blocked** flag. Blocked plates are denied entry like unknown plates (an unauthorized entry row is recorded, the email notification and IO rules fire), unlike the existing **Ignore** flag which silently drops the detection. Useful for explicitly banned vehicles where you still want a paper trail.
+- **F:** Parking Management: `PM_<zone>_Detection` event now carries a tri-state `state` field (0 = not allowed, 1 = allowed, 2 = blocked) alongside the existing `allowed` bool, so downstream systems can distinguish "unknown plate" from "explicitly blocked plate" without losing backwards compatibility.
+- **F:** Parking Management: New per-zone **Lane Traversal Time** setting for single-lane setups with a dedicated entry camera before the barrier and a dedicated exit camera after it (both facing away from the barrier). Within the configured window after an entry, an exit detection of the same plate is treated as the partner camera's rear view of the same car and ignored; the reverse also holds within the window after an exit. Set to 0 to disable. Typical lane: 5 to 15 seconds. Only shown when the zone has both a dedicated entry and a dedicated exit camera.
+- **I:** License Plate List: CSV import and export now include `ignore` and `blocked` columns. 
+- **B:** Parking Management: CarID parsing failed with `strconv.ParseInt: value out of range` once camera IDs grew past the int32 range (over 2,147,483,647). 
+- **B:** Parking Management Zones: **Remove Device** in the Devices dialog (opened from the Zones / Access tabs) now shows a confirmation dialog and actually deletes the device. Previously the click emitted an event that the host did not handle, so nothing happened. 
+- **I:** Parking Management Zones: Settings row label centering fixed. 
+
 ##### V3.6.7 - 26.05.2026
 - **B:** Flow: Removing a second or any additonal flow, does not auto switch to an existing one in UI.
 - **I:** Flow: Persistent edge mode, per default now its simple edge mode.

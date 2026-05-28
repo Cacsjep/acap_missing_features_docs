@@ -48,7 +48,12 @@ Each parking zone represents a physical area (parking level, section, or lot):
 | **Capacity** | Maximum number of vehicles (0 = unlimited) |
 | **Default Stale Timeout** | Minutes before parked entries are marked as stale (overrides global setting) |
 | **Free Flow** | When enabled, entries are recorded but access is never denied regardless of capacity, tags, or authorization |
+| **Free Flow Max Parking Time** | Free Flow only. Max minutes a vehicle may stay before overtime fires (0 = no limit) |
+| **Free Flow Plate Match** | Free Flow only. Allowed character drift between entry and exit reads: Strict (exact), 1 char, or 2 chars. Tolerates OCR jitter. Ties (two parked plates equidistant) fall back to "no match" so the wrong vehicle is never released |
 | **Re-entry Dedup Seconds** | For cameras configured as "Entry & Exit": time window during which a repeated read of the same plate is treated as a duplicate instead of an exit (0 = default 10s) |
+| **Rejected Dedup Seconds** | Time window during which duplicate Unauthorized / Exit-without-Entry events for the same plate are suppressed (0 = default 30s). Prevents the siren and IO rules from re-firing while a denied car lingers at the gate |
+| **Lane Traversal Time** | Single-lane setups with a dedicated entry camera before the barrier and a dedicated exit camera after it (both facing away from the barrier). Seconds a car needs to physically cross the barrier. Within this window after an entry, an exit detection of the same plate is treated as the partner camera's rear view of the same car and ignored; the reverse also holds within the window after an exit. Set to 0 to disable. Typical: 5 to 15 seconds. Only shown when the zone has both a dedicated entry and a dedicated exit camera |
+| **Snapshot on Entry / Exit** | Capture and store a snapshot image when a vehicle enters or exits this zone. Images are saved to SD card |
 
 !!! note "Free Flow Mode"
     Free Flow is useful for open parking lots where you want to track vehicles and collect statistics without enforcing access rules. All plates are allowed through; overtime and unauthorized events are still logged for reporting but do not affect entry decisions.
@@ -105,6 +110,14 @@ When a plate is detected, the system:
 
 !!! note "Date Validation"
     Plates with a **From Date** that hasn't been reached yet, or a **To Date** that has passed, will be denied access even if they have valid tags.
+
+!!! note "Blocked vs. Ignore"
+    Two per-plate flags from the License Plate List shape what happens on a read:
+
+    - **Blocked**: the plate is denied like an unknown plate. An `unauthorized_entry` row is created, the email notification fires, IO Rules wired to the `Unauthorized` event run, and the live event log shows the plate as blocked. Use this for explicitly banned vehicles where you still want a paper trail.
+    - **Ignore**: the plate is silently dropped. No entry, no exit, no unauthorized event, no email, no IO Rules. The live event log still shows the read tagged `IGNORE` so operators see it was observed. Use this for known false positives (e.g. a nearby billboard read as a plate).
+
+    The `PM_<zone>_Detection` platform event distinguishes the three outcomes via its `state` field (`0` = not allowed, `1` = allowed, `2` = blocked) while keeping the boolean `allowed` field for backwards compatibility.
 
 ---
 
@@ -377,10 +390,11 @@ Parking Management generates AXIS Metadata events:
 |-------|-------------|
 | **Entry** | Vehicle entered a zone |
 | **Exit** | Vehicle exited a zone |
-| **Unauthorized** | Unknown plate or plate without allowed tags attempted entry |
+| **Unauthorized** | Unknown plate, blocked plate, or plate without allowed tags attempted entry |
 | **Overtime** | Vehicle exceeded max parking time |
 | **Zone Full Rising** | Zone reached capacity limit (rising edge - fires once on crossing) |
 | **Zone Full Falling** | Zone dropped below capacity limit (falling edge - fires once on crossing) |
+| **Detection** | Combined stateless event fired on every plate read. Payload: `plate`, `plateName`, `allowed` (bool), `state` (int: 0 = not allowed, 1 = allowed, 2 = blocked), `inList`, `tags`, `camera`, and the LPV plate crop (base64). ACAP-only, not exposed in IO Rules. Use it when you want one unified feed instead of stitching Entry / Unauthorized together |
 | **Count Changed** | Zone occupancy changed (ACAP-only, not exposed in Access Control UI) |
 
 Events include metadata: plate, zone, tag, duration, camera name.
