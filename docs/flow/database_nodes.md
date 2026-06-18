@@ -471,6 +471,25 @@ Instead of returning raw rows, SQL Table Read can compute an aggregate over a co
 
 The aggregate result is returned as a single row in `Rows JSON`. Filters still apply, so you can aggregate over time windows (e.g. AVG of `temperature` over the last hour).
 
+### Downsampling (Time Buckets)
+
+For charts, returning thousands of raw rows is slow and hard to read. SQL Table Read can group rows into fixed time buckets and aggregate each bucket, so a wide time range returns a manageable number of points.
+
+| Setting | Description |
+|---------|-------------|
+| Bucket | Bucket size: `10s`, `30s`, `1m`, `5m`, `10m`, `30m`, `1h`, `2h`, `12h`, `1d`, `7d` (or none) |
+| Time Column | The timestamp column the bucket floors against |
+| Value Series | One or more columns, each with an aggregation (`MIN` / `MAX` / `AVG` / `SUM` / `COUNT`) |
+
+Each series becomes one column in the output, with one row per bucket. The bucketing SQL is built per driver (SQLite, MySQL, PostgreSQL, SQL Server) using an epoch-floor expression, and the generated query is shown in the node properties so you can verify it.
+
+#### Raw (no bucketing) series
+
+A value series can be flagged **Raw**. A raw column is returned at its exact timestamps (merged in via `UNION`) while the other series stay bucketed. This is useful for a boolean marker or event you want to see at the precise moment it occurred, alongside downsampled metrics in the same chart.
+
+!!! tip
+    Pick the bucket so the visible range yields roughly a few hundred points. For example, 7 days at a `1h` bucket is ~168 rows instead of tens of thousands of raw samples.
+
 ### Filters
 
 Add filters to select specific rows. Each filter has:

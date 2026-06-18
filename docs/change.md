@@ -7,6 +7,31 @@
 - **C:** Change
 
 
+##### V3.6.15 - 18.06.2026
+- **F:** Flow: New **JSON to Flat** node. Flattens a nested JSON object into one typed output per leaf, using dot-notation names (e.g. `user.address.city`). Paste a sample JSON and the node auto-detects each field's data type; you can override a type or paste new JSON and re-run. Arrays are emitted as a single string output (not expanded) so the node stays manageable.
+- **F:** Flow: **Axis SVG Overlay** now supports **loops**. `{{#each list as item, i}} ... {{/each}}` repeats a block once per element of a JSON array, so one template can render a dynamic list (live scoreboards, device lists, etc.). The collection is a single string input port holding JSON text; `item` / `i` are loop-local and do not become ports. Reach into each element with dot paths like `{{ item.homeTeam.name }}` and position each repeat using the index. Loops may nest and may contain `{{#if}}` blocks.
+- **I:** Flow: **JSON to Node** fixes. Pasting a new JSON now updates the outputs, the data type can be selected per key (with auto-detection on paste), and a key-relabel bug was fixed. JSON to Node and JSON to Flat now share the same parsing and type-inference logic.
+- **I:** Flow: Axis SVG Overlay editor now flags **HTML-escaped markup** (`&lt;tag&gt;`, common when pasting AI output) with a clear in-preview error and a one-click **Fix automatically** button. Escaping inside `{{ }}` expressions is left untouched.
+- **I:** Flow: Axis SVG Overlay expressions decode XML entities consistently, so `&lt;` / `&gt;` / `&amp;&amp;` behave the same inside `{{ }}`, `{{#if}}` and `{{#each}}` headers, matching the on-device renderer.
+- **B:** Flow: Axis SVG Overlay `<tspan>` text written across multiple source lines no longer renders stray boxes. Whitespace inside `<tspan>` is now collapsed (newlines / indentation to single spaces) the same way as `<text>`.
+- **I:** Flow: JSON to Flat, JSON to Node and Axis SVG Overlay nodes were widened so long dot-notation / key names fit.
+
+##### V3.6.13 - 17.06.2026
+- **F:** Flow: **SQL Table Read** time-bucket downsampling. Add a GROUP BY time bucket (10 s up to 7 d) with a per-column aggregation (min / max / avg / sum / count) to cut the number of points returned for charts. Works on SQLite, MySQL, PostgreSQL and SQL Server using per-driver epoch-floor SQL; the generated query is shown in the node properties.
+- **F:** Flow: SQL Table Read **Raw (no bucketing)** option per value series. A column flagged raw is returned at its exact timestamps (via UNION) while the other columns stay bucketed. Useful for boolean markers / events you want to see at the precise moment alongside downsampled metrics.
+- **F:** Dashboard: Chart **Timestamps are UTC** option. When timestamps are stored in UTC, enable this to display them in the browser's local time instead of treating them as already-local.
+- **B:** Dashboard: Chart zoom no longer jumps back in live mode. The chart options are now reference-stable, so incoming data keeps the current zoom / pan.
+- **I:** Dashboard: Chart annotations are now stable across updates and the time unit is auto-optimized for the visible range.
+
+##### V3.6.12 - 09.06.2026
+- **F:** Parking Management: Manual add gained **Name**, **Car Type**, **Car Color**, **Country** and **Region** fields (with a country color dot), plus a **Manual Exit** action for parked vehicles. Added validation for manually entered plates and fixed the camera selection when adding from the plate log.
+- **F:** Parking Management: New per-zone **custom fields** and a **visual zone editor** for configuring zones and viewing/entering those fields in the live view and history.
+- **I:** Parking Management: Zone configuration moved behind a per-zone **cog button**, with column selectors and clearer field names.
+- **I:** Parking Management: Plate Log gained a **Duplicate hide** toggle to collapse repeated reads, and the tooltip position was fixed.
+- **I:** Parking Management: The retention sweep (old entries, their snapshot files and the snapshot disk cap) now runs **hourly** instead of once a day, so cleanup is more prompt and each sweep is smaller.
+- **B:** Parking Management: Manually adding an already-parked vehicle no longer leaves a stale **overtime** tag.
+- **B:** Parking Management: Fixed zone / entry deletion.
+
 ##### V3.6.11 - 28.05.2026
 - **F:** License Plate List: New per-plate **Blocked** flag. Blocked plates are denied entry like unknown plates (an unauthorized entry row is recorded, the email notification and IO rules fire), unlike the existing **Ignore** flag which silently drops the detection. Useful for explicitly banned vehicles where you still want a paper trail.
 - **F:** Parking Management: `PM_<zone>_Detection` event now carries a tri-state `state` field (0 = not allowed, 1 = allowed, 2 = blocked) alongside the existing `allowed` bool, so downstream systems can distinguish "unknown plate" from "explicitly blocked plate" without losing backwards compatibility.

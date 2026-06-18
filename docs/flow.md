@@ -170,7 +170,8 @@ For a complete, per-node breakdown covering every template in the catalog (input
 
 - **HTTP Request** - Fires when `Enable` is true; `Reset` clears state. Outputs: `Success`, `Status`, `Body`, `Error`. Properties: URL, method, body type (none/form/JSON/raw/XML), auth (none/basic/digest), headers, params, timeout, skip TLS verify.  
 - **JSON Key Extractor** - On `Extract`, pulls a key (dot notation allowed) from a JSON string; `Reset` clears. Outputs: `Value`, `Found`. Properties: key and output type.
-- **JSON to Node** - Splits a JSON object into individual outputs for each top-level key; configure keys and sample JSON for auto-generation.  
+- **JSON to Node** - Splits a JSON object into one typed output per top-level key. Paste a sample JSON to auto-generate the keys and detect each data type; you can override a type or paste new JSON and re-run.  
+- **JSON to Flat** - Flattens a nested JSON object into one typed output per leaf, named with dot notation (`user.address.city`). Same paste / auto-detect / re-run flow as JSON to Node. Arrays are emitted as a single string output rather than being expanded.  
 - **JSON Array Selector** - Selects an array element by index from a JSON string; outputs the item JSON plus `Found`/`Processed` flags.
 - **TCP Server** - Accepts raw TCP connections and converts each payload to a string. Outputs: a per-request `New Message` pulse, the latest `Message`, and an `Error` string when listener failures occur. Properties: bind port, per-second rate limit and enable input.
 - **TCP Message Sender** - Sends the provided string payload to a configured host/port on every rising `Send` trigger. Outputs a one-cycle `Success` pulse plus `Error`. Properties assume a host/IP, port, and timeout.

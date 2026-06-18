@@ -75,7 +75,29 @@ You can also wrap whole parts of the SVG with an if/else block:
 ```
 
 !!! tip "Special characters inside { { } }"
-    If you need `<` or `&` inside an attribute, write `&lt;` and `&amp;` instead. The browser-style preview will warn you if something is wrong.
+    If you need `<`, `>` or `&` inside an attribute expression, write `&lt;`, `&gt;` and `&amp;` instead. This works the same inside `{{ }}`, `{{#if}}` and `{{#each}}`. If you accidentally paste an SVG whose **tags** are escaped (e.g. `&lt;rect&gt;` instead of `<rect>`, common when copying from an AI assistant), the preview shows a clear error with the affected lines and a **Fix automatically** button.
+
+### Loops
+
+To draw a list, repeat a block once per element of a JSON array with `{{#each}}`:
+
+```xml
+{{#each matches as m, i}}
+  <g transform="translate(0 {{ i * 80 }})">
+    <text x="20" y="40">{{ m.homeTeam.name }}</text>
+    <text x="200" y="40">{{ m.score.fullTime.home }} - {{ m.score.fullTime.away }}</text>
+  </g>
+{{/each}}
+```
+
+- The collection (`matches`) is a **single input port that holds a JSON array as a string** - set its data type to **String**. Flow transmits JSON as text, so feed the array text straight in.
+- `as m` names each element; the optional `, i` adds the 0-based index. Both are loop-local and do **not** become input ports.
+- Reach into each element with dot paths: `{{ m.homeTeam.name }}`, `{{ m.score.fullTime.home }}`. Missing fields render empty.
+- SVG has no automatic layout, so position each repeat yourself using the index, e.g. `translate(0 {{ i * 80 }})` or `y="{{ 40 + i * 40 }}"`.
+- Loops may nest and may contain `{{#if}}` blocks. The `<svg>` canvas size is fixed, so size it for the expected number of rows.
+
+!!! note "Text whitespace"
+    Inside `<text>` and `<tspan>`, line breaks and runs of spaces are collapsed to a single space (standard SVG). Indent the markup freely, but for alignment use coordinates (`x` / `dx`), not extra spaces.
 
 ### Sizing
 

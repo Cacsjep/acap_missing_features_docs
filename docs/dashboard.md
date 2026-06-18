@@ -227,8 +227,9 @@ Visualizes JSON data as a mixed chart of line, bar and vertical-marker series.
 | X-Axis Mode | `index` (sequential) or `time` (datetime) |
 | X-Axis Key | JSON property for time axis |
 | Time Parse Mode | `iso`, `epoch_ms`, or `epoch_s` |
+| Timestamps are UTC | (ISO mode) Treat timestamps without a zone as UTC and display them in the browser's local time, instead of treating them as already-local |
 | Time Unit | second, minute, hour, day, week, month, quarter, year |
-| Zoom/Pan | `none`, `x`, `y`, or `xy` |
+| Zoom/Pan | `none`, `x`, `y`, or `xy` (zoom/pan is kept while live data streams in) |
 | Grid Line Color | Chart grid color |
 
 **Series Configuration:**
