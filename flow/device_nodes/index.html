@@ -1,0 +1,2639 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../data_manipulation/">
+      
+      
+        <link rel="next" href="../timing_nodes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Devices & ANPR - ACAP Missing Features Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#device-integration-nodes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-header__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ACAP Missing Features Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Devices & ANPR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ACAP Missing Features Documentation" class="md-nav__button md-logo" aria-label="ACAP Missing Features Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ACAP Missing Features Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input_output_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input & Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logic_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logic & Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_manipulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Math
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devices & ANPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#axis-rtsp-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis RTSP Stream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis RTSP Stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axis-svg-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis SVG Overlay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis SVG Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axis-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-event-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Event Create
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Event Create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-event-subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Event Subscribe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Event Subscribe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics Metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene-description-json-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene Description JSON Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-plate-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Plate List
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License Plate List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vaxtor-cloud-anpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vaxtor Cloud ANPR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vaxtor Cloud ANPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timing_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database & SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collections & JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    String & Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage & SD Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced & Scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spot_color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spot Color Detector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gauge_reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gauge Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../img_sdcard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image to SD-Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scene_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scene Analysis Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license_plate_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Plate List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parking_times/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parking Times
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notification_service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notification Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sunrise_sunset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sunrise & Sunset Events
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general_settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#axis-rtsp-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis RTSP Stream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis RTSP Stream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axis-svg-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis SVG Overlay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis SVG Overlay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVG Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#placeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placeholders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axis-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axis Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-event-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Event Create
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Event Create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-event-subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata Event Subscribe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Event Subscribe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics Metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene-description-json-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene Description JSON Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-plate-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Plate List
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="License Plate List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vaxtor-cloud-anpr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vaxtor Cloud ANPR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vaxtor Cloud ANPR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functionality_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inputs_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputs_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="device-integration-nodes">Device Integration Nodes</h1>
+<p>Nodes for interacting with physical Axis devices, streams, and system events.</p>
+<h2 id="axis-rtsp-stream">Axis RTSP Stream</h2>
+<p>The <strong>Axis RTSP Stream</strong> node displays a live video stream from an Axis device and can overlay metadata.</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>AxisRtspStreamNode</code></p>
+<h3 id="functionality">Functionality</h3>
+<p>Connects to a device's RTSP stream. Supports visualizing region-of-interest (ROI) and object detection metadata overlays.</p>
+<h3 id="inputs">Inputs</h3>
+<ul>
+<li><strong>ROI</strong> (JSON): Region of Interest polygon points (if overlay enabled).</li>
+<li><strong>Observations</strong> (JSON): Object detection data to draw bounding boxes.</li>
+<li><strong>Tripwire</strong> (JSON): Tripwire line definition.</li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<ol>
+<li><strong>Device</strong>: Select the target Axis device from the dropdown property.</li>
+<li>The node will attempt to connect and display the stream automatically when the flow is "Live".</li>
+</ol>
+<hr />
+<h2 id="axis-svg-overlay">Axis SVG Overlay</h2>
+<p>The <strong>Axis SVG Overlay</strong> node draws an SVG graphic onto the camera image. The SVG is a small template, and any <code>{{ name }}</code> placeholder you put inside it becomes an input on the node, so values from your flow (sensor readings, statuses, counters) can change the picture live.</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>AxisSVGOverlayNode</code></p>
+<p><strong>Before you start</strong>: enable the overlay service in <strong>Settings → Overlay</strong>. Without it, nothing will be drawn on the stream.</p>
+<h3 id="inputs_1">Inputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable</strong></td>
+<td>Boolean</td>
+<td>Turns the overlay on or off live. When false, the overlay is cleared from the stream.</td>
+</tr>
+<tr>
+<td><em>(your variables)</em></td>
+<td>Any</td>
+<td>One input per <code>{{ name }}</code> placeholder in your SVG. Inputs appear automatically when you save the template. Pick the data type for each one from the dropdown.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stream</strong></td>
+<td>Which camera stream to draw on (0 = main stream).</td>
+</tr>
+<tr>
+<td><strong>Anchor</strong></td>
+<td>Where the SVG sits on the image: <code>top-left</code>, <code>top-right</code>, <code>bottom-left</code>, <code>bottom-right</code>, or <code>center</code>. Used when your SVG declares a <code>width</code> and <code>height</code>.</td>
+</tr>
+<tr>
+<td><strong>SVG Editor</strong></td>
+<td>Opens a full-screen editor with the SVG on the left and a live preview on the right.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="svg-editor">SVG Editor</h3>
+<p>Click <strong>SVG Editor</strong> to open the full-screen view. You edit the SVG on the left and watch the preview on the right. Two preview modes:</p>
+<ul>
+<li><strong>Literal</strong>: shows your <code>{{ name }}</code> placeholders as text, so you can check the layout and shapes.</li>
+<li><strong>Sample values</strong>: fills the placeholders with sample numbers so the overlay actually draws something.</li>
+</ul>
+<p>The <strong>Beautify</strong> button above the editor (next to the variable counter) re-indents the template. It keeps <code>{{ }}</code> expressions, <code>{{#each}}</code> / <code>{{#if}}</code> blocks and attribute values exactly as written and indents loop / conditional bodies, so it is safe to run on a template at any time.</p>
+<p>The right side also has a help section. The first panel, <strong>LLM prompt: generate SVG with an AI assistant</strong>, gives you a ready-made prompt you can paste into ChatGPT, Claude, or any other AI assistant. Type what overlay you want at the bottom of the prompt and the assistant will generate an SVG that works here. The other panels list the template syntax and supported SVG features.</p>
+<h3 id="visual-editor">Visual editor</h3>
+<p>The preview is also an editor. You don't have to write XML by hand:</p>
+<ul>
+<li><strong>Insert shapes</strong>: the small toolbar above the preview adds a rectangle, circle, ellipse, line, or text element at the center of the canvas.</li>
+<li><strong>Select</strong>: click any shape in the preview to select it. A Properties panel opens on the right showing its attributes.</li>
+<li><strong>Edit properties</strong>: change values with typed fields - number boxes for sizes/positions, dropdowns for choices like <code>text-anchor</code> or <code>font-weight</code>, and colour swatches for <code>fill</code> and <code>stroke</code> (the border colour). You can also edit a text element's content and use <strong>Add property</strong> to introduce a common attribute the shape doesn't have yet.</li>
+<li><strong>Move and resize</strong>: drag a selected shape to move it, or drag its handles to resize (lines have endpoint handles).</li>
+<li><strong>Reorder</strong>: bring-to-front / send-to-back buttons change which shape draws on top (SVG paints later elements over earlier ones).</li>
+<li><strong>Duplicate / delete</strong>: buttons in the Properties panel, or press <strong>Delete</strong> to remove the selected shape.</li>
+</ul>
+<p>Everything you do in the visual editor writes back into the SVG source as a minimal change, so it never disturbs your <code>{{ }}</code> expressions or <code>{{#each}}</code> / <code>{{#if}}</code> blocks. Elements that are inside a loop or whose values come from an expression are shown read-only in the panel - edit those in the source on the left.</p>
+<h3 id="placeholders">Placeholders</h3>
+<p>Anywhere in the SVG you can write <code>{{ name }}</code> to insert a value from a node input. You can do simple math and comparisons inside the braces too:</p>
+<ul>
+<li>Numbers, text, true / false</li>
+<li><code>+ - * / %</code> for math</li>
+<li><code>&lt;  &gt;  ==  !=</code> for comparing</li>
+<li><code>cond ? a : b</code> to pick between two values (used a lot for colour changes)</li>
+</ul>
+<p>You can also wrap whole parts of the SVG with an if/else block:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{{#if<span class="w"> </span>alert}}
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;circle</span><span class="w"> </span><span class="na">cx=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">cy=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">r=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;red&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>{{else}}
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;circle</span><span class="w"> </span><span class="na">cx=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">cy=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">r=</span><span class="s">&quot;6&quot;</span><span class="w"> </span><span class="na">fill=</span><span class="s">&quot;green&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>{{/if}}
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Special characters inside { { } }</p>
+<p>If you need <code>&lt;</code>, <code>&gt;</code> or <code>&amp;</code> inside an attribute expression, write <code>&amp;lt;</code>, <code>&amp;gt;</code> and <code>&amp;amp;</code> instead. This works the same inside <code>{{ }}</code>, <code>{{#if}}</code> and <code>{{#each}}</code>. If you accidentally paste an SVG whose <strong>tags</strong> are escaped (e.g. <code>&amp;lt;rect&amp;gt;</code> instead of <code>&lt;rect&gt;</code>, common when copying from an AI assistant), the preview shows a clear error with the affected lines and a <strong>Fix automatically</strong> button.</p>
+</div>
+<h3 id="loops">Loops</h3>
+<p>To draw a list, repeat a block once per element of a JSON array with <code>{{#each}}</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{{#each<span class="w"> </span>matches<span class="w"> </span>as<span class="w"> </span>m,<span class="w"> </span>i}}
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;g</span><span class="w"> </span><span class="na">transform=</span><span class="s">&quot;translate(0 {{ i * 80 }})&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;text</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;40&quot;</span><span class="nt">&gt;</span>{{<span class="w"> </span>m.homeTeam.name<span class="w"> </span>}}<span class="nt">&lt;/text&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;text</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;40&quot;</span><span class="nt">&gt;</span>{{<span class="w"> </span>m.score.fullTime.home<span class="w"> </span>}}<span class="w"> </span>-<span class="w"> </span>{{<span class="w"> </span>m.score.fullTime.away<span class="w"> </span>}}<span class="nt">&lt;/text&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;/g&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>{{/each}}
+</span></code></pre></div>
+<ul>
+<li>The collection (<code>matches</code>) is a <strong>single input port that holds a JSON array as a string</strong> - set its data type to <strong>String</strong>. Flow transmits JSON as text, so feed the array text straight in.</li>
+<li><code>as m</code> names each element; the optional <code>, i</code> adds the 0-based index. Both are loop-local and do <strong>not</strong> become input ports.</li>
+<li>Reach into each element with dot paths: <code>{{ m.homeTeam.name }}</code>, <code>{{ m.score.fullTime.home }}</code>. Missing fields render empty.</li>
+<li>SVG has no automatic layout, so position each repeat yourself using the index, e.g. <code>translate(0 {{ i * 80 }})</code> or <code>y="{{ 40 + i * 40 }}"</code>.</li>
+<li>Loops may nest and may contain <code>{{#if}}</code> blocks. The <code>&lt;svg&gt;</code> canvas size is fixed, so size it for the expected number of rows.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Text whitespace</p>
+<p>Inside <code>&lt;text&gt;</code> and <code>&lt;tspan&gt;</code>, line breaks and runs of spaces are collapsed to a single space (standard SVG). Indent the markup freely, but for alignment use coordinates (<code>x</code> / <code>dx</code>), not extra spaces.</p>
+</div>
+<h3 id="images">Images</h3>
+<p>You can draw a raster image (PNG or JPEG) with <code>&lt;image&gt;</code>. The source can be a base64 <code>data:</code> URI or a remote <code>http(s)</code> URL:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- Remote URL (fetched by the device) --&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;image</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;{{img_url}}&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="cm">&lt;!-- Inline base64 (no network needed) --&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;image</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;64&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;64&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">       </span><span class="na">href=</span><span class="s">&quot;data:image/png;base64,iVBORw0KGgoAAA...&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<ul>
+<li><code>x</code> / <code>y</code> / <code>width</code> / <code>height</code> accept <code>{{ }}</code> expressions. If <code>width</code> or <code>height</code> is <code>0</code>, the image's native pixel size is used.</li>
+<li>The <code>href</code> can itself be an expression, e.g. <code>href="{{ item.crest }}"</code> inside a <code>{{#each}}</code> loop, so each row can show a different image.</li>
+<li><strong>Supported formats: PNG and JPEG.</strong></li>
+<li>Decoded images are cached on the device, so reusing the same image across frames or rows is cheap.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">How remote images load</p>
+<p>Remote images are fetched in the background so the overlay never stalls waiting for the network. The first time a URL appears the image is downloaded; it shows up a moment later once it arrives, and nothing is drawn for that image until then. A URL is fetched <strong>once</strong> and cached - feed a different URL (for example a new value into <code>{{img_url}}</code>) to make it re-fetch. The same URL is never re-downloaded on its own.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">HTTPS and self-signed certificates</p>
+<p>Remote images are fetched over a standard HTTPS client that validates certificates, so a server using a self-signed or private-CA certificate will fail to load by default. If you need to load images from such a server, enable <strong>Allow untrusted TLS certificates for remote images</strong> in <strong>Settings → Overlay</strong>. Leave it off unless you need it - it disables certificate validation for those fetches.</p>
+</div>
+<h3 id="sizing">Sizing</h3>
+<p>Two ways the SVG can fit on the camera image:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>When</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fixed size</strong></td>
+<td>Your <code>&lt;svg&gt;</code> has a <code>width</code> and <code>height</code></td>
+<td>The SVG is drawn at exactly that size and placed at the selected <strong>Anchor</strong> corner / centre. The rest of the image stays transparent.</td>
+</tr>
+<tr>
+<td><strong>Full stream</strong></td>
+<td>No <code>width</code> and <code>height</code> (only <code>viewBox</code>)</td>
+<td>The SVG is stretched to cover the whole camera image.</td>
+</tr>
+</tbody>
+</table>
+<p>Compact sizes (for example 360×360 or 240×520) usually look best. Pick a corner with <strong>Anchor</strong> and leave the rest of the picture visible.</p>
+<h3 id="example">Example</h3>
+<p>A vertical bar that fills as a <code>level</code> value (0–100) goes up, switching colour from green to amber to red:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;svg</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span><span class="w"> </span><span class="na">viewBox=</span><span class="s">&quot;0 0 60 300&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;300&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;style&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>.track<span class="w"> </span>{<span class="w"> </span>fill:#1a1d24;<span class="w"> </span>stroke:#2d3340;<span class="w"> </span>stroke-width:1<span class="w"> </span>}
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>.label<span class="w"> </span>{<span class="w"> </span>font:500<span class="w"> </span>10px<span class="w"> </span>&quot;DejaVu<span class="w"> </span>Sans&quot;;<span class="w"> </span>fill:#cfd2db<span class="w"> </span>}
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&lt;/style&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&lt;rect</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;track&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;40&quot;</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;240&quot;</span><span class="w"> </span><span class="na">rx=</span><span class="s">&quot;10&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&lt;rect</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;20&quot;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="na">y=</span><span class="s">&quot;{{ 280 - level * 2.4 }}&quot;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="na">width=</span><span class="s">&quot;20&quot;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="na">height=</span><span class="s">&quot;{{ level * 2.4 }}&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="na">rx=</span><span class="s">&quot;10&quot;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="na">fill=</span><span class="s">&quot;{{ level &amp;lt; 20 ? &#39;#ef5350&#39; : level &amp;lt; 80 ? &#39;#f8d54b&#39; : &#39;#8fcb6e&#39; }}&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">&lt;text</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;label&quot;</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;30&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;20&quot;</span><span class="w"> </span><span class="na">text-anchor=</span><span class="s">&quot;middle&quot;</span><span class="nt">&gt;</span>{{<span class="w"> </span>level<span class="w"> </span>}}%<span class="nt">&lt;/text&gt;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nt">&lt;/svg&gt;</span>
+</span></code></pre></div>
+<p>Connect a number (a sensor reading, a counter, anything) to the <code>level</code> input. Leave <strong>Enable</strong> turned on. The bar updates live on the camera image.</p>
+<hr />
+<h2 id="axis-output">Axis Output</h2>
+<p>The <strong>Axis Output</strong> node controls physical I/O ports on the device (e.g., relays, digital outs).</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>AxisOutputNode</code></p>
+<h3 id="functionality_1">Functionality</h3>
+<p>Sets the state of a physical port based on the input signal.</p>
+<h3 id="inputs_2">Inputs</h3>
+<ul>
+<li><strong>In 1, In 2, ...</strong>: Boolean inputs corresponding to the device's ports.</li>
+</ul>
+<h3 id="configuration_1">Configuration</h3>
+<ul>
+<li><strong>Port Mapping</strong>: Ports are typically mapped when adding the node or via the device selection dialog.</li>
+</ul>
+<hr />
+<h2 id="metadata-event-create">Metadata Event Create</h2>
+<p>The <strong>Metadata Event Create</strong> node defines a custom event that can be emitted by the device.</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>MetaDataEventCreateNode</code></p>
+<h3 id="functionality_2">Functionality</h3>
+<p>Constructs a structured event payload. This can be used to trigger rules on the device or be consumed by other services.</p>
+<h3 id="properties_1">Properties</h3>
+<ul>
+<li><strong>Event Name</strong>: Unique identifier for the event.</li>
+<li><strong>Event Type</strong>:</li>
+<li><strong>Stateless</strong> (Trigger): Pulse-like event (e.g., "Motion Detected").</li>
+<li><strong>Stateful</strong>: Persistent state (e.g., "Door Open").</li>
+</ul>
+<h3 id="inputs_3">Inputs</h3>
+<ul>
+<li><strong>Custom Data fields</strong>: Add fields via the "+" button in properties. You can define them as:</li>
+<li><strong>Source</strong>: Origin of the event.</li>
+<li><strong>Data</strong>: Payload value.</li>
+</ul>
+<hr />
+<h2 id="metadata-event-subscribe">Metadata Event Subscribe</h2>
+<p>The <strong>Metadata Event Subscribe</strong> node listens for system or custom events.</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>MetaDataEventSubscribeNode</code></p>
+<h3 id="functionality_3">Functionality</h3>
+<p>Fires outputs when a specific event occurs on the device (e.g., specific MQTT topic or internal rule).</p>
+<h3 id="configuration_2">Configuration</h3>
+<ul>
+<li><strong>Setup</strong>: When adding this node, a dialog typically appears to select the specific event topic you wish to subscribe to.</li>
+<li><strong>Outputs</strong>: Dynamic outputs are created based on the event's data fields.</li>
+</ul>
+<hr />
+<h2 id="analytics-metadata">Analytics Metadata</h2>
+<p>The <strong>Analytics Metadata</strong> node receives raw analytics metadata from the device's built-in object detection (AXIS Object Analytics).</p>
+<p><strong>Category</strong>: Device
+<strong>Type</strong>: <code>AnalyticsMetadataNode</code></p>
+<h3 id="functionality_4">Functionality</h3>
+<p>Streams real-time object detection data from the device's analytics engine. Supports two modes for different use cases.</p>
+<h3 id="modes">Modes</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scene Description</strong></td>
+<td>Real-time frames with current observations (objects in frame)</td>
+</tr>
+<tr>
+<td><strong>Consolidated Track</strong></td>
+<td>Complete track data after an object leaves the scene</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs">Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New Data</td>
+<td>Boolean</td>
+<td>Pulses true when new metadata arrives</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>String</td>
+<td>Raw JSON containing observations or track data</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>String</td>
+<td>Error message if streaming fails</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_2">Properties</h3>
+<ul>
+<li><strong>Mode</strong>: Select Scene Description or Consolidated Track</li>
+<li><strong>Framerate</strong>: How often to poll for new data (frames per second)</li>
+</ul>
+<h3 id="scene-description-json-example">Scene Description JSON Example</h3>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;observations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;track_123&quot;</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human&quot;</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="nt">&quot;boundingBox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">},</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use Scene Description for real-time monitoring and triggering. Use Consolidated Track for logging complete object paths after they leave the frame.</p>
+</div>
+<hr />
+<h2 id="license-plate-list">License Plate List</h2>
+<p>The <strong>License Plate List</strong> node checks a plate string against a configured local database.</p>
+<p><strong>Category</strong>: Device / ANPR
+<strong>Type</strong>: <code>LicensePlateListNode</code></p>
+<h3 id="functionality_5">Functionality</h3>
+<p>Verifies if a license plate exists in the internal list and checks its validity (expiration, allowed time windows).</p>
+<h3 id="inputs_4">Inputs</h3>
+<ul>
+<li><strong>Process</strong> (Boolean): Triggers the lookup.</li>
+<li><strong>Plate</strong> (String): The text to check.</li>
+<li><strong>Reset</strong> (Boolean): Clears outputs.</li>
+</ul>
+<h3 id="outputs_1">Outputs</h3>
+<ul>
+<li><strong>Matched Plate</strong> (String): The best match found.</li>
+<li><strong>In List</strong> (Boolean): True if found.</li>
+<li><strong>Not In List</strong> (Boolean): True if not found.</li>
+<li><strong>Expired</strong> (Boolean): True if found but license is expired.</li>
+<li><strong>Not Valid Yet</strong> (Boolean): True if valid from current time &gt; now.</li>
+<li><strong>Tag outputs</strong>: Boolean outputs for each tag (e.g., "Staff", "VIP") associated with the plate.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Tag output updates</p>
+<p>Tag outputs are created when you add the node to your flow based on the tags that exist at that time. If you add new tags to the License Plate List feature later, you must <strong>delete and recreate</strong> the node to get outputs for the new tags. Plate data updates are reflected immediately without recreating the node.</p>
+</div>
+<hr />
+<h2 id="vaxtor-cloud-anpr">Vaxtor Cloud ANPR</h2>
+<p>The <strong>Vaxtor Cloud ANPR</strong> node sends an image to the Vaxtor Cloud for recognition.</p>
+<p><strong>Category</strong>: Device / ANPR
+<strong>Type</strong>: <code>VaxtorCloudAnprNode</code></p>
+<h3 id="functionality_6">Functionality</h3>
+<p>Captures an image from the connected device and uploads it to the Vaxtor Cloud API for analysis.</p>
+<h3 id="inputs_5">Inputs</h3>
+<ul>
+<li><strong>Execute</strong> (Boolean): Triggers the capture and upload.</li>
+<li><strong>Reset</strong> (Boolean): Cancels pending request.</li>
+</ul>
+<h3 id="outputs_2">Outputs</h3>
+<ul>
+<li><strong>Success</strong> (Boolean): API request succeeded.</li>
+<li><strong>Plate Found</strong> (Boolean): Cloud returned a plate.</li>
+<li><strong>Number / Country / State</strong> (String): Plate details.</li>
+<li><strong>Vehicle Make / Model / Color</strong> (String): Vehicle attributes.</li>
+<li><strong>Status</strong> (Integer): HTTP status code (200=OK) or internal error code.</li>
+</ul>
+<h3 id="configuration_3">Configuration</h3>
+<ul>
+<li><strong>Authentication</strong>: Uses configured client credentials to obtain a token from <code>auth.vaxtor.cloud</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Commend Österreich GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
