@@ -53,7 +53,22 @@ Click **SVG Editor** to open the full-screen view. You edit the SVG on the left 
 - **Literal**: shows your `{{ name }}` placeholders as text, so you can check the layout and shapes.
 - **Sample values**: fills the placeholders with sample numbers so the overlay actually draws something.
 
+The **Beautify** button above the editor (next to the variable counter) re-indents the template. It keeps `{{ }}` expressions, `{{#each}}` / `{{#if}}` blocks and attribute values exactly as written and indents loop / conditional bodies, so it is safe to run on a template at any time.
+
 The right side also has a help section. The first panel, **LLM prompt: generate SVG with an AI assistant**, gives you a ready-made prompt you can paste into ChatGPT, Claude, or any other AI assistant. Type what overlay you want at the bottom of the prompt and the assistant will generate an SVG that works here. The other panels list the template syntax and supported SVG features.
+
+### Visual editor
+
+The preview is also an editor. You don't have to write XML by hand:
+
+- **Insert shapes**: the small toolbar above the preview adds a rectangle, circle, ellipse, line, or text element at the center of the canvas.
+- **Select**: click any shape in the preview to select it. A Properties panel opens on the right showing its attributes.
+- **Edit properties**: change values with typed fields - number boxes for sizes/positions, dropdowns for choices like `text-anchor` or `font-weight`, and colour swatches for `fill` and `stroke` (the border colour). You can also edit a text element's content and use **Add property** to introduce a common attribute the shape doesn't have yet.
+- **Move and resize**: drag a selected shape to move it, or drag its handles to resize (lines have endpoint handles).
+- **Reorder**: bring-to-front / send-to-back buttons change which shape draws on top (SVG paints later elements over earlier ones).
+- **Duplicate / delete**: buttons in the Properties panel, or press **Delete** to remove the selected shape.
+
+Everything you do in the visual editor writes back into the SVG source as a minimal change, so it never disturbs your `{{ }}` expressions or `{{#each}}` / `{{#if}}` blocks. Elements that are inside a loop or whose values come from an expression are shown read-only in the panel - edit those in the source on the left.
 
 ### Placeholders
 
@@ -98,6 +113,30 @@ To draw a list, repeat a block once per element of a JSON array with `{{#each}}`
 
 !!! note "Text whitespace"
     Inside `<text>` and `<tspan>`, line breaks and runs of spaces are collapsed to a single space (standard SVG). Indent the markup freely, but for alignment use coordinates (`x` / `dx`), not extra spaces.
+
+### Images
+
+You can draw a raster image (PNG or JPEG) with `<image>`. The source can be a base64 `data:` URI or a remote `http(s)` URL:
+
+```xml
+<!-- Remote URL (fetched by the device) -->
+<image x="20" y="20" width="64" height="64" href="{{img_url}}"/>
+
+<!-- Inline base64 (no network needed) -->
+<image x="20" y="20" width="64" height="64"
+       href="data:image/png;base64,iVBORw0KGgoAAA..."/>
+```
+
+- `x` / `y` / `width` / `height` accept `{{ }}` expressions. If `width` or `height` is `0`, the image's native pixel size is used.
+- The `href` can itself be an expression, e.g. `href="{{ item.crest }}"` inside a `{{#each}}` loop, so each row can show a different image.
+- **Supported formats: PNG and JPEG.**
+- Decoded images are cached on the device, so reusing the same image across frames or rows is cheap.
+
+!!! note "How remote images load"
+    Remote images are fetched in the background so the overlay never stalls waiting for the network. The first time a URL appears the image is downloaded; it shows up a moment later once it arrives, and nothing is drawn for that image until then. A URL is fetched **once** and cached - feed a different URL (for example a new value into `{{img_url}}`) to make it re-fetch. The same URL is never re-downloaded on its own.
+
+!!! warning "HTTPS and self-signed certificates"
+    Remote images are fetched over a standard HTTPS client that validates certificates, so a server using a self-signed or private-CA certificate will fail to load by default. If you need to load images from such a server, enable **Allow untrusted TLS certificates for remote images** in **Settings → Overlay**. Leave it off unless you need it - it disables certificate validation for those fetches.
 
 ### Sizing
 
